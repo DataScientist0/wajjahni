@@ -47,6 +47,7 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 | **HTML** | The structure of every page: header, sections, cards, buttons | It's the standard language of the web, and every browser understands it |
 | **CSS** | All the styling: colors, fonts, layout, light/dark themes, mobile layout | It controls how the site looks. CSS variables made light/dark mode easy, and media queries make the site work on phones |
 | **JavaScript** | Everything interactive: search, filters, map, distance, peak hours chart, language and theme switching | It runs in the browser, so the site works without a server and is fast for users |
+| **Python (pandas)** | Cleaning the tourism statistics in a Jupyter notebook | pandas is the standard tool for working with tables of data, and a notebook shows every step clearly |
 
 ### Libraries & services
 
@@ -81,6 +82,23 @@ The dataset (`data.js`) contains **56 places across 13 regions**. Each place has
 
 ---
 
+## 🧹 Tourism statistics & data cleaning
+
+To add real numbers to the site, I'm using official tourism statistics from the **Saudi Tourism Authority** (2015–2024, all 13 regions, domestic and inbound), shared on Kaggle as [Saudi Arabia Tourism Dataset (2015–2024)](https://www.kaggle.com/datasets/toobaik/saudi-arabia-tourism-dataset-20152024).
+
+The cleaning is done in [`data-cleaning.ipynb`](data-cleaning.ipynb) with Python and pandas:
+
+- Found that the dataset's merged file is unreliable (the destination column was dropped, plus 28 duplicate rows and 20 all-zero rows), so I **rebuilt the data from the 26 original files**
+- Converted numbers stored as text (`"1,041"`) into real numbers, and gave the columns short names with clear units
+- Matched region names to the website
+- Separated region totals from cities, and **checked that the cities add up to each region total**
+- Found and removed a row that had been **copied into the wrong file** (Najran inbound 2024)
+- Kept missing values as missing instead of guessing
+
+**Output:** `data/clean/tourism_by_region.csv` and `data/clean/tourism_by_destination.csv`
+
+---
+
 ## 📁 Project structure
 
 ```
@@ -92,6 +110,10 @@ wajjahni/
 ├── styles.css      # All styles, themes, and mobile layout
 ├── app.js          # Shared logic: language, theme, distance, peak hours, popups
 ├── data.js         # The places dataset
+├── data-cleaning.ipynb  # Cleans the tourism statistics
+├── data/
+│   ├── raw/        # Original tourism files, never edited by hand
+│   └── clean/      # Clean tables made by the notebook
 └── README.md
 ```
 
@@ -120,6 +142,7 @@ No installation needed. An internet connection is required for the map, fonts, a
 - [x] Light and dark mode
 - [x] Mobile-friendly design
 - [x] Real photos for 36 places, with photographer credits
+- [x] Clean the official tourism statistics (2015–2024)
 
 **Coming next**
 - [ ] Replace sample numbers with real data from official sources
