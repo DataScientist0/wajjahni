@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wajjahni — Explore Saudi Arabia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Wajjahni<span>.</span></div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="places.html" data-i18n="nav.places">Places</a>
+      <a href="map.html" data-i18n="nav.map">Map</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-meta">56 places across 13 regions</div>
+      <button id="langToggle" class="lang-toggle">العربية</button>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+      <button id="navToggle" class="nav-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1 class="display" data-i18n="hero.title">A map of every corner of Saudi Arabia worth the drive.</h1>
+  <p class="lede" data-i18n="hero.lede">Heritage villages, mountain trails, Red Sea islands, and holy sites — filter by region or type, then see what's actually there.</p>
+  <div class="stat-row">
+    <div class="stat"><b>56</b><span data-i18n="stat.places">places mapped</span></div>
+    <div class="stat"><b>13</b><span data-i18n="stat.regions">regions</span></div>
+    <div class="stat"><b>5</b><span data-i18n="stat.types">place types</span></div>
+  </div>
+  <div class="hero-cta">
+    <a href="places.html" class="btn-primary" data-i18n="cta.browse">Browse places</a>
+    <a href="map.html" class="btn-secondary" data-i18n="cta.map">Open the map</a>
+  </div>
+</section>
+
+<section class="home-highlights">
+  <h2 class="display" data-i18n="highlights.title">What you'll find</h2>
+  <div class="highlight-grid">
+    <div class="highlight-card">
+      <div class="hc-icon" style="background:#B5502A22;color:#B5502A">🏛️</div>
+      <h3 data-i18n="hl.historical.t">Historical &amp; heritage</h3>
+      <p data-i18n="hl.historical.d">From Hegra's Nabataean tombs to Diriyah's mud-brick walls — sites that trace the Kingdom's story.</p>
+    </div>
+    <div class="highlight-card">
+      <div class="hc-icon" style="background:#1F6F7822;color:#1F6F78">🏞️</div>
+      <h3 data-i18n="hl.natural.t">Natural landscapes</h3>
+      <p data-i18n="hl.natural.d">Desert cliffs, Red Sea islands, and mountain peaks across every climate the Kingdom holds.</p>
+    </div>
+    <div class="highlight-card">
+      <div class="hc-icon" style="background:#C99A3C22;color:#C99A3C">🕌</div>
+      <h3 data-i18n="hl.religious.t">Religious sites</h3>
+      <p data-i18n="hl.religious.d">The Two Holy Mosques and the historic mosques that shaped early Islamic history.</p>
+    </div>
+    <div class="highlight-card">
+      <div class="hc-icon" style="background:#8A5FB522;color:#8A5FB5">🎡</div>
+      <h3 data-i18n="hl.entertainment.t">Entertainment &amp; culture</h3>
+      <p data-i18n="hl.entertainment.d">Corniches, cable cars, and city landmarks for an easy day out.</p>
+    </div>
+  </div>
+</section>
+
+<footer data-i18n="footer.text">Wajjahni — a student portfolio project. Place data is illustrative, not an official tourism source.</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

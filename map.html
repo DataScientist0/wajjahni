@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Map — Wajjahni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Wajjahni<span>.</span></div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="places.html" data-i18n="nav.places">Places</a>
+      <a href="map.html" data-i18n="nav.map">Map</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-meta" id="resultCount">56 places</div>
+      <button id="langToggle" class="lang-toggle">العربية</button>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+      <button id="navToggle" class="nav-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="page-head">
+  <h1 class="display" data-i18n="page.map.title">The map</h1>
+  <p class="lede" data-i18n="page.map.lede">Every place plotted — filter, search, or click a pin for details.</p>
+</section>
+
+<div class="controls">
+  <div class="search-row">
+    <div class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search a place, e.g. Hegra, Farasan..." data-i18n-placeholder="search.placeholder">
+    </div>
+    <button id="locateBtn" class="locate-btn" data-i18n="locate.btn">📍 Distance from me</button>
+  </div>
+  <div id="locateStatus" class="locate-status"></div>
+  <div class="chip-row" id="typeChips"></div>
+  <div class="chip-row regions" id="regionChips"></div>
+</div>
+
+<div class="workspace">
+  <div class="list-panel">
+    <div class="list-panel-head">
+      <span data-i18n="list.head">Places</span>
+      <span id="listCount">56 shown</span>
+    </div>
+    <div class="list-scroll" id="placeList"></div>
+  </div>
+  <div class="map-col">
+    <div id="routeInfo" class="route-info"></div>
+    <div id="leafletMap"></div>
+  </div>
+</div>
+
+<footer data-i18n="footer.text">Wajjahni — a student portfolio project. Place data is illustrative, not an official tourism source.</footer>
+
+<div id="peakModal" class="peak-modal">
+  <div class="peak-modal-box">
+    <button id="peakClose" class="peak-close" aria-label="Close">✕</button>
+    <h3 class="peak-title" id="peakModalTitle">Place name</h3>
+    <p class="peak-sub" id="peakModalSub"></p>
+    <div class="peak-chart" id="peakBars"></div>
+    <p class="peak-verdict" id="peakVerdict"></p>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+<script>
+let activeRegion = 'All';
+let activeType = 'All';
+let searchTerm = '';
+let activeId = null;
+
+const map = L.map('leafletMap', { scrollWheelZoom: false }).setView([24.2, 45.0], 5.4);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+const markers = {};
+DATA.forEach((place, i) => {
+  const color = TYPE_COLORS[place.type] || "#B5502A";
+  const marker = L.circleMarker([place.latitude, place.longitude], {
+    radius: 7, color: "#fff", weight: 2, fillColor: color, fillOpacity: 0.95
+  });
+  marker.bindPopup(popupHTML(place));
+  marker.on('click', () => setActive(i, true));
+  markers[i] = marker;
+});
+
+function buildChips(container, values, isRegion) {
+  container.innerHTML = '';
+  const allChip = document.createElement('button');
+  allChip.className = 'chip active';
+  allChip.dataset.value = 'All';
+  allChip.textContent = t('chip.all');
+  allChip.onclick = () => {
+    if (isRegion) { activeRegion = 'All'; } else { activeType = 'All'; }
+    refreshChipState(container);
+    render();
+  };
+  container.appendChild(allChip);
+  values.forEach(v => {
+    const chip = document.createElement('button');
+    chip.className = 'chip';
+    chip.dataset.value = v;
+    chip.textContent = isRegion ? tRegion(v) : tType(v);
+    chip.onclick = () => {
+      if (isRegion) { activeRegion = v; } else { activeType = v; }
+      refreshChipState(container);
+      render();
+    };
+    container.appendChild(chip);
+  });
+}
+function refreshChipState(container) {
+  const current = container === document.getElementById('regionChips') ? activeRegion : activeType;
+  [...container.children].forEach(c => c.classList.toggle('active', c.dataset.value === current));
+}
+function rebuildChips() {
+  buildChips(document.getElementById('typeChips'), types, false);
+  buildChips(document.getElementById('regionChips'), regions, true);
+  refreshChipState(document.getElementById('typeChips'));
+  refreshChipState(document.getElementById('regionChips'));
+}
+rebuildChips();
+
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  searchTerm = e.target.value.trim().toLowerCase();
+  render();
+});
+
+function filteredIndexes() {
+  let idxs = DATA.map((d, i) => i).filter(i => {
+    const d = DATA[i];
+    if (activeRegion !== 'All' && d.region !== activeRegion) return false;
+    if (activeType !== 'All' && d.type !== activeType) return false;
+    if (searchTerm && !d.place_name.toLowerCase().includes(searchTerm) && !d.region.toLowerCase().includes(searchTerm)) return false;
+    return true;
+  });
+  if (userLocation) idxs = idxs.sort((a, b) => distanceTo(DATA[a]) - distanceTo(DATA[b]));
+  return idxs;
+}
+
+function render() {
+  const idxs = filteredIndexes();
+  const listEl = document.getElementById('placeList');
+  listEl.innerHTML = '';
+  Object.values(markers).forEach(m => map.removeLayer(m));
+
+  if (idxs.length === 0) {
+    listEl.innerHTML = `<div class="empty-state">${t('empty')}</div>`;
+  } else {
+    idxs.forEach(i => {
+      const d = DATA[i];
+      markers[i].addTo(map);
+      const card = document.createElement('div');
+      card.className = 'place-card' + (i === activeId ? ' active' : '');
+      const dist = distanceTo(d);
+      const distLine = dist != null ? `<span class="pc-distance"> · ${dist.toFixed(0)} ${t('km.away')}</span>` : '';
+      card.innerHTML = `
+        <img class="pc-thumb" src="${d.image_url}" alt="${d.place_name}" loading="lazy">
+        <div class="pc-body">
+          <div class="pc-top">
+            <span class="pc-name"><span class="type-dot" style="background:${TYPE_COLORS[d.type]}"></span>${d.place_name}</span>
+            <span class="pc-rating">★ ${d.rating}</span>
+          </div>
+          <div class="pc-meta">${tRegion(d.region)} · ${tType(d.type)} · ${t('best.in')} ${tSeason(d.best_season)}${distLine}</div>
+          <div class="card-actions">
+            <button class="peak-btn" data-idx="${i}">${t('peak.btn')}</button>
+            <a href="${googleMapsUrl(d)}" target="_blank" rel="noopener" class="gmaps-btn">${t('directions.btn')}</a>
+          </div>
+        </div>
+      `;
+      card.querySelector('.pc-body').onclick = (e) => {
+        if (e.target.closest('.peak-btn') || e.target.closest('.gmaps-btn')) return;
+        setActive(i, true);
+      };
+      card.querySelector('.peak-btn').onclick = (e) => { e.stopPropagation(); openPeakModal(i); };
+      listEl.appendChild(card);
+    });
+  }
+  document.getElementById('listCount').textContent = idxs.length + ' ' + (currentLang === 'ar' ? 'ظاهر' : 'shown');
+  document.getElementById('resultCount').textContent = idxs.length + ' ' + (currentLang === 'ar' ? 'من' : 'of') + ' ' + DATA.length + ' ' + (currentLang === 'ar' ? 'مكان' : 'places');
+}
+
+function setActive(i, flyTo) {
+  activeId = i;
+  render();
+  const d = DATA[i];
+  if (flyTo) {
+    map.flyTo([d.latitude, d.longitude], 8, { duration: 0.6 });
+    markers[i].openPopup();
+  }
+  drawRouteTo(d);
+}
+
+// ---- Real driving route (distance + time), like Google Maps ----
+let routingControl = null;
+const routeInfoEl = document.getElementById('routeInfo');
+
+function drawRouteTo(place) {
+  if (!userLocation) {
+    routeInfoEl.innerHTML = `<span class="route-hint">📍 ${t('route.hint.first')} ${place.place_name}.</span>`;
+    routeInfoEl.classList.add('show');
+    return;
+  }
+
+  routeInfoEl.innerHTML = `<span class="route-hint">${t('route.calculating')} ${place.place_name}…</span>`;
+  routeInfoEl.classList.add('show');
+
+  if (routingControl) {
+    map.removeControl(routingControl);
+    routingControl = null;
+  }
+
+  routingControl = L.Routing.control({
+    waypoints: [
+      L.latLng(userLocation.lat, userLocation.lon),
+      L.latLng(place.latitude, place.longitude)
+    ],
+    routeWhileDragging: false,
+    addWaypoints: false,
+    draggableWaypoints: false,
+    fitSelectedRoutes: true,
+    show: false,
+    lineOptions: { styles: [{ color: '#D98A4A', weight: 5, opacity: 0.85 }] },
+    createMarker: () => null
+  }).addTo(map);
+
+  routingControl.on('routesfound', (e) => {
+    const r = e.routes[0];
+    const km = (r.summary.totalDistance / 1000).toFixed(1);
+    const mins = Math.round(r.summary.totalTime / 60);
+    routeInfoEl.innerHTML = `
+      <span class="route-place">${t('route.to')} ${place.place_name}:</span>
+      <span class="route-km">${km} ${t('km.away').replace(' ','')}</span>
+      <span class="route-dot">·</span>
+      <span class="route-time">${mins} ${t('route.drive')}</span>
+      <button id="routeClear" class="route-clear" aria-label="Clear route">✕</button>
+    `;
+    document.getElementById('routeClear').onclick = clearRoute;
+  });
+
+  routingControl.on('routingerror', () => {
+    routeInfoEl.innerHTML = `<span class="route-hint">${t('route.error')} ${place.place_name}.</span>`;
+  });
+}
+
+function clearRoute() {
+  if (routingControl) {
+    map.removeControl(routingControl);
+    routingControl = null;
+  }
+  routeInfoEl.classList.remove('show');
+  routeInfoEl.innerHTML = '';
+}
+
+initLocateButton(() => {
+  Object.keys(markers).forEach(i => markers[i].setPopupContent(popupHTML(DATA[i], distanceTo(DATA[i]))));
+  render();
+  if (activeId !== null) drawRouteTo(DATA[activeId]);
+});
+
+document.addEventListener('langchange', () => {
+  rebuildChips();
+  render();
+  Object.keys(markers).forEach(i => markers[i].setPopupContent(popupHTML(DATA[i], distanceTo(DATA[i]))));
+});
+
+render();
+</script>
+</body>
+</html>

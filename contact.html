@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact — Wajjahni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Wajjahni<span>.</span></div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="places.html" data-i18n="nav.places">Places</a>
+      <a href="map.html" data-i18n="nav.map">Map</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-meta">56 places across 13 regions</div>
+      <button id="langToggle" class="lang-toggle">العربية</button>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+      <button id="navToggle" class="nav-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="contact">
+  <h2 class="display" data-i18n="contact.title">Get in touch</h2>
+  <p class="lede" data-i18n="contact.lede">Spotted an error, or want to suggest a place that should be on this map? Reach out.</p>
+  <a class="contact-link" href="mailto:hello@wajjahni-example.com">hello@wajjahni-example.com</a>
+</section>
+
+<footer data-i18n="footer.text">Wajjahni — a student portfolio project. Place data is illustrative, not an official tourism source.</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
