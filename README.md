@@ -17,6 +17,7 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 | 🏠 **Home page** | Introduces the project and the kinds of places you'll find |
 | 🔎 **Search & filters** | Search by place name, and filter by region and by type (Historical, Natural, Religious, Cultural, Entertainment) |
 | 🗺️ **Interactive map** | Shows every place as a pin, colored by type. Click a pin to see its photo, rating, and description |
+| 📷 **Real photos** | Real, freely licensed photos of each place from Wikimedia Commons, with the photographer credited |
 | 📍 **Distance from me** | Uses your location (only if you allow it) to sort places from nearest to farthest |
 | 🧭 **Directions** | Draws a route to a place on the map, or opens it in Google Maps |
 | ⏰ **Peak hours** | A bar chart showing how busy a place usually is at each hour, and whether it's busy right now |
@@ -74,9 +75,9 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 
 The dataset (`data.js`) contains **56 places across 13 regions**. Each place has:
 
-`region` · `place_name` · `type` · `latitude` & `longitude` · `short_description` · `rating` · `num_reviews` · `visitors_per_year` · `best_season` · `best_for` · `image_url` · `peak_hours`
+`region` · `place_name` · `type` · `latitude` & `longitude` · `short_description` · `rating` · `num_reviews` · `visitors_per_year` · `best_season` · `best_for` · `image_url` · `image_credit` · `peak_hours`
 
-> ⚠️ **About the data:** the places are real, but the **ratings, review counts, visitor numbers, peak hours, and photos are sample data** used to build and test the website. Wajjahni is a student project, not an official tourism source. Replacing these with real data is on the to-do list below.
+> ⚠️ **About the data:** the places and photos are real, but the **ratings, review counts, visitor numbers, and peak hours are sample data** used to build and test the website. Wajjahni is a student project, not an official tourism source. Replacing these with real data is on the to-do list below.
 
 ---
 
@@ -118,13 +119,20 @@ No installation needed. An internet connection is required for the map, fonts, a
 - [x] Arabic and English
 - [x] Light and dark mode
 - [x] Mobile-friendly design
+- [x] Real photos for 36 places, with photographer credits
 
 **Coming next**
 - [ ] Replace sample numbers with real data from official sources
-- [ ] Real photos for each place
+- [ ] Real photos for the remaining 20 places
 - [ ] Translate place names and descriptions into Arabic
 - [ ] A data analysis page with charts by region, type, and season
 - [ ] A real contact email or form
+
+---
+
+## 📷 Photo credits
+
+Photos come from [Wikimedia Commons](https://commons.wikimedia.org) under free licenses (Creative Commons, GFDL, or public domain). Each photo on the site shows its photographer and license, and links to its original page. Places without a free photo yet show a placeholder.
 
 ---
 

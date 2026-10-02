@@ -173,7 +173,7 @@ function render() {
       const dist = distanceTo(d);
       const distLine = dist != null ? `<span class="pc-distance"> · ${dist.toFixed(0)} ${t('km.away')}</span>` : '';
       card.innerHTML = `
-        <img class="pc-thumb" src="${d.image_url}" alt="${d.place_name}" loading="lazy">
+        ${placeImage(d, "pc-thumb")}
         <div class="pc-body">
           <div class="pc-top">
             <span class="pc-name"><span class="type-dot" style="background:${TYPE_COLORS[d.type]}"></span>${d.place_name}</span>

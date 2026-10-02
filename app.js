@@ -11,6 +11,7 @@ const translations = {
     "hl.natural.t": "Natural landscapes", "hl.natural.d": "Desert cliffs, Red Sea islands, and mountain peaks across every climate the Kingdom holds.",
     "hl.religious.t": "Religious sites", "hl.religious.d": "The Two Holy Mosques and the historic mosques that shaped early Islamic history.",
     "hl.entertainment.t": "Entertainment & culture", "hl.entertainment.d": "Corniches, cable cars, and city landmarks for an easy day out.",
+    "photo.soon": "Photo coming soon",
     "footer.text": "Wajjahni — a student portfolio project. Place data is illustrative, not an official tourism source. © 2026 Najla. All rights reserved.",
     "page.places.title": "All places", "page.places.lede": "Search, filter, or sort by distance from you.",
     "page.map.title": "The map", "page.map.lede": "Every place plotted — filter, search, or click a pin for details.",
@@ -44,6 +45,7 @@ const translations = {
     "hl.natural.t": "مناظر طبيعية", "hl.natural.d": "جروف صحراوية، جزر بالبحر الأحمر، وقمم جبلية بكل مناخات المملكة.",
     "hl.religious.t": "مواقع دينية", "hl.religious.d": "الحرمان الشريفان والمساجد التاريخية اللي شكّلت بدايات التاريخ الإسلامي.",
     "hl.entertainment.t": "ترفيه وثقافة", "hl.entertainment.d": "كورنيشات، تلفريك، ومعالم مدن ليوم خفيف وممتع.",
+    "photo.soon": "الصورة قريباً",
     "footer.text": "وجّهني — مشروع طلابي شخصي. بيانات الأماكن توضيحية، مو مصدر سياحي رسمي. © 2026 نجلاء. جميع الحقوق محفوظة.",
     "page.places.title": "كل الأماكن", "page.places.lede": "ابحثي، فلتري، أو رتبي حسب المسافة منك.",
     "page.map.title": "الخريطة", "page.map.lede": "كل مكان موضّح على الخريطة — فلتري، ابحثي، أو اضغطي على أي نقطة للتفاصيل.",
@@ -267,15 +269,33 @@ function googleMapsUrl(place) {
   return `https://www.google.com/maps/dir/?api=1&destination=${place.latitude},${place.longitude}&travelmode=driving`;
 }
 
+// ---- Place photos: real photo with credit, or a placeholder by type ----
+const TYPE_ICONS = { Historical: "🏛️", Natural: "🏞️", Religious: "🕌", Entertainment: "🎡", Cultural: "🎭" };
+
+function placeImage(d, cls) {
+  if (d.image_url) {
+    return `<img class="${cls}" src="${d.image_url}" alt="${d.place_name}" loading="lazy">`;
+  }
+  return `<div class="${cls} img-placeholder" style="--tc:${TYPE_COLORS[d.type]}" role="img" aria-label="${d.place_name}">
+    <span>${TYPE_ICONS[d.type] || "📍"}</span><small>${t('photo.soon')}</small></div>`;
+}
+
+function photoCredit(d) {
+  if (!d.image_credit) return '';
+  const c = d.image_credit;
+  return `<a class="photo-credit" href="${c.source}" target="_blank" rel="noopener">📷 ${c.by} · ${c.license}</a>`;
+}
+
 function popupHTML(place, distanceKm) {
   const distLine = (distanceKm != null)
     ? `<div class="popup-meta pc-distance">${distanceKm.toFixed(0)} ${t('km.from.you')}</div>` : '';
   return `
-    <img class="popup-img" src="${place.image_url}" alt="${place.place_name}">
+    ${placeImage(place, "popup-img")}
     <div class="popup-title">${place.place_name}</div>
     <div class="popup-meta">${tRegion(place.region)} · ${tType(place.type)} · ★ ${place.rating}</div>
     ${distLine}
     <div class="popup-desc">${place.short_description}</div>
+    ${photoCredit(place)}
     <a href="${googleMapsUrl(place)}" target="_blank" rel="noopener" class="gmaps-link">📍 Open in Google Maps</a>
   `;
 }
