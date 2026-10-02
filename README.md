@@ -133,3 +133,11 @@ No installation needed. An internet connection is required for the map, fonts, a
 Built by a data analysis student as a portfolio project, to practice web development and working with data.
 
 📂 More of my work: [github.com/DataScientist0](https://github.com/DataScientist0)
+
+---
+
+## © Copyright
+
+© 2026 Najla. All rights reserved.
+
+This project is shared for viewing only. Please don't copy, reuse, or redistribute the code, design, or data without permission.
