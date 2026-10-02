@@ -77,8 +77,8 @@ const TYPE_LABELS = {
 const REGION_LABELS = {
   en: {}, // identity — region names stay as stored (English) for English mode
   ar: {
-    "Riyadh": "الرياض", "Makkah": "مكة المكرمة", "Madinah": "المدينة المنورة", "Qassim": "القصيم",
-    "Eastern Province": "المنطقة الشرقية", "Asir": "عسير", "Tabuk": "تبوك", "Hail": "حائل",
+    "Riyadh": "الرياض", "Makkah": "مكة المكرمة", "Madinah": "المدينة المنورة", "Al-Qassim": "القصيم",
+    "Eastern Province": "المنطقة الشرقية", "Aseer": "عسير", "Tabuk": "تبوك", "Hail": "حائل",
     "Najran": "نجران", "Jazan": "جازان", "Al-Baha": "الباحة", "Al-Jouf": "الجوف", "Northern Borders": "الحدود الشمالية"
   }
 };
