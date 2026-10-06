@@ -149,7 +149,7 @@ function filteredIndexes() {
     const d = DATA[i];
     if (activeRegion !== 'All' && d.region !== activeRegion) return false;
     if (activeType !== 'All' && d.type !== activeType) return false;
-    if (searchTerm && !d.place_name.toLowerCase().includes(searchTerm) && !d.region.toLowerCase().includes(searchTerm)) return false;
+    if (searchTerm && ![d.place_name, d.place_name_ar, d.region, tRegion(d.region), d.city, d.city_ar].some(v => (v || '').toLowerCase().includes(searchTerm))) return false;
     return true;
   });
   if (userLocation) idxs = idxs.sort((a, b) => distanceTo(DATA[a]) - distanceTo(DATA[b]));
@@ -176,10 +176,10 @@ function render() {
         ${placeImage(d, "pc-thumb")}
         <div class="pc-body">
           <div class="pc-top">
-            <span class="pc-name"><span class="type-dot" style="background:${TYPE_COLORS[d.type]}"></span>${d.place_name}</span>
+            <span class="pc-name"><span class="type-dot" style="background:${TYPE_COLORS[d.type]}"></span>${tName(d)}</span>
             <span class="pc-rating">★ ${d.rating}</span>
           </div>
-          <div class="pc-meta">${tRegion(d.region)} · ${tType(d.type)} · ${t('best.in')} ${tSeason(d.best_season)}${distLine}</div>
+          <div class="pc-meta">${tLocation(d)} · ${tType(d.type)} · ${t('best.in')} ${tSeason(d.best_season)}${distLine}</div>
           <div class="card-actions">
             <button class="peak-btn" data-idx="${i}">${t('peak.btn')}</button>
             <a href="${googleMapsUrl(d)}" target="_blank" rel="noopener" class="gmaps-btn">${t('directions.btn')}</a>
@@ -215,12 +215,12 @@ const routeInfoEl = document.getElementById('routeInfo');
 
 function drawRouteTo(place) {
   if (!userLocation) {
-    routeInfoEl.innerHTML = `<span class="route-hint">📍 ${t('route.hint.first')} ${place.place_name}.</span>`;
+    routeInfoEl.innerHTML = `<span class="route-hint">📍 ${t('route.hint.first')} ${tName(place)}.</span>`;
     routeInfoEl.classList.add('show');
     return;
   }
 
-  routeInfoEl.innerHTML = `<span class="route-hint">${t('route.calculating')} ${place.place_name}…</span>`;
+  routeInfoEl.innerHTML = `<span class="route-hint">${t('route.calculating')} ${tName(place)}…</span>`;
   routeInfoEl.classList.add('show');
 
   if (routingControl) {
@@ -247,7 +247,7 @@ function drawRouteTo(place) {
     const km = (r.summary.totalDistance / 1000).toFixed(1);
     const mins = Math.round(r.summary.totalTime / 60);
     routeInfoEl.innerHTML = `
-      <span class="route-place">${t('route.to')} ${place.place_name}:</span>
+      <span class="route-place">${t('route.to')} ${tName(place)}:</span>
       <span class="route-km">${km} ${t('km.away').replace(' ','')}</span>
       <span class="route-dot">·</span>
       <span class="route-time">${mins} ${t('route.drive')}</span>
@@ -257,7 +257,7 @@ function drawRouteTo(place) {
   });
 
   routingControl.on('routingerror', () => {
-    routeInfoEl.innerHTML = `<span class="route-hint">${t('route.error')} ${place.place_name}.</span>`;
+    routeInfoEl.innerHTML = `<span class="route-hint">${t('route.error')} ${tName(place)}.</span>`;
   });
 }
 

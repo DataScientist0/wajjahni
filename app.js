@@ -21,7 +21,7 @@ const translations = {
     "locate.status.locating": "Locating you…",
     "locate.status.error": "Couldn't get your location — check your browser's location permission.",
     "chip.all": "All",
-    "peak.btn": "🕐 Peak hours", "directions.btn": "📍 Directions",
+    "peak.btn": "🕐 Peak hours", "directions.btn": "📍 Directions", "gmaps.open": "📍 Open in Google Maps",
     "empty": "No places match these filters.",
     "peak.sub": "Typical crowd levels by hour (illustrative data)",
     "peak.notbusy": "Not too busy right now", "peak.bitbusy": "Usually a bit busy at this hour", "peak.verybusy": "Usually very busy right now",
@@ -55,7 +55,7 @@ const translations = {
     "locate.status.locating": "جاري تحديد موقعك…",
     "locate.status.error": "ما قدرنا نحدد موقعك — تأكدي من إذن الموقع بالمتصفح.",
     "chip.all": "الكل",
-    "peak.btn": "🕐 أوقات الذروة", "directions.btn": "📍 الاتجاهات",
+    "peak.btn": "🕐 أوقات الذروة", "directions.btn": "📍 الاتجاهات", "gmaps.open": "📍 افتحي في خرائط Google",
     "empty": "ما فيه أماكن مطابقة لهذي الفلاتر.",
     "peak.sub": "مستوى الازدحام المعتاد حسب الساعة (بيانات توضيحية)",
     "peak.notbusy": "مو مزدحم كثير الحين", "peak.bitbusy": "عادة يكون مزدحم شوي بهذا الوقت", "peak.verybusy": "عادة يكون مزدحم جدًا الحين",
@@ -94,6 +94,18 @@ function t(key) {
 }
 function tType(type) { return (TYPE_LABELS[currentLang] && TYPE_LABELS[currentLang][type]) || type; }
 function tRegion(region) { return (REGION_LABELS[currentLang] && REGION_LABELS[currentLang][region]) || region; }
+function tName(d) { return (currentLang === 'ar' && d.place_name_ar) || d.place_name; }
+function tDesc(d) { return (currentLang === 'ar' && d.short_description_ar) || d.short_description; }
+// "Jeddah, Makkah Region" / "جدة، منطقة مكة المكرمة"; just "Makkah Region" when there's no city
+function tLocation(d) {
+  const region = tRegion(d.region);
+  const regionFull = currentLang === 'ar'
+    ? (region.startsWith('المنطقة') ? region : 'منطقة ' + region)
+    : (/Province|Borders/.test(region) ? region : region + ' Region');
+  const city = currentLang === 'ar' ? d.city_ar : d.city;
+  if (!city) return regionFull;
+  return currentLang === 'ar' ? `${city}، ${regionFull}` : `${city}, ${regionFull}`;
+}
 function tSeason(season) { return (SEASON_LABELS[currentLang] && SEASON_LABELS[currentLang][season]) || season; }
 
 function applyLanguage(lang) {
@@ -234,8 +246,8 @@ function openPeakModal(i) {
   const d = DATA[i];
   const modal = document.getElementById('peakModal');
   if (!modal) return;
-  document.getElementById('peakModalTitle').textContent = d.place_name;
-  document.getElementById('peakModalSub').textContent = `${tRegion(d.region)} · ${t('peak.sub')}`;
+  document.getElementById('peakModalTitle').textContent = tName(d);
+  document.getElementById('peakModalSub').textContent = `${tLocation(d)} · ${t('peak.sub')}`;
 
   const now = new Date().getHours();
   const maxVal = Math.max(...d.peak_hours);
@@ -274,9 +286,9 @@ const TYPE_ICONS = { Historical: "🏛️", Natural: "🏞️", Religious: "🕌
 
 function placeImage(d, cls) {
   if (d.image_url) {
-    return `<img class="${cls}" src="${d.image_url}" alt="${d.place_name}" loading="lazy">`;
+    return `<img class="${cls}" src="${d.image_url}" alt="${tName(d)}" loading="lazy">`;
   }
-  return `<div class="${cls} img-placeholder" style="--tc:${TYPE_COLORS[d.type]}" role="img" aria-label="${d.place_name}">
+  return `<div class="${cls} img-placeholder" style="--tc:${TYPE_COLORS[d.type]}" role="img" aria-label="${tName(d)}">
     <span>${TYPE_ICONS[d.type] || "📍"}</span><small>${t('photo.soon')}</small></div>`;
 }
 
@@ -291,11 +303,11 @@ function popupHTML(place, distanceKm) {
     ? `<div class="popup-meta pc-distance">${distanceKm.toFixed(0)} ${t('km.from.you')}</div>` : '';
   return `
     ${placeImage(place, "popup-img")}
-    <div class="popup-title">${place.place_name}</div>
-    <div class="popup-meta">${tRegion(place.region)} · ${tType(place.type)} · ★ ${place.rating}</div>
+    <div class="popup-title">${tName(place)}</div>
+    <div class="popup-meta">${tLocation(place)} · ${tType(place.type)} · ★ ${place.rating}</div>
     ${distLine}
-    <div class="popup-desc">${place.short_description}</div>
+    <div class="popup-desc">${tDesc(place)}</div>
     ${photoCredit(place)}
-    <a href="${googleMapsUrl(place)}" target="_blank" rel="noopener" class="gmaps-link">📍 Open in Google Maps</a>
+    <a href="${googleMapsUrl(place)}" target="_blank" rel="noopener" class="gmaps-link">${t('gmaps.open')}</a>
   `;
 }

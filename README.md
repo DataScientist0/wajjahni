@@ -21,7 +21,7 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 | 📍 **Distance from me** | Uses your location (only if you allow it) to sort places from nearest to farthest |
 | 🧭 **Directions** | Draws a route to a place on the map, or opens it in Google Maps |
 | ⏰ **Peak hours** | A bar chart showing how busy a place usually is at each hour, and whether it's busy right now |
-| 🌐 **Arabic & English** | Switch the whole interface between English and Arabic (right-to-left) |
+| 🌐 **Arabic & English** | Switch the whole site between English and Arabic (right-to-left), including place names and descriptions. Search works in both languages |
 | 🌙 **Light & dark mode** | Switch themes. Your choice is remembered next time |
 | 📱 **Responsive design** | Works on phones, tablets, and desktops |
 
@@ -114,6 +114,7 @@ wajjahni/
 ├── data/
 │   ├── raw/        # Original tourism files, never edited by hand
 │   └── clean/      # Clean tables made by the notebook
+├── CHANGELOG.md    # Detailed log of every change (in Arabic)
 └── README.md
 ```
 
@@ -130,6 +131,8 @@ No installation needed. An internet connection is required for the map, fonts, a
 
 ## ✅ Progress
 
+For a detailed explanation of every change, see [CHANGELOG.md](CHANGELOG.md).
+
 **Done**
 - [x] Dataset of 56 places across 13 regions
 - [x] Home, places, map, and contact pages
@@ -143,11 +146,11 @@ No installation needed. An internet connection is required for the map, fonts, a
 - [x] Mobile-friendly design
 - [x] Real photos for 36 places, with photographer credits
 - [x] Clean the official tourism statistics (2015–2024)
+- [x] Place names and descriptions in Arabic
 
 **Coming next**
 - [ ] Replace sample numbers with real data from official sources
 - [ ] Real photos for the remaining 20 places
-- [ ] Translate place names and descriptions into Arabic
 - [ ] A data analysis page with charts by region, type, and season
 - [ ] A real contact email or form
 
