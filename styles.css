@@ -154,6 +154,12 @@
     align-items: center;
     gap: 14px;
   }
+  /* Small phones: hide the place count and tighten the header so nothing gets cut off */
+  @media (max-width: 480px) {
+    .nav { padding: 14px 16px; gap: 10px; }
+    .nav-meta { display: none; }
+    .nav-right { gap: 8px; }
+  }
   .theme-toggle {
     width: 36px;
     height: 36px;
