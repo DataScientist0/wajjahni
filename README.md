@@ -144,13 +144,13 @@ For a detailed explanation of every change, see [CHANGELOG.md](CHANGELOG.md).
 - [x] Arabic and English
 - [x] Light and dark mode
 - [x] Mobile-friendly design
-- [x] Real photos for 36 places, with photographer credits
+- [x] Real photos for 44 places, with photographer credits
 - [x] Clean the official tourism statistics (2015–2024)
 - [x] Place names and descriptions in Arabic
 
 **Coming next**
 - [ ] Replace sample numbers with real data from official sources
-- [ ] Real photos for the remaining 20 places
+- [ ] Real photos for the remaining 12 places
 - [ ] A data analysis page with charts by region, type, and season
 - [ ] A real contact email or form
 
