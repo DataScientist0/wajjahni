@@ -787,3 +787,38 @@
 }
 .photo-credit:hover { color: var(--accent); text-decoration: underline; }
 
+/* ---- Home hero photo (used with the photographer's permission) ---- */
+.hero.photo-hero {
+  max-width: none;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 120px max(24px, calc((100vw - 1240px) / 2 + 24px)) 72px;
+  color: #fff;
+  min-height: 520px;
+}
+.hero.photo-hero::before {
+  content: "";
+  position: absolute; inset: 0; z-index: -2;
+  background: url("hero.jpg") 70% 40% / cover no-repeat;
+}
+.hero.photo-hero::after {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, rgba(10,8,20,.85) 0%, rgba(10,8,20,.55) 45%, rgba(10,8,20,.05) 75%);
+}
+/* Arabic: text sits on the right, so mirror the photo to keep the arch visible */
+html[dir="rtl"] .hero.photo-hero::before { transform: scaleX(-1); }
+html[dir="rtl"] .hero.photo-hero::after { background: linear-gradient(270deg, rgba(10,8,20,.85) 0%, rgba(10,8,20,.55) 45%, rgba(10,8,20,.05) 75%); }
+.hero.photo-hero p.lede, .hero.photo-hero .stat span { color: rgba(255,255,255,.82); }
+.hero.photo-hero .stat b, .hero.photo-hero h1 { color: #fff; }
+.hero.photo-hero .btn-secondary { color: #fff; border-color: rgba(255,255,255,.6); background: rgba(255,255,255,.08); }
+/* Phones: text on top, arch showing at the bottom */
+@media (max-width: 700px) {
+  .hero.photo-hero { padding-top: 64px; padding-bottom: 220px; }
+  .hero.photo-hero::before, html[dir="rtl"] .hero.photo-hero::before { background-position: 82% 100%; background-size: auto 100%; }
+  .hero.photo-hero::after, html[dir="rtl"] .hero.photo-hero::after {
+    background: linear-gradient(180deg, rgba(10,8,20,.88) 0%, rgba(10,8,20,.65) 55%, rgba(10,8,20,.05) 85%);
+  }
+}
+

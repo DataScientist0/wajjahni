@@ -158,7 +158,7 @@ For a detailed explanation of every change, see [CHANGELOG.md](CHANGELOG.md).
 
 ## 📷 Photo credits
 
-Photos come from [Wikimedia Commons](https://commons.wikimedia.org) under free licenses (Creative Commons, GFDL, or public domain). Each photo on the site shows its photographer and license, and links to its original page. Places without a free photo yet show a placeholder.
+Photos come from [Wikimedia Commons](https://commons.wikimedia.org) under free licenses (Creative Commons, GFDL, or public domain). Each photo on the site shows its photographer and license, and links to its original page. Places without a free photo yet show a placeholder. The night sky photo on the home page is used with the photographer's permission, and their signature is kept on the photo.
 
 ---
 
