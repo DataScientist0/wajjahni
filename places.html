@@ -129,7 +129,7 @@ function render() {
   grid.innerHTML = '';
 
   if (idxs.length === 0) {
-    grid.innerHTML = `<div class="empty-state">${t('empty')}</div>`;
+    grid.innerHTML = emptyStateHTML();
   } else {
     idxs.forEach(i => {
       const d = DATA[i];

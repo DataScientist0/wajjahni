@@ -15,7 +15,7 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 | Feature | What it does |
 |---|---|
 | 🏠 **Home page** | Introduces the project and the kinds of places you'll find |
-| 🔎 **Search & filters** | Search by place name, and filter by region and by type (Historical, Natural, Religious, Cultural, Entertainment) |
+| 🔎 **Search & filters** | Search by place name or city, and filter by region and by type. If a search finds nothing, visitors can suggest the place by email or look it up on Google Maps |
 | 🗺️ **Interactive map** | Shows every place as a pin, colored by type. Click a pin to see its photo, rating, and description |
 | 📷 **Real photos** | Real, freely licensed photos of each place from Wikimedia Commons, with the photographer credited |
 | 📍 **Distance from me** | Uses your location (only if you allow it) to sort places from nearest to farthest |

@@ -23,6 +23,8 @@ const translations = {
     "chip.all": "All",
     "peak.btn": "🕐 Peak hours", "directions.btn": "📍 Directions", "gmaps.open": "📍 Open in Google Maps",
     "empty": "No places match these filters.",
+    "empty.notfound": "We couldn't find “{q}” on Wajjahni.", "empty.suggest": "📩 Suggest this place", "empty.gmaps": "🗺️ Search on Google Maps",
+    "empty.mail.subject": "Place suggestion: {q}", "empty.mail.body": "Hi Wajjahni team,\n\nI searched for “{q}” but couldn't find it. Please consider adding it.\n\nThanks!",
     "peak.sub": "Typical crowd levels by hour (illustrative data)",
     "peak.notbusy": "Not too busy right now", "peak.bitbusy": "Usually a bit busy at this hour", "peak.verybusy": "Usually very busy right now",
     "peak.basedon": "based on hour",
@@ -57,6 +59,8 @@ const translations = {
     "chip.all": "الكل",
     "peak.btn": "🕐 أوقات الذروة", "directions.btn": "📍 الاتجاهات", "gmaps.open": "📍 افتحي في خرائط Google",
     "empty": "ما فيه أماكن مطابقة لهذي الفلاتر.",
+    "empty.notfound": "ما لقينا «{q}» في وجّهني.", "empty.suggest": "📩 اقترحي هالمكان علينا", "empty.gmaps": "🗺️ دوري عليه في خرائط Google",
+    "empty.mail.subject": "اقتراح مكان: {q}", "empty.mail.body": "هلا فريق وجّهني،\n\nبحثت عن «{q}» وما لقيته. أتمنى تضيفونه.\n\nشكراً!",
     "peak.sub": "مستوى الازدحام المعتاد حسب الساعة (بيانات توضيحية)",
     "peak.notbusy": "مو مزدحم كثير الحين", "peak.bitbusy": "عادة يكون مزدحم شوي بهذا الوقت", "peak.verybusy": "عادة يكون مزدحم جدًا الحين",
     "peak.basedon": "بناءً على الساعة",
@@ -276,6 +280,24 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.addEventListener('click', (e) => { if (e.target.id === 'peakModal') modal.classList.remove('open'); });
   }
 });
+
+// Empty search results: when the visitor typed something, offer to suggest the place or look it up on Google Maps
+function emptyStateHTML() {
+  const input = document.getElementById('searchInput');
+  const query = input ? input.value.trim() : '';
+  if (!query) return `<div class="empty-state">${t('empty')}</div>`;
+  const safe = query.replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+  const subject = encodeURIComponent(t('empty.mail.subject').replace('{q}', query));
+  const body = encodeURIComponent(t('empty.mail.body').replace('{q}', query));
+  const maps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query + ' Saudi Arabia')}`;
+  return `<div class="empty-state">
+    <p class="empty-title">${t('empty.notfound').replace('{q}', safe)}</p>
+    <div class="empty-actions">
+      <a class="btn-primary" href="mailto:wajjahni.nj@gmail.com?subject=${subject}&body=${body}">${t('empty.suggest')}</a>
+      <a class="btn-secondary" href="${maps}" target="_blank" rel="noopener">${t('empty.gmaps')}</a>
+    </div>
+  </div>`;
+}
 
 function googleMapsUrl(place) {
   return `https://www.google.com/maps/dir/?api=1&destination=${place.latitude},${place.longitude}&travelmode=driving`;

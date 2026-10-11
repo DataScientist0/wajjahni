@@ -163,7 +163,7 @@ function render() {
   Object.values(markers).forEach(m => map.removeLayer(m));
 
   if (idxs.length === 0) {
-    listEl.innerHTML = `<div class="empty-state">${t('empty')}</div>`;
+    listEl.innerHTML = emptyStateHTML();
   } else {
     idxs.forEach(i => {
       const d = DATA[i];
