@@ -1,23 +1,52 @@
--- Wajjahni: create and fill the `services` table
--- Open this file in MySQL Workbench and run it with the lightning button.
+-- =====================================================================
+-- Wajjahni · Step 1 of 4: create and fill the `services` table
+-- =====================================================================
+-- What this file does:
+--   Creates the database and loads ~32,500 services (gas stations, pharmacies,
+--   restaurants, cafes, banks/ATMs) across Saudi Arabia.
+--
+-- Where the data comes from:
+--   Overture Maps (free, open map data). services.ipynb downloads it with DuckDB
+--   and saves data/raw/services_overture.csv. The INSERT rows below were generated
+--   from that CSV, because Workbench's import wizard failed on Arabic text.
+--
+-- How to run:
+--   Open in MySQL Workbench and click the lightning button (run all).
+--   Safe to run again: it deletes the old table and builds it from scratch.
+-- =====================================================================
 
+
+-- Create the database if it doesn't exist yet.
+-- utf8mb4 = full Unicode, needed for Arabic names (and emoji).
+-- utf8mb4_unicode_ci = "case-insensitive" comparisons, so 'KFC' = 'kfc'.
 CREATE DATABASE IF NOT EXISTS wajjahni CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- Make every following statement run inside this database.
 USE wajjahni;
+
+-- Tell MySQL that the text we send is utf8mb4, so Arabic arrives correctly.
 SET NAMES utf8mb4;
 
+
+-- Start fresh: remove the old table if it exists.
 DROP TABLE IF EXISTS services;
+
+-- One row = one service on the map.
 CREATE TABLE services (
-  id               VARCHAR(64)  PRIMARY KEY,
-  name             VARCHAR(255) NOT NULL,
-  service_type     VARCHAR(20)  NOT NULL,
-  basic_category   VARCHAR(50)  NOT NULL,
-  city             VARCHAR(100),
-  latitude         DOUBLE       NOT NULL,
-  longitude        DOUBLE       NOT NULL,
-  confidence       DOUBLE,
-  operating_status VARCHAR(30)
+  id               VARCHAR(64)  PRIMARY KEY,  -- Overture's unique ID for the place (no two rows share it)
+  name             VARCHAR(255) NOT NULL,     -- the service's name, in Arabic or English
+  service_type     VARCHAR(20)  NOT NULL,     -- our 5 groups: fuel, pharmacy, restaurant, cafe, bank
+  basic_category   VARCHAR(50)  NOT NULL,     -- Overture's original category (e.g. fast_food_restaurant)
+  city             VARCHAR(100),              -- city as written in the source (messy, cleaned in step 3)
+  latitude         DOUBLE       NOT NULL,     -- north/south position
+  longitude        DOUBLE       NOT NULL,     -- east/west position
+  confidence       DOUBLE,                    -- Overture's confidence (0 to 1) that the place is real
+  operating_status VARCHAR(30)                -- e.g. open / closed, when known
 );
 
+
+-- Load the data: one line per service.
+-- Note: a single quote inside a name is written twice ('Barn''s'), which is how SQL escapes it.
 INSERT INTO services (id, name, service_type, basic_category, city, latitude, longitude, confidence, operating_status) VALUES
 ('e358ba03-41b8-4c22-b421-791c2359bbc6', 'LOST Specialty Coffee', 'cafe', 'cafe', 'محافظة الدرب', 17.69458757, 42.31274974, 0.5431650280952454, NULL),
 ('269bea19-bdf4-42db-9a57-2f5460adc094', 'الدريس', 'fuel', 'gas_station', 'AL DARAB', 17.7135, 42.2239, 0.8, NULL),
@@ -32650,4 +32679,5 @@ INSERT INTO services (id, name, service_type, basic_category, city, latitude, lo
 ('21c2869c-8a47-4304-a041-ed9727b8f971', 'مقهى ومطعم أمواج', 'cafe', 'cafe', 'الدمام', 26.499386, 50.12275, 0.8427480459213257, NULL),
 ('ba188c0b-04f2-41a8-9b40-e4b72daa0442', 'Mars lounge', 'restaurant', 'restaurant', 'الدمام', 26.49812, 50.12816, 0.6830920577049255, NULL);
 
+-- Check: should return about 32,566 rows.
 SELECT COUNT(*) AS rows_imported FROM services;

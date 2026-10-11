@@ -1,22 +1,43 @@
--- Wajjahni: create and fill the `places` table
--- Open this file in MySQL Workbench and run it with the lightning button.
+-- =====================================================================
+-- Wajjahni · Step 2 of 4: create and fill the `places` table
+-- =====================================================================
+-- What this file does:
+--   Loads the 74 tourist places shown on the website.
+--
+-- Where the data comes from:
+--   data/clean/places.csv, which is a copy of data.js (the website's dataset).
+--   place_id = the place's position in data.js + 1, so the website can match
+--   each place with its nearby services later.
+--
+-- How to run:
+--   Run it after step 1 (it uses the same database).
+--   Re-run it whenever places are added or changed, then run step 4 again.
+-- =====================================================================
 
+
+-- Same database settings as step 1 (safe to repeat).
 CREATE DATABASE IF NOT EXISTS wajjahni CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE wajjahni;
 SET NAMES utf8mb4;
 
+
+-- Start fresh: remove the old table if it exists.
 DROP TABLE IF EXISTS places;
+
+-- One row = one tourist place.
 CREATE TABLE places (
-  place_id      INT          PRIMARY KEY,
-  place_name    VARCHAR(255) NOT NULL,
-  place_name_ar VARCHAR(255),
-  city          VARCHAR(100),
-  region        VARCHAR(100) NOT NULL,
-  type          VARCHAR(50)  NOT NULL,
+  place_id      INT          PRIMARY KEY,  -- 1, 2, 3 ... (matches the order in data.js)
+  place_name    VARCHAR(255) NOT NULL,     -- English name
+  place_name_ar VARCHAR(255),              -- Arabic name
+  city          VARCHAR(100),              -- nearest city (NULL if the place is far from any city)
+  region        VARCHAR(100) NOT NULL,     -- one of the 13 regions of Saudi Arabia
+  type          VARCHAR(50)  NOT NULL,     -- Historical, Natural, Religious, Cultural, or Entertainment
   latitude      DOUBLE       NOT NULL,
   longitude     DOUBLE       NOT NULL
 );
 
+
+-- Load the 74 places.
 INSERT INTO places (place_id, place_name, place_name_ar, city, region, type, latitude, longitude) VALUES
 (1, 'Edge of the World (Jabal Fihrayn)', 'حافة العالم (جبل فهرين)', NULL, 'Riyadh', 'Natural', 24.95, 45.9333),
 (2, 'At-Turaif District (Diriyah)', 'حي الطريف (الدرعية)', 'Diriyah', 'Riyadh', 'Historical', 24.7332, 46.5749),
@@ -93,6 +114,5 @@ INSERT INTO places (place_id, place_name, place_name_ar, city, region, type, lat
 (73, 'Fayfa Mountains', 'جبال فيفاء', 'Fayfa', 'Jazan', 'Natural', 17.25, 43.1),
 (74, 'Rajajil Columns', 'أعمدة الرجاجيل', 'Sakaka', 'Al-Jouf', 'Historical', 29.8125, 40.22);
 
+-- Check: should return 74.
 SELECT COUNT(*) AS rows_imported FROM places;
-SELECT COUNT(*) FROM services;
-SELECT COUNT(*) FROM places;
