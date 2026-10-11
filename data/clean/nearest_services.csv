@@ -16,7 +16,7 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 1,"Edge of the World (Jabal Fihrayn)",restaurant,"دانكن دونتس",25.12854174,46.10464482,26.3,3
 2,"At-Turaif District (Diriyah)",bank,"مصرف الراجحي | alrajhi bank",24.75033494,46.57391848,1.9,1
 2,"At-Turaif District (Diriyah)",bank,"Al Rajhi Bank",24.7504166666667,46.57385,1.9,2
-2,"At-Turaif District (Diriyah)",bank,"Almajed For Oud",24.75195,46.575096,2.1,3
+2,"At-Turaif District (Diriyah)",bank,"بنك الرياض",24.75205419,46.5754088,2.1,3
 2,"At-Turaif District (Diriyah)",cafe,"Cafe Bateel",24.73432317,46.57466998,0.1,1
 2,"At-Turaif District (Diriyah)",cafe,"Cafe De L’esplanade",24.736122,46.575953,0.3,2
 2,"At-Turaif District (Diriyah)",cafe,"Brunch & Cake Under The Tree",24.7366249,46.5750025,0.4,3
@@ -80,9 +80,9 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 6,"Masjid al-Haram",cafe,"مكان القهوه الصغير",21.420009968739,39.825571828403,0.3,1
 6,"Masjid al-Haram",cafe,"Starbuks Alharm",21.419919,39.825603,0.3,2
 6,"Masjid al-Haram",cafe,McCafé,21.420389,39.824418,0.3,3
-6,"Masjid al-Haram",fuel,"مركز باعارمه للوزن والترصيص",21.442450877699,39.850394231085,3.3,1
-6,"Masjid al-Haram",fuel,نفط,21.43935,39.79085,4.1,2
-6,"Masjid al-Haram",fuel,"محطة درب",21.402928975499577,39.792404515552505,4.1,3
+6,"Masjid al-Haram",fuel,نفط,21.43935,39.79085,4.1,1
+6,"Masjid al-Haram",fuel,"محطة درب",21.402928975499577,39.792404515552505,4.1,2
+6,"Masjid al-Haram",fuel,"محطة درب",21.408227,39.78885,4.2,3
 6,"Masjid al-Haram",pharmacy,"Al-Nahdi Pharmacy | صيدلية النهدي",21.42008538049929,39.82482297908741,0.3,1
 6,"Masjid al-Haram",pharmacy,"United Pharmacy - صيدلية المتحدة",21.42008051,39.82815112,0.3,2
 6,"Masjid al-Haram",pharmacy,"Nahdi pharmacy | صيدليه النهدى",21.419407,39.825635,0.3,3
@@ -127,16 +127,16 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 9,"Jeddah Corniche",cafe,BellaRosa,21.54794113,39.1626166,0.7,3
 9,"Jeddah Corniche",fuel,"محطة بامعروف",21.550023442664,39.154746185609,0.8,1
 9,"Jeddah Corniche",fuel,نفط,21.55003,39.15439,0.8,2
-9,"Jeddah Corniche",fuel,"شركة عمر قاسم العيسائي وشركاه للتسويق المحدودة",21.541224285956,39.171770031738,1.5,3
+9,"Jeddah Corniche",fuel,نفط,21.52642,39.16184,1.9,3
 9,"Jeddah Corniche",pharmacy,"Nahdi pharmacy | صيدليه النهدى",21.537468,39.163449,0.9,1
 9,"Jeddah Corniche",pharmacy,"Nahdi pharmacy | صيدليه النهدى",21.552935,39.16187,1.1,2
 9,"Jeddah Corniche",pharmacy,"Adama Pharmacy",21.549795870854275,39.14845394621213,1.2,3
 9,"Jeddah Corniche",restaurant,"حلواني كويزين",21.542922,39.155766,0.2,1
 9,"Jeddah Corniche",restaurant,"Rasoi by Vineet",21.54781658,39.15654647,0.5,2
 9,"Jeddah Corniche",restaurant,"Le Bistro",21.54786007,39.15639502,0.5,3
-10,"King Fahd's Fountain",bank,"في قلب الحدث",21.577196340835,39.1091078302,0.5,1
-10,"King Fahd's Fountain",bank,"صراف بنك الجزيره",21.577981993243984,39.11017626185225,0.7,2
-10,"King Fahd's Fountain",bank,"SNB Capital Jeddah lounge | الأهلي كابيتال صالة جدة",21.56623188,39.12652041,2.6,3
+10,"King Fahd's Fountain",bank,"صراف بنك الجزيره",21.577981993243984,39.11017626185225,0.7,1
+10,"King Fahd's Fountain",bank,"SNB Capital Jeddah lounge | الأهلي كابيتال صالة جدة",21.56623188,39.12652041,2.6,2
+10,"King Fahd's Fountain",bank,"صراف بنك الجزيره",21.584192,39.130385,2.9,3
 10,"King Fahd's Fountain",cafe,Starbucks,21.57687991,39.10908431,0.5,1
 10,"King Fahd's Fountain",cafe,"Sky Lounge",21.57618812,39.10999403,0.6,2
 10,"King Fahd's Fountain",cafe,"Beyond Coffee JW بيوند كوفي الكورنيش",21.578541,39.110356,0.7,3
@@ -180,8 +180,8 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 12,"Quba Mosque",restaurant,Brotin,24.44625229,39.6189213,0.8,2
 12,"Quba Mosque",restaurant,"Shawarmer - شاورمر",24.44667,39.61873,0.8,3
 13,"Hegra (Mada'in Salih)",bank,"بنك الرياض",26.605509,37.925577,21.2,1
-13,"Hegra (Mada'in Salih)",bank,"Almajed For Oud",26.603198,37.929554,21.4,2
-13,"Hegra (Mada'in Salih)",bank,"مصرف الراجحي",26.601743,37.923114,21.6,3
+13,"Hegra (Mada'in Salih)",bank,"مصرف الراجحي",26.601743,37.923114,21.6,2
+13,"Hegra (Mada'in Salih)",bank,"Al Rajhi Bank",27.6304166666667,38.5491666666667,110.1,3
 13,"Hegra (Mada'in Salih)",cafe,Jolt,26.690083,37.981888,11.9,1
 13,"Hegra (Mada'in Salih)",cafe,"Key Café",26.688859,37.980707,12.1,2
 13,"Hegra (Mada'in Salih)",cafe,ستاربكس,26.66390077667957,37.904318746536234,15.3,3
@@ -196,7 +196,7 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 13,"Hegra (Mada'in Salih)",restaurant,"دانكن دونتس",26.87855669,37.90318003,10.6,3
 14,"Elephant Rock",bank,"بنك الرياض",26.605509,37.925577,2.8,1
 14,"Elephant Rock",bank,"مصرف الراجحي",26.601743,37.923114,3,2
-14,"Elephant Rock",bank,"Almajed For Oud",26.603198,37.929554,3.2,3
+14,"Elephant Rock",bank,"Al Rajhi Bank",27.6304166666667,38.5491666666667,128.3,3
 14,"Elephant Rock",cafe,"Dunkin' - دانكن",26.627522047405577,37.912946119049074,0.2,1
 14,"Elephant Rock",cafe,مركاز,26.627238,37.913102,0.2,2
 14,"Elephant Rock",cafe,ستاربكس,26.6293312,37.9133353,0.4,3
@@ -427,7 +427,7 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 29,"Tabuk Castle",cafe,"Golden Dear",28.387426,36.584818,1.3,3
 29,"Tabuk Castle",fuel,الدريس,28.3985,36.5906,0.8,1
 29,"Tabuk Castle",fuel,الدريس,28.3956,36.5711,1.1,2
-29,"Tabuk Castle",fuel,"قطوف وحلا",28.3903810463607,36.5887889846583,1.2,3
+29,"Tabuk Castle",fuel,نفط,28.38919,36.59019,1.4,3
 29,"Tabuk Castle",pharmacy,"صيدلية مواسم للادوية",28.39948475,36.57803968,0.4,1
 29,"Tabuk Castle",pharmacy,"Nahdi pharmacy | صيدليه النهدى",28.405603,36.581666,0.7,2
 29,"Tabuk Castle",pharmacy,"Nabd Alfairoz pharmacy",28.40832,36.58523,1.1,3
@@ -500,9 +500,9 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 34,"Jubbah Rock Art",cafe,"Hail Train Rail",27.684758,41.755049,92.1,1
 34,"Jubbah Rock Art",cafe,"SWORDS CAFÉ",27.546111,41.666745,92.3,2
 34,"Jubbah Rock Art",cafe,"النورس كافيه",27.547914,41.668349,92.3,3
-34,"Jubbah Rock Art",fuel,"Petro Nofoud   بترو نفود",27.824594183649,41.566442055638,69.2,1
-34,"Jubbah Rock Art",fuel,الدريس,27.8466,41.7288,83.8,2
-34,"Jubbah Rock Art",fuel,"محطة الدائري الغربي",27.52668,41.65959,93,3
+34,"Jubbah Rock Art",fuel,الدريس,27.8466,41.7288,83.8,1
+34,"Jubbah Rock Art",fuel,"محطة الدائري الغربي",27.52668,41.65959,93,2
+34,"Jubbah Rock Art",fuel,نفط,27.52416,41.65995,93.1,3
 34,"Jubbah Rock Art",pharmacy,"Lemon Pharmacy 258 - salamat hospital",27.55340887,41.67902304,92.8,1
 34,"Jubbah Rock Art",pharmacy,"Nahdi pharmacy | صيدليه النهدى",27.521626,41.657451,93.1,2
 34,"Jubbah Rock Art",pharmacy,"al-dawaa pharmacy",27.56821928,41.73008977,96.1,3
@@ -555,8 +555,8 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 37,"Old Najran Mudbrick Houses",restaurant,"N8 Burger",17.50160034,44.18754419,6.2,2
 37,"Old Najran Mudbrick Houses",restaurant,"Maestro Pizza",17.49546478,44.18907386,6.3,3
 38,"Farasan Islands",bank,"Samba Bank",16.903,42.54869,72.4,1
-38,"Farasan Islands",bank,"Almajed For Oud",16.906594,42.548894,72.5,2
-38,"Farasan Islands",bank,"بنك الرياض",16.902511,42.550462,72.5,3
+38,"Farasan Islands",bank,"بنك الرياض",16.902511,42.550462,72.5,2
+38,"Farasan Islands",bank,"ENJAZ Money Transfer",16.90434869,42.55024256,72.6,3
 38,"Farasan Islands",cafe,"ديوانية دلة الخيالة",16.88994,42.541015,71.2,1
 38,"Farasan Islands",cafe,"PORTO CAFÉ",16.901761090000004,42.53813117,71.3,2
 38,"Farasan Islands",cafe,"The Coffee Address | عنوان القهوة",16.904966,42.544016,72,3
@@ -615,8 +615,8 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 41,"Raghadan Forest Park",restaurant,"مشاوي عمان المركزية",20.0117882,41.4671838,0.1,2
 41,"Raghadan Forest Park",restaurant,"Moha restaurant",20.0117882,41.4671838,0.1,3
 42,"Al-Baha Zipline",bank,"Al Rajhi Bank",20.01025,41.4649666666667,0.5,1
-42,"Al-Baha Zipline",bank,"Almajed For Oud",20.007647,41.452426,0.8,2
-42,"Al-Baha Zipline",bank,"بنك الرياض",20.013301,41.467349,0.9,3
+42,"Al-Baha Zipline",bank,"بنك الرياض",20.013301,41.467349,0.9,2
+42,"Al-Baha Zipline",bank,"مصرف الراجحي | alrajhi bank",20.01476995,41.46966723,1.1,3
 42,"Al-Baha Zipline",cafe,"Extra Sugar",20.00916588,41.45738437,0.3,1
 42,"Al-Baha Zipline",cafe,"Black Sugar",20.012526,41.465914,0.7,2
 42,"Al-Baha Zipline",cafe,"BrainPing Coffee",20.0117882,41.4671838,0.8,3
@@ -645,8 +645,8 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 43,"Dhee Ain Village (Marble Village)",restaurant,"مطعم العمدة",19.86582453217356,41.56688548068404,10.6,2
 43,"Dhee Ain Village (Marble Village)",restaurant,"بروست الطازج",19.86590821,41.56849537,10.8,3
 44,"Zaabal Castle",bank,"بنك الرياض",29.9691,40.20272,0.4,1
-44,"Zaabal Castle",bank,"Almajed For Oud",29.961728,40.203377,0.9,2
-44,"Zaabal Castle",bank,"Al Rajhi Bank | بنك الراجحي",29.960960328306307,40.20428237876361,1,3
+44,"Zaabal Castle",bank,"Al Rajhi Bank | بنك الراجحي",29.960960328306307,40.20428237876361,1,2
+44,"Zaabal Castle",bank,"البنك الاهلي",29.974202,40.215342,1,3
 44,"Zaabal Castle",cafe,"Elm Cafe",29.973529936926,40.19977978118,0.8,1
 44,"Zaabal Castle",cafe,"Dunkin' - دانكن",29.97709755,40.20190645,0.9,2
 44,"Zaabal Castle",cafe,"Se7En Coffee",29.976298,40.214113,1,3
@@ -770,9 +770,9 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 52,"Abu Ali Island",cafe,"CELESTE CORNER",27.176405,49.529335,21.3,1
 52,"Abu Ali Island",cafe,ستاربوكس,27.176248,49.529341,21.3,2
 52,"Abu Ali Island",cafe,"Derby Coffee",27.167456779139,49.57092128211,22.3,3
-52,"Abu Ali Island",fuel,"الخنيني للخدمات البترولية",27.139151689328,49.566165522261,25.4,1
-52,"Abu Ali Island",fuel,"الخنيني للخدمات البترولية",27.12412434,49.55267526,27,2
-52,"Abu Ali Island",fuel,الدريس,27.1106,49.5537,28.5,3
+52,"Abu Ali Island",fuel,الدريس,27.1106,49.5537,28.5,1
+52,"Abu Ali Island",fuel,الدريس,27.5091,49.2551,33.1,2
+52,"Abu Ali Island",fuel,"Konaini Station",27.47640283887435,49.18635176164013,37.9,3
 52,"Abu Ali Island",pharmacy,"Luluat Al Ferdos Pharmacy",27.159616795402,49.560398858024,23,1
 52,"Abu Ali Island",pharmacy,Boots,27.15807399,49.56626553,23.3,2
 52,"Abu Ali Island",pharmacy,"Al Nahdi Pharmacy",27.147180557251,49.565967559814,24.5,3
@@ -795,8 +795,8 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 53,"Karan Island",restaurant,"دانكن دونتس",26.90271937606947,49.75809355952162,17.1,2
 53,"Karan Island",restaurant,"حلويات قمة الحلا والذوق",26.930275,49.716967,17.5,3
 54,"Farasan Al-Kabir Island",bank,"Samba Bank",16.903,42.54869,69.3,1
-54,"Farasan Al-Kabir Island",bank,"Almajed For Oud",16.906594,42.548894,69.4,2
-54,"Farasan Al-Kabir Island",bank,"بنك الرياض",16.902511,42.550462,69.4,3
+54,"Farasan Al-Kabir Island",bank,"بنك الرياض",16.902511,42.550462,69.4,2
+54,"Farasan Al-Kabir Island",bank,"ENJAZ Money Transfer",16.90434869,42.55024256,69.5,3
 54,"Farasan Al-Kabir Island",cafe,"ديوانية دلة الخيالة",16.88994,42.541015,68.1,1
 54,"Farasan Al-Kabir Island",cafe,"PORTO CAFÉ",16.901761090000004,42.53813117,68.2,2
 54,"Farasan Al-Kabir Island",cafe,"The Coffee Address | عنوان القهوة",16.904966,42.544016,68.9,3
@@ -830,9 +830,9 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 56,"Clock Tower Museum",cafe,"Zamzam Resto Cafe & Mall",21.419105711744443,39.82552695950094,0,1
 56,"Clock Tower Museum",cafe,مذاق,21.419137460918,39.825498744777,0,2
 56,"Clock Tower Museum",cafe,"Tim Hortons",21.418126962554087,39.825918920018665,0.1,3
-56,"Clock Tower Museum",fuel,"مركز باعارمه للوزن والترصيص",21.442450877699,39.850394231085,3.7,1
-56,"Clock Tower Museum",fuel,"محطات سمارك للمحروقات",21.385111372608,39.833314418793,3.8,2
-56,"Clock Tower Museum",fuel,"محطة درب",21.402928975499577,39.792404515552505,3.9,3
+56,"Clock Tower Museum",fuel,"محطات سمارك للمحروقات",21.385111372608,39.833314418793,3.8,1
+56,"Clock Tower Museum",fuel,"محطة درب",21.402928975499577,39.792404515552505,3.9,2
+56,"Clock Tower Museum",fuel,نفط,21.38339492711412,39.82834478157997,3.9,3
 56,"Clock Tower Museum",pharmacy,"Nahdi pharmacy | صيدليه النهدى",21.419407,39.825635,0.1,1
 56,"Clock Tower Museum",pharmacy,"United Pharmacy - صيدلية المتحدة",21.419367482141,39.8242599146361,0.2,2
 56,"Clock Tower Museum",pharmacy,"Al-Nahdi Pharmacy | صيدلية النهدي",21.42008538049929,39.82482297908741,0.2,3
