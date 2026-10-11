@@ -34,7 +34,7 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 | `index.html` | Home page |
 | `places.html` | All places as cards, with search, filters, distance sorting, peak hours, and directions |
 | `map.html` | Interactive map with a list of places beside it |
-| `contact.html` | Contact page for suggestions and corrections |
+| `contact.html` | Contact page for suggestions and corrections (wajjahni.nj@gmail.com) |
 
 ---
 
@@ -147,12 +147,12 @@ For a detailed explanation of every change, see [CHANGELOG.md](CHANGELOG.md).
 - [x] Real photos for 44 places, with photographer credits
 - [x] Clean the official tourism statistics (2015–2024)
 - [x] Place names and descriptions in Arabic
+- [x] Real contact email
 
 **Coming next**
 - [ ] Replace sample numbers with real data from official sources
 - [ ] Real photos for the remaining 12 places
 - [ ] A data analysis page with charts by region, type, and season
-- [ ] A real contact email or form
 
 ---
 
