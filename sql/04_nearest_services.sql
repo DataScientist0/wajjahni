@@ -1,5 +1,5 @@
 -- Wajjahni: the 3 nearest services of each type for every tourist place
--- Run in MySQL Workbench after 01_import_services.sql and 02_import_places.sql.
+-- Run in MySQL Workbench after 01_import_services.sql, 02_import_places.sql and 03_clean_services.sql.
 -- Re-run it any time places or services change, then export the result to data/clean/nearest_services.csv.
 
 USE wajjahni;
@@ -32,4 +32,6 @@ FROM (
 ) AS ranked
 WHERE rank_num <= 3;
 
-SELECT * FROM nearest_services ORDER BY place_id, service_type, rank_num;
+-- LIMIT 5000: without it Workbench shows only the first 1000 rows, and the export would miss places.
+SELECT * FROM nearest_services ORDER BY place_id, service_type, rank_num
+LIMIT 5000;

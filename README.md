@@ -116,7 +116,7 @@ wajjahni/
 ├── services.js     # Nearest services for each place (from the SQL results)
 ├── data-cleaning.ipynb  # Cleans the tourism statistics
 ├── services.ipynb  # Pulls services from Overture Maps with DuckDB
-├── sql/            # MySQL scripts: import tables and calculate nearest services
+├── sql/            # MySQL scripts, run in order: 01 import services → 02 import places → 03 clean services → 04 nearest services
 ├── data/
 │   ├── raw/        # Original tourism files, never edited by hand
 │   └── clean/      # Clean tables made by the notebook
