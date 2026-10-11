@@ -77,7 +77,7 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 
 ## 📊 Data
 
-The dataset (`data.js`) contains **56 places across 13 regions**. Each place has:
+The dataset (`data.js`) contains **74 places across 13 regions**. Each place has:
 
 `region` · `place_name` · `type` · `latitude` & `longitude` · `short_description` · `rating` · `num_reviews` · `visitors_per_year` · `best_season` · `best_for` · `image_url` · `image_credit` · `peak_hours`
 
@@ -140,7 +140,7 @@ No installation needed. An internet connection is required for the map, fonts, a
 For a detailed explanation of every change, see [CHANGELOG.md](CHANGELOG.md).
 
 **Done**
-- [x] Dataset of 56 places across 13 regions
+- [x] Dataset of 74 places across 13 regions
 - [x] Home, places, map, and contact pages
 - [x] Search and filters by region and type
 - [x] Interactive map with colored pins
@@ -150,14 +150,14 @@ For a detailed explanation of every change, see [CHANGELOG.md](CHANGELOG.md).
 - [x] Arabic and English
 - [x] Light and dark mode
 - [x] Mobile-friendly design
-- [x] Real photos for 46 places, with photographer credits
+- [x] Real photos for 63 places, with photographer credits
 - [x] Clean the official tourism statistics (2015–2024)
 - [x] Place names and descriptions in Arabic
 - [x] Real contact email
 
 **Coming next**
 - [ ] Replace sample numbers with real data from official sources
-- [ ] Real photos for the remaining 10 places
+- [ ] Real photos for the remaining 11 places
 - [ ] A data analysis page with charts by region, type, and season
 
 ---
