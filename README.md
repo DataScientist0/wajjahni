@@ -20,7 +20,7 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 | 📷 **Real photos** | Real, freely licensed photos of each place from Wikimedia Commons, with the photographer credited |
 | 📍 **Distance from me** | Uses your location (only if you allow it) to sort places from nearest to farthest |
 | 🧭 **Directions** | Draws a route to a place on the map, or opens it in Google Maps |
-| 🧭 **Nearby services** | For every place, the 3 nearest gas stations, pharmacies, restaurants, cafes, and banks/ATMs, with distances and Google Maps directions. Calculated in MySQL from Overture Maps data |
+| 🧭 **Nearby services** | For every place, the 3 nearest gas stations, pharmacies, restaurants, cafes, and banks/ATMs, with distances and Google Maps directions. They also appear as icons on the map, with a panel to show or hide each type. Calculated in MySQL from Overture Maps data |
 | ⏰ **Peak hours** | A bar chart showing how busy a place usually is at each hour, and whether it's busy right now |
 | 🌐 **Arabic & English** | Switch the whole site between English and Arabic (right-to-left), including place names and descriptions. Search works in both languages |
 | 🌙 **Light & dark mode** | Switch themes. Your choice is remembered next time |

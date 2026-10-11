@@ -103,6 +103,77 @@ DATA.forEach((place, i) => {
   markers[i] = marker;
 });
 
+// ---- Nearby services shown on the map for the selected place ----
+const SERVICE_STYLE = {
+  fuel:       { icon: '⛽', color: '#C0392B' },
+  pharmacy:   { icon: '💊', color: '#2E8B57' },
+  restaurant: { icon: '🍽️', color: '#D98A4A' },
+  cafe:       { icon: '☕', color: '#8B5A2B' },
+  bank:       { icon: '🏦', color: '#2F5D8A' },
+};
+const serviceLayer = L.layerGroup().addTo(map);
+const shownTypes = new Set(Object.keys(SERVICE_STYLE));
+let servicesFor = null;   // index of the place whose services are on the map
+
+function escHTML(s) {
+  return String(s).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+}
+
+function showServicesOnMap(i, fit) {
+  serviceLayer.clearLayers();
+  servicesFor = i;
+  const data = (typeof NEARBY !== 'undefined' && NEARBY[String(i + 1)]) || {};
+  const d = DATA[i];
+  const points = [[d.latitude, d.longitude]];
+  Object.keys(SERVICE_STYLE).forEach(type => {
+    if (!shownTypes.has(type) || !data[type]) return;
+    const st = SERVICE_STYLE[type];
+    data[type].forEach((s, rank) => {
+      const icon = L.divIcon({
+        className: 'svc-marker',
+        html: `<span style="border-color:${st.color}">${st.icon}</span>`,
+        iconSize: [28, 28], iconAnchor: [14, 14], popupAnchor: [0, -12]
+      });
+      L.marker([s.lat, s.lon], { icon, zIndexOffset: 500 - rank })
+        .bindPopup(`
+          <div class="popup-title">${st.icon} ${escHTML(s.n)}</div>
+          <div class="popup-meta">${t('svc.' + type)} · ${s.km.toFixed(1)} ${t('nearby.km')}</div>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lon}&travelmode=driving" target="_blank" rel="noopener" class="gmaps-link">📍 ${t('nearby.go')}</a>`)
+        .addTo(serviceLayer);
+      if (rank === 0) points.push([s.lat, s.lon]);
+    });
+  });
+  if (fit && points.length > 1) {
+    map.flyToBounds(points, { padding: [40, 40], maxZoom: 12, duration: 0.6 });
+  }
+  servicesControlEl.classList.add('show');
+}
+
+// Small panel on the map to turn each service type on or off
+const servicesControlEl = L.DomUtil.create('div', 'svc-control leaflet-bar');
+const ServicesControl = L.Control.extend({
+  options: { position: 'topright' },
+  onAdd() {
+    L.DomEvent.disableClickPropagation(servicesControlEl);
+    renderServicesControl();
+    return servicesControlEl;
+  }
+});
+function renderServicesControl() {
+  servicesControlEl.innerHTML = `<div class="svc-control-title">${t('nearby.title')}</div>` +
+    Object.keys(SERVICE_STYLE).map(type => `
+      <label><input type="checkbox" data-type="${type}" ${shownTypes.has(type) ? 'checked' : ''}> ${t('svc.' + type)}</label>`).join('');
+  servicesControlEl.querySelectorAll('input').forEach(cb => cb.addEventListener('change', () => {
+    if (cb.checked) shownTypes.add(cb.dataset.type); else shownTypes.delete(cb.dataset.type);
+    if (servicesFor !== null) showServicesOnMap(servicesFor, false);
+  }));
+}
+new ServicesControl().addTo(map);
+document.addEventListener('langchange', () => {
+  renderServicesControl();
+  if (servicesFor !== null) showServicesOnMap(servicesFor, false);
+});
+
 function buildChips(container, values, isRegion) {
   container.innerHTML = '';
   const allChip = document.createElement('button');
@@ -209,6 +280,7 @@ function setActive(i, flyTo) {
     map.flyTo([d.latitude, d.longitude], 8, { duration: 0.6 });
     markers[i].openPopup();
   }
+  showServicesOnMap(i, flyTo);
   drawRouteTo(d);
 }
 
