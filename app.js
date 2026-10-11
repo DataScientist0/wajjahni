@@ -1,7 +1,7 @@
 // ---- Translations ----
 const translations = {
   en: {
-    "nav.home": "Home", "nav.places": "Places", "nav.map": "Map", "nav.contact": "Contact",
+    "nav.home": "Home", "nav.places": "Places", "nav.map": "Map", "nav.planner": "Trip cost", "nav.contact": "Contact",
     "hero.title": "A map of every corner of Saudi Arabia worth the drive.",
     "hero.lede": "Heritage villages, mountain trails, Red Sea islands, and holy sites — filter by region or type, then see what's actually there.",
     "stat.places": "places mapped", "stat.regions": "regions", "stat.types": "place types",
@@ -40,7 +40,7 @@ const translations = {
     "lang.toggle": "العربية"
   },
   ar: {
-    "nav.home": "الرئيسية", "nav.places": "الأماكن", "nav.map": "الخريطة", "nav.contact": "تواصل",
+    "nav.home": "الرئيسية", "nav.places": "الأماكن", "nav.map": "الخريطة", "nav.planner": "تكلفة الرحلة", "nav.contact": "تواصل",
     "hero.title": "خريطة تجمع كل ركن بالسعودية يستاهل الرحلة.",
     "hero.lede": "قرى تراثية، مسارات جبلية، جزر بالبحر الأحمر، ومواقع دينية — فلتري حسب المنطقة أو النوع، وشوفي وش فيها فعلاً.",
     "stat.places": "مكان على الخريطة", "stat.regions": "منطقة", "stat.types": "نوع مكان",

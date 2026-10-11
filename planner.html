@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trip Cost — Wajjahni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Wajjahni<span>.</span></div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="places.html" data-i18n="nav.places">Places</a>
+      <a href="map.html" data-i18n="nav.map">Map</a>
+      <a href="planner.html" data-i18n="nav.planner">Trip cost</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <button id="langToggle" class="lang-toggle">العربية</button>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+      <button id="navToggle" class="nav-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="page-head">
+  <h1 class="display" data-i18n="plan.title">Trip cost estimator</h1>
+  <p class="lede" data-i18n="plan.lede">Planning to visit another region? Get a rough idea of what your trip could cost before you go.</p>
+</section>
+
+<div class="planner-wrap">
+
+  <div class="plan-notice" id="sampleNotice">
+    <b data-i18n="plan.notice.title">⚠️ This is an estimate, not a price quote</b>
+    <span data-i18n="plan.notice.body">The calculator uses average costs to give you a rough budget. Real prices change with the season, the hotel, and your choices.</span>
+    <span class="plan-notice-sample" data-i18n="plan.notice.sample">The numbers right now are temporary sample values while the page is being built.</span>
+  </div>
+
+  <ol class="plan-steps">
+    <li><span>1</span><div><b data-i18n="plan.step1.t">Choose your trip</b><small data-i18n="plan.step1.d">Where you're starting, where you're going, and for how long</small></div></li>
+    <li><span>2</span><div><b data-i18n="plan.step2.t">Pick how you travel</b><small data-i18n="plan.step2.d">By car or by plane, and your travel style</small></div></li>
+    <li><span>3</span><div><b data-i18n="plan.step3.t">See your estimate</b><small data-i18n="plan.step3.d">A total and a breakdown that updates as you change anything</small></div></li>
+  </ol>
+
+  <div class="planner-grid">
+
+    <!-- ---------- The form ---------- -->
+    <form class="plan-card" id="planForm" onsubmit="return false">
+
+      <h2 class="plan-section" data-i18n="plan.sec.trip">Your trip</h2>
+
+      <label class="plan-field">
+        <span data-i18n="plan.from">Starting from</span>
+        <select id="fromCity"></select>
+      </label>
+
+      <label class="plan-field">
+        <span data-i18n="plan.to">Going to</span>
+        <select id="toPlace"></select>
+      </label>
+
+      <div class="plan-row">
+        <div class="plan-field">
+          <span data-i18n="plan.nights">Nights</span>
+          <div class="stepper">
+            <button type="button" data-step="nights" data-d="-1" aria-label="−">−</button>
+            <output id="nights">3</output>
+            <button type="button" data-step="nights" data-d="1" aria-label="+">+</button>
+          </div>
+        </div>
+        <div class="plan-field">
+          <span data-i18n="plan.people">Travelers</span>
+          <div class="stepper">
+            <button type="button" data-step="people" data-d="-1" aria-label="−">−</button>
+            <output id="people">2</output>
+            <button type="button" data-step="people" data-d="1" aria-label="+">+</button>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="plan-section" data-i18n="plan.sec.travel">How you travel</h2>
+
+      <div class="plan-field">
+        <span data-i18n="plan.transport">Getting there</span>
+        <div class="seg" data-name="transport">
+          <button type="button" data-value="car" class="active" data-i18n="plan.car">🚗 By car</button>
+          <button type="button" data-value="plane" data-i18n="plan.plane">✈️ By plane</button>
+        </div>
+      </div>
+
+      <div class="plan-field" id="carSizeField">
+        <span data-i18n="plan.carsize">Car type</span>
+        <div class="seg" data-name="car">
+          <button type="button" data-value="small" data-i18n="plan.car.small">Small</button>
+          <button type="button" data-value="sedan" class="active" data-i18n="plan.car.sedan">Sedan</button>
+          <button type="button" data-value="suv" data-i18n="plan.car.suv">SUV</button>
+        </div>
+      </div>
+
+      <div class="plan-field">
+        <span data-i18n="plan.style">Travel style</span>
+        <div class="seg seg-cards" data-name="style">
+          <button type="button" data-value="budget"><b data-i18n="plan.style.budget">💸 Budget</b><small data-i18n="plan.style.budget.d">Simple hotels, casual food</small></button>
+          <button type="button" data-value="mid" class="active"><b data-i18n="plan.style.mid">⭐ Comfortable</b><small data-i18n="plan.style.mid.d">Good hotels, nice restaurants</small></button>
+          <button type="button" data-value="luxury"><b data-i18n="plan.style.luxury">💎 Luxury</b><small data-i18n="plan.style.luxury.d">Top hotels, fine dining</small></button>
+        </div>
+      </div>
+    </form>
+
+    <!-- ---------- The result ---------- -->
+    <aside class="plan-card plan-result" id="planResult" aria-live="polite">
+      <div class="res-label" data-i18n="plan.res.title">Estimated total</div>
+      <div class="res-total" id="resTotal">—</div>
+      <div class="res-range" id="resRange"></div>
+      <div class="res-pp" id="resPerPerson"></div>
+
+      <div class="res-facts" id="resFacts"></div>
+      <div class="res-warn" id="resWarn"></div>
+
+      <div class="res-breakdown" id="resBreakdown"></div>
+
+      <details class="res-how">
+        <summary data-i18n="plan.how.title">How is this calculated?</summary>
+        <ul id="resHow"></ul>
+      </details>
+    </aside>
+  </div>
+
+  <div class="plan-incl">
+    <div>
+      <h3 data-i18n="plan.incl.title">✅ Included</h3>
+      <ul>
+        <li data-i18n="plan.incl.1">Getting there and back (fuel or flights)</li>
+        <li data-i18n="plan.incl.2">Hotel nights</li>
+        <li data-i18n="plan.incl.3">Food and drinks</li>
+        <li data-i18n="plan.incl.4">Activities and entry tickets</li>
+      </ul>
+    </div>
+    <div>
+      <h3 data-i18n="plan.excl.title">❌ Not included</h3>
+      <ul>
+        <li data-i18n="plan.excl.1">Shopping and souvenirs</li>
+        <li data-i18n="plan.excl.2">Price jumps in holidays and events (like Eid or Riyadh Season)</li>
+        <li data-i18n="plan.excl.3">Tolls, parking, and car maintenance</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer data-i18n="footer.text">Wajjahni — a student portfolio project. Ratings and peak hours are sample data, not an official tourism source. © 2026 Najla. All rights reserved.</footer>
+
+<script src="data.js"></script>
+<script src="costs.js"></script>
+<script src="app.js"></script>
+<script>
+// ---- Text for this page (added to the shared translations in app.js) ----
+Object.assign(translations.en, {
+  "plan.title": "Trip cost estimator",
+  "plan.lede": "Planning to visit another region? Get a rough idea of what your trip could cost before you go.",
+  "plan.notice.title": "⚠️ This is an estimate, not a price quote",
+  "plan.notice.body": "The calculator uses average costs to give you a rough budget. Real prices change with the season, the hotel, and your choices.",
+  "plan.notice.sample": "The numbers right now are temporary sample values while the page is being built.",
+  "plan.step1.t": "Choose your trip", "plan.step1.d": "Where you're starting, where you're going, and for how long",
+  "plan.step2.t": "Pick how you travel", "plan.step2.d": "By car or by plane, and your travel style",
+  "plan.step3.t": "See your estimate", "plan.step3.d": "A total and a breakdown that updates as you change anything",
+  "plan.sec.trip": "Your trip", "plan.sec.travel": "How you travel",
+  "plan.from": "Starting from", "plan.to": "Going to", "plan.nights": "Nights", "plan.people": "Travelers",
+  "plan.transport": "Getting there", "plan.car": "🚗 By car", "plan.plane": "✈️ By plane",
+  "plan.carsize": "Car type", "plan.car.small": "Small", "plan.car.sedan": "Sedan", "plan.car.suv": "SUV",
+  "plan.style": "Travel style",
+  "plan.style.budget": "💸 Budget", "plan.style.budget.d": "Simple hotels, casual food",
+  "plan.style.mid": "⭐ Comfortable", "plan.style.mid.d": "Good hotels, nice restaurants",
+  "plan.style.luxury": "💎 Luxury", "plan.style.luxury.d": "Top hotels, fine dining",
+  "plan.res.title": "Estimated total", "plan.sar": "SAR",
+  "plan.range": "Usually between {a} and {b} SAR", "plan.pp": "About {x} SAR per person",
+  "plan.fact.road": "🛣️ About {km} km by road each way", "plan.fact.drive": "⏱️ Around {h} of driving each way",
+  "plan.fact.air": "✈️ About {km} km by air each way", "plan.fact.rooms": "🛏️ {n} hotel room(s) for {p} traveler(s)",
+  "plan.hours": "{h} h", "plan.hours.min": "{h} h {m} min",
+  "plan.warn.near": "This place is close to your city, so driving is usually easier and cheaper than flying.",
+  "plan.warn.same": "This place is in or near your city, so there's almost no travel cost.",
+  "plan.cat.transport": "🚗 Getting there & back", "plan.cat.flight": "✈️ Flights & local transport",
+  "plan.cat.hotel": "🏨 Hotel", "plan.cat.food": "🍽️ Food", "plan.cat.activities": "🎟️ Activities",
+  "plan.how.title": "How is this calculated?",
+  "plan.how.fuel": "Fuel: road distance × 2 (there and back) × {l} liters per 100 km × {p} SAR per liter.",
+  "plan.how.flight": "Flights: a round-trip ticket per traveler based on distance, plus {d} SAR a day for a car or taxis at the destination.",
+  "plan.how.hotel": "Hotel: {r} SAR per room per night × {n} room(s) × {x} night(s). One room fits 2 people.",
+  "plan.how.food": "Food: {f} SAR per person per day × {p} traveler(s) × {d} day(s).",
+  "plan.how.act": "Activities: {a} SAR per person per day for tickets and tours.",
+  "plan.how.range": "The range shows that real costs are often a bit lower or quite a bit higher than the average.",
+  "plan.incl.title": "✅ Included", "plan.incl.1": "Getting there and back (fuel or flights)", "plan.incl.2": "Hotel nights",
+  "plan.incl.3": "Food and drinks", "plan.incl.4": "Activities and entry tickets",
+  "plan.excl.title": "❌ Not included", "plan.excl.1": "Shopping and souvenirs",
+  "plan.excl.2": "Price jumps in holidays and events (like Eid or Riyadh Season)", "plan.excl.3": "Tolls, parking, and car maintenance"
+});
+Object.assign(translations.ar, {
+  "plan.title": "حاسبة تكاليف الرحلة",
+  "plan.lede": "ناوية تزورين منطقة ثانية؟ اعرفي تقريباً كم بتكلفك رحلتك قبل لا تسافرين.",
+  "plan.notice.title": "⚠️ هذا تقدير تقريبي، مو سعر نهائي",
+  "plan.notice.body": "الحاسبة تستخدم متوسط التكاليف عشان تعطيك ميزانية تقريبية. الأسعار الحقيقية تتغير حسب الموسم والفندق واختياراتك.",
+  "plan.notice.sample": "الأرقام حالياً تجريبية مؤقتة لين نخلص الصفحة.",
+  "plan.step1.t": "اختاري رحلتك", "plan.step1.d": "من وين بتطلعين، ووين بتروحين، وكم ليلة",
+  "plan.step2.t": "اختاري طريقة السفر", "plan.step2.d": "سيارة أو طيران، ومستوى الرحلة",
+  "plan.step3.t": "شوفي التكلفة", "plan.step3.d": "المجموع والتفاصيل يتحدثون مع أي تغيير",
+  "plan.sec.trip": "رحلتك", "plan.sec.travel": "طريقة السفر",
+  "plan.from": "من", "plan.to": "إلى", "plan.nights": "عدد الليالي", "plan.people": "عدد المسافرين",
+  "plan.transport": "كيف بتروحين", "plan.car": "🚗 بالسيارة", "plan.plane": "✈️ بالطيارة",
+  "plan.carsize": "نوع السيارة", "plan.car.small": "صغيرة", "plan.car.sedan": "سيدان", "plan.car.suv": "جيب (SUV)",
+  "plan.style": "مستوى الرحلة",
+  "plan.style.budget": "💸 اقتصادية", "plan.style.budget.d": "فنادق بسيطة وأكل عادي",
+  "plan.style.mid": "⭐ مريحة", "plan.style.mid.d": "فنادق زينة ومطاعم حلوة",
+  "plan.style.luxury": "💎 فاخرة", "plan.style.luxury.d": "أفخم الفنادق والمطاعم",
+  "plan.res.title": "التكلفة التقريبية", "plan.sar": "ريال",
+  "plan.range": "غالباً بين {a} و {b} ريال", "plan.pp": "تقريباً {x} ريال للشخص",
+  "plan.fact.road": "🛣️ حوالي {km} كم بالطريق (رايح)", "plan.fact.drive": "⏱️ حوالي {h} سواقة (رايح)",
+  "plan.fact.air": "✈️ حوالي {km} كم بالطيارة (رايح)", "plan.fact.rooms": "🛏️ {n} غرفة لـ {p} مسافر",
+  "plan.hours": "{h} ساعة", "plan.hours.min": "{h} ساعة و {m} دقيقة",
+  "plan.warn.near": "المكان قريب من مدينتك، فالسيارة غالباً أسهل وأرخص من الطيارة.",
+  "plan.warn.same": "المكان داخل مدينتك أو قريب منها، فتكلفة الطريق تقريباً ما تذكر.",
+  "plan.cat.transport": "🚗 الطريق (رايح وراجع)", "plan.cat.flight": "✈️ الطيران والمواصلات هناك",
+  "plan.cat.hotel": "🏨 الفندق", "plan.cat.food": "🍽️ الأكل", "plan.cat.activities": "🎟️ الأنشطة",
+  "plan.how.title": "كيف انحسبت التكلفة؟",
+  "plan.how.fuel": "البنزين: مسافة الطريق × ٢ (رايح وراجع) × {l} لتر لكل ١٠٠ كم × {p} ريال للتر.",
+  "plan.how.flight": "الطيران: تذكرة ذهاب وعودة لكل مسافر حسب المسافة، وفوقها {d} ريال باليوم لسيارة أو تاكسي هناك.",
+  "plan.how.hotel": "الفندق: {r} ريال للغرفة بالليلة × {n} غرفة × {x} ليلة. كل غرفة لشخصين.",
+  "plan.how.food": "الأكل: {f} ريال للشخص باليوم × {p} مسافر × {d} يوم.",
+  "plan.how.act": "الأنشطة: {a} ريال للشخص باليوم للتذاكر والجولات.",
+  "plan.how.range": "المدى يوضح إن التكلفة الحقيقية أحياناً أقل شوي من المتوسط، وأحياناً أعلى بواجد.",
+  "plan.incl.title": "✅ يشمل", "plan.incl.1": "الطريق رايح وراجع (بنزين أو طيران)", "plan.incl.2": "ليالي الفندق",
+  "plan.incl.3": "الأكل والمشروبات", "plan.incl.4": "الأنشطة وتذاكر الدخول",
+  "plan.excl.title": "❌ ما يشمل", "plan.excl.1": "التسوق والهدايا",
+  "plan.excl.2": "ارتفاع الأسعار في الإجازات والمواسم (مثل العيد وموسم الرياض)", "plan.excl.3": "المواقف وصيانة السيارة"
+});
+translations.en["nav.planner"] = translations.en["nav.planner"] || "Trip cost";
+translations.ar["nav.planner"] = translations.ar["nav.planner"] || "تكلفة الرحلة";
+
+// Fill {placeholders} in a translated sentence
+function tf(key, vals) {
+  return t(key).replace(/\{(\w+)\}/g, (_, k) => vals[k]);
+}
+const fmt = n => Math.round(n).toLocaleString('en-US');
+const roundTo = (n, step) => Math.round(n / step) * step;
+
+// ---- Current choices ----
+const state = { nights: 3, people: 2, transport: 'car', car: 'sedan', style: 'mid' };
+const LIMITS = { nights: [0, 30], people: [1, 20] };
+
+// ---- Fill the two dropdowns ----
+function fillSelects() {
+  const from = document.getElementById('fromCity');
+  const to = document.getElementById('toPlace');
+  const fromVal = from.value, toVal = to.value;
+
+  from.innerHTML = START_CITIES.map((c, i) =>
+    `<option value="${i}">${currentLang === 'ar' ? c.ar : c.en}</option>`).join('');
+
+  // Places grouped by region
+  const byRegion = {};
+  DATA.forEach((d, i) => (byRegion[d.region] = byRegion[d.region] || []).push(i));
+  to.innerHTML = Object.keys(byRegion).map(r =>
+    `<optgroup label="${tRegion(r)}">` +
+      byRegion[r].map(i => `<option value="${i}">${tName(DATA[i])}</option>`).join('') +
+    `</optgroup>`).join('');
+
+  // Keep the previous choice, or use ?place= from the link, or a sensible default
+  const urlPlace = new URLSearchParams(location.search).get('place');
+  from.value = fromVal || '0';
+  to.value = toVal || (urlPlace !== null && DATA[urlPlace] ? urlPlace : String(DATA.findIndex(d => d.region === 'Madinah' && /AlUla Old Town/.test(d.place_name))));
+  if (to.value === '' || to.value === '-1') to.value = '0';
+}
+
+// ---- The calculation ----
+function estimate() {
+  const C = COSTS;
+  const start = START_CITIES[+document.getElementById('fromCity').value];
+  const place = DATA[+document.getElementById('toPlace').value];
+  const { nights, people, transport, car, style } = state;
+
+  const days = nights + 1;                        // e.g. 3 nights = 4 days
+  const rooms = Math.ceil(people / 2);            // one room for every 2 people
+  const rf = C.regionFactor[place.region] || 1;   // region price level (1 = average)
+
+  const airKm = haversineKm(start.lat, start.lon, place.latitude, place.longitude);
+  const roadKm = airKm * C.roadFactor;
+
+  const parts = [];
+  if (transport === 'car') {
+    const liters = (roadKm * 2) * C.carLitersPer100km[car] / 100;
+    parts.push({ key: 'plan.cat.transport', value: liters * C.fuelPricePerLiter });
+  } else {
+    const ticket = (C.flight.base + C.flight.perKm * airKm) * C.flightStyleFactor[style];
+    parts.push({ key: 'plan.cat.flight', value: ticket * people + C.localTransportPerDay[style] * days });
+  }
+  parts.push({ key: 'plan.cat.hotel', value: C.hotelPerRoomNight[style] * rooms * nights * rf });
+  parts.push({ key: 'plan.cat.food', value: C.foodPerPersonDay[style] * people * days * rf });
+  parts.push({ key: 'plan.cat.activities', value: C.activitiesPerPersonDay[style] * people * days * rf });
+
+  const total = parts.reduce((s, p) => s + p.value, 0);
+  return { start, place, days, rooms, airKm, roadKm, parts, total };
+}
+
+// ---- Show the result ----
+function render() {
+  const r = estimate();
+  const C = COSTS;
+  const { nights, people, transport, car, style } = state;
+
+  document.getElementById('carSizeField').style.display = transport === 'car' ? '' : 'none';
+
+  document.getElementById('resTotal').innerHTML = `≈ ${fmt(roundTo(r.total, 50))} <small>${t('plan.sar')}</small>`;
+  document.getElementById('resRange').textContent = tf('plan.range', {
+    a: fmt(roundTo(r.total * (1 - C.rangeLow), 50)), b: fmt(roundTo(r.total * (1 + C.rangeHigh), 50)) });
+  document.getElementById('resPerPerson').textContent = people > 1 ? tf('plan.pp', { x: fmt(roundTo(r.total / people, 10)) }) : '';
+
+  // Quick facts about the trip
+  const facts = [];
+  if (transport === 'car') {
+    const hours = r.roadKm / C.avgDrivingSpeedKmh;
+    const h = Math.floor(hours), m = roundTo((hours - h) * 60, 15) % 60;
+    facts.push(tf('plan.fact.road', { km: fmt(roundTo(r.roadKm, 10)) }));
+    facts.push(tf('plan.fact.drive', { h: m ? tf('plan.hours.min', { h, m }) : tf('plan.hours', { h: Math.max(h, 1) }) }));
+  } else {
+    facts.push(tf('plan.fact.air', { km: fmt(roundTo(r.airKm, 10)) }));
+  }
+  if (nights > 0) facts.push(tf('plan.fact.rooms', { n: r.rooms, p: people }));
+  document.getElementById('resFacts').innerHTML = facts.map(f => `<div>${f}</div>`).join('');
+
+  // Warnings
+  let warn = '';
+  if (r.airKm < 40) warn = t('plan.warn.same');
+  else if (transport === 'plane' && r.airKm < C.minFlightKm) warn = t('plan.warn.near');
+  const w = document.getElementById('resWarn');
+  w.textContent = warn; w.style.display = warn ? '' : 'none';
+
+  // Breakdown bars
+  const max = Math.max(...r.parts.map(p => p.value), 1);
+  document.getElementById('resBreakdown').innerHTML = r.parts.map(p => `
+    <div class="res-row">
+      <div class="res-row-top"><span>${t(p.key)}</span><b>${fmt(roundTo(p.value, 10))} ${t('plan.sar')}</b></div>
+      <div class="res-bar"><i style="width:${(p.value / max * 100).toFixed(1)}%"></i></div>
+    </div>`).join('');
+
+  // "How is this calculated?"
+  const how = [];
+  if (transport === 'car') how.push(tf('plan.how.fuel', { l: C.carLitersPer100km[car], p: C.fuelPricePerLiter }));
+  else how.push(tf('plan.how.flight', { d: C.localTransportPerDay[style] }));
+  how.push(tf('plan.how.hotel', { r: fmt(C.hotelPerRoomNight[style]), n: r.rooms, x: nights }));
+  how.push(tf('plan.how.food', { f: C.foodPerPersonDay[style], p: people, d: r.days }));
+  how.push(tf('plan.how.act', { a: C.activitiesPerPersonDay[style] }));
+  how.push(t('plan.how.range'));
+  document.getElementById('resHow').innerHTML = how.map(h => `<li>${h}</li>`).join('');
+
+  document.getElementById('sampleNotice').classList.toggle('is-sample', COSTS.isSample);
+}
+
+// ---- Inputs ----
+document.querySelectorAll('.stepper button').forEach(btn => btn.addEventListener('click', () => {
+  const key = btn.dataset.step, [lo, hi] = LIMITS[key];
+  state[key] = Math.min(hi, Math.max(lo, state[key] + (+btn.dataset.d)));
+  document.getElementById(key).textContent = state[key];
+  render();
+}));
+document.querySelectorAll('.seg').forEach(seg => seg.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => {
+  seg.querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
+  state[seg.dataset.name] = btn.dataset.value;
+  render();
+})));
+document.getElementById('fromCity').addEventListener('change', render);
+document.getElementById('toPlace').addEventListener('change', render);
+document.addEventListener('langchange', () => { fillSelects(); render(); });
+</script>
+</body>
+</html>

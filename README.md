@@ -21,6 +21,7 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 | 📍 **Distance from me** | Uses your location (only if you allow it) to sort places from nearest to farthest |
 | 🧭 **Directions** | Draws a route to a place on the map, or opens it in Google Maps |
 | 🧭 **Nearby services** | For every place, the 3 nearest gas stations, pharmacies, restaurants, cafes, and banks/ATMs, with distances and Google Maps directions. They also appear as icons on the map, with a panel to show or hide each type. Calculated in MySQL from Overture Maps data |
+| 💰 **Trip cost estimator** | A rough budget for a trip to any place: fuel or flights, hotel, food, and activities, based on the number of nights, travelers, and travel style. *(Currently uses sample numbers)* |
 | ⏰ **Peak hours** | A bar chart showing how busy a place usually is at each hour, and whether it's busy right now |
 | 🌐 **Arabic & English** | Switch the whole site between English and Arabic (right-to-left), including place names and descriptions. Search works in both languages |
 | 🌙 **Light & dark mode** | Switch themes. Your choice is remembered next time |
@@ -35,6 +36,7 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 | `index.html` | Home page |
 | `places.html` | All places as cards, with search, filters, distance sorting, peak hours, and directions |
 | `map.html` | Interactive map with a list of places beside it |
+| `planner.html` | Trip cost estimator |
 | `contact.html` | Contact page for suggestions and corrections (wajjahni.nj@gmail.com) |
 
 ---
@@ -109,6 +111,8 @@ wajjahni/
 ├── index.html      # Home page
 ├── places.html     # Places list with search and filters
 ├── map.html        # Interactive map
+├── planner.html    # Trip cost estimator
+├── costs.js        # The numbers used by the trip cost estimator
 ├── contact.html    # Contact page
 ├── styles.css      # All styles, themes, and mobile layout
 ├── app.js          # Shared logic: language, theme, distance, peak hours, popups
