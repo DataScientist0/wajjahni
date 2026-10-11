@@ -76,6 +76,7 @@
 </div>
 
 <script src="data.js"></script>
+<script src="services.js"></script>
 <script src="app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
@@ -182,6 +183,7 @@ function render() {
           <div class="pc-meta">${tLocation(d)} · ${tType(d.type)} · ${t('best.in')} ${tSeason(d.best_season)}${distLine}</div>
           <div class="card-actions">
             <button class="peak-btn" data-idx="${i}">${t('peak.btn')}</button>
+            <button class="peak-btn nearby-btn" data-idx="${i}">${t('nearby.btn')}</button>
             <a href="${googleMapsUrl(d)}" target="_blank" rel="noopener" class="gmaps-btn">${t('directions.btn')}</a>
           </div>
         </div>
@@ -190,7 +192,8 @@ function render() {
         if (e.target.closest('.peak-btn') || e.target.closest('.gmaps-btn')) return;
         setActive(i, true);
       };
-      card.querySelector('.peak-btn').onclick = (e) => { e.stopPropagation(); openPeakModal(i); };
+      card.querySelector('.peak-btn:not(.nearby-btn)').onclick = (e) => { e.stopPropagation(); openPeakModal(i); };
+      card.querySelector('.nearby-btn').onclick = (e) => { e.stopPropagation(); openNearbyModal(i); };
       listEl.appendChild(card);
     });
   }

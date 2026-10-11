@@ -12,6 +12,9 @@ const translations = {
     "hl.religious.t": "Religious sites", "hl.religious.d": "The Two Holy Mosques and the historic mosques that shaped early Islamic history.",
     "hl.entertainment.t": "Entertainment & culture", "hl.entertainment.d": "Corniches, cable cars, and city landmarks for an easy day out.",
     "photo.soon": "Photo coming soon",
+    "nearby.btn": "🧭 Nearby services", "nearby.title": "Nearby services", "nearby.sub": "The 3 closest of each service (straight-line distance)", "nearby.km": "km", "nearby.go": "Directions",
+    "svc.fuel": "⛽ Gas stations", "svc.pharmacy": "💊 Pharmacies", "svc.restaurant": "🍽️ Restaurants", "svc.cafe": "☕ Cafes", "svc.bank": "🏦 Banks & ATMs",
+    "nearby.source": "Service data © Overture Maps Foundation. It may be incomplete or out of date.", "nearby.none": "No nearby services found.",
     "footer.text": "Wajjahni — a student portfolio project. Place data is illustrative, not an official tourism source. © 2026 Najla. All rights reserved.",
     "page.places.title": "All places", "page.places.lede": "Search, filter, or sort by distance from you.",
     "page.map.title": "The map", "page.map.lede": "Every place plotted — filter, search, or click a pin for details.",
@@ -48,6 +51,9 @@ const translations = {
     "hl.religious.t": "مواقع دينية", "hl.religious.d": "الحرمان الشريفان والمساجد التاريخية اللي شكّلت بدايات التاريخ الإسلامي.",
     "hl.entertainment.t": "ترفيه وثقافة", "hl.entertainment.d": "كورنيشات، تلفريك، ومعالم مدن ليوم خفيف وممتع.",
     "photo.soon": "الصورة قريباً",
+    "nearby.btn": "🧭 خدمات قريبة", "nearby.title": "خدمات قريبة", "nearby.sub": "أقرب ٣ من كل خدمة (المسافة بخط مستقيم)", "nearby.km": "كم", "nearby.go": "الاتجاهات",
+    "svc.fuel": "⛽ محطات بنزين", "svc.pharmacy": "💊 صيدليات", "svc.restaurant": "🍽️ مطاعم", "svc.cafe": "☕ مقاهي", "svc.bank": "🏦 بنوك وصرافات",
+    "nearby.source": "بيانات الخدمات من Overture Maps، وقد لا تكون كاملة أو محدثة.", "nearby.none": "ما لقينا خدمات قريبة.",
     "footer.text": "وجّهني — مشروع طلابي شخصي. بيانات الأماكن توضيحية، مو مصدر سياحي رسمي. © 2026 نجلاء. جميع الحقوق محفوظة.",
     "page.places.title": "كل الأماكن", "page.places.lede": "ابحثي، فلتري، أو رتبي حسب المسافة منك.",
     "page.map.title": "الخريطة", "page.map.lede": "كل مكان موضّح على الخريطة — فلتري، ابحثي، أو اضغطي على أي نقطة للتفاصيل.",
@@ -297,6 +303,42 @@ function emptyStateHTML() {
       <a class="btn-secondary" href="${maps}" target="_blank" rel="noopener">${t('empty.gmaps')}</a>
     </div>
   </div>`;
+}
+
+// ---- Nearby services modal (built once, reused on places.html and map.html) ----
+function openNearbyModal(i) {
+  const d = DATA[i];
+  const data = (typeof NEARBY !== 'undefined' && NEARBY[String(i + 1)]) || {};
+  let modal = document.getElementById('nearbyModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'nearbyModal';
+    modal.className = 'peak-modal';
+    modal.innerHTML = '<div class="peak-modal-box nearby-box"><button class="peak-close" aria-label="Close">✕</button><div class="nearby-content"></div></div>';
+    document.body.appendChild(modal);
+    modal.querySelector('.peak-close').addEventListener('click', () => modal.classList.remove('open'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') modal.classList.remove('open'); });
+  }
+  const esc = (s) => String(s).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+  const order = ['fuel', 'pharmacy', 'restaurant', 'cafe', 'bank'];
+  const groups = order.filter(k => data[k] && data[k].length).map(k => `
+    <div class="nearby-group">
+      <h4>${t('svc.' + k)}</h4>
+      <ul>${data[k].map(s => `
+        <li>
+          <span class="nb-name">${esc(s.n)}</span>
+          <span class="nb-km">${s.km.toFixed(1)} ${t('nearby.km')}</span>
+          <a class="nb-go" href="https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lon}&travelmode=driving" target="_blank" rel="noopener">📍 ${t('nearby.go')}</a>
+        </li>`).join('')}
+      </ul>
+    </div>`).join('');
+  modal.querySelector('.nearby-content').innerHTML = `
+    <h3 class="peak-title">${t('nearby.title')}: ${esc(tName(d))}</h3>
+    <p class="peak-sub">${t('nearby.sub')}</p>
+    ${groups || `<p>${t('nearby.none')}</p>`}
+    <p class="nearby-source">${t('nearby.source')}</p>`;
+  modal.classList.add('open');
 }
 
 function googleMapsUrl(place) {

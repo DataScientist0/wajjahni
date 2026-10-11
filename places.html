@@ -62,6 +62,7 @@
 </div>
 
 <script src="data.js"></script>
+<script src="services.js"></script>
 <script src="app.js"></script>
 <script>
 let activeRegion = 'All';
@@ -149,11 +150,13 @@ function render() {
           ${photoCredit(d)}
           <div class="card-actions">
             <button class="peak-btn" data-idx="${i}">${t('peak.btn')}</button>
+            <button class="peak-btn nearby-btn" data-idx="${i}">${t('nearby.btn')}</button>
             <a href="${googleMapsUrl(d)}" target="_blank" rel="noopener" class="gmaps-btn">${t('directions.btn')}</a>
           </div>
         </div>
       `;
-      card.querySelector('.peak-btn').onclick = () => openPeakModal(i);
+      card.querySelector('.peak-btn:not(.nearby-btn)').onclick = () => openPeakModal(i);
+      card.querySelector('.nearby-btn').onclick = () => openNearbyModal(i);
       grid.appendChild(card);
     });
   }

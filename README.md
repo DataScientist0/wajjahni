@@ -20,6 +20,7 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 | 📷 **Real photos** | Real, freely licensed photos of each place from Wikimedia Commons, with the photographer credited |
 | 📍 **Distance from me** | Uses your location (only if you allow it) to sort places from nearest to farthest |
 | 🧭 **Directions** | Draws a route to a place on the map, or opens it in Google Maps |
+| 🧭 **Nearby services** | For every place, the 3 nearest gas stations, pharmacies, restaurants, cafes, and banks/ATMs, with distances and Google Maps directions. Calculated in MySQL from Overture Maps data |
 | ⏰ **Peak hours** | A bar chart showing how busy a place usually is at each hour, and whether it's busy right now |
 | 🌐 **Arabic & English** | Switch the whole site between English and Arabic (right-to-left), including place names and descriptions. Search works in both languages |
 | 🌙 **Light & dark mode** | Switch themes. Your choice is remembered next time |
@@ -55,6 +56,8 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 |---|---|---|
 | **Leaflet** | The interactive map | A free, lightweight, open-source map library that's easy to use |
 | **Leaflet Routing Machine** | Drawing routes and directions on the map | Works directly with Leaflet, so routes appear on the same map |
+| **Overture Maps** | Data for nearby services (restaurants, cafes, pharmacies, banks, gas stations) | Free, open data that combines several large sources |
+| **MySQL** | Cleaning the services data and calculating the nearest services with SQL | The most common database in data jobs |
 | **OpenStreetMap** | The map tiles (the map images) | Free and open map data, with no API key needed |
 | **Google Maps link** | Opening directions in Google Maps | Most people already use Google Maps on their phones |
 | **Google Fonts** (Fraunces & Inter) | The fonts | Free fonts that make the site look clean and modern |
@@ -110,7 +113,10 @@ wajjahni/
 ├── styles.css      # All styles, themes, and mobile layout
 ├── app.js          # Shared logic: language, theme, distance, peak hours, popups
 ├── data.js         # The places dataset
+├── services.js     # Nearest services for each place (from the SQL results)
 ├── data-cleaning.ipynb  # Cleans the tourism statistics
+├── services.ipynb  # Pulls services from Overture Maps with DuckDB
+├── sql/            # MySQL scripts: import tables and calculate nearest services
 ├── data/
 │   ├── raw/        # Original tourism files, never edited by hand
 │   └── clean/      # Clean tables made by the notebook
