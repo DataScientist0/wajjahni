@@ -48,6 +48,11 @@
     <li><span>3</span><div><b data-i18n="plan.step3.t">See your estimate</b><small data-i18n="plan.step3.d">A total and a breakdown that updates as you change anything</small></div></li>
   </ol>
 
+  <div class="seg seg-cards plan-mode" data-name="mode">
+    <button type="button" data-value="place" class="active"><b data-i18n="plan.mode.place">📍 I know where I'm going</b><small data-i18n="plan.mode.place.d">Get the full cost of one trip</small></button>
+    <button type="button" data-value="budget"><b data-i18n="plan.mode.budget">💰 I have a budget</b><small data-i18n="plan.mode.budget.d">See which places fit it</small></button>
+  </div>
+
   <div class="planner-grid">
 
     <!-- ---------- The form ---------- -->
@@ -60,10 +65,27 @@
         <select id="fromCity"></select>
       </label>
 
-      <label class="plan-field">
+      <label class="plan-field" id="toPlaceField">
         <span data-i18n="plan.to">Going to</span>
         <select id="toPlace"></select>
       </label>
+
+      <div id="budgetFields" style="display:none">
+        <label class="plan-field">
+          <span data-i18n="plan.budget">Your total budget for the whole group (SAR)</span>
+          <input type="number" id="budgetInput" class="plan-input" min="0" step="100" value="5000" inputmode="numeric">
+        </label>
+        <div class="plan-row">
+          <label class="plan-field">
+            <span data-i18n="plan.region">Region</span>
+            <select id="budgetRegion"></select>
+          </label>
+          <label class="plan-field">
+            <span data-i18n="plan.type">Type of place</span>
+            <select id="budgetType"></select>
+          </label>
+        </div>
+      </div>
 
       <div class="plan-row">
         <div class="plan-field">
@@ -132,6 +154,7 @@
         </div>
       </div>
 
+      <div id="staySection">
       <h2 class="plan-section" data-i18n="plan.sec.stay">Where you'll stay</h2>
       <p class="plan-hint" data-i18n="plan.stay.intro">Pick a hotel near your destination (optional), check its price for your dates, and type it below for a more accurate total.</p>
 
@@ -149,10 +172,19 @@
         <input type="number" id="hotelPrice" class="plan-input" min="0" step="10" inputmode="numeric">
         <small class="plan-hint" id="priceHint"></small>
       </label>
+      </div>
     </form>
 
     <!-- ---------- The result ---------- -->
     <aside class="plan-card plan-result" id="planResult" aria-live="polite">
+      <div id="budgetResult" style="display:none">
+        <div class="res-label" data-i18n="plan.b.title">Places that fit your budget</div>
+        <div class="b-count" id="bCount"></div>
+        <p class="plan-hint" data-i18n="plan.b.note">Costs use the estimated hotel price for your travel style. Open a place to see the details and pick a hotel.</p>
+        <div class="b-list" id="bList"></div>
+      </div>
+
+      <div id="placeResult">
       <div class="res-label" data-i18n="plan.res.title">Estimated total</div>
       <div class="res-total" id="resTotal">—</div>
       <div class="res-range" id="resRange"></div>
@@ -167,6 +199,7 @@
         <summary data-i18n="plan.how.title">How is this calculated?</summary>
         <ul id="resHow"></ul>
       </details>
+      </div>
     </aside>
   </div>
 
@@ -303,6 +336,26 @@ Object.assign(translations.ar, {
   "plan.excl.title": "❌ ما يشمل", "plan.excl.1": "التسوق والهدايا",
   "plan.excl.2": "ارتفاع الأسعار في الإجازات والمواسم (مثل العيد وموسم الرياض)", "plan.excl.3": "المواقف وصيانة السيارة"
 });
+Object.assign(translations.en, {
+  "plan.mode.place": "📍 I know where I'm going", "plan.mode.place.d": "Get the full cost of one trip",
+  "plan.mode.budget": "💰 I have a budget", "plan.mode.budget.d": "See which places fit it",
+  "plan.budget": "Your total budget for the whole group (SAR)", "plan.region": "Region", "plan.type": "Type of place",
+  "plan.anyregion": "Any region", "plan.anytype": "Any type",
+  "plan.b.title": "Places that fit your budget", "plan.b.count": "{n} of {t} places fit your budget",
+  "plan.b.note": "Costs use the estimated hotel price for your travel style. Open a place to see the details and pick a hotel.",
+  "plan.b.none": "No place fits this budget with these choices. Try fewer nights, the budget style, a closer region, or a bigger budget. The closest options:",
+  "plan.b.left": "{x} SAR left", "plan.b.over": "{x} SAR over budget", "plan.b.open": "See details →", "plan.b.enter": "Type your budget to see the places that fit it."
+});
+Object.assign(translations.ar, {
+  "plan.mode.place": "📍 أعرف وين بروح", "plan.mode.place.d": "احسبي تكلفة رحلة وحدة بالتفصيل",
+  "plan.mode.budget": "💰 عندي ميزانية", "plan.mode.budget.d": "شوفي وش الأماكن اللي تناسبها",
+  "plan.budget": "ميزانيتك الكاملة لكل المسافرين (ريال)", "plan.region": "المنطقة", "plan.type": "نوع المكان",
+  "plan.anyregion": "كل المناطق", "plan.anytype": "كل الأنواع",
+  "plan.b.title": "أماكن تناسب ميزانيتك", "plan.b.count": "{n} من {t} مكان تناسب ميزانيتك",
+  "plan.b.note": "التكلفة محسوبة على سعر الفندق التقديري لمستوى رحلتك. افتحي أي مكان عشان تشوفين التفاصيل وتختارين فندق.",
+  "plan.b.none": "ما فيه مكان يناسب هالميزانية مع اختياراتك. جربي ليالي أقل، أو المستوى الاقتصادي، أو منطقة أقرب، أو ميزانية أكبر. أقرب الخيارات:",
+  "plan.b.left": "يبقى لك {x} ريال", "plan.b.over": "يزيد {x} ريال عن ميزانيتك", "plan.b.open": "التفاصيل ←", "plan.b.enter": "اكتبي ميزانيتك عشان تطلع لك الأماكن اللي تناسبها."
+});
 Object.assign(translations.en, { "plan.s.budget": "budget", "plan.s.mid": "comfortable", "plan.s.luxury": "luxury" });
 Object.assign(translations.ar, { "plan.s.budget": "اقتصادية", "plan.s.mid": "مريحة", "plan.s.luxury": "فاخرة" });
 translations.en["nav.planner"] = translations.en["nav.planner"] || "Trip cost";
@@ -316,7 +369,7 @@ const fmt = n => Math.round(n).toLocaleString('en-US');
 const roundTo = (n, step) => Math.round(n / step) * step;
 
 // ---- Current choices ----
-const state = { adults: 2, children: 0, nights: 3, rooms: 1, transport: 'car', car: 'sedan', style: 'mid' };
+const state = { mode: 'place', adults: 2, children: 0, nights: 3, rooms: 1, transport: 'car', car: 'sedan', style: 'mid' };
 const LIMITS = { adults: [1, 20], children: [0, 20], nights: [0, 30], rooms: [1, 20] };
 let roomsTouched = false;     // once the user changes rooms, stop suggesting
 let chosenHotel = null;       // index in HOTELS, or null
@@ -347,13 +400,24 @@ function fillSelects() {
   from.value = fromVal || '0';
   to.value = toVal || (urlPlace !== null && DATA[urlPlace] ? urlPlace : String(DATA.findIndex(d => d.region === 'Madinah' && /AlUla Old Town/.test(d.place_name))));
   if (to.value === '' || to.value === '-1') to.value = '0';
+
+  // Budget mode filters
+  const reg = document.getElementById('budgetRegion'), typ = document.getElementById('budgetType');
+  const regVal = reg.value || 'All', typVal = typ.value || 'All';
+  reg.innerHTML = `<option value="All">${t('plan.anyregion')}</option>` +
+    [...new Set(DATA.map(d => d.region))].map(r => `<option value="${r}">${tRegion(r)}</option>`).join('');
+  typ.innerHTML = `<option value="All">${t('plan.anytype')}</option>` +
+    [...new Set(DATA.map(d => d.type))].map(x => `<option value="${x}">${tType(x)}</option>`).join('');
+  reg.value = regVal; typ.value = typVal;
 }
 
 // ---- The calculation ----
-function estimate() {
+// placeIdx: which place (default: the one in "Going to").
+// useTyped: use the hotel price the user typed (only makes sense for the chosen place).
+function estimate(placeIdx = currentPlaceIndex(), useTyped = true) {
   const C = COSTS;
   const start = START_CITIES[+document.getElementById('fromCity').value];
-  const place = DATA[+document.getElementById('toPlace').value];
+  const place = DATA[placeIdx];
   const { adults, children, nights, rooms, transport, car, style } = state;
 
   const days = nights + 1;                        // e.g. 3 nights = 4 days
@@ -366,7 +430,7 @@ function estimate() {
 
   // Hotel price: what the user typed, or the estimate for this style and region
   const estNight = C.hotelPerRoomNight[style] * rf;
-  const typed = parseFloat(document.getElementById('hotelPrice').value);
+  const typed = useTyped ? parseFloat(document.getElementById('hotelPrice').value) : NaN;
   const night = typed > 0 ? typed : estNight;
 
   const airKm = haversineKm(start.lat, start.lon, place.latitude, place.longitude);
@@ -391,12 +455,22 @@ function estimate() {
 
 // ---- Show the result ----
 function render() {
+  const budgetMode = state.mode === 'budget';
+  document.getElementById('toPlaceField').style.display = budgetMode ? 'none' : '';
+  document.getElementById('budgetFields').style.display = budgetMode ? '' : 'none';
+  document.getElementById('staySection').style.display = budgetMode ? 'none' : '';
+  document.getElementById('budgetResult').style.display = budgetMode ? '' : 'none';
+  document.getElementById('placeResult').style.display = budgetMode ? 'none' : '';
+  document.getElementById('carSizeField').style.display = state.transport === 'car' ? '' : 'none';
+  document.getElementById('roomsHint').textContent = tf('plan.rooms.hint', { n: suggestedRooms(), p: state.adults + state.children });
+  document.getElementById('sampleNotice').classList.toggle('is-sample', COSTS.isSample);
+  if (budgetMode) return renderBudget();
+
   const r = estimate();
   const C = COSTS;
   const { adults, children, nights, rooms, transport, car, style } = state;
   const people = r.people;
 
-  document.getElementById('roomsHint').textContent = tf('plan.rooms.hint', { n: suggestedRooms(), p: people });
   document.getElementById('priceHint').textContent = r.typed
     ? tf('plan.price.own', { x: fmt(r.night) })
     : tf('plan.price.est', { x: fmt(roundTo(r.estNight, 10)), s: t('plan.s.' + style) });
@@ -453,6 +527,57 @@ function render() {
 
   document.getElementById('sampleNotice').classList.toggle('is-sample', COSTS.isSample);
 }
+
+// ---- Budget mode: which places fit the budget? ----
+// Runs the same estimate for every place, keeps the ones that cost less than the budget.
+function renderBudget() {
+  const budget = parseFloat(document.getElementById('budgetInput').value);
+  const region = document.getElementById('budgetRegion').value;
+  const type = document.getElementById('budgetType').value;
+  const list = document.getElementById('bList');
+  const count = document.getElementById('bCount');
+
+  if (!(budget > 0)) { count.textContent = ''; list.innerHTML = `<p class="plan-hint">${t('plan.b.enter')}</p>`; return; }
+
+  const options = DATA.map((d, i) => i)
+    .filter(i => (region === 'All' || DATA[i].region === region) && (type === 'All' || DATA[i].type === type))
+    .map(i => ({ i, total: estimate(i, false).total }))
+    .sort((a, b) => a.total - b.total);              // cheapest first
+  const fits = options.filter(o => o.total <= budget);
+
+  count.textContent = tf('plan.b.count', { n: fits.length, t: options.length });
+  const shown = fits.length ? fits : options.slice(0, 3);
+  list.innerHTML = (fits.length ? '' : `<p class="res-warn">${t('plan.b.none')}</p>`) + shown.map(({ i, total }) => {
+    const d = DATA[i], diff = budget - total;
+    const note = diff >= 0 ? tf('plan.b.left', { x: fmt(roundTo(diff, 50)) }) : tf('plan.b.over', { x: fmt(roundTo(-diff, 50)) });
+    return `
+      <button type="button" class="b-item" data-i="${i}">
+        ${placeImage(d, 'b-thumb')}
+        <span class="b-body">
+          <b>${tName(d)}</b>
+          <small>${tLocation(d)} · ${tType(d.type)}</small>
+          <span class="b-cost">≈ ${fmt(roundTo(total, 50))} ${t('plan.sar')} <em class="${diff >= 0 ? 'ok' : 'over'}">${note}</em></span>
+        </span>
+        <span class="b-open">${t('plan.b.open')}</span>
+      </button>`;
+  }).join('');
+
+  // Open a place: switch to "I know where I'm going" with that place selected
+  list.querySelectorAll('.b-item').forEach(b => b.onclick = () => {
+    document.getElementById('toPlace').value = b.dataset.i;
+    setMode('place');
+    document.getElementById('toPlace').dispatchEvent(new Event('change'));
+    document.getElementById('planResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
+
+function setMode(mode) {
+  state.mode = mode;
+  document.querySelectorAll('.plan-mode button').forEach(b => b.classList.toggle('active', b.dataset.value === mode));
+}
+
+['budgetInput', 'budgetRegion', 'budgetType'].forEach(id =>
+  document.getElementById(id).addEventListener(id === 'budgetInput' ? 'input' : 'change', render));
 
 // ---- Inputs ----
 document.querySelectorAll('.stepper button').forEach(btn => btn.addEventListener('click', () => {

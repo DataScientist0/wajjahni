@@ -22,6 +22,7 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 | 🧭 **Directions** | Draws a route to a place on the map, or opens it in Google Maps |
 | 🧭 **Nearby services** | For every place, the 3 nearest gas stations, pharmacies, restaurants, cafes, and banks/ATMs, with distances and Google Maps directions. They also appear as icons on the map, with a panel to show or hide each type. Calculated in MySQL from Overture Maps data |
 | 💰 **Trip cost estimator** | A full trip budget: fuel or flights, hotel, food, and activities, based on adults, children, nights, rooms, car or plane, and travel style. Travelers can pick from **all nearby hotels** (4,400+ from Overture Maps, cleaned in MySQL), check the price on Google Maps, and type it in for an accurate total. *(Default prices are sample numbers for now)* |
+| 🎯 **Plan by budget** | Type a total budget and the estimator lists every place that fits it, cheapest first, with how much money is left. Filter by region or type, then open any place for the full breakdown |
 | ⏰ **Peak hours** | A bar chart showing how busy a place usually is at each hour, and whether it's busy right now |
 | 🌐 **Arabic & English** | Switch the whole site between English and Arabic (right-to-left), including place names and descriptions. Search works in both languages |
 | 🌙 **Light & dark mode** | Switch themes. Your choice is remembered next time |
