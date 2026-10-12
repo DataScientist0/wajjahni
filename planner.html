@@ -67,6 +67,25 @@
 
       <div class="plan-row">
         <div class="plan-field">
+          <span data-i18n="plan.adults">Adults</span>
+          <div class="stepper">
+            <button type="button" data-step="adults" data-d="-1" aria-label="−">−</button>
+            <output id="adults">2</output>
+            <button type="button" data-step="adults" data-d="1" aria-label="+">+</button>
+          </div>
+        </div>
+        <div class="plan-field">
+          <span><span data-i18n="plan.children">Children</span> <small class="plan-hint" data-i18n="plan.children.hint">(under 12)</small></span>
+          <div class="stepper">
+            <button type="button" data-step="children" data-d="-1" aria-label="−">−</button>
+            <output id="children">0</output>
+            <button type="button" data-step="children" data-d="1" aria-label="+">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-row">
+        <div class="plan-field">
           <span data-i18n="plan.nights">Nights</span>
           <div class="stepper">
             <button type="button" data-step="nights" data-d="-1" aria-label="−">−</button>
@@ -75,14 +94,15 @@
           </div>
         </div>
         <div class="plan-field">
-          <span data-i18n="plan.people">Travelers</span>
+          <span data-i18n="plan.rooms">Hotel rooms</span>
           <div class="stepper">
-            <button type="button" data-step="people" data-d="-1" aria-label="−">−</button>
-            <output id="people">2</output>
-            <button type="button" data-step="people" data-d="1" aria-label="+">+</button>
+            <button type="button" data-step="rooms" data-d="-1" aria-label="−">−</button>
+            <output id="rooms">1</output>
+            <button type="button" data-step="rooms" data-d="1" aria-label="+">+</button>
           </div>
         </div>
       </div>
+      <p class="plan-hint" id="roomsHint"></p>
 
       <h2 class="plan-section" data-i18n="plan.sec.travel">How you travel</h2>
 
@@ -111,6 +131,24 @@
           <button type="button" data-value="luxury"><b data-i18n="plan.style.luxury">💎 Luxury</b><small data-i18n="plan.style.luxury.d">Top hotels, fine dining</small></button>
         </div>
       </div>
+
+      <h2 class="plan-section" data-i18n="plan.sec.stay">Where you'll stay</h2>
+      <p class="plan-hint" data-i18n="plan.stay.intro">Pick a hotel near your destination (optional), check its price for your dates, and type it below for a more accurate total.</p>
+
+      <div class="plan-field">
+        <span id="hotelCount"></span>
+        <input type="search" id="hotelSearch" class="plan-input" data-i18n-placeholder="plan.hotel.search" placeholder="Search hotels by name…">
+        <div class="hotel-list" id="hotelList" role="listbox"></div>
+        <button type="button" class="hotel-more" id="hotelMore" data-i18n="plan.hotel.more">Show more hotels</button>
+      </div>
+
+      <div class="hotel-picked" id="hotelPicked"></div>
+
+      <label class="plan-field">
+        <span data-i18n="plan.price">Price per room per night (SAR)</span>
+        <input type="number" id="hotelPrice" class="plan-input" min="0" step="10" inputmode="numeric">
+        <small class="plan-hint" id="priceHint"></small>
+      </label>
     </form>
 
     <!-- ---------- The result ---------- -->
@@ -157,6 +195,7 @@
 
 <script src="data.js"></script>
 <script src="costs.js"></script>
+<script src="hotels.js"></script>
 <script src="app.js"></script>
 <script>
 // ---- Text for this page (added to the shared translations in app.js) ----
@@ -170,7 +209,19 @@ Object.assign(translations.en, {
   "plan.step2.t": "Pick how you travel", "plan.step2.d": "By car or by plane, and your travel style",
   "plan.step3.t": "See your estimate", "plan.step3.d": "A total and a breakdown that updates as you change anything",
   "plan.sec.trip": "Your trip", "plan.sec.travel": "How you travel",
-  "plan.from": "Starting from", "plan.to": "Going to", "plan.nights": "Nights", "plan.people": "Travelers",
+  "plan.from": "Starting from", "plan.to": "Going to", "plan.nights": "Nights",
+  "plan.adults": "Adults", "plan.children": "Children", "plan.children.hint": "(under 12)", "plan.rooms": "Hotel rooms",
+  "plan.rooms.hint": "Suggested: {n} room(s) for {p} traveler(s) (2 adults per room, children share). You can change it.",
+  "plan.sec.stay": "Where you'll stay",
+  "plan.stay.intro": "Pick a hotel near your destination (optional), check its price for your dates, and type it below for a more accurate total.",
+  "plan.hotel.count": "{n} hotels around {place}", "plan.hotel.none": "No hotels found near this place.",
+  "plan.hotel.search": "Search hotels by name…", "plan.hotel.more": "Show more hotels", "plan.hotel.nomatch": "No hotel matches your search.",
+  "plan.hotel.km": "{km} km away", "plan.hotel.chosen": "Your hotel", "plan.hotel.check": "🔎 Check the price on Google Maps", "plan.hotel.clear": "Remove",
+  "plan.price": "Price per room per night (SAR)",
+  "plan.price.est": "Leave it empty to use the estimate: about {x} SAR a night for a {s} trip in this region.",
+  "plan.price.own": "Using your price: {x} SAR a night.",
+  "plan.fact.hotel": "🏨 {h}", "plan.fact.cars": "🚗 {n} cars needed for {p} travelers",
+  "plan.fact.people": "👥 {a} adult(s), {c} child(ren)",
   "plan.transport": "Getting there", "plan.car": "🚗 By car", "plan.plane": "✈️ By plane",
   "plan.carsize": "Car type", "plan.car.small": "Small", "plan.car.sedan": "Sedan", "plan.car.suv": "SUV",
   "plan.style": "Travel style",
@@ -180,7 +231,7 @@ Object.assign(translations.en, {
   "plan.res.title": "Estimated total", "plan.sar": "SAR",
   "plan.range": "Usually between {a} and {b} SAR", "plan.pp": "About {x} SAR per person",
   "plan.fact.road": "🛣️ About {km} km by road each way", "plan.fact.drive": "⏱️ Around {h} of driving each way",
-  "plan.fact.air": "✈️ About {km} km by air each way", "plan.fact.rooms": "🛏️ {n} hotel room(s) for {p} traveler(s)",
+  "plan.fact.air": "✈️ About {km} km by air each way", "plan.fact.rooms": "🛏️ {n} hotel room(s) × {x} night(s)",
   "plan.hours": "{h} h", "plan.hours.min": "{h} h {m} min",
   "plan.warn.near": "This place is close to your city, so driving is usually easier and cheaper than flying.",
   "plan.warn.same": "This place is in or near your city, so there's almost no travel cost.",
@@ -189,8 +240,10 @@ Object.assign(translations.en, {
   "plan.how.title": "How is this calculated?",
   "plan.how.fuel": "Fuel: road distance × 2 (there and back) × {l} liters per 100 km × {p} SAR per liter.",
   "plan.how.flight": "Flights: a round-trip ticket per traveler based on distance, plus {d} SAR a day for a car or taxis at the destination.",
-  "plan.how.hotel": "Hotel: {r} SAR per room per night × {n} room(s) × {x} night(s). One room fits 2 people.",
-  "plan.how.food": "Food: {f} SAR per person per day × {p} traveler(s) × {d} day(s).",
+  "plan.how.hotel": "Hotel: {r} SAR per room per night × {n} room(s) × {x} night(s).",
+  "plan.how.food": "Food: {f} SAR per adult per day × {d} day(s). Children count as half.",
+  "plan.how.cars": "Driving: one car fits {n} people, so bigger groups need more cars (and more fuel).",
+  "plan.how.kids": "Children (under 12) pay {fl}% of a flight ticket, and half for food and activities.",
   "plan.how.act": "Activities: {a} SAR per person per day for tickets and tours.",
   "plan.how.range": "The range shows that real costs are often a bit lower or quite a bit higher than the average.",
   "plan.incl.title": "✅ Included", "plan.incl.1": "Getting there and back (fuel or flights)", "plan.incl.2": "Hotel nights",
@@ -208,7 +261,19 @@ Object.assign(translations.ar, {
   "plan.step2.t": "اختاري طريقة السفر", "plan.step2.d": "سيارة أو طيران، ومستوى الرحلة",
   "plan.step3.t": "شوفي التكلفة", "plan.step3.d": "المجموع والتفاصيل يتحدثون مع أي تغيير",
   "plan.sec.trip": "رحلتك", "plan.sec.travel": "طريقة السفر",
-  "plan.from": "من", "plan.to": "إلى", "plan.nights": "عدد الليالي", "plan.people": "عدد المسافرين",
+  "plan.from": "من", "plan.to": "إلى", "plan.nights": "عدد الليالي",
+  "plan.adults": "البالغين", "plan.children": "الأطفال", "plan.children.hint": "(أقل من ١٢ سنة)", "plan.rooms": "عدد الغرف",
+  "plan.rooms.hint": "المقترح: {n} غرفة لـ {p} مسافر (كل غرفة لشخصين بالغين، والأطفال معهم). تقدرين تغيرينه.",
+  "plan.sec.stay": "وين بتسكنين",
+  "plan.stay.intro": "اختاري فندق قريب من وجهتك (اختياري)، وشوفي سعره لتاريخ رحلتك، واكتبيه تحت عشان يطلع لك حساب أدق.",
+  "plan.hotel.count": "{n} فندق حول {place}", "plan.hotel.none": "ما لقينا فنادق قريبة من هالمكان.",
+  "plan.hotel.search": "ابحثي عن فندق بالاسم…", "plan.hotel.more": "اعرضي فنادق أكثر", "plan.hotel.nomatch": "ما فيه فندق بهالاسم.",
+  "plan.hotel.km": "يبعد {km} كم", "plan.hotel.chosen": "فندقك", "plan.hotel.check": "🔎 شوفي السعر في خرائط Google", "plan.hotel.clear": "إزالة",
+  "plan.price": "سعر الغرفة بالليلة (ريال)",
+  "plan.price.est": "إذا تركتيه فاضي نستخدم التقدير: حوالي {x} ريال بالليلة لرحلة {s} في هالمنطقة.",
+  "plan.price.own": "نحسب على سعرك: {x} ريال بالليلة.",
+  "plan.fact.hotel": "🏨 {h}", "plan.fact.cars": "🚗 تحتاجون {n} سيارات لـ {p} مسافر",
+  "plan.fact.people": "👥 {a} بالغ، {c} طفل",
   "plan.transport": "كيف بتروحين", "plan.car": "🚗 بالسيارة", "plan.plane": "✈️ بالطيارة",
   "plan.carsize": "نوع السيارة", "plan.car.small": "صغيرة", "plan.car.sedan": "سيدان", "plan.car.suv": "جيب (SUV)",
   "plan.style": "مستوى الرحلة",
@@ -218,7 +283,7 @@ Object.assign(translations.ar, {
   "plan.res.title": "التكلفة التقريبية", "plan.sar": "ريال",
   "plan.range": "غالباً بين {a} و {b} ريال", "plan.pp": "تقريباً {x} ريال للشخص",
   "plan.fact.road": "🛣️ حوالي {km} كم بالطريق (رايح)", "plan.fact.drive": "⏱️ حوالي {h} سواقة (رايح)",
-  "plan.fact.air": "✈️ حوالي {km} كم بالطيارة (رايح)", "plan.fact.rooms": "🛏️ {n} غرفة لـ {p} مسافر",
+  "plan.fact.air": "✈️ حوالي {km} كم بالطيارة (رايح)", "plan.fact.rooms": "🛏️ {n} غرفة × {x} ليلة",
   "plan.hours": "{h} ساعة", "plan.hours.min": "{h} ساعة و {m} دقيقة",
   "plan.warn.near": "المكان قريب من مدينتك، فالسيارة غالباً أسهل وأرخص من الطيارة.",
   "plan.warn.same": "المكان داخل مدينتك أو قريب منها، فتكلفة الطريق تقريباً ما تذكر.",
@@ -227,8 +292,10 @@ Object.assign(translations.ar, {
   "plan.how.title": "كيف انحسبت التكلفة؟",
   "plan.how.fuel": "البنزين: مسافة الطريق × ٢ (رايح وراجع) × {l} لتر لكل ١٠٠ كم × {p} ريال للتر.",
   "plan.how.flight": "الطيران: تذكرة ذهاب وعودة لكل مسافر حسب المسافة، وفوقها {d} ريال باليوم لسيارة أو تاكسي هناك.",
-  "plan.how.hotel": "الفندق: {r} ريال للغرفة بالليلة × {n} غرفة × {x} ليلة. كل غرفة لشخصين.",
-  "plan.how.food": "الأكل: {f} ريال للشخص باليوم × {p} مسافر × {d} يوم.",
+  "plan.how.hotel": "الفندق: {r} ريال للغرفة بالليلة × {n} غرفة × {x} ليلة.",
+  "plan.how.food": "الأكل: {f} ريال للشخص البالغ باليوم × {d} يوم. الطفل يُحسب بنص.",
+  "plan.how.cars": "السيارة: كل سيارة تشيل {n} أشخاص، فالمجموعات الكبيرة تحتاج سيارات أكثر (وبنزين أكثر).",
+  "plan.how.kids": "الأطفال (أقل من ١٢ سنة): تذكرة الطيارة {fl}٪ من سعر البالغ، والأكل والأنشطة بالنص.",
   "plan.how.act": "الأنشطة: {a} ريال للشخص باليوم للتذاكر والجولات.",
   "plan.how.range": "المدى يوضح إن التكلفة الحقيقية أحياناً أقل شوي من المتوسط، وأحياناً أعلى بواجد.",
   "plan.incl.title": "✅ يشمل", "plan.incl.1": "الطريق رايح وراجع (بنزين أو طيران)", "plan.incl.2": "ليالي الفندق",
@@ -236,6 +303,8 @@ Object.assign(translations.ar, {
   "plan.excl.title": "❌ ما يشمل", "plan.excl.1": "التسوق والهدايا",
   "plan.excl.2": "ارتفاع الأسعار في الإجازات والمواسم (مثل العيد وموسم الرياض)", "plan.excl.3": "المواقف وصيانة السيارة"
 });
+Object.assign(translations.en, { "plan.s.budget": "budget", "plan.s.mid": "comfortable", "plan.s.luxury": "luxury" });
+Object.assign(translations.ar, { "plan.s.budget": "اقتصادية", "plan.s.mid": "مريحة", "plan.s.luxury": "فاخرة" });
 translations.en["nav.planner"] = translations.en["nav.planner"] || "Trip cost";
 translations.ar["nav.planner"] = translations.ar["nav.planner"] || "تكلفة الرحلة";
 
@@ -247,8 +316,14 @@ const fmt = n => Math.round(n).toLocaleString('en-US');
 const roundTo = (n, step) => Math.round(n / step) * step;
 
 // ---- Current choices ----
-const state = { nights: 3, people: 2, transport: 'car', car: 'sedan', style: 'mid' };
-const LIMITS = { nights: [0, 30], people: [1, 20] };
+const state = { adults: 2, children: 0, nights: 3, rooms: 1, transport: 'car', car: 'sedan', style: 'mid' };
+const LIMITS = { adults: [1, 20], children: [0, 20], nights: [0, 30], rooms: [1, 20] };
+let roomsTouched = false;     // once the user changes rooms, stop suggesting
+let chosenHotel = null;       // index in HOTELS, or null
+let hotelShown = 20;          // how many hotels are listed (grows with "Show more")
+
+// 2 adults per room; children share with the adults
+const suggestedRooms = () => Math.max(1, Math.ceil(state.adults / 2));
 
 // ---- Fill the two dropdowns ----
 function fillSelects() {
@@ -279,36 +354,53 @@ function estimate() {
   const C = COSTS;
   const start = START_CITIES[+document.getElementById('fromCity').value];
   const place = DATA[+document.getElementById('toPlace').value];
-  const { nights, people, transport, car, style } = state;
+  const { adults, children, nights, rooms, transport, car, style } = state;
 
   const days = nights + 1;                        // e.g. 3 nights = 4 days
-  const rooms = Math.ceil(people / 2);            // one room for every 2 people
+  const people = adults + children;
+  const k = C.childFactor;
+  const eaters = adults + children * k.food;      // "adult-equivalents" for food
+  const doers = adults + children * k.activities; // ... and for activities
+  const cars = Math.ceil(people / C.peoplePerCar);
   const rf = C.regionFactor[place.region] || 1;   // region price level (1 = average)
+
+  // Hotel price: what the user typed, or the estimate for this style and region
+  const estNight = C.hotelPerRoomNight[style] * rf;
+  const typed = parseFloat(document.getElementById('hotelPrice').value);
+  const night = typed > 0 ? typed : estNight;
 
   const airKm = haversineKm(start.lat, start.lon, place.latitude, place.longitude);
   const roadKm = airKm * C.roadFactor;
 
   const parts = [];
   if (transport === 'car') {
-    const liters = (roadKm * 2) * C.carLitersPer100km[car] / 100;
+    const liters = (roadKm * 2) * C.carLitersPer100km[car] / 100 * cars;
     parts.push({ key: 'plan.cat.transport', value: liters * C.fuelPricePerLiter });
   } else {
     const ticket = (C.flight.base + C.flight.perKm * airKm) * C.flightStyleFactor[style];
-    parts.push({ key: 'plan.cat.flight', value: ticket * people + C.localTransportPerDay[style] * days });
+    const tickets = adults + children * k.flight;
+    parts.push({ key: 'plan.cat.flight', value: ticket * tickets + C.localTransportPerDay[style] * days * cars });
   }
-  parts.push({ key: 'plan.cat.hotel', value: C.hotelPerRoomNight[style] * rooms * nights * rf });
-  parts.push({ key: 'plan.cat.food', value: C.foodPerPersonDay[style] * people * days * rf });
-  parts.push({ key: 'plan.cat.activities', value: C.activitiesPerPersonDay[style] * people * days * rf });
+  parts.push({ key: 'plan.cat.hotel', value: night * rooms * nights });
+  parts.push({ key: 'plan.cat.food', value: C.foodPerPersonDay[style] * eaters * days * rf });
+  parts.push({ key: 'plan.cat.activities', value: C.activitiesPerPersonDay[style] * doers * days * rf });
 
   const total = parts.reduce((s, p) => s + p.value, 0);
-  return { start, place, days, rooms, airKm, roadKm, parts, total };
+  return { start, place, days, people, cars, night, estNight, typed: typed > 0, airKm, roadKm, parts, total };
 }
 
 // ---- Show the result ----
 function render() {
   const r = estimate();
   const C = COSTS;
-  const { nights, people, transport, car, style } = state;
+  const { adults, children, nights, rooms, transport, car, style } = state;
+  const people = r.people;
+
+  document.getElementById('roomsHint').textContent = tf('plan.rooms.hint', { n: suggestedRooms(), p: people });
+  document.getElementById('priceHint').textContent = r.typed
+    ? tf('plan.price.own', { x: fmt(r.night) })
+    : tf('plan.price.est', { x: fmt(roundTo(r.estNight, 10)), s: t('plan.s.' + style) });
+  document.getElementById('hotelPrice').placeholder = fmt(roundTo(r.estNight, 10));
 
   document.getElementById('carSizeField').style.display = transport === 'car' ? '' : 'none';
 
@@ -318,16 +410,18 @@ function render() {
   document.getElementById('resPerPerson').textContent = people > 1 ? tf('plan.pp', { x: fmt(roundTo(r.total / people, 10)) }) : '';
 
   // Quick facts about the trip
-  const facts = [];
+  const facts = [tf('plan.fact.people', { a: adults, c: children })];
   if (transport === 'car') {
     const hours = r.roadKm / C.avgDrivingSpeedKmh;
     const h = Math.floor(hours), m = roundTo((hours - h) * 60, 15) % 60;
     facts.push(tf('plan.fact.road', { km: fmt(roundTo(r.roadKm, 10)) }));
     facts.push(tf('plan.fact.drive', { h: m ? tf('plan.hours.min', { h, m }) : tf('plan.hours', { h: Math.max(h, 1) }) }));
+    if (r.cars > 1) facts.push(tf('plan.fact.cars', { n: r.cars, p: people }));
   } else {
     facts.push(tf('plan.fact.air', { km: fmt(roundTo(r.airKm, 10)) }));
   }
-  if (nights > 0) facts.push(tf('plan.fact.rooms', { n: r.rooms, p: people }));
+  if (nights > 0) facts.push(tf('plan.fact.rooms', { n: rooms, x: nights }));
+  if (nights > 0 && chosenHotel !== null) facts.push(tf('plan.fact.hotel', { h: escHTML(HOTELS[chosenHotel][0]) }));
   document.getElementById('resFacts').innerHTML = facts.map(f => `<div>${f}</div>`).join('');
 
   // Warnings
@@ -349,8 +443,10 @@ function render() {
   const how = [];
   if (transport === 'car') how.push(tf('plan.how.fuel', { l: C.carLitersPer100km[car], p: C.fuelPricePerLiter }));
   else how.push(tf('plan.how.flight', { d: C.localTransportPerDay[style] }));
-  how.push(tf('plan.how.hotel', { r: fmt(C.hotelPerRoomNight[style]), n: r.rooms, x: nights }));
-  how.push(tf('plan.how.food', { f: C.foodPerPersonDay[style], p: people, d: r.days }));
+  if (transport === 'car' && people > C.peoplePerCar) how.push(tf('plan.how.cars', { n: C.peoplePerCar }));
+  how.push(tf('plan.how.hotel', { r: fmt(roundTo(r.night, 10)), n: rooms, x: nights }));
+  how.push(tf('plan.how.food', { f: C.foodPerPersonDay[style], d: r.days }));
+  if (children > 0) how.push(tf('plan.how.kids', { fl: Math.round(C.childFactor.flight * 100) }));
   how.push(tf('plan.how.act', { a: C.activitiesPerPersonDay[style] }));
   how.push(t('plan.how.range'));
   document.getElementById('resHow').innerHTML = how.map(h => `<li>${h}</li>`).join('');
@@ -362,17 +458,66 @@ function render() {
 document.querySelectorAll('.stepper button').forEach(btn => btn.addEventListener('click', () => {
   const key = btn.dataset.step, [lo, hi] = LIMITS[key];
   state[key] = Math.min(hi, Math.max(lo, state[key] + (+btn.dataset.d)));
-  document.getElementById(key).textContent = state[key];
+  if (key === 'rooms') roomsTouched = true;
+  if (key === 'adults' && !roomsTouched) state.rooms = suggestedRooms();
+  ['adults', 'children', 'nights', 'rooms'].forEach(k => document.getElementById(k).textContent = state[k]);
   render();
 }));
+
+// ---- Hotels around the destination ----
+function escHTML(s) {
+  return String(s).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+}
+function currentPlaceIndex() { return +document.getElementById('toPlace').value; }
+function hotelsForPlace() { return PLACE_HOTELS[String(currentPlaceIndex() + 1)] || []; }
+
+function renderHotels() {
+  const list = hotelsForPlace();
+  const place = DATA[currentPlaceIndex()];
+  const q = document.getElementById('hotelSearch').value.trim().toLowerCase();
+  const matches = q ? list.filter(([h]) => HOTELS[h][0].toLowerCase().includes(q)) : list;
+
+  document.getElementById('hotelCount').textContent = list.length
+    ? tf('plan.hotel.count', { n: fmt(list.length), place: tName(place) }) : t('plan.hotel.none');
+
+  const box = document.getElementById('hotelList');
+  box.innerHTML = matches.slice(0, hotelShown).map(([h, km]) => `
+    <button type="button" class="hotel-item${h === chosenHotel ? ' active' : ''}" data-h="${h}">
+      <span>${escHTML(HOTELS[h][0])}</span><small>${tf('plan.hotel.km', { km })}</small>
+    </button>`).join('') || (list.length ? `<p class="plan-hint">${t('plan.hotel.nomatch')}</p>` : '');
+  box.querySelectorAll('.hotel-item').forEach(b => b.onclick = () => { chosenHotel = +b.dataset.h; renderHotels(); renderPicked(); render(); });
+  document.getElementById('hotelMore').style.display = matches.length > hotelShown ? '' : 'none';
+}
+
+function renderPicked() {
+  const el = document.getElementById('hotelPicked');
+  if (chosenHotel === null) { el.innerHTML = ''; el.style.display = 'none'; return; }
+  const [name, lat, lon] = HOTELS[chosenHotel];
+  const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}%20${lat},${lon}`;
+  el.style.display = '';
+  el.innerHTML = `
+    <div><small>${t('plan.hotel.chosen')}</small><b>${escHTML(name)}</b></div>
+    <a href="${url}" target="_blank" rel="noopener" class="gmaps-btn">${t('plan.hotel.check')}</a>
+    <button type="button" class="hotel-clear" id="hotelClear">${t('plan.hotel.clear')}</button>`;
+  document.getElementById('hotelClear').onclick = () => { chosenHotel = null; renderHotels(); renderPicked(); render(); };
+}
+
+document.getElementById('hotelSearch').addEventListener('input', () => { hotelShown = 20; renderHotels(); });
+document.getElementById('hotelMore').addEventListener('click', () => { hotelShown += 30; renderHotels(); });
+document.getElementById('hotelPrice').addEventListener('input', render);
 document.querySelectorAll('.seg').forEach(seg => seg.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => {
   seg.querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
   state[seg.dataset.name] = btn.dataset.value;
   render();
 })));
 document.getElementById('fromCity').addEventListener('change', render);
-document.getElementById('toPlace').addEventListener('change', render);
-document.addEventListener('langchange', () => { fillSelects(); render(); });
+document.getElementById('toPlace').addEventListener('change', () => {
+  // A new destination means a new list of hotels
+  chosenHotel = null; hotelShown = 20;
+  document.getElementById('hotelSearch').value = '';
+  renderHotels(); renderPicked(); render();
+});
+document.addEventListener('langchange', () => { fillSelects(); renderHotels(); renderPicked(); render(); });
 </script>
 </body>
 </html>

@@ -12,6 +12,7 @@ const COSTS = {
   carLitersPer100km: { small: 7, sedan: 9, suv: 13 },
   roadFactor: 1.3,                        // roads are longer than a straight line, so straight-line km × 1.3
   avgDrivingSpeedKmh: 100,                // used for the rough driving time
+  peoplePerCar: 5,                        // a bigger group needs more than one car
 
   // ---- Flying ----
   // Round-trip ticket per person ≈ base + (perKm × one-way km), then × the style factor
@@ -24,6 +25,9 @@ const COSTS = {
   hotelPerRoomNight: { budget: 250, mid: 550, luxury: 1400 }, // one room fits 2 people
   foodPerPersonDay:  { budget: 90,  mid: 170, luxury: 380 },
   activitiesPerPersonDay: { budget: 30, mid: 90, luxury: 220 }, // tickets, tours, entry fees
+
+  // Children (under 12) cost less: share of an adult's price
+  childFactor: { flight: 0.75, food: 0.5, activities: 0.5 },
 
   // Some regions cost more or less than average. 1 = average.
   // To be calculated later from the official tourism spending data.

@@ -965,3 +965,36 @@ html[dir="rtl"] .hero.photo-hero::after { background: linear-gradient(270deg, rg
   .plan-card { padding: 18px 16px; }
   .seg-cards { flex-direction: column; }
 }
+
+/* Trip cost estimator: hotels and extra inputs */
+.plan-hint { font-size: 12px; color: var(--text-muted); margin: -6px 0 14px; font-weight: 400; }
+.plan-field .plan-hint { margin: 0; }
+.plan-input {
+  width: 100%; padding: 12px 14px; border-radius: 12px; font-size: 15px; font-family: inherit;
+  border: 1px solid var(--border); background: var(--bg); color: var(--text);
+}
+.plan-input:focus, .plan-field select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.hotel-list {
+  max-height: 280px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px;
+  padding: 2px; margin-top: 2px;
+}
+.hotel-item {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  text-align: start; padding: 10px 12px; border-radius: 10px; cursor: pointer;
+  border: 1px solid var(--border); background: var(--bg); color: var(--text); font: inherit; font-size: 14px;
+}
+.hotel-item small { flex: none; color: var(--text-muted); font-size: 12px; }
+.hotel-item:hover { border-color: var(--accent); }
+.hotel-item.active { background: var(--accent); border-color: var(--accent); color: #FFF8EF; }
+.hotel-item.active small { color: #FFF8EF; opacity: .85; }
+.hotel-more {
+  align-self: flex-start; background: none; border: 0; padding: 4px 0; cursor: pointer;
+  color: var(--accent-strong); font: inherit; font-size: 13px; font-weight: 600;
+}
+.hotel-picked {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 16px;
+  padding: 12px 14px; border-radius: 12px; background: var(--chip-bg); border: 1px solid var(--border);
+}
+.hotel-picked > div { flex: 1 1 180px; display: flex; flex-direction: column; }
+.hotel-picked small { font-size: 12px; color: var(--text-muted); }
+.hotel-clear { background: none; border: 0; cursor: pointer; color: var(--text-muted); font: inherit; font-size: 13px; text-decoration: underline; }

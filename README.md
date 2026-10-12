@@ -21,7 +21,7 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 | 📍 **Distance from me** | Uses your location (only if you allow it) to sort places from nearest to farthest |
 | 🧭 **Directions** | Draws a route to a place on the map, or opens it in Google Maps |
 | 🧭 **Nearby services** | For every place, the 3 nearest gas stations, pharmacies, restaurants, cafes, and banks/ATMs, with distances and Google Maps directions. They also appear as icons on the map, with a panel to show or hide each type. Calculated in MySQL from Overture Maps data |
-| 💰 **Trip cost estimator** | A rough budget for a trip to any place: fuel or flights, hotel, food, and activities, based on the number of nights, travelers, and travel style. *(Currently uses sample numbers)* |
+| 💰 **Trip cost estimator** | A full trip budget: fuel or flights, hotel, food, and activities, based on adults, children, nights, rooms, car or plane, and travel style. Travelers can pick from **all nearby hotels** (4,400+ from Overture Maps, cleaned in MySQL), check the price on Google Maps, and type it in for an accurate total. *(Default prices are sample numbers for now)* |
 | ⏰ **Peak hours** | A bar chart showing how busy a place usually is at each hour, and whether it's busy right now |
 | 🌐 **Arabic & English** | Switch the whole site between English and Arabic (right-to-left), including place names and descriptions. Search works in both languages |
 | 🌙 **Light & dark mode** | Switch themes. Your choice is remembered next time |
@@ -113,6 +113,7 @@ wajjahni/
 ├── map.html        # Interactive map
 ├── planner.html    # Trip cost estimator
 ├── costs.js        # The numbers used by the trip cost estimator
+├── hotels.js       # Hotels around each place (built from data/clean/place_hotels.csv)
 ├── contact.html    # Contact page
 ├── styles.css      # All styles, themes, and mobile layout
 ├── app.js          # Shared logic: language, theme, distance, peak hours, popups
@@ -120,7 +121,7 @@ wajjahni/
 ├── services.js     # Nearest services for each place (from the SQL results)
 ├── data-cleaning.ipynb  # Cleans the tourism statistics
 ├── services.ipynb  # Pulls services from Overture Maps with DuckDB
-├── sql/            # MySQL scripts, run in order: 01 import services → 02 import places → 03 clean services → 04 nearest services
+├── sql/            # MySQL scripts, run in order: 01 import services → 02 import places → 03 clean services → 04 nearest services → 05 import hotels → 06 clean hotels → 07 hotels near places
 ├── data/
 │   ├── raw/        # Original tourism files, never edited by hand
 │   └── clean/      # Clean tables made by the notebook
