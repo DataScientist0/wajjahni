@@ -42,10 +42,10 @@ const translations = {
   ar: {
     "nav.home": "الرئيسية", "nav.places": "الأماكن", "nav.map": "الخريطة", "nav.planner": "تكلفة الرحلة", "nav.contact": "تواصل", "nav.meta": "٧٤ مكان في ١٣ منطقة",
     "hero.title": "خريطة تجمع كل ركن بالسعودية يستاهل الرحلة.",
-    "hero.lede": "قرى تراثية، مسارات جبلية، جزر بالبحر الأحمر، ومواقع دينية — فلتري حسب المنطقة أو النوع، وشوفي وش فيها فعلاً.",
+    "hero.lede": "قرى تراثية، مسارات جبلية، جزر بالبحر الأحمر، ومواقع دينية — فلتر حسب المنطقة أو النوع، وشوف وش فيها فعلاً.",
     "stat.places": "مكان على الخريطة", "stat.regions": "منطقة", "stat.types": "نوع مكان",
-    "cta.browse": "تصفح الأماكن", "cta.map": "افتحي الخريطة",
-    "highlights.title": "وش بتلقين",
+    "cta.browse": "تصفح الأماكن", "cta.map": "افتح الخريطة",
+    "highlights.title": "وش بتلقى",
     "hl.historical.t": "تاريخي وتراثي", "hl.historical.d": "من مقابر الحِجر النبطية إلى جدران الدرعية الطينية — مواقع تحكي قصة المملكة.",
     "hl.natural.t": "مناظر طبيعية", "hl.natural.d": "جروف صحراوية، جزر بالبحر الأحمر، وقمم جبلية بكل مناخات المملكة.",
     "hl.religious.t": "مواقع دينية", "hl.religious.d": "الحرمان الشريفان والمساجد التاريخية اللي شكّلت بدايات التاريخ الإسلامي.",
@@ -55,24 +55,24 @@ const translations = {
     "svc.fuel": "⛽ محطات بنزين", "svc.pharmacy": "💊 صيدليات", "svc.restaurant": "🍽️ مطاعم", "svc.cafe": "☕ مقاهي", "svc.bank": "🏦 بنوك وصرافات",
     "nearby.source": "بيانات الخدمات من Overture Maps، وقد لا تكون كاملة أو محدثة.", "nearby.none": "ما لقينا خدمات قريبة.",
     "footer.text": "وجّهني — مشروع طلابي شخصي. التقييمات وأوقات الذروة بيانات تجريبية، مو مصدر سياحي رسمي. © 2026 نجلاء. جميع الحقوق محفوظة.",
-    "page.places.title": "كل الأماكن", "page.places.lede": "ابحثي، فلتري، أو رتبي حسب المسافة منك.",
-    "page.map.title": "الخريطة", "page.map.lede": "كل مكان موضّح على الخريطة — فلتري، ابحثي، أو اضغطي على أي نقطة للتفاصيل.",
-    "search.placeholder": "ابحثي عن مكان، مثلاً حِجر، فرسان...",
+    "page.places.title": "كل الأماكن", "page.places.lede": "ابحث، فلتر، أو رتّب حسب المسافة منك.",
+    "page.map.title": "الخريطة", "page.map.lede": "كل مكان موضّح على الخريطة — فلتر، ابحث، أو اضغط على أي نقطة للتفاصيل.",
+    "search.placeholder": "ابحث عن مكان، مثلاً حِجر، فرسان...",
     "locate.btn": "📍 المسافة مني", "locate.btn.active": "📍 مرتبة حسب المسافة",
     "locate.status": "الأماكن تحت مرتبة الحين من الأقرب للأبعد.",
     "locate.status.locating": "جاري تحديد موقعك…",
-    "locate.status.error": "ما قدرنا نحدد موقعك — تأكدي من إذن الموقع بالمتصفح.",
+    "locate.status.error": "ما قدرنا نحدد موقعك — تأكد من إذن الموقع بالمتصفح.",
     "chip.all": "الكل",
-    "peak.btn": "🕐 أوقات الذروة", "directions.btn": "📍 الاتجاهات", "gmaps.open": "📍 افتحي في خرائط Google",
+    "peak.btn": "🕐 أوقات الذروة", "directions.btn": "📍 الاتجاهات", "gmaps.open": "📍 افتح في خرائط Google",
     "empty": "ما فيه أماكن مطابقة لهذي الفلاتر.",
-    "empty.notfound": "ما لقينا «{q}» في وجّهني.", "empty.suggest": "📩 اقترحي هالمكان علينا", "empty.gmaps": "🗺️ دوري عليه في خرائط Google",
+    "empty.notfound": "ما لقينا «{q}» في وجّهني.", "empty.suggest": "📩 اقترح هالمكان علينا", "empty.gmaps": "🗺️ دوّر عليه في خرائط Google",
     "empty.mail.subject": "اقتراح مكان: {q}", "empty.mail.body": "هلا فريق وجّهني،\n\nبحثت عن «{q}» وما لقيته. أتمنى تضيفونه.\n\nشكراً!",
     "peak.sub": "مستوى الازدحام المعتاد حسب الساعة (بيانات توضيحية)",
     "peak.notbusy": "مو مزدحم كثير الحين", "peak.bitbusy": "عادة يكون مزدحم شوي بهذا الوقت", "peak.verybusy": "عادة يكون مزدحم جدًا الحين",
     "peak.basedon": "بناءً على الساعة",
     "list.head": "الأماكن",
-    "contact.title": "تواصلي معنا", "contact.lede": "لقيتِ خطأ، أو تبين تقترحين مكان ينضاف للخريطة؟ تواصلي وياني.",
-    "route.hint.first": "اضغطي \"المسافة مني\" أول عشان أحسب لك مسار القيادة لـ",
+    "contact.title": "تواصل معنا", "contact.lede": "لقيت خطأ، أو تبي تقترح مكان ينضاف للخريطة؟ تواصل معنا.",
+    "route.hint.first": "اضغط \"المسافة مني\" أول عشان أحسب لك مسار القيادة لـ",
     "route.calculating": "جاري حساب المسار لـ",
     "route.to": "إلى", "route.drive": "دقيقة بالسيارة", "route.error": "ما قدرنا نحسب مسار لـ",
     "best.in": "أفضل وقت", "km.away": "كم", "km.from.you": "كم منك",
@@ -135,6 +135,61 @@ function applyLanguage(lang) {
 
   document.dispatchEvent(new CustomEvent('langchange'));
 }
+
+// ---- Digits: Arabic numerals (٠١٢٣٤٥٦٧٨٩) in Arabic, Western (0123456789) in English ----
+// The page builds its numbers in many places (counts, ratings, km, prices, hours...),
+// so instead of changing each one, we convert the digits in the page text itself,
+// and a MutationObserver converts anything added or changed later.
+// Skipped: form inputs (people type numbers there), photo licenses like "CC BY 2.0",
+// the map's attribution line, and anything marked data-keep-digits.
+const AR_DIGITS = '٠١٢٣٤٥٦٧٨٩';
+const SKIP_DIGITS = 'script, style, input, textarea, select, .photo-credit, .leaflet-control-attribution, [data-keep-digits]';
+
+function convertDigits(text, lang) {
+  if (lang === 'ar') {
+    return text
+      .replace(/(\d)\.(\d)/g, '$1٫$2')      // decimal point: 4.7 → ٤٫٧
+      .replace(/(\d),(\d)/g, '$1٬$2')        // thousands: 1,200 → ١٬٢٠٠
+      .replace(/\d/g, d => AR_DIGITS[d]);
+  }
+  return text
+    .replace(/[٠-٩]/g, d => AR_DIGITS.indexOf(d))
+    .replace(/(\d)٫(\d)/g, '$1.$2')
+    .replace(/(\d)٬(\d)/g, '$1,$2');
+}
+
+function convertDigitsIn(root) {
+  if (root.nodeType === Node.TEXT_NODE) {
+    if (root.parentElement && root.parentElement.closest(SKIP_DIGITS)) return;
+    const next = convertDigits(root.nodeValue, currentLang);
+    if (next !== root.nodeValue) root.nodeValue = next;   // only write when something changed
+    return;
+  }
+  if (root.nodeType !== Node.ELEMENT_NODE || root.closest(SKIP_DIGITS)) return;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(convertDigitsIn);
+  root.querySelectorAll('[placeholder]').forEach(el => {
+    const next = convertDigits(el.getAttribute('placeholder'), currentLang);
+    if (next !== el.getAttribute('placeholder')) el.setAttribute('placeholder', next);
+  });
+}
+
+const digitObserver = new MutationObserver(mutations => {
+  mutations.forEach(m => {
+    if (m.type === 'characterData') convertDigitsIn(m.target);
+    else if (m.type === 'attributes') {
+      const v = m.target.getAttribute('placeholder') || '', next = convertDigits(v, currentLang);
+      if (next !== v) m.target.setAttribute('placeholder', next);
+    }
+    else m.addedNodes.forEach(convertDigitsIn);
+  });
+});
+document.addEventListener('langchange', () => convertDigitsIn(document.body));
+document.addEventListener('DOMContentLoaded', () => {
+  digitObserver.observe(document.body, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['placeholder'] });
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   applyLanguage(currentLang);
