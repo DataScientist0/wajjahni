@@ -118,7 +118,7 @@ function filteredIndexes() {
     const d = DATA[i];
     if (activeRegion !== 'All' && d.region !== activeRegion) return false;
     if (activeType !== 'All' && d.type !== activeType) return false;
-    if (searchTerm && ![d.place_name, d.place_name_ar, d.region, tRegion(d.region), d.city, d.city_ar].some(v => (v || '').toLowerCase().includes(searchTerm))) return false;
+    if (searchTerm && !matchesSearch(d, searchTerm)) return false;
     return true;
   });
   if (userLocation) idxs = idxs.sort((a, b) => distanceTo(DATA[a]) - distanceTo(DATA[b]));

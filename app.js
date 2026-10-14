@@ -26,7 +26,9 @@ const translations = {
     "chip.all": "All",
     "peak.btn": "🕐 Peak hours", "directions.btn": "📍 Directions", "gmaps.open": "📍 Open in Google Maps",
     "empty": "No places match these filters.",
-    "empty.notfound": "We couldn't find “{q}” on Wajjahni.", "empty.suggest": "📩 Suggest this place", "empty.gmaps": "🗺️ Search on Google Maps",
+    "empty.notfound": "We couldn't find “{q}” on Wajjahni.",
+    "empty.didyoumean": "Did you mean:", "empty.typo": "Check the spelling, or try another name.",
+    "empty.invalid": "“{q}” doesn't look like a place name. Try the name of a place or a city, e.g. AlUla or Abha.", "empty.suggest": "📩 Suggest this place", "empty.gmaps": "🗺️ Search on Google Maps",
     "empty.mail.subject": "Place suggestion: {q}", "empty.mail.body": "Hi Wajjahni team,\n\nI searched for “{q}” but couldn't find it. Please consider adding it.\n\nThanks!",
     "peak.sub": "Typical crowd levels by hour (illustrative data)",
     "peak.notbusy": "Not too busy right now", "peak.bitbusy": "Usually a bit busy at this hour", "peak.verybusy": "Usually very busy right now",
@@ -65,7 +67,9 @@ const translations = {
     "chip.all": "الكل",
     "peak.btn": "🕐 أوقات الذروة", "directions.btn": "📍 الاتجاهات", "gmaps.open": "📍 افتح في خرائط Google",
     "empty": "ما فيه أماكن مطابقة لهذي الفلاتر.",
-    "empty.notfound": "ما لقينا «{q}» في وجّهني.", "empty.suggest": "📩 اقترح هالمكان علينا", "empty.gmaps": "🗺️ دوّر عليه في خرائط Google",
+    "empty.notfound": "ما لقينا «{q}» في وجّهني.",
+    "empty.didyoumean": "قصدك:", "empty.typo": "تأكد من الإملاء، أو جرب اسم ثاني.",
+    "empty.invalid": "«{q}» ما يبدو اسم مكان. جرب تكتب اسم مكان أو مدينة، مثلاً العلا أو أبها.", "empty.suggest": "📩 اقترح هالمكان علينا", "empty.gmaps": "🗺️ دوّر عليه في خرائط Google",
     "empty.mail.subject": "اقتراح مكان: {q}", "empty.mail.body": "هلا فريق وجّهني،\n\nبحثت عن «{q}» وما لقيته. أتمنى تضيفونه.\n\nشكراً!",
     "peak.sub": "مستوى الازدحام المعتاد حسب الساعة (بيانات توضيحية)",
     "peak.notbusy": "مو مزدحم كثير الحين", "peak.bitbusy": "عادة يكون مزدحم شوي بهذا الوقت", "peak.verybusy": "عادة يكون مزدحم جدًا الحين",
@@ -343,16 +347,89 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Empty search results: when the visitor typed something, offer to suggest the place or look it up on Google Maps
+// ---- Search ----
+// Make text easy to compare: lower case, no Arabic diacritics, and one form for letters
+// people often write differently (أ إ آ → ا, ة → ه, ى → ي, ؤ → و, ئ → ي), Arabic digits → 0-9.
+function normalizeSearch(s) {
+  return String(s || '').toLowerCase()
+    .replace(/[\u064B-\u065F\u0670\u0640]/g, '')          // tashkeel and tatweel
+    .replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي')
+    .replace(/ؤ/g, 'و').replace(/ئ/g, 'ي')
+    .replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d))
+    .replace(/[^\p{L}\p{N}]+/gu, ' ').trim();               // punctuation → space
+}
+
+// The texts a place can be found by
+function searchFields(d) {
+  return [d.place_name, d.place_name_ar, d.region, tRegion(d.region), d.city, d.city_ar];
+}
+
+function matchesSearch(d, query) {
+  if (!String(query || '').trim()) return true;     // empty search box: show everything
+  const q = normalizeSearch(query);
+  if (!q) return false;                             // only symbols (e.g. "@@"): nothing matches
+  return searchFields(d).some(v => normalizeSearch(v).includes(q));
+}
+
+// How many letter changes (add / remove / replace) it takes to make `q` appear somewhere inside `text`.
+// 0 = q is in the text exactly. Used to catch spelling mistakes like "Hegre" → "Hegra".
+function fuzzyDistance(q, text) {
+  let prev = new Array(text.length + 1).fill(0);   // a match can start anywhere in the text
+  for (let i = 1; i <= q.length; i++) {
+    const cur = [i];
+    for (let j = 1; j <= text.length; j++) {
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (q[i - 1] === text[j - 1] ? 0 : 1));
+    }
+    prev = cur;
+  }
+  return Math.min(...prev);                        // a match can end anywhere too
+}
+
+// The (up to 3) places whose names are closest to what was typed
+function suggestPlaces(query) {
+  const q = normalizeSearch(query);
+  if (q.length < 3) return [];
+  const maxMistakes = Math.max(1, Math.floor(q.length / 3));   // e.g. 1 mistake for 3–5 letters, 2 for 6–8
+  return DATA.map((d, i) => ({
+      i, dist: Math.min(...searchFields(d).filter(Boolean).map(v => fuzzyDistance(q, normalizeSearch(v))))
+    }))
+    .filter(s => s.dist <= maxMistakes)
+    .sort((a, b) => a.dist - b.dist)
+    .slice(0, 3)
+    .map(s => s.i);
+}
+
+// Clicking a suggestion puts that place's name in the search box
+function useSuggestion(i) {
+  const input = document.getElementById('searchInput');
+  input.value = tName(DATA[i]);
+  input.dispatchEvent(new Event('input', { bubbles: true }));
+}
+
 function emptyStateHTML() {
   const input = document.getElementById('searchInput');
   const query = input ? input.value.trim() : '';
   if (!query) return `<div class="empty-state">${t('empty')}</div>`;
   const safe = query.replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+
+  // Only numbers or symbols, or a single letter: not a name at all
+  if (!/\p{L}{2,}/u.test(query)) {
+    return `<div class="empty-state"><p class="empty-title">${t('empty.invalid').replace('{q}', safe)}</p></div>`;
+  }
+
+  const ideas = suggestPlaces(query);
+  const didYouMean = ideas.length ? `
+    <div class="empty-suggest">
+      <span>${t('empty.didyoumean')}</span>
+      ${ideas.map(i => `<button type="button" class="chip" onclick="useSuggestion(${i})">${tName(DATA[i])}</button>`).join('')}
+    </div>` : `<p class="empty-hint">${t('empty.typo')}</p>`;
+
   const subject = encodeURIComponent(t('empty.mail.subject').replace('{q}', query));
   const body = encodeURIComponent(t('empty.mail.body').replace('{q}', query));
   const maps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query + ' Saudi Arabia')}`;
   return `<div class="empty-state">
     <p class="empty-title">${t('empty.notfound').replace('{q}', safe)}</p>
+    ${didYouMean}
     <div class="empty-actions">
       <a class="btn-primary" href="mailto:wajjahni.nj@gmail.com?subject=${subject}&body=${body}">${t('empty.suggest')}</a>
       <a class="btn-secondary" href="${maps}" target="_blank" rel="noopener">${t('empty.gmaps')}</a>

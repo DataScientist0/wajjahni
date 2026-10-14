@@ -1047,3 +1047,8 @@
 .b-cost em.over { color: #C0392B; }
 .b-open { flex: none; font-size: 12px; font-weight: 600; color: var(--accent-strong); }
 @media (max-width: 480px) { .b-open { display: none; } }
+
+/* Search: "Did you mean" suggestions */
+.empty-suggest { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; margin: 0 0 18px; }
+.empty-suggest span { font-size: 14px; color: var(--text-muted); }
+.empty-hint { margin: -8px 0 16px; font-size: 13px; color: var(--text-muted); }
