@@ -27,6 +27,12 @@ const translations = {
     "peak.btn": "🕐 Peak hours", "directions.btn": "📍 Directions", "gmaps.open": "📍 Open in Google Maps",
     "empty": "No places match these filters.",
     "empty.notfound": "We couldn't find “{q}” on Wajjahni.",
+    "listen.btn": "🔊 Listen", "listen.stop": "⏹ Stop", "listen.label": "Read this place out loud",
+    "mic.btn": "🎤 Speak", "mic.label": "Search by voice", "mic.listening": "Listening… say a place name",
+    "mic.stop": "⏹ Stop", "mic.error": "Couldn't use the microphone. Check that it's allowed for this site.",
+    "mic.nothing": "Didn't catch that. Tap 🎤 and try again.",
+    "listen.nearby": "Nearest {type}: {name}, {km} kilometers.",
+    "svc1.fuel": "gas station", "svc1.pharmacy": "pharmacy", "svc1.restaurant": "restaurant", "svc1.cafe": "cafe", "svc1.bank": "bank or ATM",
     "empty.didyoumean": "Did you mean:", "empty.typo": "Check the spelling, or try another name.",
     "empty.invalid": "“{q}” doesn't look like a place name. Try the name of a place or a city, e.g. AlUla or Abha.", "empty.suggest": "📩 Suggest this place", "empty.gmaps": "🗺️ Search on Google Maps",
     "empty.mail.subject": "Place suggestion: {q}", "empty.mail.body": "Hi Wajjahni team,\n\nI searched for “{q}” but couldn't find it. Please consider adding it.\n\nThanks!",
@@ -68,6 +74,12 @@ const translations = {
     "peak.btn": "🕐 أوقات الذروة", "directions.btn": "📍 الاتجاهات", "gmaps.open": "📍 افتح في خرائط Google",
     "empty": "ما فيه أماكن مطابقة لهذي الفلاتر.",
     "empty.notfound": "ما لقينا «{q}» في وجّهني.",
+    "listen.btn": "🔊 استمع", "listen.stop": "⏹ إيقاف", "listen.label": "اقرأ معلومات المكان بصوت عالي",
+    "mic.btn": "🎤 تكلّم", "mic.label": "ابحث بصوتك", "mic.listening": "أسمعك… قل اسم المكان",
+    "mic.stop": "⏹ إيقاف", "mic.error": "ما قدرنا نستخدم المايك. تأكد إنه مسموح لهالموقع.",
+    "mic.nothing": "ما سمعت شي. اضغط 🎤 وجرب مرة ثانية.",
+    "listen.nearby": "أقرب {type}: {name}، على بعد {km} كيلو.",
+    "svc1.fuel": "محطة بنزين", "svc1.pharmacy": "صيدلية", "svc1.restaurant": "مطعم", "svc1.cafe": "مقهى", "svc1.bank": "بنك أو صراف",
     "empty.didyoumean": "قصدك:", "empty.typo": "تأكد من الإملاء، أو جرب اسم ثاني.",
     "empty.invalid": "«{q}» ما يبدو اسم مكان. جرب تكتب اسم مكان أو مدينة، مثلاً العلا أو أبها.", "empty.suggest": "📩 اقترح هالمكان علينا", "empty.gmaps": "🗺️ دوّر عليه في خرائط Google",
     "empty.mail.subject": "اقتراح مكان: {q}", "empty.mail.body": "هلا فريق وجّهني،\n\nبحثت عن «{q}» وما لقيته. أتمنى تضيفونه.\n\nشكراً!",
@@ -468,6 +480,7 @@ function openNearbyModal(i) {
   modal.querySelector('.nearby-content').innerHTML = `
     <h3 class="peak-title">${t('nearby.title')}: ${esc(tName(d))}</h3>
     <p class="peak-sub">${t('nearby.sub')}</p>
+    ${nearbyListenButton(data)}
     ${groups || `<p>${t('nearby.none')}</p>`}
     <p class="nearby-source">${t('nearby.source')}</p>`;
   modal.classList.add('open');
@@ -505,5 +518,127 @@ function popupHTML(place, distanceKm) {
     <div class="popup-desc">${tDesc(place)}</div>
     ${photoCredit(place)}
     <a href="${googleMapsUrl(place)}" target="_blank" rel="noopener" class="gmaps-link">${t('gmaps.open')}</a>
+    ${listenButton(DATA.indexOf(place))}
   `;
 }
+
+
+// =====================================================================
+// Accessibility: read places out loud (🔊) and search by voice (🎤)
+// Both use the browser's built-in Web Speech API: free, no API key, works offline for reading.
+// =====================================================================
+
+// ---- 🔊 Read out loud (speechSynthesis) ----
+let speakingBtn = null;   // the button that started the current reading, so it can show "Stop"
+
+function speak(text, btn) {
+  if (!('speechSynthesis' in window)) return;
+  const synth = window.speechSynthesis;
+  // Pressing the same button again stops the reading
+  if (speakingBtn === btn && synth.speaking) { synth.cancel(); return; }
+  synth.cancel();
+
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = currentLang === 'ar' ? 'ar-SA' : 'en-US';
+  // Use a voice for this language if the device has one
+  const voice = synth.getVoices().find(v => v.lang.replace('_', '-').startsWith(currentLang === 'ar' ? 'ar' : 'en'));
+  if (voice) u.voice = voice;
+  u.rate = 0.95;            // a little slower than normal, easier to follow
+
+  const reset = () => { if (speakingBtn) speakingBtn.textContent = t('listen.btn'); speakingBtn = null; };
+  u.onend = reset; u.onerror = reset;
+  reset();
+  speakingBtn = btn;
+  if (btn) btn.textContent = t('listen.stop');
+  synth.speak(u);
+}
+
+// 🔊 in the nearby-services window: reads the closest service of each type
+function nearbyListenButton(data) {
+  if (!('speechSynthesis' in window)) return '';
+  const text = ['fuel', 'pharmacy', 'restaurant', 'cafe', 'bank']
+    .filter(type => data[type] && data[type][0])
+    .map(type => t('listen.nearby').replace('{type}', t('svc1.' + type))
+      .replace('{name}', data[type][0].n).replace('{km}', data[type][0].km.toFixed(1)))
+    .join(' ');
+  if (!text) return '';
+  const safe = text.replace(/"/g, '&quot;');
+  return `<button type="button" class="peak-btn listen-btn" data-speak="${safe}" aria-label="${t('listen.label')}">${t('listen.btn')}</button>`;
+}
+
+// What gets read for a place: name, where it is, its type, and the description
+function placeSpeechText(d) {
+  return [tName(d), tLocation(d), tType(d.type), tDesc(d)].join('. ');
+}
+
+// The 🔊 button (empty if the browser can't speak)
+function listenButton(i) {
+  if (!('speechSynthesis' in window) || i < 0) return '';
+  return `<button type="button" class="peak-btn listen-btn" data-listen="${i}" aria-label="${t('listen.label')}" title="${t('listen.label')}">${t('listen.btn')}</button>`;
+}
+
+// One click handler for every 🔊 button on the page, even ones added later
+document.addEventListener('click', e => {
+  const btn = e.target.closest('[data-listen], [data-speak]');
+  if (!btn) return;
+  e.stopPropagation();
+  speak(btn.dataset.speak || placeSpeechText(DATA[+btn.dataset.listen]), btn);
+}, true);
+
+// Stop reading when the language changes or the page is left
+document.addEventListener('langchange', () => window.speechSynthesis && speechSynthesis.cancel());
+window.addEventListener('pagehide', () => window.speechSynthesis && speechSynthesis.cancel());
+
+// ---- 🎤 Search by voice (SpeechRecognition) ----
+const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+function setupVoiceSearch() {
+  const input = document.getElementById('searchInput');
+  if (!SpeechRec || !input) return;          // browser can't do it (e.g. Firefox): no button
+
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'mic-btn';
+  input.parentElement.appendChild(btn);
+  const status = document.createElement('div');
+  status.className = 'mic-status';
+  status.setAttribute('aria-live', 'polite');   // screen readers announce changes
+  input.closest('.search-row').insertAdjacentElement('afterend', status);
+
+  let rec = null;
+  const idle = () => {
+    btn.textContent = t('mic.btn'); btn.classList.remove('listening');
+    btn.setAttribute('aria-label', t('mic.label')); btn.title = t('mic.label');
+  };
+  idle();
+  document.addEventListener('langchange', idle);
+
+  btn.addEventListener('click', () => {
+    if (rec) { rec.stop(); return; }          // pressing again stops listening
+    rec = new SpeechRec();
+    rec.lang = currentLang === 'ar' ? 'ar-SA' : 'en-US';
+    rec.interimResults = true;                // show words while the person is still talking
+    let heard = '';
+
+    rec.onstart = () => {
+      btn.textContent = t('mic.stop'); btn.classList.add('listening');
+      status.textContent = t('mic.listening');
+    };
+    rec.onresult = e => {
+      heard = Array.from(e.results).map(r => r[0].transcript).join(' ');
+      input.value = heard.replace(/[.،,!?؟]+$/, '').trim();   // drop the final punctuation
+      input.dispatchEvent(new Event('input', { bubbles: true })); // run the normal search
+    };
+    rec.onerror = e => {
+      status.textContent = (e.error === 'not-allowed' || e.error === 'service-not-allowed') ? t('mic.error') : t('mic.nothing');
+    };
+    rec.onend = () => {
+      if (!heard && !status.textContent.startsWith(t('mic.error'))) status.textContent = t('mic.nothing');
+      else if (heard) status.textContent = '';
+      rec = null; idle();
+    };
+    status.textContent = '';
+    rec.start();
+  });
+}
+document.addEventListener('DOMContentLoaded', setupVoiceSearch);

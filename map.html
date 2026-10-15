@@ -256,6 +256,7 @@ function render() {
           <div class="card-actions">
             <button class="peak-btn" data-idx="${i}">${t('peak.btn')}</button>
             <button class="peak-btn nearby-btn" data-idx="${i}">${t('nearby.btn')}</button>
+            ${listenButton(i)}
             <a href="${googleMapsUrl(d)}" target="_blank" rel="noopener" class="gmaps-btn">${t('directions.btn')}</a>
           </div>
         </div>
