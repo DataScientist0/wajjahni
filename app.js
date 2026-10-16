@@ -27,7 +27,7 @@ const translations = {
     "peak.btn": "🕐 Peak hours", "directions.btn": "📍 Directions", "gmaps.open": "📍 Open in Google Maps",
     "empty": "No places match these filters.",
     "empty.notfound": "We couldn't find “{q}” on Wajjahni.",
-    "listen.btn": "🔊 Listen", "listen.stop": "⏹ Stop", "listen.label": "Read this place out loud",
+    "listen.btn": "🔊 Listen", "listen.stop": "⏹ Stop", "listen.novoice": "⚠️ No English voice on this device", "listen.label": "Read this place out loud",
     "mic.btn": "🎤 Speak", "mic.label": "Search by voice", "mic.listening": "Listening… say a place name",
     "mic.stop": "⏹ Stop", "mic.error": "Couldn't use the microphone. Check that it's allowed for this site.",
     "mic.nothing": "Didn't catch that. Tap 🎤 and try again.",
@@ -74,7 +74,7 @@ const translations = {
     "peak.btn": "🕐 أوقات الذروة", "directions.btn": "📍 الاتجاهات", "gmaps.open": "📍 افتح في خرائط Google",
     "empty": "ما فيه أماكن مطابقة لهذي الفلاتر.",
     "empty.notfound": "ما لقينا «{q}» في وجّهني.",
-    "listen.btn": "🔊 استمع", "listen.stop": "⏹ إيقاف", "listen.label": "اقرأ معلومات المكان بصوت عالي",
+    "listen.btn": "🔊 استمع", "listen.stop": "⏹ إيقاف", "listen.novoice": "⚠️ جهازك ما فيه صوت عربي", "listen.label": "اقرأ معلومات المكان بصوت عالي",
     "mic.btn": "🎤 تكلّم", "mic.label": "ابحث بصوتك", "mic.listening": "أسمعك… قل اسم المكان",
     "mic.stop": "⏹ إيقاف", "mic.error": "ما قدرنا نستخدم المايك. تأكد إنه مسموح لهالموقع.",
     "mic.nothing": "ما سمعت شي. اضغط 🎤 وجرب مرة ثانية.",
@@ -531,19 +531,74 @@ function popupHTML(place, distanceKm) {
 // ---- 🔊 Read out loud (speechSynthesis) ----
 let speakingBtn = null;   // the button that started the current reading, so it can show "Stop"
 
-function speak(text, btn) {
+// The device's voices load a moment after the page opens, so we wait for them.
+// Without this, the first click can read Arabic text with an English voice, which sounds like nonsense.
+function loadVoices() {
+  return new Promise(resolve => {
+    const voices = speechSynthesis.getVoices();
+    if (voices.length) return resolve(voices);
+    const done = () => resolve(speechSynthesis.getVoices());
+    speechSynthesis.addEventListener('voiceschanged', done, { once: true });
+    setTimeout(done, 1500);                  // don't wait forever
+  });
+}
+
+// Best voice for the current language. Natural-sounding voices first:
+// "Premium" / "Enhanced" (Apple), "Neural" / "Natural" (Microsoft), "Google" (Chrome, Android).
+function pickVoice(voices) {
+  const want = currentLang === 'ar' ? 'ar' : 'en';
+  const norm = v => v.lang.replace('_', '-').toLowerCase();
+  const mine = voices.filter(v => norm(v) === want || norm(v).startsWith(want + '-'));
+  const score = v => {
+    let s = 0;
+    if (/premium|enhanced|neural|natural/i.test(v.name)) s += 4;   // high-quality voices
+    if (/google/i.test(v.name)) s += 3;
+    if (norm(v) === (currentLang === 'ar' ? 'ar-sa' : 'en-us')) s += 2;   // Saudi Arabic / US English
+    if (v.localService === false) s += 1;                          // online voices usually sound better
+    return s;
+  };
+  return mine.sort((a, b) => score(b) - score(a))[0];
+}
+
+// Tidy the text so the voice reads it more naturally
+function speechFriendly(text) {
+  const c = currentLang === 'ar' ? '،' : ',';     // Arabic or English comma = a short pause
+  let s = String(text)
+    .replace(/[()\[\]«»"]/g, c + ' ')          // brackets: a short pause instead of a symbol
+    .replace(/\s*[·|•—]\s*/g, c + ' ');        // separators → pause
+  if (currentLang === 'ar') {
+    // "90 كم" → "90 كيلومتر" (\b doesn't work with Arabic letters, so we check what comes after)
+    s = s.replace(/(\d|[٠-٩])\s*كم(?=$|[\s،.])/g, '$1 كيلومتر');
+  } else {
+    s = s.replace(/(\d)\s*km\b/gi, '$1 kilometers');
+  }
+  return s
+    .replace(/(\d)\.0(?!\d)/g, '$1')                // "64.0" → "64"
+    .replace(/\s+([،,])/g, '$1')                      // no space before a comma
+    .replace(/([،,]\s*)+/g, c + ' ')                  // one comma at a time
+    .replace(/[،,]\s*\./g, '.')                       // ", ." → "."
+    .replace(/\s+/g, ' ').trim();
+}
+
+async function speak(text, btn) {
   if (!('speechSynthesis' in window)) return;
   const synth = window.speechSynthesis;
   // Pressing the same button again stops the reading
-  if (speakingBtn === btn && synth.speaking) { synth.cancel(); return; }
+  if (speakingBtn === btn && (synth.speaking || synth.pending)) { synth.cancel(); return; }
   synth.cancel();
 
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = currentLang === 'ar' ? 'ar-SA' : 'en-US';
-  // Use a voice for this language if the device has one
-  const voice = synth.getVoices().find(v => v.lang.replace('_', '-').startsWith(currentLang === 'ar' ? 'ar' : 'en'));
-  if (voice) u.voice = voice;
-  u.rate = 0.95;            // a little slower than normal, easier to follow
+  const voice = pickVoice(await loadVoices());
+  if (!voice) {
+    // No voice for this language on the device: say so, instead of reading with the wrong voice
+    if (btn) { const old = btn.textContent; btn.textContent = t('listen.novoice'); setTimeout(() => btn.textContent = old, 3500); }
+    return;
+  }
+
+  const u = new SpeechSynthesisUtterance(speechFriendly(text));
+  u.voice = voice;
+  u.lang = voice.lang;      // use the voice's own language code (e.g. Majed on Mac is "ar-001")
+  u.rate = 0.9;             // a little slower than normal, easier to follow
+  u.pitch = 1;
 
   const reset = () => { if (speakingBtn) speakingBtn.textContent = t('listen.btn'); speakingBtn = null; };
   u.onend = reset; u.onerror = reset;
@@ -566,9 +621,10 @@ function nearbyListenButton(data) {
   return `<button type="button" class="peak-btn listen-btn" data-speak="${safe}" aria-label="${t('listen.label')}">${t('listen.btn')}</button>`;
 }
 
-// What gets read for a place: name, where it is, its type, and the description
+// What gets read for a place: for now just its name.
+// (To read more later, e.g. the description: return [tName(d), tDesc(d)].join('. ');)
 function placeSpeechText(d) {
-  return [tName(d), tLocation(d), tType(d.type), tDesc(d)].join('. ');
+  return tName(d);
 }
 
 // The 🔊 button (empty if the browser can't speak)
@@ -582,12 +638,44 @@ document.addEventListener('click', e => {
   const btn = e.target.closest('[data-listen], [data-speak]');
   if (!btn) return;
   e.stopPropagation();
-  speak(btn.dataset.speak || placeSpeechText(DATA[+btn.dataset.listen]), btn);
+  if (btn.dataset.listen !== undefined) playPlaceName(+btn.dataset.listen, btn);
+  else speak(btn.dataset.speak, btn);
 }, true);
 
+// ---- Recorded human voice for place names ----
+// audio/ar/12.mp3 and audio/en/12.mp3 = the name of place 12 (place_id = position in DATA + 1),
+// made once with a natural (neural) voice by scripts/make_audio.py.
+// If a file isn't there (or can't play), we fall back to the device's voice.
+let currentAudio = null;
+
+function stopAudio() {
+  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+}
+
+function playPlaceName(i, btn) {
+  const wasThisButton = speakingBtn === btn;
+  stopAudio();
+  if (window.speechSynthesis) speechSynthesis.cancel();
+  if (speakingBtn) speakingBtn.textContent = t('listen.btn');
+  speakingBtn = null;
+  if (wasThisButton) return;                        // second press = stop
+
+  const audio = new Audio(`audio/${currentLang}/${i + 1}.mp3`);
+  currentAudio = audio;
+  speakingBtn = btn; btn.textContent = t('listen.stop');
+  const done = () => { if (currentAudio === audio) currentAudio = null; if (speakingBtn === btn) { btn.textContent = t('listen.btn'); speakingBtn = null; } };
+  audio.onended = done;
+  audio.onerror = () => {                           // no recording yet → device voice
+    if (currentAudio !== audio) return;
+    currentAudio = null; speakingBtn = null; btn.textContent = t('listen.btn');
+    speak(placeSpeechText(DATA[i]), btn);
+  };
+  audio.play().catch(() => audio.onerror());
+}
+
 // Stop reading when the language changes or the page is left
-document.addEventListener('langchange', () => window.speechSynthesis && speechSynthesis.cancel());
-window.addEventListener('pagehide', () => window.speechSynthesis && speechSynthesis.cancel());
+document.addEventListener('langchange', () => { stopAudio(); window.speechSynthesis && speechSynthesis.cancel(); });
+window.addEventListener('pagehide', () => { stopAudio(); window.speechSynthesis && speechSynthesis.cancel(); });
 
 // ---- 🎤 Search by voice (SpeechRecognition) ----
 const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;

@@ -116,6 +116,7 @@ wajjahni/
 ├── planner.html    # Trip cost estimator
 ├── costs.js        # The numbers used by the trip cost estimator
 ├── hotels.js       # Hotels around each place (built from data/clean/place_hotels.csv)
+├── scripts/        # make_audio.py: records place names with a natural (neural) voice into audio/
 ├── contact.html    # Contact page
 ├── styles.css      # All styles, themes, and mobile layout
 ├── app.js          # Shared logic: language, theme, distance, peak hours, popups
