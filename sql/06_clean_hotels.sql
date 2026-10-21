@@ -48,7 +48,7 @@ WHERE name REGEXP 'حجوزات|حجز|اسعار|أسعار|معتمرين|تن
 -- "Clarion Hotel Jeddah Airport" or "Al Koot Heritage Hotel and Restaurant" stay valid.
 UPDATE hotels
 SET is_valid = 0
-WHERE name REGEXP 'travel|tours|turizm|سياحة|مكتب|office|company|شركة|factory|مصنع|commercial port|ميناء|compound|district|حي |street|شارع|^[A-Z0-9]{4}\\+|accommodation|accomodation|سكن عمال|labor|labour|for oud|divers|غوص|مطعم|restaurant|cafe|كافيه|صيدل|pharm|hospital|مستشفى|clinic|عياد|school|مدرس|salon|صالون|اللهم|المملكه|السعوديه|brgy|saudi arabia|\\bksa\\b|/'
+WHERE name REGEXP 'subway|صب واي|قاعة افراح|قاعة أفراح|travel|tours|turizm|سياحة|مكتب|office|company|شركة|factory|مصنع|commercial port|ميناء|compound|district|حي |street|شارع|^[A-Z0-9]{4}\\+|accommodation|accomodation|سكن عمال|labor|labour|for oud|divers|غوص|مطعم|restaurant|cafe|كافيه|صيدل|pharm|hospital|مستشفى|clinic|عياد|school|مدرس|salon|صالون|اللهم|المملكه|السعوديه|brgy|saudi arabia|\\bksa\\b|/'
   AND name NOT REGEXP 'hotel|فندق|فنادق|inn\\b|resort|منتجع|suite|سويت|أجنحة|اجنحة|residence|boudl|بودل|استراحة|شاليه|chalet|@home|tulip|ibis|tower|ابراج|أبراج';
 
 

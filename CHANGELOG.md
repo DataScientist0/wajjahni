@@ -5,6 +5,39 @@ The newest changes are at the **top**. Every new update adds a section at the st
 
 ---
 
+## October 21, 2026: Municipal fee in hotel prices, and duplicate hotels removed 🏨
+
+### Municipal fee
+- GASTAT's room prices don't include the **municipal accommodation fee**, so the estimator now adds it (it said before that we couldn't confirm the rate).
+- The fee is still collected: municipalities run an "accommodation occupancy fee invoice" service (e.g. Hafar Al-Batin Municipality). Its rate, from the Ministry of Municipalities' rules:
+  - **5%** for 4-star hotels and above → used for **comfortable** and **luxury**
+  - **2.5%** for 3-star and below, and furnished apartments → used for **budget**
+- VAT (15%) is charged on the room price plus the fee, as hotels' invoices show.
+- Example, Riyadh: comfortable 678 + 5% + 15% VAT = **819 SAR** a night (was 780); budget 247 + 2.5% + 15% = **291 SAR**.
+- "How is this calculated?" now shows the fee.
+
+### Duplicate hotels
+- Overture sometimes lists the same hotel twice, with the same name a few hundred meters apart, or with a slightly longer name.
+- `scripts/rebuild_nearby.py` now treats two entries as the same hotel when:
+  - they have **the same name within 1 km**, or
+  - **all the words of the shorter name are in the longer one, within 300 m**, and the shorter name has a word that isn't a general one (so "Al Haram Hotel" and "Dar Al Eiman Al Haram Hotel" stay two hotels).
+- From each group, the most reliable entry (highest Overture confidence) is kept.
+- **36 duplicates removed**, for example: two "Fairmont Riyadh", "Golden Tulip" + "Golden Tulip Al Mektan", "InterContinental Al Jubail" + "… Resort", "A Fairmont Hotel" + "Makkah Clock Royal Tower, A Fairmont Hotel".
+- **4 entries that aren't hotels** removed too: 3 "صب واي" (Subway) branches listed as resorts, and a wedding hall. These words were added to the cleaning rule in the script and in `sql/06_clean_hotels.sql`.
+- Hotels were rebuilt only for the 30 places whose list changed (`--hotels-only --places …`), so nearby services didn't change.
+- 4,793 valid hotels now (was 4,833).
+
+### Files changed
+| File | Change |
+|---|---|
+| `costs.js` | `municipalFee` for each travel style |
+| `planner.html` | Fee in the hotel price and the explanations |
+| `scripts/rebuild_nearby.py` | Duplicate hotels rule, `--hotels-only`, Subway and wedding halls |
+| `sql/06_clean_hotels.sql` | Subway and wedding halls in the cleaning rule |
+| `hotels.js`, `data/clean/place_hotels.csv` | Hotels without duplicates |
+
+---
+
 ## October 21, 2026: Home page numbers in the title's color
 
 ### What changed?

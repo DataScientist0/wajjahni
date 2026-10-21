@@ -14,12 +14,14 @@ Outputs: data/clean/nearest_services.csv → services.js
 How to run (from the wajjahni folder):
     python3 scripts/rebuild_nearby.py                  # rebuild everything
     python3 scripts/rebuild_nearby.py --places 1,49    # rebuild only these place_ids, keep the rest as they are
+    python3 scripts/rebuild_nearby.py --hotels-only    # rebuild only the hotels, keep the services as they are
     python3 scripts/rebuild_nearby.py --check          # only compare with the current files, change nothing
 """
 import csv, json, math, re, sys
 
 check_only = "--check" in sys.argv
 only = set(sys.argv[sys.argv.index("--places") + 1].split(",")) if "--places" in sys.argv else None
+hotels_only = "--hotels-only" in sys.argv
 
 # MySQL's ST_Distance_Sphere uses a sphere with this radius (meters)
 EARTH_M = 6370986
@@ -38,7 +40,8 @@ SERVICE_OK = {
     "bank": r"بنك|مصرف|bank|صراف|atm|الراجحي|rajhi|الأهلي|الاهلي|snb|ncb|alinma|الإنماء|الانماء|البلاد|bilad|riyad|ساب|sabb|الجزيرة|jazira|anb|العربي|fransi|الفرنسي|bsf|nbd|stc pay|urpay|samba|سامبا|enjaz|انجاز|إنجاز|western union|ويسترن|tahweel|تحويل|express|exchange|صرافة|telemoney",
 }
 HOTEL_BOOKING = r"حجوزات|حجز|اسعار|أسعار|معتمرين|تنظيم|رحلات|لإدارة|تسويق|management|holding"
-HOTEL_NOT_HOTEL = (r"travel|tours|turizm|سياحة|مكتب|office|company|شركة|factory|مصنع|commercial port|ميناء|compound|"
+HOTEL_NOT_HOTEL = (r"subway|صب واي|قاعة افراح|قاعة أفراح|"
+                   r"travel|tours|turizm|سياحة|مكتب|office|company|شركة|factory|مصنع|commercial port|ميناء|compound|"
                    r"district|حي |street|شارع|^[A-Z0-9]{4}\+|accommodation|accomodation|سكن عمال|labor|labour|for oud|"
                    r"divers|غوص|مطعم|restaurant|cafe|كافيه|صيدل|pharm|hospital|مستشفى|clinic|عياد|school|مدرس|salon|"
                    r"صالون|اللهم|المملكه|السعوديه|brgy|saudi arabia|\bksa\b|/")
@@ -69,6 +72,46 @@ hotels = [h for h in read("data/raw/hotels_overture.csv") if hotel_valid(h)]
 for rows in (places, services, hotels):
     for r in rows:
         r["lat"], r["lon"] = float(r["latitude"]), float(r["longitude"])
+
+# ---- Duplicate hotels (an extra step, not in the SQL files) ----
+# Overture sometimes lists the same hotel twice, with the same or a slightly longer name.
+# Two entries are the same hotel when:
+#   - they have the same name and are within 1 km, or
+#   - all the words of the shorter name are in the longer one, and they're within 300 m.
+# The shorter name needs 2+ words and at least one word that isn't a general one, so "Al Haram Hotel"
+# and "Dar Al Eiman Al Haram Hotel" stay two hotels. From each group we keep the most reliable entry.
+GENERAL_WORDS = set("al el the hotel hotels inn resort resorts suites suite apartments فندق فنادق منتجع اجنحه شقق "
+                    "makkah mecca مكه madinah المدينه haram الحرم riyadh الرياض jeddah جده".split())
+
+
+def words(name):
+    s = (name or "").lower().replace("ة", "ه").replace("ى", "ي")
+    s = re.sub(r"[أإآ]", "ا", s)
+    return re.sub(r"[^\w]+", " ", s).split()
+
+
+def same_hotel(a, b):
+    wa, wb = words(a["name"]), words(b["name"])
+    short, long_ = (wa, wb) if len(wa) <= len(wb) else (wb, wa)
+    if len(short) < 2 or not set(short) - GENERAL_WORDS:
+        return False
+    d = distance_m(a["lat"], a["lon"], b["lat"], b["lon"])
+    return (wa == wb and d <= 1000) or (set(short) <= set(long_) and d <= 300)
+
+
+def drop_duplicates(rows):
+    rows = sorted(rows, key=lambda h: -float(h["confidence"] or 0))   # most reliable first
+    kept = []
+    for h in rows:
+        near = [k for k in kept if abs(k["lat"] - h["lat"]) < 0.01 and abs(k["lon"] - h["lon"]) < 0.01]
+        if not any(same_hotel(h, k) for k in near):
+            kept.append(h)
+    return kept
+
+
+before = len(hotels)
+hotels = drop_duplicates(hotels)
+print(f"Hotels: {before} valid, {before - len(hotels)} duplicates removed, {len(hotels)} left")
 
 
 def near(p, rows):
@@ -144,7 +187,8 @@ def write_csv(path, rows):
     open(path, "w", encoding="utf8").write("\n".join([header] + body) + "\n")
 
 
-write_csv("data/clean/nearest_services.csv", service_rows)
+if not hotels_only:
+    write_csv("data/clean/nearest_services.csv", service_rows)
 write_csv("data/clean/place_hotels.csv", hotel_rows)
 # The website files are built from the CSV files as saved
 service_rows, hotel_rows = read("data/clean/nearest_services.csv"), read("data/clean/place_hotels.csv")

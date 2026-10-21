@@ -34,8 +34,12 @@ const COSTS = {
   // Hotel: the GASTAT price of a room per night near each place (place_costs.js), plus VAT.
   //   budget = serviced apartments, comfortable = hotels (both real averages).
   //   luxury = ESTIMATE: GASTAT doesn't split prices by star rating, so luxury = hotel average × 2.
-  //   GASTAT's prices don't include the municipal fee either; we couldn't confirm its current rate, so it isn't added.
+  //   GASTAT's prices don't include the municipal fee or VAT, so both are added:
+  //   Municipal accommodation fee (Ministry of Municipalities, still collected through each municipality's
+  //   "accommodation occupancy fee" service): 5% for 4-star hotels and above, 2.5% for 3-star and below
+  //   and furnished apartments. VAT (15%) is charged on the room price plus the fee.
   vat: 0.15,
+  municipalFee: { budget: 0.025, mid: 0.05, luxury: 0.05 },
   luxuryHotelFactor: 2,
   adultsPerRoom: 2,                       // one room fits 2 adults and up to 4 people with children
   peoplePerRoom: 4,

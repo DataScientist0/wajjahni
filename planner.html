@@ -272,10 +272,10 @@ Object.assign(translations.en, {
   "plan.hotel.search": "Search hotels by name…", "plan.hotel.more": "Show more hotels", "plan.hotel.nomatch": "No hotel matches your search.",
   "plan.hotel.km": "{km} km away", "plan.hotel.chosen": "Your hotel", "plan.hotel.check": "🔎 Check the price on Google Maps", "plan.hotel.clear": "Remove",
   "plan.price": "Price per room per night (SAR)",
-  "plan.price.est": "Leave it empty to use the real average: about {x} SAR a night for a {s} stay in {c} (official GASTAT data, VAT included).",
+  "plan.price.est": "Leave it empty to use the real average: about {x} SAR a night for a {s} stay in {c} (official GASTAT data, municipal fee and VAT included).",
   "plan.price.est.lux": "Leave it empty to use about {x} SAR a night in {c}. This is an estimate (twice the average hotel price), because there's no official data for luxury hotels. Type the real price for a better total.",
   "plan.fuel": "Fuel", "plan.fuel.91": "Gasoline 91", "plan.fuel.95": "Gasoline 95",
-  "plan.how.hotelsrc": "Hotel prices: the average room price in {c} from GASTAT's Tourism Establishments Statistics (year average, Jul 2025 to Jun 2026), plus 15% VAT. Budget = furnished apartments, comfortable = hotels.",
+  "plan.how.hotelsrc": "Hotel prices: the average room price in {c} from GASTAT's Tourism Establishments Statistics (year average, Jul 2025 to Jun 2026), plus the municipal fee ({f}%) and 15% VAT. Budget = furnished apartments, comfortable = hotels.",
   "plan.how.foodsrc": "Food prices in {c} from Numbeo (October 2026): a simple meal costs about {a} SAR, and a mid-range dinner for two about {b} SAR.",
   "plan.price.own": "Using your price: {x} SAR a night.",
   "plan.fact.hotel": "🏨 {h}", "plan.fact.cars": "🚗 {n} cars needed for {p} travelers",
@@ -347,10 +347,10 @@ Object.assign(translations.ar, {
   "plan.hotel.search": "ابحث عن فندق بالاسم…", "plan.hotel.more": "اعرض فنادق أكثر", "plan.hotel.nomatch": "ما فيه فندق بهالاسم.",
   "plan.hotel.km": "يبعد {km} كم", "plan.hotel.chosen": "فندقك", "plan.hotel.check": "🔎 شوف السعر في خرائط Google", "plan.hotel.clear": "إزالة",
   "plan.price": "سعر الغرفة بالليلة (ريال)",
-  "plan.price.est": "إذا تركته فاضي نستخدم المتوسط الحقيقي: حوالي {x} ريال بالليلة لإقامة {s} في {c} (بيانات الهيئة العامة للإحصاء، شامل الضريبة).",
+  "plan.price.est": "إذا تركته فاضي نستخدم المتوسط الحقيقي: حوالي {x} ريال بالليلة لإقامة {s} في {c} (بيانات الهيئة العامة للإحصاء، شامل رسوم البلدية والضريبة).",
   "plan.price.est.lux": "إذا تركته فاضي نستخدم حوالي {x} ريال بالليلة في {c}. هذا تقدير (ضعف متوسط الفنادق) لأن ما فيه بيانات رسمية للفنادق الفاخرة. اكتب السعر الحقيقي عشان يطلع الحساب أدق.",
   "plan.fuel": "البنزين", "plan.fuel.91": "بنزين ٩١", "plan.fuel.95": "بنزين ٩٥",
-  "plan.how.hotelsrc": "أسعار الفنادق: متوسط سعر الغرفة في {c} من إحصاءات المنشآت السياحية من الهيئة العامة للإحصاء (متوسط السنة، من يوليو ٢٠٢٥ لين يونيو ٢٠٢٦)، مع ضريبة ١٥٪. الاقتصادية = شقق مفروشة، والمريحة = فنادق.",
+  "plan.how.hotelsrc": "أسعار الفنادق: متوسط سعر الغرفة في {c} من إحصاءات المنشآت السياحية من الهيئة العامة للإحصاء (متوسط السنة، من يوليو ٢٠٢٥ لين يونيو ٢٠٢٦)، مع رسوم البلدية ({f}٪) وضريبة ١٥٪. الاقتصادية = شقق مفروشة، والمريحة = فنادق.",
   "plan.how.foodsrc": "أسعار الأكل في {c} من Numbeo (أكتوبر ٢٠٢٦): الوجبة البسيطة حوالي {a} ريال، والعشاء لشخصين في مطعم متوسط حوالي {b} ريال.",
   "plan.price.own": "نحسب على سعرك: {x} ريال بالليلة.",
   "plan.fact.hotel": "🏨 {h}", "plan.fact.cars": "🚗 تحتاجون {n} سيارات لـ {p} مسافر",
@@ -510,7 +510,7 @@ function estimate(placeIdx = currentPlaceIndex(), useTyped = true) {
   const season = month === '' ? 1 : HOTEL_SEASONS[pc.season][roomType][month];
   const baseNight = style === 'budget' ? pc.apartment_night
                   : pc.hotel_night * (style === 'luxury' ? C.luxuryHotelFactor : 1);
-  const estNight = baseNight * season * (1 + C.vat);
+  const estNight = baseNight * season * (1 + C.municipalFee[style]) * (1 + C.vat);
   const typed = useTyped ? parseFloat(document.getElementById('hotelPrice').value) : NaN;
   const night = typed > 0 ? typed : estNight;
 
@@ -666,7 +666,7 @@ function render() {
   }
   if (r.byCar && people > C.peoplePerCar) how.push(tf('plan.how.cars', { n: C.peoplePerCar }));
   how.push(tf('plan.how.hotel', { r: fmt(roundTo(r.night, 10)), n: rooms, x: nights }));
-  if (!r.typed) how.push(tf('plan.how.hotelsrc', { c: currentLang === 'ar' ? r.pc.hotel_city_ar : r.pc.hotel_city }));
+  if (!r.typed) how.push(tf('plan.how.hotelsrc', { c: currentLang === 'ar' ? r.pc.hotel_city_ar : r.pc.hotel_city, f: C.municipalFee[style] * 100 }));
   if (!r.typed && state.month !== '') how.push(tf('plan.how.season', {
     r: currentLang === 'ar' ? r.pc.hotel_city_ar : r.pc.hotel_city, m: t('plan.months').split(',')[state.month], x: Math.round(r.season * 100) }));
   how.push(tf('plan.how.food', { f: fmt(r.foodDay), d: r.days }));
