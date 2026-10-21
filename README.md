@@ -21,7 +21,7 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 | 📍 **Distance from me** | Uses your location (only if you allow it) to sort places from nearest to farthest |
 | 🧭 **Directions** | Draws a route to a place on the map, or opens it in Google Maps |
 | 🧭 **Nearby services** | For every place, the 3 nearest gas stations, pharmacies, restaurants, cafes, and banks/ATMs, with distances and Google Maps directions. They also appear as icons on the map, with a panel to show or hide each type. Calculated in MySQL from Overture Maps data |
-| 💰 **Trip cost estimator** | A full trip budget: fuel or flights, hotel, food, and activities, based on adults, children, nights, rooms, car or plane, and travel style. Travelers can pick from **all nearby hotels** (4,400+ from Overture Maps, cleaned in MySQL), check the price on Google Maps, and type it in for an accurate total. *(Default prices are sample numbers for now)* |
+| 💰 **Trip cost estimator** | A full trip budget: fuel or flights, hotel, food, and **the real entry ticket price of each place**, based on adults, children, nights, rooms, car or plane, and travel style. Travelers can pick from **all nearby hotels** (4,400+ from Overture Maps, cleaned in MySQL), check the price on Google Maps, and type it in for an accurate total. **Real prices:** hotel prices from official GASTAT data for the nearest city, changed for the **travel month** with each region's real monthly prices; restaurant prices from Numbeo; fuel from Aramco; taxis with the official Transport General Authority fare. For flights, travelers type the real ticket price (a button opens Google Flights for their route), or the page uses an estimate. |
 | 🎯 **Plan by budget** | Type a total budget and the estimator lists every place that fits it, cheapest first, with how much money is left. Filter by region or type, then open any place for the full breakdown |
 | ♿ **Read aloud & voice search** | A 🔊 Listen button reads any place (and its nearby services) out loud, and a 🎤 Speak button lets people search by voice, in Arabic or English. Built with the browser's Web Speech API, for people who find reading or typing hard |
 | ⏰ **Peak hours** | A bar chart showing how busy a place usually is at each hour, and whether it's busy right now |
@@ -62,6 +62,8 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 | **Leaflet Routing Machine** | Drawing routes and directions on the map | Works directly with Leaflet, so routes appear on the same map |
 | **Overture Maps** | Data for nearby services (restaurants, cafes, pharmacies, banks, gas stations) | Free, open data that combines several large sources |
 | **MySQL** | Cleaning the services data and calculating the nearest services with SQL | The most common database in data jobs |
+| **GASTAT** (General Authority for Statistics) | Average hotel and furnished-apartment price per night in each city and in each region for every month (Tourism Establishments Statistics, Jul 2025 to Jun 2026) | Official government data from the Ministry of Tourism's monitoring platform |
+| **Numbeo** | Restaurant prices in Saudi cities (October 2026), used for academic, non-commercial purposes with credit | The largest cost-of-living database, with prices added by people who live in each city |
 | **OpenStreetMap** | The map tiles (the map images) | Free and open map data, with no API key needed |
 | **Google Maps link** | Opening directions in Google Maps | Most people already use Google Maps on their phones |
 | **Google Fonts** (Fraunces & Inter) | The fonts | Free fonts that make the site look clean and modern |
@@ -115,8 +117,10 @@ wajjahni/
 ├── map.html        # Interactive map
 ├── planner.html    # Trip cost estimator
 ├── costs.js        # The numbers used by the trip cost estimator
+├── prices.js       # Entry ticket prices for each place, with sources (free, official, reported, or unknown)
+├── place_costs.js  # Real hotel and food prices near each place (made by scripts/build_place_costs.py)
 ├── hotels.js       # Hotels around each place (built from data/clean/place_hotels.csv)
-├── scripts/        # make_audio.py: records place names with a natural (neural) voice into audio/
+├── scripts/        # make_audio.py: records place names with a natural voice · build_place_costs.py: builds place_costs.js from data/raw
 ├── contact.html    # Contact page
 ├── styles.css      # All styles, themes, and mobile layout
 ├── app.js          # Shared logic: language, theme, distance, peak hours, popups
@@ -158,14 +162,14 @@ For a detailed explanation of every change, see [CHANGELOG.md](CHANGELOG.md).
 - [x] Arabic and English
 - [x] Light and dark mode
 - [x] Mobile-friendly design
-- [x] Real photos for 63 places, with photographer credits
+- [x] Real photos for 64 places, with photographer credits
 - [x] Clean the official tourism statistics (2015–2024)
 - [x] Place names and descriptions in Arabic
 - [x] Real contact email
 
 **Coming next**
 - [ ] Replace sample numbers with real data from official sources
-- [ ] Real photos for the remaining 11 places
+- [ ] Real photos for the remaining 10 places
 - [ ] A data analysis page with charts by region, type, and season
 
 ---

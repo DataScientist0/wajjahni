@@ -968,6 +968,9 @@
 .res-facts { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--text-muted); margin: 16px 0 0; padding-top: 14px; border-top: 1px solid var(--border); }
 .res-warn { margin-top: 12px; font-size: 13px; padding: 10px 12px; border-radius: 10px; background: var(--chip-bg); border-inline-start: 3px solid var(--gold-500); }
 .res-breakdown { display: flex; flex-direction: column; gap: 12px; margin-top: 18px; }
+.res-ticket { margin-top: 14px; font-size: 13px; color: var(--text-muted); padding: 10px 12px; border-radius: 10px; background: var(--chip-bg); }
+.res-ticket b { color: var(--text); }
+.res-ticket a { color: var(--accent); }
 .res-row-top { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; margin-bottom: 5px; }
 .res-bar { height: 8px; border-radius: 99px; background: var(--chip-bg); overflow: hidden; }
 .res-bar i { display: block; height: 100%; border-radius: 99px; background: var(--accent); transition: width .25s ease; }
