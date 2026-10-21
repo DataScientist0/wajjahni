@@ -2,7 +2,7 @@
 -- Wajjahni · Step 7: hotels around every tourist place
 -- =====================================================================
 -- What this file does:
---   For each of the 74 places, lists the hotels around it, nearest first,
+--   For each of the 72 places, lists the hotels around it, nearest first,
 --   and saves them in a new table `place_hotels`. The trip cost estimator shows
 --   this list so travelers can choose where to stay.
 --

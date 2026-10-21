@@ -16,7 +16,7 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 |---|---|
 | 🏠 **Home page** | Introduces the project and the kinds of places you'll find |
 | 🔎 **Search & filters** | Search by place name or city, and filter by region and by type. If a search finds nothing, visitors can suggest the place by email or look it up on Google Maps |
-| 🗺️ **Interactive map** | Shows every place as a pin, colored by type. Click a pin to see its photo, rating, and description |
+| 🗺️ **Interactive map** | Shows every place as a pin, colored by type. Click a pin to see its photo and description |
 | 📷 **Real photos** | Real, freely licensed photos of each place from Wikimedia Commons, with the photographer credited |
 | 📍 **Distance from me** | Uses your location (only if you allow it) to sort places from nearest to farthest |
 | 🧭 **Directions** | Draws a route to a place on the map, or opens it in Google Maps |
@@ -24,7 +24,7 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 | 💰 **Trip cost estimator** | A full trip budget: fuel or flights, hotel, food, and **the real entry ticket price of each place**, based on adults, children, nights, rooms, car or plane, and travel style. Travelers can pick from **all nearby hotels** (4,400+ from Overture Maps, cleaned in MySQL), check the price on Google Maps, and type it in for an accurate total. **Real prices:** hotel prices from official GASTAT data for the nearest city, changed for the **travel month** with each region's real monthly prices; restaurant prices from Numbeo; fuel from Aramco; taxis with the official Transport General Authority fare. For flights, travelers type the real ticket price (a button opens Google Flights for their route), or the page uses an estimate. |
 | 🎯 **Plan by budget** | Type a total budget and the estimator lists every place that fits it, cheapest first, with how much money is left. Filter by region or type, then open any place for the full breakdown |
 | ♿ **Read aloud & voice search** | A 🔊 Listen button reads any place (and its nearby services) out loud, and a 🎤 Speak button lets people search by voice, in Arabic or English. Built with the browser's Web Speech API, for people who find reading or typing hard |
-| ⏰ **Peak hours** | A bar chart showing how busy a place usually is at each hour, and whether it's busy right now |
+| ⏰ **Peak hours** | A bar chart showing how busy a place usually is at each hour, and whether it's busy right now. *(An estimate, marked as such on the site)* |
 | 🌐 **Arabic & English** | Switch the whole site between English and Arabic (right-to-left), including place names and descriptions. Search works in both languages |
 | 🌙 **Light & dark mode** | Switch themes. Your choice is remembered next time |
 | 📱 **Responsive design** | Works on phones, tablets, and desktops |
@@ -83,11 +83,11 @@ Wajjahni (Arabic for *"guide me"*) is an interactive website that helps you disc
 
 ## 📊 Data
 
-The dataset (`data.js`) contains **74 places across 13 regions**. Each place has:
+The dataset (`data.js`) contains **72 places across 13 regions**. Each place has:
 
 `region` · `place_name` · `type` · `latitude` & `longitude` · `short_description` · `rating` · `num_reviews` · `visitors_per_year` · `best_season` · `best_for` · `image_url` · `image_credit` · `peak_hours`
 
-> ⚠️ **About the data:** the places and photos are real, but the **ratings, review counts, visitor numbers, and peak hours are sample data** used to build and test the website. Wajjahni is a student project, not an official tourism source. Replacing these with real data is on the to-do list below.
+> ⚠️ **About the data:** the places, photos, and coordinates are real (coordinates checked against Wikipedia and OpenStreetMap). The **peak hours are estimates**, and the site says so. The `rating`, `num_reviews`, and `visitors_per_year` fields are **sample data and are not shown on the site**. Wajjahni is a student project, not an official tourism source.
 
 ---
 
@@ -120,7 +120,7 @@ wajjahni/
 ├── prices.js       # Entry ticket prices for each place, with sources (free, official, reported, or unknown)
 ├── place_costs.js  # Real hotel and food prices near each place (made by scripts/build_place_costs.py)
 ├── hotels.js       # Hotels around each place (built from data/clean/place_hotels.csv)
-├── scripts/        # make_audio.py: records place names with a natural voice · build_place_costs.py: builds place_costs.js from data/raw
+├── scripts/        # make_audio.py: records place names with a natural voice · build_place_costs.py: builds place_costs.js from data/raw · rebuild_nearby.py: rebuilds nearby services and hotels (same logic as the SQL files)
 ├── contact.html    # Contact page
 ├── styles.css      # All styles, themes, and mobile layout
 ├── app.js          # Shared logic: language, theme, distance, peak hours, popups
@@ -152,24 +152,25 @@ No installation needed. An internet connection is required for the map, fonts, a
 For a detailed explanation of every change, see [CHANGELOG.md](CHANGELOG.md).
 
 **Done**
-- [x] Dataset of 74 places across 13 regions
+- [x] Dataset of 72 places across 13 regions
 - [x] Home, places, map, and contact pages
 - [x] Search and filters by region and type
 - [x] Interactive map with colored pins
 - [x] Distance from me
 - [x] Directions
-- [x] Peak hours chart
+- [x] Peak hours chart (estimates)
 - [x] Arabic and English
 - [x] Light and dark mode
 - [x] Mobile-friendly design
-- [x] Real photos for 64 places, with photographer credits
+- [x] Real photos for 65 places, with photographer credits
 - [x] Clean the official tourism statistics (2015–2024)
 - [x] Place names and descriptions in Arabic
 - [x] Real contact email
 
 **Coming next**
-- [ ] Replace sample numbers with real data from official sources
-- [ ] Real photos for the remaining 10 places
+- [x] Check every place's coordinates and fix the wrong ones (27 places)
+- [ ] Decide whether to add real ratings (e.g. from Google Places)
+- [ ] Real photos for the remaining 7 places
 - [ ] A data analysis page with charts by region, type, and season
 
 ---

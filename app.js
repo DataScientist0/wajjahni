@@ -1,7 +1,7 @@
 // ---- Translations ----
 const translations = {
   en: {
-    "nav.home": "Home", "nav.places": "Places", "nav.map": "Map", "nav.planner": "Trip cost", "nav.contact": "Contact", "nav.meta": "74 places across 13 regions",
+    "nav.home": "Home", "nav.places": "Places", "nav.map": "Map", "nav.planner": "Trip cost", "nav.contact": "Contact", "nav.meta": "72 places across 13 regions",
     "hero.title": "A map of every corner of Saudi Arabia worth the drive.",
     "hero.lede": "Heritage villages, mountain trails, Red Sea islands, and holy sites — filter by region or type, then see what's actually there.",
     "stat.places": "places mapped", "stat.regions": "regions", "stat.types": "place types",
@@ -15,7 +15,7 @@ const translations = {
     "nearby.btn": "🧭 Nearby services", "nearby.title": "Nearby services", "nearby.sub": "The 3 closest of each service (straight-line distance)", "nearby.km": "km", "nearby.go": "Directions",
     "svc.fuel": "⛽ Gas stations", "svc.pharmacy": "💊 Pharmacies", "svc.restaurant": "🍽️ Restaurants", "svc.cafe": "☕ Cafes", "svc.bank": "🏦 Banks & ATMs",
     "nearby.source": "Service data © Overture Maps Foundation. It may be incomplete or out of date.", "nearby.none": "No nearby services found.",
-    "footer.text": "Wajjahni — a student portfolio project. Ratings and peak hours are sample data, not an official tourism source. © 2026 Najla. All rights reserved.",
+    "footer.text": "Wajjahni — a student portfolio project. Peak hours are estimates, not an official tourism source. © 2026 Najla. All rights reserved.",
     "page.places.title": "All places", "page.places.lede": "Search, filter, or sort by distance from you.",
     "page.map.title": "The map", "page.map.lede": "Every place plotted — filter, search, or click a pin for details.",
     "search.placeholder": "Search a place, e.g. Hegra, Farasan...",
@@ -24,7 +24,7 @@ const translations = {
     "locate.status.locating": "Locating you…",
     "locate.status.error": "Couldn't get your location — check your browser's location permission.",
     "chip.all": "All",
-    "peak.btn": "🕐 Peak hours", "directions.btn": "📍 Directions", "gmaps.open": "📍 Open in Google Maps",
+    "peak.btn": "🕐 Peak hours (estimate)", "directions.btn": "📍 Directions", "gmaps.open": "📍 Open in Google Maps",
     "empty": "No places match these filters.",
     "empty.notfound": "We couldn't find “{q}” on Wajjahni.",
     "listen.btn": "🔊 Listen", "listen.stop": "⏹ Stop", "listen.novoice": "⚠️ No English voice on this device", "listen.label": "Read this place out loud",
@@ -37,7 +37,7 @@ const translations = {
     "empty.didyoumean": "Did you mean:", "empty.typo": "Check the spelling, or try another name.",
     "empty.invalid": "“{q}” doesn't look like a place name. Try the name of a place or a city, e.g. AlUla or Abha.", "empty.suggest": "📩 Suggest this place", "empty.gmaps": "🗺️ Search on Google Maps",
     "empty.mail.subject": "Place suggestion: {q}", "empty.mail.body": "Hi Wajjahni team,\n\nI searched for “{q}” but couldn't find it. Please consider adding it.\n\nThanks!",
-    "peak.sub": "Typical crowd levels by hour (illustrative data)",
+    "peak.sub": "Estimated crowd levels by hour. This is an estimate, not measured data.",
     "peak.notbusy": "Not too busy right now", "peak.bitbusy": "Usually a bit busy at this hour", "peak.verybusy": "Usually very busy right now",
     "peak.basedon": "based on hour",
     "list.head": "Places",
@@ -49,7 +49,7 @@ const translations = {
     "lang.toggle": "العربية"
   },
   ar: {
-    "nav.home": "الرئيسية", "nav.places": "الأماكن", "nav.map": "الخريطة", "nav.planner": "تكلفة الرحلة", "nav.contact": "تواصل", "nav.meta": "٧٤ مكان في ١٣ منطقة",
+    "nav.home": "الرئيسية", "nav.places": "الأماكن", "nav.map": "الخريطة", "nav.planner": "تكلفة الرحلة", "nav.contact": "تواصل", "nav.meta": "٧٢ مكان في ١٣ منطقة",
     "hero.title": "خريطة تجمع كل ركن بالسعودية يستاهل الرحلة.",
     "hero.lede": "قرى تراثية، مسارات جبلية، جزر بالبحر الأحمر، ومواقع دينية — فلتر حسب المنطقة أو النوع، وشوف وش فيها فعلاً.",
     "stat.places": "مكان على الخريطة", "stat.regions": "منطقة", "stat.types": "نوع مكان",
@@ -63,7 +63,7 @@ const translations = {
     "nearby.btn": "🧭 خدمات قريبة", "nearby.title": "خدمات قريبة", "nearby.sub": "أقرب ٣ من كل خدمة (المسافة بخط مستقيم)", "nearby.km": "كم", "nearby.go": "الاتجاهات",
     "svc.fuel": "⛽ محطات بنزين", "svc.pharmacy": "💊 صيدليات", "svc.restaurant": "🍽️ مطاعم", "svc.cafe": "☕ مقاهي", "svc.bank": "🏦 بنوك وصرافات",
     "nearby.source": "بيانات الخدمات من Overture Maps، وقد لا تكون كاملة أو محدثة.", "nearby.none": "ما لقينا خدمات قريبة.",
-    "footer.text": "وجّهني — مشروع طلابي شخصي. التقييمات وأوقات الذروة بيانات تجريبية، مو مصدر سياحي رسمي. © 2026 نجلاء. جميع الحقوق محفوظة.",
+    "footer.text": "وجّهني — مشروع طلابي شخصي. أوقات الذروة تقديرية، مو مصدر سياحي رسمي. © 2026 نجلاء. جميع الحقوق محفوظة.",
     "page.places.title": "كل الأماكن", "page.places.lede": "ابحث، فلتر، أو رتّب حسب المسافة منك.",
     "page.map.title": "الخريطة", "page.map.lede": "كل مكان موضّح على الخريطة — فلتر، ابحث، أو اضغط على أي نقطة للتفاصيل.",
     "search.placeholder": "ابحث عن مكان، مثلاً حِجر، فرسان...",
@@ -72,7 +72,7 @@ const translations = {
     "locate.status.locating": "جاري تحديد موقعك…",
     "locate.status.error": "ما قدرنا نحدد موقعك — تأكد من إذن الموقع بالمتصفح.",
     "chip.all": "الكل",
-    "peak.btn": "🕐 أوقات الذروة", "directions.btn": "📍 الاتجاهات", "gmaps.open": "📍 افتح في خرائط Google",
+    "peak.btn": "🕐 أوقات الذروة (تقديرية)", "directions.btn": "📍 الاتجاهات", "gmaps.open": "📍 افتح في خرائط Google",
     "empty": "ما فيه أماكن مطابقة لهذي الفلاتر.",
     "empty.notfound": "ما لقينا «{q}» في وجّهني.",
     "listen.btn": "🔊 استمع", "listen.stop": "⏹ إيقاف", "listen.novoice": "⚠️ جهازك ما فيه صوت عربي", "listen.label": "اقرأ معلومات المكان بصوت عالي",
@@ -85,7 +85,7 @@ const translations = {
     "empty.didyoumean": "قصدك:", "empty.typo": "تأكد من الإملاء، أو جرب اسم ثاني.",
     "empty.invalid": "«{q}» ما يبدو اسم مكان. جرب تكتب اسم مكان أو مدينة، مثلاً العلا أو أبها.", "empty.suggest": "📩 اقترح هالمكان علينا", "empty.gmaps": "🗺️ دوّر عليه في خرائط Google",
     "empty.mail.subject": "اقتراح مكان: {q}", "empty.mail.body": "هلا فريق وجّهني،\n\nبحثت عن «{q}» وما لقيته. أتمنى تضيفونه.\n\nشكراً!",
-    "peak.sub": "مستوى الازدحام المعتاد حسب الساعة (بيانات توضيحية)",
+    "peak.sub": "مستوى الازدحام التقديري حسب الساعة. هذا تقدير، مو بيانات مقاسة.",
     "peak.notbusy": "مو مزدحم كثير الحين", "peak.bitbusy": "عادة يكون مزدحم شوي بهذا الوقت", "peak.verybusy": "عادة يكون مزدحم جدًا الحين",
     "peak.basedon": "بناءً على الساعة",
     "list.head": "الأماكن",
@@ -515,7 +515,7 @@ function popupHTML(place, distanceKm) {
   return `
     ${placeImage(place, "popup-img")}
     <div class="popup-title">${tName(place)}</div>
-    <div class="popup-meta">${tLocation(place)} · ${tType(place.type)} · ★ ${place.rating}</div>
+    <div class="popup-meta">${tLocation(place)} · ${tType(place.type)}</div>
     ${distLine}
     <div class="popup-desc">${tDesc(place)}</div>
     ${photoCredit(place)}

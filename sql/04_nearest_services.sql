@@ -2,9 +2,9 @@
 -- Wajjahni · Step 4 of 4: the 3 nearest services of each type for every place
 -- =====================================================================
 -- What this file does:
---   For each of the 74 tourist places, finds the 3 closest gas stations,
+--   For each of the 72 tourist places, finds the 3 closest gas stations,
 --   pharmacies, restaurants, cafes, and banks/ATMs, and saves them in a new
---   table `nearest_services` (74 places x 5 types x 3 = up to 1,110 rows).
+--   table `nearest_services` (72 places x 5 types x 3 = up to 1,080 rows).
 --
 -- How to run:
 --   Run it after steps 1, 2 and 3. Re-run it whenever places or services change.
@@ -66,7 +66,7 @@ FROM (
     JOIN services s
 
       -- Only pair a place with services less than 2 degrees away (about 220 km).
-      -- Without this, MySQL would measure 74 x 32,500 = 2.4 million distances and
+      -- Without this, MySQL would measure 72 x 32,500 = 2.3 million distances and
       -- fill up the disk with temporary data. The 3 nearest services are always
       -- much closer than 220 km, so the result is the same, just much faster.
       ON  ABS(s.latitude  - p.latitude)  < 2

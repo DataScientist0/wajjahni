@@ -5,6 +5,92 @@ The newest changes are at the **top**. Every new update adds a section at the st
 
 ---
 
+## October 21, 2026: Buraydah Date City replaces Buraydah Central Market, and two places removed (72 places now)
+
+### What changed?
+- **Buraydah Central Market → Buraydah Date City (مدينة التمور ببريدة).**
+  - The old description said it was "one of the largest camel and livestock markets", which was wrong: the camel market is a different place.
+  - Date City is one of the largest date markets in Saudi Arabia, home to the yearly Buraydah Dates Festival.
+  - It has a **real photo** (Suliman Al-Kurishan, CC BY 2.0, Wikimedia Commons), and its location comes from the photo's own GPS data (26.3131, 43.9817).
+  - Entry is free; best season: summer (the festival is in late summer).
+- **Removed: Al-Baha Zipline.** It's part of Raghadan Forest Park, which is already on the site.
+- **Removed: Al-Asyah Lake.** We found no reliable source showing this lake exists (not on Wikipedia, OpenStreetMap, or in the news).
+- The site now has **72 places** (was 74), and **65 of them have a real photo** (7 left).
+
+### Renumbering
+Each place's number (its position in `data.js` + 1) links it to its audio files, nearby services, and hotels. Removing two places shifts the number of every place after them, so everything was renumbered together:
+- **Audio files** in `audio/ar/` and `audio/en/` renamed to the new numbers. We checked all 142 files against the originals: every one is on the right place. Date City's old recordings (with the old name) were deleted, so the 🔊 button uses the device's voice until we record it again with `scripts/make_audio.py`.
+- `data/clean/places.csv`, `sql/02_import_places.sql`, `data/clean/nearest_services.csv`, `data/clean/place_hotels.csv`, `services.js`, and `hotels.js`.
+- Date City's nearby services and hotels were calculated with `scripts/rebuild_nearby.py`.
+- Check in the browser: for all 72 places, the distance to every nearby service and hotel matches the place's coordinates.
+- The count "74" was changed to "72" on every page, in the translations, the README, and the SQL comments.
+
+### Files changed
+| File | Change |
+|---|---|
+| `data.js` | Date City, and two places removed |
+| `audio/ar/`, `audio/en/` | Renamed to the new numbers |
+| `data/clean/places.csv`, `sql/02_import_places.sql` | 72 places, new numbers |
+| `data/clean/nearest_services.csv`, `services.js` | New numbers, Date City's services |
+| `data/clean/place_hotels.csv`, `hotels.js` | New numbers, Date City's hotels |
+| `prices.js`, `place_costs.js`, `data/clean/place_costs.csv` | Date City, two places removed |
+| `index.html`, `places.html`, `map.html`, `contact.html`, `app.js` | 72 places |
+| `sql/04_nearest_services.sql`, `sql/07_hotels_near_places.sql` | Counts in the comments |
+| `README.md` | Number of places and photos |
+
+---
+
+## October 21, 2026: Correct coordinates for 27 places 📍, ratings removed, peak hours marked as estimates
+
+### Coordinates
+- We compared **every place's coordinates** with **Wikipedia** and **OpenStreetMap**, and fixed **27 places** that were wrong or only approximate. The biggest errors:
+
+| Place | How far off it was | Correct location (source) |
+|---|---|---|
+| Linah Heritage Village | **587 km** (was near Turaif) | Near Rafha (OSM) |
+| Gulf of Aqaba Beaches | 144 km | Haql (OSM) |
+| Disi Desert | 111 km | Wadi Disah (OSM) |
+| Al-Gharaba Nature Reserve | 93 km | West of Arar (OSM) |
+| Karan Island | 76 km | Karan Island (OSM) |
+| Shura Island | 54 km | Shura Island (Wikipedia) |
+| Najran Dam | 21 km | Najran Valley Dam (Wikipedia) |
+| Shebara Island | 19 km | Sheybarah Island (Wikipedia) |
+| Rijal Almaa | 16 km | Rijal Almaa (OSM + Wikipedia) |
+| Elephant Rock | 10 km | Elephant Rock (OSM + Wikipedia) |
+
+- Smaller fixes (1 to 11 km): Edge of the World, Wadi Hanifah, Jeddah Corniche, King Fahd's Fountain, Half Moon Bay, Al-Ahsa Oasis, Tabuk Castle, A'arif Fort, Al-Ukhdood, Old Najran, Jazan Corniche, Raghadan Forest Park, Al-Baha Zipline, Dhee Ain Village, Zaabal Castle, Abu Ali Island, and Farasan Al-Kabir Island.
+- The other places matched the sources (within about 1 km).
+
+### Everything that depends on the coordinates was recalculated
+- **Nearby services and hotels:** a new script, **`scripts/rebuild_nearby.py`**, does exactly what the SQL files do (`03`, `04`, `06`, `07`) in Python, so they can be rebuilt without Workbench after changing a place.
+  - We checked it gives the same result as the MySQL files: every place that didn't move came out the same, except two cafes at the same distance (0.4 km) near the Prophet's Mosque, whose order is random.
+  - Only the moved places were rebuilt (`--places`), and the lines of every other place were kept exactly as they were.
+- **Hotel and food prices** for the estimator (`scripts/build_place_costs.py`).
+- The same coordinates in `data/clean/places.csv` and `sql/02_import_places.sql`.
+- Examples: Linah's hotels are now in Rafha (about 98 km), Karan Island's in Jubail, and Rijal Almaa is now 25 km from Abha (it said 11).
+
+### Ratings removed
+- The ★ rating no longer appears on place cards, in the map list, or in map popups, because the ratings were sample data.
+- The data stays in `data.js` for now (not shown), in case we add real ratings later.
+
+### Peak hours marked as estimates
+- The button is now **"🕐 Peak hours (estimate)"**, and the window says it's **an estimate, not measured data**.
+- The footer on every page now says: "Peak hours are estimates, not an official tourism source."
+
+### Files changed
+| File | Change |
+|---|---|
+| `data.js`, `data/clean/places.csv`, `sql/02_import_places.sql` | Coordinates of 27 places |
+| `scripts/rebuild_nearby.py` | New: rebuilds nearby services and hotels with the SQL logic |
+| `services.js`, `data/clean/nearest_services.csv` | Nearby services for the moved places |
+| `hotels.js`, `data/clean/place_hotels.csv` | Hotels around the moved places |
+| `place_costs.js`, `data/clean/place_costs.csv` | Estimator prices with the new coordinates |
+| `places.html`, `map.html`, `app.js` | Ratings removed, peak hours labeled as estimates |
+| `index.html`, `contact.html`, `planner.html` | Footer text |
+| `README.md` | About the data, and the new script |
+
+---
+
 ## October 21, 2026: More accurate voice search 🎤
 
 ### Why did it get things wrong?

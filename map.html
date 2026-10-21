@@ -24,7 +24,7 @@
       <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="nav-right">
-      <div class="nav-meta" id="resultCount">74 places</div>
+      <div class="nav-meta" id="resultCount">72 places</div>
       <button id="langToggle" class="lang-toggle">العربية</button>
       <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
       <button id="navToggle" class="nav-toggle" aria-label="Open menu">☰</button>
@@ -54,7 +54,7 @@
   <div class="list-panel">
     <div class="list-panel-head">
       <span data-i18n="list.head">Places</span>
-      <span id="listCount">74 shown</span>
+      <span id="listCount">72 shown</span>
     </div>
     <div class="list-scroll" id="placeList"></div>
   </div>
@@ -64,7 +64,7 @@
   </div>
 </div>
 
-<footer data-i18n="footer.text">Wajjahni — a student portfolio project. Ratings and peak hours are sample data, not an official tourism source. © 2026 Najla. All rights reserved.</footer>
+<footer data-i18n="footer.text">Wajjahni — a student portfolio project. Peak hours are estimates, not an official tourism source. © 2026 Najla. All rights reserved.</footer>
 
 <div id="peakModal" class="peak-modal">
   <div class="peak-modal-box">
@@ -250,7 +250,6 @@ function render() {
         <div class="pc-body">
           <div class="pc-top">
             <span class="pc-name"><span class="type-dot" style="background:${TYPE_COLORS[d.type]}"></span>${tName(d)}</span>
-            <span class="pc-rating">★ ${d.rating}</span>
           </div>
           <div class="pc-meta">${tLocation(d)} · ${tType(d.type)} · ${t('best.in')} ${tSeason(d.best_season)}${distLine}</div>
           <div class="card-actions">

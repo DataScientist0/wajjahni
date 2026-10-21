@@ -1,19 +1,19 @@
 place_id,place_name,service_type,service_name,latitude,longitude,distance_km,rank_num
-1,"Edge of the World (Jabal Fihrayn)",bank,"Al Rajhi Bank",25.110646374633568,46.10466627798458,24.8,1
-1,"Edge of the World (Jabal Fihrayn)",bank,"anb ATM",25.277156,45.866183,37,2
-1,"Edge of the World (Jabal Fihrayn)",bank,"Al Rajhi Bank",25.282289381623137,45.8641123469508,37.6,3
-1,"Edge of the World (Jabal Fihrayn)",cafe,"إيفينت كافيه",25.126452,46.07991,24.6,1
-1,"Edge of the World (Jabal Fihrayn)",cafe,"Dunkin' - دانكن",24.932446,46.369575,44,2
-1,"Edge of the World (Jabal Fihrayn)",cafe,"قهوة خالد",24.906329,46.384725,45.8,3
-1,"Edge of the World (Jabal Fihrayn)",fuel,الدريس,24.9002,46.1467,22.2,1
-1,"Edge of the World (Jabal Fihrayn)",fuel,"محطة الجمعية",25.127361,46.104425,26.2,2
-1,"Edge of the World (Jabal Fihrayn)",fuel,الدريس,25.1286,46.1443,29.1,3
-1,"Edge of the World (Jabal Fihrayn)",pharmacy,"Nahdi pharmacy | صيدليه النهدى",24.472531057700227,46.28782354232789,64,1
-1,"Edge of the World (Jabal Fihrayn)",pharmacy,"Nahdi pharmacy | صيدليه النهدى",24.460797,46.298556,65.7,2
-1,"Edge of the World (Jabal Fihrayn)",pharmacy,"Nahdi pharmacy | صيدليه النهدى",24.661134,46.520565,67.4,3
-1,"Edge of the World (Jabal Fihrayn)",restaurant,"دانكن دونتس",25.131328766055667,45.97346554905918,20.6,1
-1,"Edge of the World (Jabal Fihrayn)",restaurant,"إيفينت برجر Event Burger",25.128280220650936,46.10440041080482,26.3,2
-1,"Edge of the World (Jabal Fihrayn)",restaurant,"دانكن دونتس",25.12854174,46.10464482,26.3,3
+1,Edge of the World (Jabal Fihrayn),bank,Al Rajhi Bank,25.110646374633568,46.10466627798458,21.5,1
+1,Edge of the World (Jabal Fihrayn),bank,anb ATM,25.277156,45.866183,38.6,2
+1,Edge of the World (Jabal Fihrayn),bank,Al Rajhi Bank,25.282289381623134,45.8641123469508,39.2,3
+1,Edge of the World (Jabal Fihrayn),cafe,إيفينت كافيه,25.126452,46.07991,21.8,1
+1,Edge of the World (Jabal Fihrayn),cafe,Dunkin' - دانكن,24.932446,46.369575,38.5,2
+1,Edge of the World (Jabal Fihrayn),cafe,قهوة خالد,24.906329,46.384725,40.2,3
+1,Edge of the World (Jabal Fihrayn),fuel,الدريس,24.9002,46.1467,16.8,1
+1,Edge of the World (Jabal Fihrayn),fuel,محطة الجمعية,25.127361,46.104425,23.1,2
+1,Edge of the World (Jabal Fihrayn),fuel,الدريس,25.1286,46.1443,25.4,3
+1,Edge of the World (Jabal Fihrayn),pharmacy,Nahdi pharmacy | صيدليه النهدى,24.472531057700227,46.28782354232789,60.9,1
+1,Edge of the World (Jabal Fihrayn),pharmacy,Dr Naeem pharmacy,24.9021,46.60175,62.0,2
+1,Edge of the World (Jabal Fihrayn),pharmacy,Nahdi pharmacy | صيدليه النهدى,24.661134,46.520565,62.5,3
+1,Edge of the World (Jabal Fihrayn),restaurant,دانكن دونتس,25.131328766055667,45.97346554905918,20.4,1
+1,Edge of the World (Jabal Fihrayn),restaurant,إيفينت برجر Event Burger,25.128280220650936,46.10440041080482,23.2,2
+1,Edge of the World (Jabal Fihrayn),restaurant,دانكن دونتس,25.12854174,46.10464482,23.2,3
 2,"At-Turaif District (Diriyah)",bank,"مصرف الراجحي | alrajhi bank",24.75033494,46.57391848,1.9,1
 2,"At-Turaif District (Diriyah)",bank,"Al Rajhi Bank",24.7504166666667,46.57385,1.9,2
 2,"At-Turaif District (Diriyah)",bank,"بنك الرياض",24.75205419,46.5754088,2.1,3
@@ -59,21 +59,21 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 4,"Kingdom Centre Tower",restaurant,شايه,24.71161115,46.67530585,0,1
 4,"Kingdom Centre Tower",restaurant,McDonald's,24.711558,46.675295,0,2
 4,"Kingdom Centre Tower",restaurant,"Samurai Japanese Cuisine",24.71194106,46.6752683,0,3
-5,"Wadi Hanifah",bank,"Al Rajhi Bank",24.6541498901556,46.67514151015915,0.7,1
-5,"Wadi Hanifah",bank,"Al Rajhi Bank",24.6551333333333,46.67075,1.1,2
-5,"Wadi Hanifah",bank,"Al Rajhi Bank",24.6465257163861,46.69394391872198,1.5,3
-5,"Wadi Hanifah",cafe,"القهوة العربية",24.655264862958,46.687037958461,0.9,1
-5,"Wadi Hanifah",cafe,"سلطان القهوه | Sultan Coffee",24.654428080946513,46.68823133837336,1,2
-5,"Wadi Hanifah",cafe,"مقهى مجلس المضياف",24.65301805,46.68903025,1,3
-5,"Wadi Hanifah",fuel,الدريس,24.6484,46.6709,0.9,1
-5,"Wadi Hanifah",fuel,نفط,24.63797512395866,46.673579999999994,1.5,2
-5,"Wadi Hanifah",fuel,"محطة الدريس",24.639774519479,46.692703228566,1.7,3
-5,"Wadi Hanifah",pharmacy,"Boots Pharmacy | صيدلية بوتس",24.664068604172,46.68290560426565,1.6,1
-5,"Wadi Hanifah",pharmacy,Boots,24.66447892,46.68285193,1.6,2
-5,"Wadi Hanifah",pharmacy,"صيدلية المتحدة",24.63740131,46.69763508,2.3,3
-5,"Wadi Hanifah",restaurant,"Chicken Basha",24.65414248,46.67503772,0.7,1
-5,"Wadi Hanifah",restaurant,"Finding Sushi",24.64315882,46.67439962,0.9,2
-5,"Wadi Hanifah",restaurant,"السبيعي الناصريه",24.65057,46.670447,1,3
+5,Wadi Hanifah,bank,SABB Bank ATM | بنك ساب,24.58783453570996,46.70486614971331,1.1,1
+5,Wadi Hanifah,bank,صرافة سامبا,24.59028032,46.70498357,1.3,2
+5,Wadi Hanifah,bank,Al Rajhi Bank,24.5766,46.6991166666667,1.5,3
+5,Wadi Hanifah,cafe,ماريو كوفي شوب,24.585127819897,46.714101186222,0.5,1
+5,Wadi Hanifah,cafe,ستاربوكس,24.5783677,46.7017297,1.2,2
+5,Wadi Hanifah,cafe,ديوانية الكيف cafe diwaniet alkeef,24.569811879720177,46.72346151414781,1.6,3
+5,Wadi Hanifah,fuel,نفط,24.59315,46.70319,1.7,1
+5,Wadi Hanifah,fuel,محطة أورانج,24.58971686,46.72763005,1.8,2
+5,Wadi Hanifah,fuel,الدريس,24.5756,46.696,1.8,3
+5,Wadi Hanifah,pharmacy,Albustan  Pharmacy,24.588543982403,46.710948944092,0.9,1
+5,Wadi Hanifah,pharmacy,Nahdi pharmacy | صيدليه النهدى,24.571906,46.698459,1.8,2
+5,Wadi Hanifah,pharmacy,Nahdi pharmacy | صيدليه النهدى,24.56556,46.704254,1.9,3
+5,Wadi Hanifah,restaurant,مطعم أسماك بيت القرش للمأكولات البحرية,24.59001458,46.71207815,1.0,1
+5,Wadi Hanifah,restaurant,دانكن دونتس,24.57841268,46.70156518,1.2,2
+5,Wadi Hanifah,restaurant,مطعم الامجاد,24.576649,46.700336,1.4,3
 6,"Masjid al-Haram",bank,"Al Rajhi Bank",21.420199578103116,39.82415453533683,0.3,1
 6,"Masjid al-Haram",bank,"NCB Bank",21.429989052674,39.829441573965,0.9,2
 6,"Masjid al-Haram",bank,"Alamoudi Exchange Co",21.432468486092,39.829079738058,1.1,3
@@ -119,36 +119,36 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 8,"Al-Balad (Historic Jeddah)",restaurant,"أرض الزعفران للعطور",21.4859107,39.1905747,0.2,1
 8,"Al-Balad (Historic Jeddah)",restaurant,"مطعم البصلي للاسماك والمأكولات الشعبية",21.48604286,39.19024062,0.2,2
 8,"Al-Balad (Historic Jeddah)",restaurant,"أسماك البَصلي",21.485789329649,39.190105,0.2,3
-9,"Jeddah Corniche",bank,"بنك البلاد",21.55052035,39.15701496,0.8,1
-9,"Jeddah Corniche",bank,"NCB - Correspondent Banking Division",21.55080409,39.15802164,0.8,2
-9,"Jeddah Corniche",bank,"Private Banking SABB",21.5506178012,39.1559327213,0.8,3
-9,"Jeddah Corniche",cafe,Bicicleta,21.546470630100167,39.16330933570862,0.7,1
-9,"Jeddah Corniche",cafe,"Fabu Cafe",21.548589899825,39.161315352374,0.7,2
-9,"Jeddah Corniche",cafe,BellaRosa,21.54794113,39.1626166,0.7,3
-9,"Jeddah Corniche",fuel,"محطة بامعروف",21.550023442664,39.154746185609,0.8,1
-9,"Jeddah Corniche",fuel,نفط,21.55003,39.15439,0.8,2
-9,"Jeddah Corniche",fuel,نفط,21.52642,39.16184,1.9,3
-9,"Jeddah Corniche",pharmacy,"Nahdi pharmacy | صيدليه النهدى",21.537468,39.163449,0.9,1
-9,"Jeddah Corniche",pharmacy,"Nahdi pharmacy | صيدليه النهدى",21.552935,39.16187,1.1,2
-9,"Jeddah Corniche",pharmacy,"Adama Pharmacy",21.549795870854275,39.14845394621213,1.2,3
-9,"Jeddah Corniche",restaurant,"حلواني كويزين",21.542922,39.155766,0.2,1
-9,"Jeddah Corniche",restaurant,"Rasoi by Vineet",21.54781658,39.15654647,0.5,2
-9,"Jeddah Corniche",restaurant,"Le Bistro",21.54786007,39.15639502,0.5,3
-10,"King Fahd's Fountain",bank,"صراف بنك الجزيره",21.577981993243984,39.11017626185225,0.7,1
-10,"King Fahd's Fountain",bank,"SNB Capital Jeddah lounge | الأهلي كابيتال صالة جدة",21.56623188,39.12652041,2.6,2
-10,"King Fahd's Fountain",bank,"صراف بنك الجزيره",21.584192,39.130385,2.9,3
-10,"King Fahd's Fountain",cafe,Starbucks,21.57687991,39.10908431,0.5,1
-10,"King Fahd's Fountain",cafe,"Sky Lounge",21.57618812,39.10999403,0.6,2
-10,"King Fahd's Fountain",cafe,"Beyond Coffee JW بيوند كوفي الكورنيش",21.578541,39.110356,0.7,3
-10,"King Fahd's Fountain",fuel,نفط,21.55855111694148,39.11617329447747,2.4,1
-10,"King Fahd's Fountain",fuel,الدريس,21.5914,39.1355,3.6,2
-10,"King Fahd's Fountain",fuel,نفط,21.60971,39.12055,4,3
-10,"King Fahd's Fountain",pharmacy,"Nahdi pharmacy | صيدليه النهدى",21.5906,39.120134,2.3,1
-10,"King Fahd's Fountain",pharmacy,"United Pharmacy - صيدلية المتحدة",21.55915078,39.11618902,2.3,2
-10,"King Fahd's Fountain",pharmacy,"Faris Luxury Pharmacy",21.57264488,39.12936362,2.7,3
-10,"King Fahd's Fountain",restaurant,"Le Paris Bretagne",21.577714337188,39.109869003296,0.6,1
-10,"King Fahd's Fountain",restaurant,"Butcha Steakhouse & International cuisine",21.581336,39.10936,0.7,2
-10,"King Fahd's Fountain",restaurant,"Pizza Hut",21.57387939,39.11054204,0.8,3
+9,Jeddah Corniche,bank,National Commercial Bank - Al Ahli,21.60034706881,39.120175765133,1.4,1
+9,Jeddah Corniche,bank,NCB Training Center   البنك الأهلي مركز التدريب,21.599485148324,39.120430955836,1.5,2
+9,Jeddah Corniche,bank,مصرف الراجحي ش. حراء,21.602719122957673,39.12071873711818,1.5,3
+9,Jeddah Corniche,cafe,StArbucks,21.599923,39.107183,0.1,1
+9,Jeddah Corniche,cafe,The Twenty KSA,21.598237817589,39.107634723187,0.1,2
+9,Jeddah Corniche,cafe,Coffee & More,21.602501,39.108261,0.4,3
+9,Jeddah Corniche,fuel,نفط,21.60971,39.12055,1.9,1
+9,Jeddah Corniche,fuel,الدريس,21.5914,39.1355,3.1,2
+9,Jeddah Corniche,fuel,Saad Gas Station,21.61834585,39.13022215,3.3,3
+9,Jeddah Corniche,pharmacy,Nahdi pharmacy | صيدليه النهدى,21.599006,39.120977,1.5,1
+9,Jeddah Corniche,pharmacy,Nahdi pharmacy | صيدليه النهدى,21.5906,39.120134,1.7,2
+9,Jeddah Corniche,pharmacy,Nahdi pharmacy | صيدليه النهدى,21.60647236,39.12233866,1.9,3
+9,Jeddah Corniche,restaurant,Le Voyageur,21.60194039,39.10827842,0.4,1
+9,Jeddah Corniche,restaurant,Anbriyah Seafood| العنبريّة للمأكولات البحرية,21.603953,39.107273,0.6,2
+9,Jeddah Corniche,restaurant,X Bite The Beach,21.604154,39.107622,0.6,3
+10,King Fahd's Fountain,bank,SABB Bank | بنك ساب,21.520251,39.157414,1.4,1
+10,King Fahd's Fountain,bank,صراف بنك الجزيره,21.524504,39.155227,1.4,2
+10,King Fahd's Fountain,bank,صراف بنك الجزيره,21.529203,39.161166,2.2,3
+10,King Fahd's Fountain,cafe,كورنيش الحمراء,21.51932197808371,39.152812451896104,0.9,1
+10,King Fahd's Fountain,cafe,كلتشر كافيه ولاونج,21.517657,39.153789,0.9,2
+10,King Fahd's Fountain,cafe,Triple shot cafe,21.5187421,39.1534351,0.9,3
+10,King Fahd's Fountain,fuel,نفط,21.52642,39.16184,2.1,1
+10,King Fahd's Fountain,fuel,نفط,21.50588,39.16512,2.4,2
+10,King Fahd's Fountain,fuel,الدريس,21.5263,39.1709,2.9,3
+10,King Fahd's Fountain,pharmacy,United Pharmacy - صيدلية المتحدة,21.51704635644613,39.16573763264083,2.2,1
+10,King Fahd's Fountain,pharmacy,Nahdi pharmacy | صيدليه النهدى,21.515883,39.166066,2.2,2
+10,King Fahd's Fountain,pharmacy,صيدلية الجواهر المتميزة,21.52443689,39.16743457,2.5,3
+10,King Fahd's Fountain,restaurant,أبو شقرة,21.51833927,39.15344011,0.9,1
+10,King Fahd's Fountain,restaurant,Saedi Fish Restaurant,21.5179,39.15359419,0.9,2
+10,King Fahd's Fountain,restaurant,Dilek ديليك,21.51774936865431,39.153656046033966,0.9,3
 11,"Al-Masjid an-Nabawi",bank,"SABB Bank ATM | بنك ساب",24.463899,39.610144,0.4,1
 11,"Al-Masjid an-Nabawi",bank,"SABB Bank ATM | بنك ساب",24.471401,39.613483,0.5,2
 11,"Al-Masjid an-Nabawi",bank,"صراف بنك الجزيره",24.46727,39.602502,0.9,3
@@ -194,21 +194,21 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 13,"Hegra (Mada'in Salih)",restaurant,Annabel’s,26.803944,37.950439,1.1,1
 13,"Hegra (Mada'in Salih)",restaurant,Saffron,26.755356,37.862894,9.9,2
 13,"Hegra (Mada'in Salih)",restaurant,"دانكن دونتس",26.87855669,37.90318003,10.6,3
-14,"Elephant Rock",bank,"بنك الرياض",26.605509,37.925577,2.8,1
-14,"Elephant Rock",bank,"مصرف الراجحي",26.601743,37.923114,3,2
-14,"Elephant Rock",bank,"Al Rajhi Bank",27.6304166666667,38.5491666666667,128.3,3
-14,"Elephant Rock",cafe,"Dunkin' - دانكن",26.627522047405577,37.912946119049074,0.2,1
-14,"Elephant Rock",cafe,مركاز,26.627238,37.913102,0.2,2
-14,"Elephant Rock",cafe,ستاربكس,26.6293312,37.9133353,0.4,3
-14,"Elephant Rock",fuel,الدريس,26.6158,37.92,1.5,1
-14,"Elephant Rock",fuel,الدريس,26.6089,37.926,2.5,2
-14,"Elephant Rock",fuel,الدريس,26.5786,37.9425,6.2,3
-14,"Elephant Rock",pharmacy,"صيدلية بلسم العلا",26.60493183,37.9253492,2.8,1
-14,"Elephant Rock",pharmacy,"Nahdi pharmacy | صيدليه النهدى",26.577534,37.942795,6.3,2
-14,"Elephant Rock",pharmacy,"ER Pharmacy",26.554984,37.949995,8.9,3
-14,"Elephant Rock",restaurant,"دانكن دونتس",26.62749665211179,37.912908599957866,0.2,1
-14,"Elephant Rock",restaurant,"Palm Garden, منتزه النخيل",26.626919,37.913488,0.3,2
-14,"Elephant Rock",restaurant,SKLT,26.62870335,37.9130667,0.3,3
+14,Elephant Rock,bank,بنك الرياض,26.605509,37.925577,10.8,1
+14,Elephant Rock,bank,مصرف الراجحي,26.601743,37.923114,11.3,2
+14,Elephant Rock,bank,Al Rajhi Bank,27.6304166666667,38.5491666666667,118.8,3
+14,Elephant Rock,cafe,Key Café,26.688859,37.980707,0.1,1
+14,Elephant Rock,cafe,Jolt,26.690083,37.981888,0.1,2
+14,Elephant Rock,cafe,ستاربكس,26.66390077667957,37.904318746536234,8.2,3
+14,Elephant Rock,fuel,الدريس,26.6554,38.0587,8.5,1
+14,Elephant Rock,fuel,الدريس,26.6158,37.92,10.2,2
+14,Elephant Rock,fuel,الدريس,26.6291,38.0604,10.3,3
+14,Elephant Rock,pharmacy,صيدلية بلسم العلا,26.60493183,37.9253492,10.9,1
+14,Elephant Rock,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.577534,37.942795,13.0,2
+14,Elephant Rock,pharmacy,ER Pharmacy,26.554984,37.949995,15.3,3
+14,Elephant Rock,restaurant,Burger Boutique || برجر بوتيك,26.690074,37.982447,0.1,1
+14,Elephant Rock,restaurant,Salt,26.68858764,37.98004417,0.2,2
+14,Elephant Rock,restaurant,Shaden Resturant,26.658353304203974,37.962063543111356,3.9,3
 15,"Mount Uhud",bank,"بنك الرياض",24.496325,39.606174,0.8,1
 15,"Mount Uhud",bank,"Sabb Atm",24.492821,39.610324,1.1,2
 15,"Mount Uhud",bank,"Emirates NBD ATM",24.49625,39.59571,1.5,3
@@ -224,21 +224,21 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 15,"Mount Uhud",restaurant,"Reef Al Bustan Garden",24.500707753748,39.61231,0.3,1
 15,"Mount Uhud",restaurant,"Mattam Atbak Al-Khair مطعم اطباق الخير",24.50373,39.60526,0.4,2
 15,"Mount Uhud",restaurant,Sayid,24.50373,39.60526,0.4,3
-16,"Buraydah Central Market",bank,"صراف بنك الجزيره",26.359274,43.981829,0,1
-16,"Buraydah Central Market",bank,"Al Rajhi Bank",26.3708333333333,43.974,1.5,2
-16,"Buraydah Central Market",bank,"بنك التنمية الاجتماعية - فرع بريدة",26.363684,43.96737,1.5,3
-16,"Buraydah Central Market",cafe,"The Coffee Address | عنوان القهوة",26.363848988323593,43.97253401915739,1.1,1
-16,"Buraydah Central Market",cafe,"ارابيكا ستار",26.35855896053,43.969040930247,1.3,2
-16,"Buraydah Central Market",cafe,"قهوة السكرية",26.35886437,43.96889492,1.3,3
-16,"Buraydah Central Market",fuel,الدريس,26.3703,43.9797,1.3,1
-16,"Buraydah Central Market",fuel,الدريس,26.3635,43.9958,1.5,2
-16,"Buraydah Central Market",fuel,الدريس,26.3459,43.9728,1.7,3
-16,"Buraydah Central Market",pharmacy,"صيدلية السلمان",26.3595228,43.97004665,1.2,1
-16,"Buraydah Central Market",pharmacy,"Al-Salman Pharmacy",26.35890098,43.96897318,1.3,2
-16,"Buraydah Central Market",pharmacy,"صيدلية علاج الصفوة",26.368937,43.960793,2.4,3
-16,"Buraydah Central Market",restaurant,"بيتزا هت",26.3592309,43.98181200000001,0,1
-16,"Buraydah Central Market",restaurant,"McDonald's - ماكدونالدز",26.353878782828353,43.97496451685271,0.9,2
-16,"Buraydah Central Market",restaurant,"Feeshon Restaurant",26.356489462028136,43.97117966322962,1.1,3
+16,Buraydah Date City,bank,Al Rajhi Bank,26.3243333333333,43.9805,1.3,1
+16,Buraydah Date City,bank,Al Rajhi Bank,26.30019854628929,43.98730005288266,1.5,2
+16,Buraydah Date City,bank,بنك الراجحي,26.327394616096,43.973866217578,1.8,3
+16,Buraydah Date City,cafe,Arabica Star,26.3107374,43.97008144,1.2,1
+16,Buraydah Date City,cafe,Arabica Star Coffee,26.3267419,43.98036,1.5,2
+16,Buraydah Date City,cafe,جنة القهوة,26.32597,43.974209,1.6,3
+16,Buraydah Date City,fuel,الدريس,26.3096,43.9842,0.5,1
+16,Buraydah Date City,fuel,الدريس,26.3186,43.9884,0.9,2
+16,Buraydah Date City,fuel,الدريس,26.3146,43.9651,1.7,3
+16,Buraydah Date City,pharmacy,صيدليات عادل,26.314959119182,43.976211547852,0.6,1
+16,Buraydah Date City,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.287569,43.992263,3.0,2
+16,Buraydah Date City,pharmacy,Nawader Al Dawaa pharmacy - صيدلية نوادر الدواء,26.3294441,44.013239,3.6,3
+16,Buraydah Date City,restaurant,مطعم الخيام,26.3241455,43.9814016,1.2,1
+16,Buraydah Date City,restaurant,Al Baik  Buraidah Al Qassim,26.324060882587556,43.97774356837942,1.3,2
+16,Buraydah Date City,restaurant,مطعم البحار,26.32291174,43.97473003,1.3,3
 17,"Unaizah Old Town",bank,"AlRajhi Bank | مصرف الراجحي",26.08492426026789,43.98609642742286,0.1,1
 17,"Unaizah Old Town",bank,"البنك العربي | ANB Bank",26.08311578963964,43.98976119919149,0.4,2
 17,"Unaizah Old Town",bank,"بنك الرياض",26.086304,43.989502,0.4,3
@@ -269,843 +269,812 @@ place_id,place_name,service_type,service_name,latitude,longitude,distance_km,ran
 18,"Al-Bassam Historic House",restaurant,"Kashmir Restaurant",26.09151732,43.97951663,0.2,1
 18,"Al-Bassam Historic House",restaurant,"يم يم بيتزا | Yum Yum Pizza",26.08941310510432,43.97649912175952,0.4,2
 18,"Al-Bassam Historic House",restaurant,"مطعم مرحبا",26.093036,43.974912,0.6,3
-19,"Al-Asyah Lake",bank,"بنك الرياض",26.152715,43.653038,12.1,1
-19,"Al-Asyah Lake",bank,"Al Rajhi Bank",26.15107228834156,43.65300915752447,12.1,2
-19,"Al-Asyah Lake",bank,"Al Rajhi Bank",26.2525,43.618,12.7,3
-19,"Al-Asyah Lake",cafe,"ملتقى نون",26.160407055961,43.634562492371,10.1,1
-19,"Al-Asyah Lake",cafe,"Bells Coffee",26.067395,43.559075,11.3,2
-19,"Al-Asyah Lake",cafe,"لقيا كآفيه | Luqia Cafe",26.147941,43.648579,11.7,3
-19,"Al-Asyah Lake",fuel,الدريس,26.0652,43.5527,11.5,1
-19,"Al-Asyah Lake",fuel,الدريس,26.1517,43.6528,12,2
-19,"Al-Asyah Lake",fuel,"محطة الخليج",26.160345100259,43.658021781082,12.5,3
-19,"Al-Asyah Lake",pharmacy,"صيدلية أركان الوصفة",26.14324226,43.60268152,7.4,1
-19,"Al-Asyah Lake",pharmacy,"Nahdi pharmacy | صيدليه النهدى",26.127251,43.646281,12.1,2
-19,"Al-Asyah Lake",pharmacy,"Nahdi pharmacy | صيدليه النهدى",26.143173,43.652401,12.2,3
-19,"Al-Asyah Lake",restaurant,McDonald's,26.234094,43.553263,7.8,1
-19,"Al-Asyah Lake",restaurant,"دانكن دونتس",26.067711918343605,43.5589892865072,11.3,2
-19,"Al-Asyah Lake",restaurant,"Crepe Day",26.143888,43.649928,11.9,3
-20,"Half Moon Bay",bank,"صراف بنك الجزيره",26.186631,50.159708,9.3,1
-20,"Half Moon Bay",bank,"بنك الرياض",26.1883482,50.1875068,11.4,2
-20,"Half Moon Bay",bank,"SABB Bank ATM | بنك ساب",26.178099803430037,50.196198818562,11.5,3
-20,"Half Moon Bay",cafe,Starbucks,26.143911,50.091129,2.6,1
-20,"Half Moon Bay",cafe,"Greeno Cafe",26.090505,50.124911,4.3,2
-20,"Half Moon Bay",cafe,"Costa Coffee",26.14748451,50.15137647,5.9,3
-20,"Half Moon Bay",fuel,الدريس,26.1748,50.1478,7.6,1
-20,"Half Moon Bay",fuel,الدريس,26.1715,50.1621,8.3,2
-20,"Half Moon Bay",fuel,الدريس,26.1865,50.1597,9.3,3
-20,"Half Moon Bay",pharmacy,"Al-Dawaa Pharmacy",26.187316,50.187035,11.3,1
-20,"Half Moon Bay",pharmacy,"صيدلية النهدي",26.208916,50.191079,13.3,2
-20,"Half Moon Bay",pharmacy,"Nahdi pharmacy | صيدليه النهدى",26.203691,50.197595,13.3,3
-20,"Half Moon Bay",restaurant,PIN,26.127309,50.079241,2.2,1
-20,"Half Moon Bay",restaurant,"The Cheesecake Factory",26.14694679,50.09220484,2.9,2
-20,"Half Moon Bay",restaurant,"بوفية نجوم شواطئ العزيزية",26.154962,50.141461,5.5,3
-21,"Qatif Old Town",bank,"بنك الرياض",26.5167797,49.9994616,1,1
-21,"Qatif Old Town",bank,"Al Rajhi Bank",26.527493789214123,50.02263291981999,1.6,2
-21,"Qatif Old Town",bank,"SABB Bank ATM | بنك ساب",26.518729216849003,50.02793608937225,1.9,3
-21,"Qatif Old Town",cafe,"Oh la la",26.52039131,49.99933578,0.9,1
-21,"Qatif Old Town",cafe,ستاربكس,26.533395,50.027426,2.4,2
-21,"Qatif Old Town",cafe,ستاربوكس,26.533395,50.027426,2.4,3
-21,"Qatif Old Town",fuel,"محطة الساحل الشرقي",26.51899657935,50.006012377674,0.3,1
-21,"Qatif Old Town",fuel,الدريس,26.5083,50.0292,2.5,2
-21,"Qatif Old Town",fuel,SASCO,26.50307842,50.039026,3.6,3
-21,"Qatif Old Town",pharmacy,"Farah Khalid's Pharmacy",26.52,50.0247,1.6,1
-21,"Qatif Old Town",pharmacy,"United Pharmacy - صيدلية المتحدة",26.53840116,50.02515554,2.6,2
-21,"Qatif Old Town",pharmacy,"صيدليه الدواء",26.539362903044,50.024335421649,2.6,3
-21,"Qatif Old Town",restaurant,"مطعم الساباط",26.51950118,50.00082836,0.8,1
-21,"Qatif Old Town",restaurant,"مطعم استاذ الشاورما",26.521467,49.99877,1,2
-21,"Qatif Old Town",restaurant,ksa.restaurant,26.521042,49.998524,1,3
-22,"Tarout Castle",bank,"صراف بنك الجزيره",26.564291,50.049617,1,1
-22,"Tarout Castle",bank,"Riyad Bank",26.56946999570304,50.071539193829466,2,2
-22,"Tarout Castle",bank,"بنك الرياض",26.569453,50.071551,2,3
-22,"Tarout Castle",cafe,ChocoValley,26.57865,50.05209,0.6,1
-22,"Tarout Castle",cafe,"Dark Café",26.566996,50.048255,0.8,2
-22,"Tarout Castle",cafe,"Brugge Originalite",26.567611,50.044298,1,3
-22,"Tarout Castle",fuel,"Al Abduljabbar Gas Station",26.57411035,50.05339993,0.2,1
-22,"Tarout Castle",fuel,نفط,26.55716530127503,50.07219466501236,2.7,2
-22,"Tarout Castle",fuel,"محطة طيبة للمحروقات",26.57387315,50.08064247,2.9,3
-22,"Tarout Castle",pharmacy,"Farah Khaled Pharmacy",26.58139534,50.03990195,1.5,1
-22,"Tarout Castle",pharmacy,"Nahdi pharmacy | صيدليه النهدى",26.558707,50.053387,1.6,2
-22,"Tarout Castle",pharmacy,"صيدلية النهدي - الشاطيء",26.55884520209,50.036967432161,2.2,3
-22,"Tarout Castle",restaurant,كشكش,26.574374,50.050031,0.2,1
-22,"Tarout Castle",restaurant,"مشويات المعلم الشامي",26.5694995,50.053503,0.4,2
-22,"Tarout Castle",restaurant,"مطعم القلعة",26.57376672,50.04622606,0.6,3
-23,"Dammam Corniche",bank,"Al Rajhi Bank",26.432649309403637,50.104674890993955,0.2,1
-23,"Dammam Corniche",bank,"Western Union",26.43908106,50.10485113,0.5,2
-23,"Dammam Corniche",bank,SABB,26.439506,50.104355,0.6,3
-23,"Dammam Corniche",cafe,"Dunkin' - دانكن",26.43441963,50.10326004,0,1
-23,"Dammam Corniche",cafe,ATYPICAL,26.438028621863836,50.10453956527289,0.4,2
-23,"Dammam Corniche",cafe,"karak Cup",26.436514,50.10737,0.5,3
-23,"Dammam Corniche",fuel,الدريس,26.4339,50.1049,0.2,1
-23,"Dammam Corniche",fuel,الدريس,26.4257,50.0991,1.1,2
-23,"Dammam Corniche",fuel,"محطة الدريس",26.441623,50.111466,1.1,3
-23,"Dammam Corniche",pharmacy,"Nahdi pharmacy | صيدليه النهدى",26.436528,50.096989,0.7,1
-23,"Dammam Corniche",pharmacy,"Nahdi pharmacy | صيدليه النهدى",26.437988,50.092371,1.2,2
-23,"Dammam Corniche",pharmacy,"Abeer Pharmacy",26.44398426,50.09417736,1.4,3
-23,"Dammam Corniche",restaurant,"مطبخ ومطعم واحة شبام",26.43272,50.10333328,0.2,1
-23,"Dammam Corniche",restaurant,"Egyptian Falafel Corner",26.433051645606,50.101030456331,0.3,2
-23,"Dammam Corniche",restaurant,Redtable.sa,26.43324,50.1007,0.3,3
-24,"Al-Ahsa Oasis",bank,"Al Rajhi Bank",25.381144175031913,49.585119015889944,0.3,1
-24,"Al-Ahsa Oasis",bank,"صراف بنك الجزيره",25.382708,49.586878,0.4,2
-24,"Al-Ahsa Oasis",bank,"Arab National Bank",25.3801681,49.5855029,0.4,3
-24,"Al-Ahsa Oasis",cafe,ستاربكس,25.380031,49.588116,0.6,1
-24,"Al-Ahsa Oasis",cafe,"Dunkin' Donuts - 30060",25.388703,49.58043,0.7,2
-24,"Al-Ahsa Oasis",cafe,"Royal Neem Cafe and Restaurant",25.38879164,49.58033713,0.7,3
-24,"Al-Ahsa Oasis",fuel,"محطه جمال البراهيم",25.39162985,49.5869483,1,1
-24,"Al-Ahsa Oasis",fuel,الدريس,25.3933,49.5815,1.1,2
-24,"Al-Ahsa Oasis",fuel,الدريس,25.3721,49.5822,1.3,3
-24,"Al-Ahsa Oasis",pharmacy,"Nahdi pharmacy | صيدليه النهدى",25.375154,49.588262,1,1
-24,"Al-Ahsa Oasis",pharmacy,"صيدلية رحيق السلامة",25.39157095,49.59951907,1.9,2
-24,"Al-Ahsa Oasis",pharmacy,Boots,25.400472,49.5781959,2,3
-24,"Al-Ahsa Oasis",restaurant,"Café Boutiques",25.38706968,49.58032888,0.5,1
-24,"Al-Ahsa Oasis",restaurant,"مطعم البستان",25.3881056,49.583364,0.5,2
-24,"Al-Ahsa Oasis",restaurant,"Silk Road Restaurant",25.3879155,49.5817525,0.5,3
-25,"Abha Lake Park",bank,"صراف بنك الجزيره",18.246502,42.51173,0,1
-25,"Abha Lake Park",bank,"Al Rajhi Bank",18.2384166666667,42.5000833333333,1.5,2
-25,"Abha Lake Park",bank,"بنك الأهلي",18.232034,42.508209,1.7,3
-25,"Abha Lake Park",cafe,"الإستكانة التركية",18.23957239,42.50192416,1.3,1
-25,"Abha Lake Park",cafe,"مقهى جلسة السمو",18.241819,42.499076,1.4,2
-25,"Abha Lake Park",cafe,"مقهى الباخرة الحديث",18.23530889,42.50076952,1.7,3
-25,"Abha Lake Park",fuel,الدريس,18.2329,42.5063,1.6,1
-25,"Abha Lake Park",fuel,الدريس,18.226,42.5002,2.6,2
-25,"Abha Lake Park",fuel,الدريس,18.2312,42.492,2.7,3
-25,"Abha Lake Park",pharmacy,"Nahdi pharmacy | صيدليه النهدى",18.246475,42.511783,0,1
-25,"Abha Lake Park",pharmacy,"Nahdi pharmacy | صيدليه النهدى‎",18.233149,42.504462,1.7,2
-25,"Abha Lake Park",pharmacy,"صيدلية النميص فرع السامر",18.23111607,42.50828355,1.7,3
-25,"Abha Lake Park",restaurant,"مطعم كبسة البيت ٢",18.24023634,42.49987364,1.4,1
-25,"Abha Lake Park",restaurant,البيك,18.254255,42.500435,1.5,2
-25,"Abha Lake Park",restaurant,"Al Baik",18.254450221734363,42.500337423326734,1.5,3
-26,"Rijal Almaa Heritage Village",bank,"Al Rajhi Bank",18.207329168022405,42.489949510076535,9,1
-26,"Rijal Almaa Heritage Village",bank,"بنك الإنماء",18.215079454244,42.492729610919,9.7,2
-26,"Rijal Almaa Heritage Village",bank,"SABB Bank ATM | بنك ساب",18.213594,42.498339,10.1,3
-26,"Rijal Almaa Heritage Village",cafe,"مرفأ أبها",18.208974,42.482243,8.4,1
-26,"Rijal Almaa Heritage Village",cafe,"Lobby Abha Palace",18.210542351044637,42.48361144454191,8.6,2
-26,"Rijal Almaa Heritage Village",cafe,"Barncafe - بارنيز كافيه",18.230553,42.467634,8.9,3
-26,"Rijal Almaa Heritage Village",fuel,الدريس,18.2338,42.4098,7.5,1
-26,"Rijal Almaa Heritage Village",fuel,الدريس,18.2312,42.492,10.7,2
-26,"Rijal Almaa Heritage Village",fuel,الدريس,18.226,42.5002,11,3
-26,"Rijal Almaa Heritage Village",pharmacy,"Nahdi pharmacy | صيدليه النهدى",18.219439,42.482735,9.1,1
-26,"Rijal Almaa Heritage Village",pharmacy,"Nahdi pharmacy | صيدليه النهدى",18.230094,42.482287,9.9,2
-26,"Rijal Almaa Heritage Village",pharmacy,"Saudi Arabian Drug Store - Abha branch",18.21760140000049,42.497633999998264,10.3,3
-26,"Rijal Almaa Heritage Village",restaurant,"مطعم درة الصين",18.20742901,42.49054771,9,1
-26,"Rijal Almaa Heritage Village",restaurant,"Max Food",18.20541663,42.49176059,9,2
-26,"Rijal Almaa Heritage Village",restaurant,العريش,18.209078,42.49089,9.1,3
-27,Al-Soudah,bank,"Al Rajhi Bank",18.2384166666667,42.5000833333333,14.7,1
-27,Al-Soudah,bank,"بنك الإنماء",18.215079454244,42.492729610919,14.8,2
-27,Al-Soudah,bank,"Al Rajhi Bank",18.207329168022405,42.489949510076535,14.9,3
-27,Al-Soudah,cafe,"Barn's | بارنز",18.23059246,42.4676407,11.6,1
-27,Al-Soudah,cafe,"Barncafe - بارنيز كافيه",18.230553,42.467634,11.7,2
-27,Al-Soudah,cafe,"Box Coffee",18.241634,42.480502,12.6,3
-27,Al-Soudah,fuel,الدريس,18.2338,42.4098,6.2,1
-27,Al-Soudah,fuel,الدريس,18.2312,42.492,14,2
-27,Al-Soudah,fuel,الدريس,18.226,42.5002,15.1,3
-27,Al-Soudah,pharmacy,"Nahdi pharmacy | صيدليه النهدى",18.24436,42.271536,10.3,1
-27,Al-Soudah,pharmacy,"Nahdi pharmacy | صيدليه النهدى",18.230094,42.482287,13.1,2
-27,Al-Soudah,pharmacy,"Nahdi pharmacy | صيدليه النهدى",18.278795,42.241276,13.1,3
-27,Al-Soudah,restaurant,"مطعم الشجره محايل عسير",18.251517633345028,42.47545686665739,11.8,1
-27,Al-Soudah,restaurant,"دانكن دونتس",18.2750798,42.24430173,12.8,2
-27,Al-Soudah,restaurant,"الشوكة التركية",18.230858,42.480719,12.9,3
-28,"Abha Cable Car",bank,"Al Rajhi Bank",18.2384166666667,42.5000833333333,1.1,1
-28,"Abha Cable Car",bank,"بنك الأهلي",18.232034,42.508209,2,2
-28,"Abha Cable Car",bank,"بنك الإنماء",18.215079454244,42.492729610919,2.2,3
-28,"Abha Cable Car",cafe,ستاربوكس,18.231266,42.492366,0.5,1
-28,"Abha Cable Car",cafe,Starbucks,18.23116825,42.4923809,0.5,2
-28,"Abha Cable Car",cafe,"Tooz Cafe",18.2319824,42.4948071,0.6,3
-28,"Abha Cable Car",fuel,الدريس,18.2312,42.492,0.5,1
-28,"Abha Cable Car",fuel,الدريس,18.226,42.5002,1.5,2
-28,"Abha Cable Car",fuel,الدريس,18.2329,42.5063,1.7,3
-28,"Abha Cable Car",pharmacy,"Universe Pharmacy",18.23082459,42.49325019,0.6,1
-28,"Abha Cable Car",pharmacy,"صيدلية الوردتين",18.22901323,42.49555263,0.9,2
-28,"Abha Cable Car",pharmacy,"Nahdi pharmacy | صيدليه النهدى",18.230094,42.482287,1,3
-28,"Abha Cable Car",restaurant,"دانكن دونتس",18.23150186,42.4923069,0.5,1
-28,"Abha Cable Car",restaurant,ماكدونالدز,18.23058543701914,42.48967835809756,0.5,2
-28,"Abha Cable Car",restaurant,McDonald's,18.23046576,42.48976543,0.5,3
-29,"Tabuk Castle",bank,"SABB Bank ATM | بنك ساب",28.397886865650815,36.57911122563239,0.3,1
-29,"Tabuk Castle",bank,"Al Rajhi Bank",28.399163039092652,36.57701203576461,0.5,2
-29,"Tabuk Castle",bank,"Samba Bank",28.403394,36.570097,1.3,3
-29,"Tabuk Castle",cafe,"The Coffee Address | عنوان القهوة",28.387598,36.581983,1.3,1
-29,"Tabuk Castle",cafe,"Barn's | بارنز",28.39024416,36.59069854,1.3,2
-29,"Tabuk Castle",cafe,"Golden Dear",28.387426,36.584818,1.3,3
-29,"Tabuk Castle",fuel,الدريس,28.3985,36.5906,0.8,1
-29,"Tabuk Castle",fuel,الدريس,28.3956,36.5711,1.1,2
-29,"Tabuk Castle",fuel,نفط,28.38919,36.59019,1.4,3
-29,"Tabuk Castle",pharmacy,"صيدلية مواسم للادوية",28.39948475,36.57803968,0.4,1
-29,"Tabuk Castle",pharmacy,"Nahdi pharmacy | صيدليه النهدى",28.405603,36.581666,0.7,2
-29,"Tabuk Castle",pharmacy,"Nabd Alfairoz pharmacy",28.40832,36.58523,1.1,3
-29,"Tabuk Castle",restaurant,"مطاعم كشري الشيف",28.39806574,36.57821431,0.4,1
-29,"Tabuk Castle",restaurant,"Shawaya House بيت الشواية",28.39812445,36.57798171,0.4,2
-29,"Tabuk Castle",restaurant,"Al Bustan Restaurant",28.39759171,36.57782485,0.5,3
-30,"Gulf of Aqaba Beaches",bank,"بنك الرياض",27.359867,35.690436,112.9,1
-30,"Gulf of Aqaba Beaches",bank,"مصرف الراجحي | Al Rajhi Bank",27.352548,35.689086,113.3,2
-30,"Gulf of Aqaba Beaches",bank,"Al Rajhi Bank",29.2824166666667,34.94525,143.3,3
-30,"Gulf of Aqaba Beaches",cafe,"Afife Lady Cafe & Restaurant 2",28.161965661712,34.90487197359,20.7,1
-30,"Gulf of Aqaba Beaches",cafe,"Dunkin' - دانكن",28.113387,35.108168,32.8,2
-30,"Gulf of Aqaba Beaches",cafe,Starbucks,28.112505,35.109385,32.8,3
-30,"Gulf of Aqaba Beaches",fuel,الدريس,28.0654,35.1773,37.7,1
-30,"Gulf of Aqaba Beaches",fuel,الدريس,28.0609,35.1953,39.4,2
-30,"Gulf of Aqaba Beaches",fuel,الدريس,28.021,35.2317,42.4,3
-30,"Gulf of Aqaba Beaches",pharmacy,"Nahdi pharmacy | صيدليه النهدى",27.359789,35.690871,113,1
-30,"Gulf of Aqaba Beaches",pharmacy,"Nahdi pharmacy | صيدليه النهدى",27.354729,35.698441,113.9,2
-30,"Gulf of Aqaba Beaches",pharmacy,"Nahdi pharmacy | صيدليه النهدى",29.283986,34.949699,143.5,3
-30,"Gulf of Aqaba Beaches",restaurant,"Akleh أكلِة",28.118508341906,34.734349250793,14.7,1
-30,"Gulf of Aqaba Beaches",restaurant,"دانكن دونتس",28.1133451,35.1081123,32.8,2
-30,"Gulf of Aqaba Beaches",restaurant,"Hardee’s | هارديز",28.075805,35.15583,35.9,3
-31,"Disi Desert",bank,"صراف بنك الجزيره",28.422348,36.476105,47.3,1
-31,"Disi Desert",bank,"صراف بنك الجزيره",28.373861,36.47927,48.9,2
-31,"Disi Desert",bank,"صراف بنك الجزيره",28.387694,36.513097,51.7,3
-31,"Disi Desert",cafe,"Dunkin' - دانكن",28.403612,36.452731,45.5,1
-31,"Disi Desert",cafe,"Dunkin' - دانكن",28.384451,36.465685,47.3,2
-31,"Disi Desert",cafe,"Dunkin' - دانكن",28.38075066,36.46839523,47.7,3
-31,"Disi Desert",fuel,الدريس,28.4259,36.4505,44.8,1
-31,"Disi Desert",fuel,الدريس,28.4303,36.4753,47.1,2
-31,"Disi Desert",fuel,الدريس,28.3705,36.4886,49.9,3
-31,"Disi Desert",pharmacy,"Nahdi pharmacy | صيدليه النهدى",28.401139,36.530718,53,1
-31,"Disi Desert",pharmacy,"Nahdi pharmacy | صيدليه النهدى",28.396515,36.539082,53.9,2
-31,"Disi Desert",pharmacy,"Nahdi pharmacy | صيدليه النهدى",28.45549,36.552606,54.2,3
-31,"Disi Desert",restaurant,"دانكن دونتس",28.389670915045844,36.4493303197678,45.6,1
-31,"Disi Desert",restaurant,"دانكن دونتس",28.38425856594745,36.46612647110451,47.4,2
-31,"Disi Desert",restaurant,"دانكن دونتس",28.384523157894908,36.483352556461455,49,3
-32,"Qishlah Palace",bank,"SABB Bank بنك ساب",27.512164532472287,41.69286244902746,0.3,1
-32,"Qishlah Palace",bank,"Al Rajhi Bank بنك الراجحي",27.51751848770071,41.693952299733056,0.6,2
-32,"Qishlah Palace",bank,"بنك الرياض",27.51367,41.69617,0.6,3
-32,"Qishlah Palace",cafe,"مقهى الهرم الرابع لتقديم المشروبات",27.51606353,41.68199485,0.8,1
-32,"Qishlah Palace",cafe,"Mur Cafe",27.50991,41.682424,0.9,2
-32,"Qishlah Palace",cafe,"Turkish coffee shop hail saudi arabia",27.523805821423,41.692177238678,1.2,3
-32,"Qishlah Palace",fuel,الدريس,27.509,41.6821,0.9,1
-32,"Qishlah Palace",fuel,الدريس,27.5143,41.7015,1.1,2
-32,"Qishlah Palace",fuel,الدريس,27.5192,41.6723,1.9,3
-32,"Qishlah Palace",pharmacy,"Nahdi pharmacy | صيدليه النهدى",27.499791,41.697728,1.7,1
-32,"Qishlah Palace",pharmacy,"Nahdi pharmacy | صيدليه النهدى",27.488803,41.677973,3,2
-32,"Qishlah Palace",pharmacy,"Nahdi pharmacy | صيدليه النهدى",27.521626,41.657451,3.3,3
-32,"Qishlah Palace",restaurant,"مطعم دفرنت",27.510474,41.695006,0.6,1
-32,"Qishlah Palace",restaurant,"مطعم النخيل",27.519064,41.693837,0.7,2
-32,"Qishlah Palace",restaurant,KFC,27.514780082258,41.69732093811,0.7,3
-33,"A'arif Fort",bank,"Al Rajhi Bank",27.521,41.6925,0.2,1
-33,"A'arif Fort",bank,"Al Rajhi Bank بنك الراجحي",27.51751848770071,41.693952299733056,0.6,2
-33,"A'arif Fort",bank,"بنك الرياض",27.51367,41.69617,1.1,3
-33,"A'arif Fort",cafe,"Turkish coffee shop hail saudi arabia",27.523805821423,41.692177238678,0.3,1
-33,"A'arif Fort",cafe,"ماستر كافيه",27.52306,41.684191,0.7,2
-33,"A'arif Fort",cafe,"مقهى الهرم الرابع لتقديم المشروبات",27.51606353,41.68199485,1.1,3
-33,"A'arif Fort",fuel,الدريس,27.5143,41.7015,1.4,1
-33,"A'arif Fort",fuel,الدريس,27.509,41.6821,1.7,2
-33,"A'arif Fort",fuel,الدريس,27.5192,41.6723,1.8,3
-33,"A'arif Fort",pharmacy,"Nahdi pharmacy | صيدليه النهدى",27.499791,41.697728,2.6,1
-33,"A'arif Fort",pharmacy,"Nahdi pharmacy | صيدليه النهدى",27.521626,41.657451,3.3,2
-33,"A'arif Fort",pharmacy,"Lemon Pharmacy 258 - salamat hospital",27.55340887,41.67902304,3.7,3
-33,"A'arif Fort",restaurant,"Applebee's Grill + Bar",27.521877,41.690727,0,1
-33,"A'arif Fort",restaurant,"مطعم سماوي Samavee Restaurant Pakistani Cuisine",27.52211447,41.69345202,0.3,2
-33,"A'arif Fort",restaurant,"مطعم النخيل",27.519064,41.693837,0.4,3
-34,"Jubbah Rock Art",bank,"Al Rajhi Bank",28.0301666666667,40.94,4.1,1
-34,"Jubbah Rock Art",bank,"صراف بنك الجزيره",27.825154,41.566552,69.1,2
-34,"Jubbah Rock Art",bank,"Al Rajhi Bank",27.38688380504719,41.1767900216517,75.8,3
-34,"Jubbah Rock Art",cafe,"Hail Train Rail",27.684758,41.755049,92.1,1
-34,"Jubbah Rock Art",cafe,"SWORDS CAFÉ",27.546111,41.666745,92.3,2
-34,"Jubbah Rock Art",cafe,"النورس كافيه",27.547914,41.668349,92.3,3
-34,"Jubbah Rock Art",fuel,الدريس,27.8466,41.7288,83.8,1
-34,"Jubbah Rock Art",fuel,"محطة الدائري الغربي",27.52668,41.65959,93,2
-34,"Jubbah Rock Art",fuel,نفط,27.52416,41.65995,93.1,3
-34,"Jubbah Rock Art",pharmacy,"Lemon Pharmacy 258 - salamat hospital",27.55340887,41.67902304,92.8,1
-34,"Jubbah Rock Art",pharmacy,"Nahdi pharmacy | صيدليه النهدى",27.521626,41.657451,93.1,2
-34,"Jubbah Rock Art",pharmacy,"al-dawaa pharmacy",27.56821928,41.73008977,96.1,3
-34,"Jubbah Rock Art",restaurant,"مطعم ومطبخ دكة مذاق الشمال",27.58676122,41.67184859,90.1,1
-34,"Jubbah Rock Art",restaurant,"دانكن دونتس",27.57474331,41.6717457,90.9,2
-34,"Jubbah Rock Art",restaurant,"Grain Silos And Flour Mill",27.646921,41.726771,91.5,3
-35,"Al-Ukhdood Archaeological Site",bank,"بنك الرياض",17.489317,44.133369,1,1
-35,"Al-Ukhdood Archaeological Site",bank,"صراف بنك الجزيره",17.494662,44.189465,5.1,2
-35,"Al-Ukhdood Archaeological Site",bank,"بنك الرياض",17.524746,44.200474,7.5,3
-35,"Al-Ukhdood Archaeological Site",cafe,"مقهى الإستكانة فرع/البلد",17.48959555,44.13104861,1.2,1
-35,"Al-Ukhdood Archaeological Site",cafe,"Barn's | بارنز",17.5012675,44.1879794,5.1,2
-35,"Al-Ukhdood Archaeological Site",cafe,"مقهى مراكش",17.497126800007347,44.189240029995545,5.1,3
-35,"Al-Ukhdood Archaeological Site",fuel,الدريس,17.514,44.1747,4.5,1
-35,"Al-Ukhdood Archaeological Site",fuel,الدريس,17.542,44.2212,10.4,2
-35,"Al-Ukhdood Archaeological Site",fuel,الدريس,17.5294,44.231,10.5,3
-35,"Al-Ukhdood Archaeological Site",pharmacy,"Nahdi pharmacy | صيدليه النهدى",17.491999,44.137933,0.7,1
-35,"Al-Ukhdood Archaeological Site",pharmacy,"Nahdi pharmacy | صيدليه النهدى",17.517349,44.156125,3.6,2
-35,"Al-Ukhdood Archaeological Site",pharmacy,"Nahdi pharmacy | صيدليه النهدى",17.488573,44.188234,4.9,3
-35,"Al-Ukhdood Archaeological Site",restaurant,نجران,17.48840322,44.13212171,1.1,1
-35,"Al-Ukhdood Archaeological Site",restaurant,"مطعم اسلام اباد",17.48936867,44.18978205,5.1,2
-35,"Al-Ukhdood Archaeological Site",restaurant,"Maestro Pizza",17.49546478,44.18907386,5.1,3
-36,"Najran Dam",bank,"بنك الرياض",17.524746,44.200474,6,1
-36,"Najran Dam",bank,"البنك العربي",17.526036153613,44.205540060731,6.5,2
-36,"Najran Dam",bank,"بنك ساب",17.527482,44.206281,6.5,3
-36,"Najran Dam",cafe,"Crown Cafee",17.521447,44.196062,5.8,1
-36,"Najran Dam",cafe,Rancho,17.532914,44.202395,5.9,2
-36,"Najran Dam",cafe,"T Spoon",17.53341,44.203304,5.9,3
-36,"Najran Dam",fuel,الدريس,17.514,44.1747,4.8,1
-36,"Najran Dam",fuel,الدريس,17.5569,44.2152,7,2
-36,"Najran Dam",fuel,الدريس,17.542,44.2212,7.6,3
-36,"Najran Dam",pharmacy,"Nahdi pharmacy | صيدليه النهدى",17.517349,44.156125,3.7,1
-36,"Najran Dam",pharmacy,"Nahdi pharmacy | صيدليه النهدى",17.533468,44.205283,6.1,2
-36,"Najran Dam",pharmacy,"Nahdi pharmacy | صيدليه النهدى",17.491999,44.137933,6.6,3
-36,"Najran Dam",restaurant,"مطعم مكان الهندي",17.530913,44.200901,5.8,1
-36,"Najran Dam",restaurant,"Loay Gutalac Zamboanga Del Norte",17.535237087088415,44.20258536259986,5.8,2
-36,"Najran Dam",restaurant,"Makan Indian Fine Dining",17.53084222,44.20107946,5.8,3
-37,"Old Najran Mudbrick Houses",bank,"بنك الرياض",17.489317,44.133369,0.4,1
-37,"Old Najran Mudbrick Houses",bank,"صراف بنك الجزيره",17.494662,44.189465,6.3,2
-37,"Old Najran Mudbrick Houses",bank,"بنك الرياض",17.524746,44.200474,8.4,3
-37,"Old Najran Mudbrick Houses",cafe,"مقهى الإستكانة فرع/البلد",17.48959555,44.13104861,0.1,1
-37,"Old Najran Mudbrick Houses",cafe,"Barn's | بارنز",17.5012675,44.1879794,6.3,2
-37,"Old Najran Mudbrick Houses",cafe,"مقهى مراكش",17.497126800007347,44.189240029995545,6.3,3
-37,"Old Najran Mudbrick Houses",fuel,الدريس,17.514,44.1747,5.4,1
-37,"Old Najran Mudbrick Houses",fuel,الدريس,17.542,44.2212,11.3,2
-37,"Old Najran Mudbrick Houses",fuel,الدريس,17.5294,44.231,11.6,3
-37,"Old Najran Mudbrick Houses",pharmacy,"Nahdi pharmacy | صيدليه النهدى",17.491999,44.137933,0.9,1
-37,"Old Najran Mudbrick Houses",pharmacy,"Nahdi pharmacy | صيدليه النهدى",17.517349,44.156125,4.1,2
-37,"Old Najran Mudbrick Houses",pharmacy,"Nahdi pharmacy | صيدليه النهدى",17.488573,44.188234,6.2,3
-37,"Old Najran Mudbrick Houses",restaurant,نجران,17.48840322,44.13212171,0.3,1
-37,"Old Najran Mudbrick Houses",restaurant,"N8 Burger",17.50160034,44.18754419,6.2,2
-37,"Old Najran Mudbrick Houses",restaurant,"Maestro Pizza",17.49546478,44.18907386,6.3,3
-38,"Farasan Islands",bank,"Samba Bank",16.903,42.54869,72.4,1
-38,"Farasan Islands",bank,"بنك الرياض",16.902511,42.550462,72.5,2
-38,"Farasan Islands",bank,"ENJAZ Money Transfer",16.90434869,42.55024256,72.6,3
-38,"Farasan Islands",cafe,"ديوانية دلة الخيالة",16.88994,42.541015,71.2,1
-38,"Farasan Islands",cafe,"PORTO CAFÉ",16.901761090000004,42.53813117,71.3,2
-38,"Farasan Islands",cafe,"The Coffee Address | عنوان القهوة",16.904966,42.544016,72,3
-38,"Farasan Islands",fuel,الدريس,16.6998,42.1072,22.1,1
-38,"Farasan Islands",fuel,الدريس,16.9064,42.5537,73,2
-38,"Farasan Islands",fuel,الدريس,16.9224,42.5551,73.7,3
-38,"Farasan Islands",pharmacy,"Nahdi pharmacy | صيدليه النهدى",16.907348,42.544959,72.1,1
-38,"Farasan Islands",pharmacy,"Nahdi pharmacy | صيدليه النهدى",16.89568,42.552858,72.6,2
-38,"Farasan Islands",pharmacy,Boots,16.902442,42.553028,72.8,3
-38,"Farasan Islands",restaurant,"فرن تميس و بوفية صباح الخير",16.701929855982446,42.11714109140939,23.1,1
-38,"Farasan Islands",restaurant,"مطعم الوفاء",16.70210571,42.11778272,23.2,2
-38,"Farasan Islands",restaurant,Saaltndpepper.sa,16.8876,42.53994,71,3
-39,"Jazan Corniche",bank,"صراف بنك الجزيره",16.892029,42.557608,0.8,1
-39,"Jazan Corniche",bank,"صرافة الراجحي",16.883262,42.560503,1.2,2
-39,"Jazan Corniche",bank,"Bank Enjaz",16.898507,42.559049,1.3,3
-39,"Jazan Corniche",cafe,"Saltgur سولتقر",16.8892,42.5511,0,1
-39,"Jazan Corniche",cafe,"Mehedi Hassan Alvi",16.89057,42.55053,0.2,2
-39,"Jazan Corniche",cafe,"ديوانية دلة الخيالة",16.88994,42.541015,1.1,3
-39,"Jazan Corniche",fuel,الدريس,16.9064,42.5537,1.9,1
-39,"Jazan Corniche",fuel,"محطة درب",16.889453,42.570608,2.1,2
-39,"Jazan Corniche",fuel,نفط,16.91937,42.55638,3.4,3
-39,"Jazan Corniche",pharmacy,"Nahdi pharmacy | صيدليه النهدى",16.89568,42.552858,0.7,1
-39,"Jazan Corniche",pharmacy,"Nahdi pharmacy | صيدليه النهدى",16.896095,42.560886,1.3,2
-39,"Jazan Corniche",pharmacy,Boots,16.902442,42.553028,1.5,3
-39,"Jazan Corniche",restaurant,"مطعم أهرامات النيل ",16.890531869078,42.55077,0.2,1
-39,"Jazan Corniche",restaurant,Tabbakhspicy,16.89399324,42.55456144,0.6,2
-39,"Jazan Corniche",restaurant,"Jeddah Restaurant",16.8924965,42.55643581,0.7,3
-40,"Al Idabi Waterfall",bank,"Al Rajhi Bank",17.03928373138039,43.08550067952309,21.6,1
-40,"Al Idabi Waterfall",bank,"Al Rajhi Bank",17.1136666666667,42.7698333333333,37.5,2
-40,"Al Idabi Waterfall",bank,"صراف بنك الجزيره",17.108557,42.762569,38.4,3
-40,"Al Idabi Waterfall",cafe,"Barn's | بارنز",17.2322286,42.9355949,17.5,1
-40,"Al Idabi Waterfall",cafe,VIRLA,17.11306421,42.75958126,38.6,2
-40,"Al Idabi Waterfall",cafe,"Jazan Avenue Cafe",16.969167420014074,42.84026069503291,40.3,3
-40,"Al Idabi Waterfall",fuel,"محطة السلام",17.02998218,43.04280399,23.4,1
-40,"Al Idabi Waterfall",fuel,الدريس,17.0492,42.7798,39.7,2
-40,"Al Idabi Waterfall",fuel,الدريس,16.9791,42.8097,41.8,3
-40,"Al Idabi Waterfall",pharmacy,"Nahdi pharmacy | صيدليه النهدى",17.335948,43.133697,12,1
-40,"Al Idabi Waterfall",pharmacy,"صيدلية الشهد",17.23326263,42.94075526,16.9,2
-40,"Al Idabi Waterfall",pharmacy,"Nahdi pharmacy | صيدليه النهدى",17.232106,42.935801,17.4,3
-40,"Al Idabi Waterfall",restaurant,"حاشي باشا| فرع الداير بني مالك",17.337427,43.134083,12.1,1
-40,"Al Idabi Waterfall",restaurant,"حاشي باشا | فرع العارضة",17.033176,43.056022,22.7,2
-40,"Al Idabi Waterfall",restaurant,"مطاعم ومحانذ السادلية",16.973603,42.85428,38.9,3
-41,"Raghadan Forest Park",bank,"بنك الرياض",20.013301,41.467349,0.1,1
-41,"Raghadan Forest Park",bank,"مصرف الراجحي | alrajhi bank",20.01476995,41.46966723,0.3,2
-41,"Raghadan Forest Park",bank,"Al Rajhi Bank",20.01025,41.4649666666667,0.4,3
-41,"Raghadan Forest Park",cafe,"BrainPing Coffee",20.0117882,41.4671838,0.1,1
-41,"Raghadan Forest Park",cafe,"Black Sugar",20.012526,41.465914,0.2,2
-41,"Raghadan Forest Park",cafe,"Saadeddin Pastry Al Baha",20.01843289877676,41.46672165996313,0.6,3
-41,"Raghadan Forest Park",fuel,الدريس,20.019,41.4699,0.7,1
-41,"Raghadan Forest Park",fuel,الدريس,20.0023,41.4619,1.3,2
-41,"Raghadan Forest Park",fuel,الدريس,20.0281,41.4771,2,3
-41,"Raghadan Forest Park",pharmacy,"Nahdi pharmacy | صيدليه النهدى",20.014351,41.469072,0.2,1
-41,"Raghadan Forest Park",pharmacy,"Nahdi pharmacy | صيدليه النهدى",20.012127,41.463682,0.4,2
-41,"Raghadan Forest Park",pharmacy,"Nahdi pharmacy | صيدليه النهدى",20.002965,41.458489,1.5,3
-41,"Raghadan Forest Park",restaurant,"اسماك الشاطئ الازرق",20.01230348,41.46858112,0.1,1
-41,"Raghadan Forest Park",restaurant,"مشاوي عمان المركزية",20.0117882,41.4671838,0.1,2
-41,"Raghadan Forest Park",restaurant,"Moha restaurant",20.0117882,41.4671838,0.1,3
-42,"Al-Baha Zipline",bank,"Al Rajhi Bank",20.01025,41.4649666666667,0.5,1
-42,"Al-Baha Zipline",bank,"بنك الرياض",20.013301,41.467349,0.9,2
-42,"Al-Baha Zipline",bank,"مصرف الراجحي | alrajhi bank",20.01476995,41.46966723,1.1,3
-42,"Al-Baha Zipline",cafe,"Extra Sugar",20.00916588,41.45738437,0.3,1
-42,"Al-Baha Zipline",cafe,"Black Sugar",20.012526,41.465914,0.7,2
-42,"Al-Baha Zipline",cafe,"BrainPing Coffee",20.0117882,41.4671838,0.8,3
-42,"Al-Baha Zipline",fuel,الدريس,20.0023,41.4619,0.9,1
-42,"Al-Baha Zipline",fuel,الدريس,20.019,41.4699,1.4,2
-42,"Al-Baha Zipline",fuel,الدريس,20.0306,41.4488,2.6,3
-42,"Al-Baha Zipline",pharmacy,"Nahdi pharmacy | صيدليه النهدى",20.012127,41.463682,0.5,1
-42,"Al-Baha Zipline",pharmacy,"Nahdi pharmacy | صيدليه النهدى",20.002965,41.458489,0.8,2
-42,"Al-Baha Zipline",pharmacy,"Nahdi pharmacy | صيدليه النهدى",20.014351,41.469072,1.1,3
-42,"Al-Baha Zipline",restaurant,"فول خلوفة الباحه",20.00902434,41.46111704,0.2,1
-42,"Al-Baha Zipline",restaurant,القرموشي,20.012165,41.45956,0.2,2
-42,"Al-Baha Zipline",restaurant,Domino's,20.012439,41.460395,0.3,3
-43,"Dhee Ain Village (Marble Village)",bank,"Al Rajhi Bank",19.9395,41.5522833333333,10.1,1
-43,"Dhee Ain Village (Marble Village)",bank,"بنك الرياض",19.86301,41.56289,10.3,2
-43,"Dhee Ain Village (Marble Village)",bank,"Al Rajhi Bank",19.8655,41.5665,10.6,3
-43,"Dhee Ain Village (Marble Village)",cafe,"Barn's | بارنز",19.8092676,41.4422071,9.7,1
-43,"Dhee Ain Village (Marble Village)",cafe,"Mera Coffee",19.86728914,41.56312192,10.2,2
-43,"Dhee Ain Village (Marble Village)",cafe,"Barn's | بارنز",19.8839414,41.5679687,10.4,3
-43,"Dhee Ain Village (Marble Village)",fuel,الدريس,19.889,41.445,2.6,1
-43,"Dhee Ain Village (Marble Village)",fuel,الدريس,19.9371,41.5515,9.9,2
-43,"Dhee Ain Village (Marble Village)",fuel,الدريس,19.9051,41.5684,10.4,3
-43,"Dhee Ain Village (Marble Village)",pharmacy,"Nahdi pharmacy | صيدليه النهدى",19.866069,41.568292,10.8,1
-43,"Dhee Ain Village (Marble Village)",pharmacy,"صيدلية النهدي 189",19.860919,41.570916,11.2,2
-43,"Dhee Ain Village (Marble Village)",pharmacy,"Nahdi pharmacy | صيدليه النهدى",19.860894,41.57096,11.2,3
-43,"Dhee Ain Village (Marble Village)",restaurant,"فول عثمان",19.86090503,41.56218994,10.3,1
-43,"Dhee Ain Village (Marble Village)",restaurant,"مطعم العمدة",19.86582453217356,41.56688548068404,10.6,2
-43,"Dhee Ain Village (Marble Village)",restaurant,"بروست الطازج",19.86590821,41.56849537,10.8,3
-44,"Zaabal Castle",bank,"بنك الرياض",29.9691,40.20272,0.4,1
-44,"Zaabal Castle",bank,"Al Rajhi Bank | بنك الراجحي",29.960960328306307,40.20428237876361,1,2
-44,"Zaabal Castle",bank,"البنك الاهلي",29.974202,40.215342,1,3
-44,"Zaabal Castle",cafe,"Elm Cafe",29.973529936926,40.19977978118,0.8,1
-44,"Zaabal Castle",cafe,"Dunkin' - دانكن",29.97709755,40.20190645,0.9,2
-44,"Zaabal Castle",cafe,"Se7En Coffee",29.976298,40.214113,1,3
-44,"Zaabal Castle",fuel,"محطة وقود",29.97168827,40.19873332,0.8,1
-44,"Zaabal Castle",fuel,الدريس,29.9654,40.2146,0.9,2
-44,"Zaabal Castle",fuel,الدريس,29.9719,40.1896,1.6,3
-44,"Zaabal Castle",pharmacy,"Nahdi pharmacy | صيدليه النهدى",29.964245,40.212883,0.9,1
-44,"Zaabal Castle",pharmacy,"صيدلية طب الدوائية",29.98035471,40.21284792,1.3,2
-44,"Zaabal Castle",pharmacy,"صيدلية الدواء",29.95703784,40.20576354,1.4,3
-44,"Zaabal Castle",restaurant,"الشاري بروستد",29.96689449285745,40.20297537441621,0.5,1
-44,"Zaabal Castle",restaurant,"بيت الفروج",29.96564097586,40.203157188037,0.5,2
-44,"Zaabal Castle",restaurant,"Bait Alfarooj Fry Chicken",29.965631,40.20311,0.6,3
-45,"Marid Castle",bank,"بنك الرياض",29.79921,39.86045,1.6,1
-45,"Marid Castle",bank,"Al Rajhi Bank بنك الراجحي",29.79866281673699,39.87084750525173,1.6,2
-45,"Marid Castle",bank,"صراف بنك الجزيره",29.878056,40.104368,24.1,3
-45,"Marid Castle",cafe,نُزُل,29.802595,39.869747,1.2,1
-45,"Marid Castle",cafe,"Dunkin - دانكن",29.798585,39.859574,1.7,2
-45,"Marid Castle",cafe,"RIحana cafe",29.796162,39.87029,1.9,3
-45,"Marid Castle",fuel,الدريس,29.7985,39.8677,1.6,1
-45,"Marid Castle",fuel,الدريس,29.7953,39.8716,2,2
-45,"Marid Castle",fuel,الدريس,29.8139,39.639,21.9,3
-45,"Marid Castle",pharmacy,"Nahdi pharmacy | صيدليه النهدى",29.808841,39.859957,0.8,1
-45,"Marid Castle",pharmacy,"Nahdi pharmacy | صيدليه النهدى",29.889936,40.216157,34.8,2
-45,"Marid Castle",pharmacy,"صيدلية الدواء",29.95703784,40.20576354,36.4,3
-45,"Marid Castle",restaurant,"Al-Cafe Time",29.806494,39.860525,0.9,1
-45,"Marid Castle",restaurant,kudu,29.79919772,39.86847978,1.5,2
-45,"Marid Castle",restaurant,"دانكن دونتس",29.79859379,39.85954807,1.7,3
-46,"Dumat Al-Jandal Lake",bank,"Al Rajhi Bank بنك الراجحي",29.79866281673699,39.87084750525173,1.3,1
-46,"Dumat Al-Jandal Lake",bank,"بنك الرياض",29.79921,39.86045,1.5,2
-46,"Dumat Al-Jandal Lake",bank,"صراف بنك الجزيره",29.878056,40.104368,23.8,3
-46,"Dumat Al-Jandal Lake",cafe,نُزُل,29.802595,39.869747,0.8,1
-46,"Dumat Al-Jandal Lake",cafe,"RIحana cafe",29.796162,39.87029,1.5,2
-46,"Dumat Al-Jandal Lake",cafe,"Dunkin - دانكن",29.798585,39.859574,1.6,3
-46,"Dumat Al-Jandal Lake",fuel,الدريس,29.7985,39.8677,1.3,1
-46,"Dumat Al-Jandal Lake",fuel,الدريس,29.7953,39.8716,1.6,2
-46,"Dumat Al-Jandal Lake",fuel,الدريس,29.8139,39.639,22.3,3
-46,"Dumat Al-Jandal Lake",pharmacy,"Nahdi pharmacy | صيدليه النهدى",29.808841,39.859957,1,1
-46,"Dumat Al-Jandal Lake",pharmacy,"Nahdi pharmacy | صيدليه النهدى",29.889936,40.216157,34.5,2
-46,"Dumat Al-Jandal Lake",pharmacy,"صيدلية الدواء",29.95703784,40.20576354,36.3,3
-46,"Dumat Al-Jandal Lake",restaurant,"Al-Cafe Time",29.806494,39.860525,1,1
-46,"Dumat Al-Jandal Lake",restaurant,kudu,29.79919772,39.86847978,1.2,2
-46,"Dumat Al-Jandal Lake",restaurant,"دانكن دونتس",29.79859379,39.85954807,1.6,3
-47,"North Borders Museum",bank,"مصرف الإنماء",30.9809472,41.0272222,1.3,1
-47,"North Borders Museum",bank,"Al Rajhi Bank | بنك الراجحي",30.979558,41.026138,1.3,2
-47,"North Borders Museum",bank,"مصرف الراجحي",30.98447522,41.0210631,2,3
-47,"North Borders Museum",cafe,"Creppy Cafe",30.98353383,41.02471499,1.6,1
-47,"North Borders Museum",cafe,"Dunkin' - دانكن",30.990379,41.049506,1.9,2
-47,"North Borders Museum",cafe,"Brownbird Cafe",30.956146,41.041652,2.2,3
-47,"North Borders Museum",fuel,نفط,30.97773,41.02747,1.1,1
-47,"North Borders Museum",fuel,الدريس,30.9821,41.0596,2.1,2
-47,"North Borders Museum",fuel,الدريس,30.9924,41.0262,2.2,3
-47,"North Borders Museum",pharmacy,"Salamaty pharmacy",30.98676455,41.01989798,2.2,1
-47,"North Borders Museum",pharmacy,"صيدلية اليحيى",30.977261,41.010336,2.7,2
-47,"North Borders Museum",pharmacy,"Nahdi pharmacy | صيدليه النهدى",30.954412,41.011665,3.5,3
-47,"North Borders Museum",restaurant,"Herfy | هرفي",30.97120943759904,41.03296801564478,0.7,1
-47,"North Borders Museum",restaurant,ماكدونالدز,30.982853,41.030713,1.1,2
-47,"North Borders Museum",restaurant,"مطاعم الرومانسية",30.982564709924148,41.02489944907379,1.5,3
-48,"Al-Gharaba Nature Reserve",bank,"مصرف الإنماء",30.9809472,41.0272222,45.1,1
-48,"Al-Gharaba Nature Reserve",bank,"Al Rajhi Bank | بنك الراجحي",30.979558,41.026138,45.2,2
-48,"Al-Gharaba Nature Reserve",bank,"مصرف الراجحي",30.98447522,41.0210631,45.7,3
-48,"Al-Gharaba Nature Reserve",cafe,"Dunkin' - دانكن",30.902142,41.137981,36.2,1
-48,"Al-Gharaba Nature Reserve",cafe,"Dunkin' - دانكن",30.990379,41.049506,43,2
-48,"Al-Gharaba Nature Reserve",cafe,"Brownbird Cafe",30.956146,41.041652,44,3
-48,"Al-Gharaba Nature Reserve",fuel,الدريس,30.9657,41.1178,36.6,1
-48,"Al-Gharaba Nature Reserve",fuel,الدريس,30.9411,41.1061,38.1,2
-48,"Al-Gharaba Nature Reserve",fuel,الدريس,30.9153,41.0971,39.6,3
-48,"Al-Gharaba Nature Reserve",pharmacy,"Salamaty pharmacy",30.98676455,41.01989798,45.8,1
-48,"Al-Gharaba Nature Reserve",pharmacy,"صيدلية اليحيى",30.977261,41.010336,46.7,2
-48,"Al-Gharaba Nature Reserve",pharmacy,"Nahdi pharmacy | صيدليه النهدى",30.954412,41.011665,46.8,3
-48,"Al-Gharaba Nature Reserve",restaurant,"مطعم السويلم",30.86584353,41.19767598,32.5,1
-48,"Al-Gharaba Nature Reserve",restaurant,"دانكن دونتس",30.90321731,41.1370209,36.2,2
-48,"Al-Gharaba Nature Reserve",restaurant,"فروج الطائف",30.98422783,41.05297345,42.6,3
-49,"Linah Heritage Village",bank,"Al Rajhi Bank",31.6781666666667,38.6571666666667,0.9,1
-49,"Linah Heritage Village",bank,"بنك الرياض",31.67662,38.66417,1.5,2
-49,"Linah Heritage Village",bank,"Al Rajhi Bank",31.3306666666667,37.3415833333333,130.1,3
-49,"Linah Heritage Village",cafe,"5 Degrees",31.670403,38.661828,1.8,1
-49,"Linah Heritage Village",cafe,"Cups and Cones",31.67006781,38.67048729,2.4,2
-49,"Linah Heritage Village",cafe,Thawab,31.75912,38.897872,24.9,3
-49,"Linah Heritage Village",fuel,نفط,31.67473,38.68418,3.4,1
-49,"Linah Heritage Village",fuel,نفط,31.66369,38.6793,3.5,2
-49,"Linah Heritage Village",fuel,الدريس,31.6621,38.6848,4,3
-49,"Linah Heritage Village",pharmacy,"صيدلية العروب طبرجل،الجوف ،المملكة العربية السعودية",31.3333,37.3419,130,1
-49,"Linah Heritage Village",pharmacy,"صيدلية العودة",31.33126555,37.34250186,130,2
-49,"Linah Heritage Village",pharmacy,"صيدلية باب الشفاء",31.33617663,37.33714357,130.3,3
-49,"Linah Heritage Village",restaurant,ماكدونالدز,31.676984,38.663442,1.5,1
-49,"Linah Heritage Village",restaurant,"دانكن دونتس",31.677133206189833,38.664919354453005,1.6,2
-49,"Linah Heritage Village",restaurant,"مطعم حدائق بابل للمشويات العراقية",31.66941038,38.65444018,1.6,3
-50,"Shura Island",bank,"بنك الرياض",25.02544,37.26577,33.5,1
-50,"Shura Island",bank,"Al Rajhi Bank",25.0615,38.11,118.7,2
-50,"Shura Island",bank,"البنك الأهلي | NCB",26.230885,36.459169,143.1,3
-50,"Shura Island",cafe,"Zone Cup",25.034055,37.255885,32.6,1
-50,"Shura Island",cafe,"Sea Seal",25.02260087,37.267161,33.6,2
-50,"Shura Island",cafe,"Star Coffee",24.15474428,37.95757276,141.1,3
-50,"Shura Island",fuel,الدريس,25.0981,37.2678,34.9,1
-50,"Shura Island",fuel,الدريس,24.9963,37.2831,35.3,2
-50,"Shura Island",fuel,الدريس,25.129,37.2687,36,3
-50,"Shura Island",pharmacy,"Nahdi pharmacy | صيدليه النهدى",25.038011,37.261317,33.1,1
-50,"Shura Island",pharmacy,"Nahdi pharmacy | صيدليه النهدى",26.247122,36.455095,145,2
-50,"Shura Island",pharmacy,"Nahdi pharmacy | صيدليه النهدى",24.095927,38.0282,150.8,3
-50,"Shura Island",restaurant,"Almeena fish restaurant",25.03973233,37.26278408,33.3,1
-50,"Shura Island",restaurant,"حاشي باشا | فرع أملج",25.030567,37.264078,33.4,2
-50,"Shura Island",restaurant,"مطاعم الزعيم الاسماك",25.02640133,37.26526906,33.5,3
-51,"Shebara Island",bank,"بنك الرياض",25.02544,37.26577,46.1,1
-51,"Shebara Island",bank,"البنك الأهلي | NCB",26.230885,36.459169,121.1,2
-51,"Shebara Island",bank,"البنك العربي ANB",26.247246499690817,36.45530669792072,123,3
-51,"Shebara Island",cafe,"Zone Cup",25.034055,37.255885,44.8,1
-51,"Shebara Island",cafe,"Sea Seal",25.02260087,37.267161,46.4,2
-51,"Shebara Island",cafe,"Awtar Elsadaa",26.23542873,36.45918799,121.6,3
-51,"Shebara Island",fuel,الدريس,25.5175,37.0335,39.8,1
-51,"Shebara Island",fuel,الدريس,25.129,37.2687,42.9,2
-51,"Shebara Island",fuel,الدريس,25.0981,37.2678,43.6,3
-51,"Shebara Island",pharmacy,"Nahdi pharmacy | صيدليه النهدى",25.038011,37.261317,45.2,1
-51,"Shebara Island",pharmacy,"Nahdi pharmacy | صيدليه النهدى",26.247122,36.455095,123,2
-51,"Shebara Island",pharmacy,"Nahdi pharmacy | صيدليه النهدى",24.095927,38.0282,171,3
-51,"Shebara Island",restaurant,"دانكن دونتس",25.50915487,37.04360379,39.5,1
-51,"Shebara Island",restaurant,ماكدونالدز,25.091939,37.265829,43.5,2
-51,"Shebara Island",restaurant,"دانكن دونتس",25.091348901922157,37.26566431655295,43.5,3
-52,"Abu Ali Island",bank,"Al Rajhi Bank",27.156898,49.541395,23.3,1
-52,"Abu Ali Island",bank,"مصرف الراجحي",27.156108,49.541709,23.4,2
-52,"Abu Ali Island",bank,"بنك الرياض",27.146821,49.567073,24.5,3
-52,"Abu Ali Island",cafe,"CELESTE CORNER",27.176405,49.529335,21.3,1
-52,"Abu Ali Island",cafe,ستاربوكس,27.176248,49.529341,21.3,2
-52,"Abu Ali Island",cafe,"Derby Coffee",27.167456779139,49.57092128211,22.3,3
-52,"Abu Ali Island",fuel,الدريس,27.1106,49.5537,28.5,1
-52,"Abu Ali Island",fuel,الدريس,27.5091,49.2551,33.1,2
-52,"Abu Ali Island",fuel,"Konaini Station",27.47640283887435,49.18635176164013,37.9,3
-52,"Abu Ali Island",pharmacy,"Luluat Al Ferdos Pharmacy",27.159616795402,49.560398858024,23,1
-52,"Abu Ali Island",pharmacy,Boots,27.15807399,49.56626553,23.3,2
-52,"Abu Ali Island",pharmacy,"Al Nahdi Pharmacy",27.147180557251,49.565967559814,24.5,3
-52,"Abu Ali Island",restaurant,SalaDo,27.17611,49.529225,21.3,1
-52,"Abu Ali Island",restaurant,Kudu,27.16987016,49.54164525,21.9,2
-52,"Abu Ali Island",restaurant,"مطعم ليالي أهل المدينة",27.16541,49.54014,22.4,3
-53,"Karan Island",bank,"صراف بنك الجزيره",26.926103,49.723982,17.3,1
-53,"Karan Island",bank,"بنك الرياض",26.96782,49.6743,18.9,2
-53,"Karan Island",bank,"مصرف الراجحي",27.013043,49.660467,18.9,3
-53,"Karan Island",cafe,"Saline Water Corporation, Al Jubail | dr.CAFE COFFEE | Manual Brew | Drive Thru",26.91599239,49.75717916,16,1
-53,"Karan Island",cafe,"dr.CAFE COFFEE | د.كيف كافيه",26.903048,49.76164,16.9,2
-53,"Karan Island",cafe,"Saline Water Corporation, Al Jubail | dr.CAFE COFFEE",26.903056,49.760972,17,3
-53,"Karan Island",fuel,"Orange Gas Station Jubail | محطة وقود أورانج الجبيل",26.9027391,49.7583897,17.1,1
-53,"Karan Island",fuel,"KPS (Khonaini Petroleum Service) 28",26.922245,49.724602,17.5,2
-53,"Karan Island",fuel,الدريس,27.0191,49.6727,17.6,3
-53,"Karan Island",pharmacy,"Nahdi pharmacy | صيدليه النهدى",26.93066,49.718008,17.4,1
-53,"Karan Island",pharmacy,"Al Dawaa Pharmacy 48",27.01049341,49.6604687,18.9,2
-53,"Karan Island",pharmacy,"Nahdi pharmacy | صيدليه النهدى",27.003929,49.659541,19.1,3
-53,"Karan Island",restaurant,"Fisherman Wharf",26.933099,49.721826,16.9,1
-53,"Karan Island",restaurant,"دانكن دونتس",26.90271937606947,49.75809355952162,17.1,2
-53,"Karan Island",restaurant,"حلويات قمة الحلا والذوق",26.930275,49.716967,17.5,3
-54,"Farasan Al-Kabir Island",bank,"Samba Bank",16.903,42.54869,69.3,1
-54,"Farasan Al-Kabir Island",bank,"بنك الرياض",16.902511,42.550462,69.4,2
-54,"Farasan Al-Kabir Island",bank,"ENJAZ Money Transfer",16.90434869,42.55024256,69.5,3
-54,"Farasan Al-Kabir Island",cafe,"ديوانية دلة الخيالة",16.88994,42.541015,68.1,1
-54,"Farasan Al-Kabir Island",cafe,"PORTO CAFÉ",16.901761090000004,42.53813117,68.2,2
-54,"Farasan Al-Kabir Island",cafe,"The Coffee Address | عنوان القهوة",16.904966,42.544016,68.9,3
-54,"Farasan Al-Kabir Island",fuel,الدريس,16.6998,42.1072,18.5,1
-54,"Farasan Al-Kabir Island",fuel,الدريس,16.9064,42.5537,69.9,2
-54,"Farasan Al-Kabir Island",fuel,الدريس,16.9224,42.5551,70.7,3
-54,"Farasan Al-Kabir Island",pharmacy,"Nahdi pharmacy | صيدليه النهدى",16.907348,42.544959,69.1,1
-54,"Farasan Al-Kabir Island",pharmacy,"Nahdi pharmacy | صيدليه النهدى",16.89568,42.552858,69.4,2
-54,"Farasan Al-Kabir Island",pharmacy,Boots,16.902442,42.553028,69.7,3
-54,"Farasan Al-Kabir Island",restaurant,"فرن تميس و بوفية صباح الخير",16.701929855982446,42.11714109140939,19.6,1
-54,"Farasan Al-Kabir Island",restaurant,"مطعم الوفاء",16.70210571,42.11778272,19.6,2
-54,"Farasan Al-Kabir Island",restaurant,Saaltndpepper.sa,16.8876,42.53994,67.9,3
-55,"Qiddiya City",bank,"Al Rajhi Bank",24.4733,46.28225,14,1
-55,"Qiddiya City",bank,"بنك الرياض",24.47243,46.27973,14.2,2
-55,"Qiddiya City",bank,"مصرف الراجحي Al Rajhi Bank",24.459396718646975,46.27432823181152,15.7,3
-55,"Qiddiya City",cafe,"Tim Hortons | تيم هورتنز",24.476336701071094,46.28656780960707,13.5,1
-55,"Qiddiya City",cafe,McCafe,24.475991,46.286196,13.5,2
-55,"Qiddiya City",cafe,"مقهى القهوة العربية",24.474258,46.2848,13.8,3
-55,"Qiddiya City",fuel,الدريس,24.5193,46.3693,8.3,1
-55,"Qiddiya City",fuel,"محطة أجزالا",24.490727996121365,46.32549061055222,10.9,2
-55,"Qiddiya City",fuel,"Petromin Fuel Station",24.54436671,46.4672556,13.9,3
-55,"Qiddiya City",pharmacy,"Nahdi pharmacy | صيدليه النهدى",24.472531057700227,46.28782354232789,13.8,1
-55,"Qiddiya City",pharmacy,"Nahdi pharmacy | صيدليه النهدى",24.460797,46.298556,14.7,2
-55,"Qiddiya City",pharmacy,"Nahdi pharmacy | صيدليه النهدى",24.562998,46.517917,18.3,3
-55,"Qiddiya City",restaurant,McDonald's,24.492692,46.362456,10.9,1
-55,"Qiddiya City",restaurant,"دوّار السّعاده",24.490335,46.324978,11,2
-55,"Qiddiya City",restaurant,"بوفيه الدمام",24.48085331,46.29258029,12.8,3
-56,"Clock Tower Museum",bank,"Al Rajhi Bank",21.420199578103116,39.82415453533683,0.2,1
-56,"Clock Tower Museum",bank,"NCB Bank",21.429989052674,39.829441573965,1.3,2
-56,"Clock Tower Museum",bank,"Alamoudi Exchange Co",21.432468486092,39.829079738058,1.6,3
-56,"Clock Tower Museum",cafe,"Zamzam Resto Cafe & Mall",21.419105711744443,39.82552695950094,0,1
-56,"Clock Tower Museum",cafe,مذاق,21.419137460918,39.825498744777,0,2
-56,"Clock Tower Museum",cafe,"Tim Hortons",21.418126962554087,39.825918920018665,0.1,3
-56,"Clock Tower Museum",fuel,"محطات سمارك للمحروقات",21.385111372608,39.833314418793,3.8,1
-56,"Clock Tower Museum",fuel,"محطة درب",21.402928975499577,39.792404515552505,3.9,2
-56,"Clock Tower Museum",fuel,نفط,21.38339492711412,39.82834478157997,3.9,3
-56,"Clock Tower Museum",pharmacy,"Nahdi pharmacy | صيدليه النهدى",21.419407,39.825635,0.1,1
-56,"Clock Tower Museum",pharmacy,"United Pharmacy - صيدلية المتحدة",21.419367482141,39.8242599146361,0.2,2
-56,"Clock Tower Museum",pharmacy,"Al-Nahdi Pharmacy | صيدلية النهدي",21.42008538049929,39.82482297908741,0.2,3
-56,"Clock Tower Museum",restaurant,Smashburger,21.41867646,39.82557668,0,1
-56,"Clock Tower Museum",restaurant,"Zad Restaurant",21.41879498,39.82564946,0,2
-56,"Clock Tower Museum",restaurant,Hardee's,21.41883778,39.82556363,0,3
-57,Masmak Fortress,bank,Al Rajhi Bank,24.62855,46.71335,0.3,1
-57,Masmak Fortress,bank,Al Rajhi Bank,24.629383844159616,46.71007097107549,0.4,2
-57,Masmak Fortress,bank,Al Rajhi Bank,24.6335,46.7161666666667,0.4,3
-57,Masmak Fortress,cafe,Elixir Bunn Coffee Roasters,24.63093610701081,46.712279319763184,0.1,1
-57,Masmak Fortress,cafe,هيلة,24.630008,46.712559,0.1,2
-57,Masmak Fortress,cafe,رغيف وكيف,24.63031222,46.71198922,0.2,3
-57,Masmak Fortress,fuel,الدريس,24.6202,46.7176,1.3,1
-57,Masmak Fortress,fuel,الدريس,24.6371,46.6985,1.6,2
-57,Masmak Fortress,fuel,الدريس,24.6164,46.7099,1.7,3
-57,Masmak Fortress,pharmacy,United Pharmacy - صيدلية المتحدة,24.63786419,46.70895932,0.9,1
-57,Masmak Fortress,pharmacy,Exir Pharmacy,24.64065904,46.71750641,1.1,2
-57,Masmak Fortress,pharmacy,SAFARI Pharmacy,24.64316311,46.71763366,1.4,3
-57,Masmak Fortress,restaurant,دانكن دونتس,24.63148215,46.71203674,0.1,1
-57,Masmak Fortress,restaurant,Chop Chop Square,24.63090202,46.71171557,0.2,2
-57,Masmak Fortress,restaurant,Al Baik Chicken,24.63320541381836,46.71592712402344,0.4,3
-58,Boulevard City,bank,Bank Al Jazira | بنك الجزيرة,24.753289743506738,46.61059825522173,0.4,1
-58,Boulevard City,bank,SABB Bank بنك ساب,24.749844130892782,46.62250554232787,0.9,2
-58,Boulevard City,bank,AlRajhi Bank ATM,24.73924275,46.60852746,1.3,3
-58,Boulevard City,cafe,Starbucks,24.75035824,46.61357296,0.0,1
-58,Boulevard City,cafe,ستاربوكس,24.7503846,46.6136045,0.0,2
-58,Boulevard City,cafe,Minyums,24.750177394451004,46.61378023524262,0.1,3
-58,Boulevard City,fuel,محطة حطين بطريق الأبراج الجديد,24.767053731342,46.612723660735,1.9,1
-58,Boulevard City,fuel,الدريس,24.7487,46.6354,2.2,2
-58,Boulevard City,fuel,الدريس,24.7711,46.6228,2.5,3
-58,Boulevard City,pharmacy,Whites Pharmacy | صيدلية وايتس,24.746739203069367,46.61883706121339,0.7,1
-58,Boulevard City,pharmacy,Nahdi pharmacy | صيدليه النهدى,24.738169,46.607143,1.5,2
-58,Boulevard City,pharmacy,صيدليات المتحدة,24.7368,46.60978,1.5,3
-58,Boulevard City,restaurant,Morini Riyadh,24.750584609216613,46.613384842237586,0.0,1
-58,Boulevard City,restaurant,Lokma | لقمة,24.7506620435416,46.61321578504534,0.0,2
-58,Boulevard City,restaurant,Five Guys,24.75010191,46.61366953,0.0,3
-59,Al-Shafa,bank,صراف بنك الجزيره,21.224255,40.374432,18.4,1
-59,Al-Shafa,bank,صراف بنك الجزيره,21.23562,40.362201,19.2,2
-59,Al-Shafa,bank,anb Bank,21.24248949,40.41874471,22.2,3
-59,Al-Shafa,cafe,ركن الشاذلية للقهوة,21.0714156,40.30936367,0.3,1
-59,Al-Shafa,cafe,كافية ولاونج,21.072250366211,40.310050964355,0.4,2
-59,Al-Shafa,cafe,Breezes Cafe,21.06735026,40.3090818,0.4,3
-59,Al-Shafa,fuel,محطة درب,21.217019,40.375197,17.7,1
-59,Al-Shafa,fuel,الدريس,21.2224,40.3634,17.8,2
-59,Al-Shafa,fuel,الدريس,21.2462,40.3708,20.6,3
-59,Al-Shafa,pharmacy,Nahdi pharmacy | صيدليه النهدى,21.228235,40.377842,18.9,1
-59,Al-Shafa,pharmacy,United Pharmacy - صيدلية المتحدة,21.228800852701195,40.386066429161076,19.3,2
-59,Al-Shafa,pharmacy,Nahdi pharmacy | صيدليه النهدى,21.227503,40.414447,20.5,3
-59,Al-Shafa,restaurant,MEGYAL Restaurant,21.067498,40.308857,0.4,1
-59,Al-Shafa,restaurant,Domino's,21.07227850767923,40.30968914097519,0.4,2
-59,Al-Shafa,restaurant,مزرعة ومطل مطعم السيف,21.11773725,40.3595949,7.3,3
-60,Al-Hada,bank,البنك الاهلي,21.35706,40.28475,1.3,1
-60,Al-Hada,bank,صراف البنك الاهلي التجاري,21.35181278,40.27812577,2.0,2
-60,Al-Hada,bank,Alinma Bank,21.29150975,40.40376261,15.0,3
-60,Al-Hada,cafe,barn’s|بارنز,21.369589,40.270634,1.5,1
-60,Al-Hada,cafe,Location Cafe,21.36340026,40.27031721,1.6,2
-60,Al-Hada,cafe,المعشوقة السمراء,21.35586774,40.27453435,1.8,3
-60,Al-Hada,fuel,الدريس,21.3619,40.2853,0.7,1
-60,Al-Hada,fuel,الدريس,21.3609,40.2964,1.5,2
-60,Al-Hada,fuel,الدريس,21.3548,40.2117,7.7,3
-60,Al-Hada,pharmacy,صيدلية جنة الشفاء,21.35465444,40.27517319,1.8,1
-60,Al-Hada,pharmacy,United Pharmacy - صيدلية المتحدة,21.35917286210252,40.42295680643139,14.4,2
-60,Al-Hada,pharmacy,Nahdi pharmacy | صيدليه النهدى,21.35717584150344,40.42535108465575,14.6,3
-60,Al-Hada,restaurant,بن سليم للفول,21.360315444822,40.275921887923,1.3,1
-60,Al-Hada,restaurant,Burgerizzr | برغرايززر,21.36967651537367,40.270607341104515,1.5,2
-60,Al-Hada,restaurant,مطعم وكافيه تراسينا,21.358123,40.272939,1.7,3
-61,Shubra Palace,bank,Al Rajhi Bank,21.288700134718205,40.41860279482039,0.5,1
-61,Shubra Palace,bank,مصرف الراجحي,21.28888891652468,40.41859284242997,0.5,2
-61,Shubra Palace,bank,SABB,21.282297,40.41368,0.5,3
-61,Shubra Palace,cafe,مقهى الليالي السبع,21.285438,40.416866,0.2,1
-61,Shubra Palace,cafe,Selected Coffee,21.28844772,40.41598192,0.2,2
-61,Shubra Palace,cafe,Di Roasta Cafe,21.28757995,40.41831279,0.4,3
-61,Shubra Palace,fuel,الدريس,21.284,40.4149,0.3,1
-61,Shubra Palace,fuel,الدريس,21.289,40.4163,0.3,2
-61,Shubra Palace,fuel,محطة درب,21.284092,40.424886,1.1,3
-61,Shubra Palace,pharmacy,Nahdi pharmacy | صيدليه النهدى,21.290251,40.416704,0.5,1
-61,Shubra Palace,pharmacy,صيدلية تداوي زهرة سينا tadawi zahrat sina pharmacy,21.27768091,40.41376573,1.0,2
-61,Shubra Palace,pharmacy,Nahdi pharmacy | صيدليه النهدى,21.291424,40.40339,1.3,3
-61,Shubra Palace,restaurant,بيتزا إن,21.28821772,40.41587486,0.2,1
-61,Shubra Palace,restaurant,Liwan Al Arab - ليوان العرب,21.28437,40.41465,0.2,2
-61,Shubra Palace,restaurant,Dar Taj Indian Restaurant,21.28660253,40.41792659,0.3,3
-62,AlUla Old Town,bank,بنك الرياض,26.605509,37.925577,2.5,1
-62,AlUla Old Town,bank,مصرف الراجحي,26.601743,37.923114,2.8,2
-62,AlUla Old Town,bank,Al Rajhi Bank,27.6304166666667,38.5491666666667,128.1,3
-62,AlUla Old Town,cafe,مركاز,26.627238,37.913102,0.3,1
-62,AlUla Old Town,cafe,Dunkin' - دانكن,26.627522047405577,37.912946119049074,0.3,2
-62,AlUla Old Town,cafe,ستاربكس,26.6293312,37.9133353,0.4,3
-62,AlUla Old Town,fuel,الدريس,26.6158,37.92,1.2,1
-62,AlUla Old Town,fuel,الدريس,26.6089,37.926,2.2,2
-62,AlUla Old Town,fuel,الدريس,26.5786,37.9425,5.9,3
-62,AlUla Old Town,pharmacy,صيدلية بلسم العلا,26.60493183,37.9253492,2.5,1
-62,AlUla Old Town,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.577534,37.942795,6.0,2
-62,AlUla Old Town,pharmacy,ER Pharmacy,26.554984,37.949995,8.6,3
-62,AlUla Old Town,restaurant,شعبيات,26.625282,37.915869,0.1,1
-62,AlUla Old Town,restaurant,Acme,26.62517566,37.91424653,0.1,2
-62,AlUla Old Town,restaurant,Entrecôte Café de Paris,26.62538450943086,37.913821041584015,0.1,3
-63,Maraya,bank,بنك الرياض,26.605509,37.925577,16.5,1
-63,Maraya,bank,مصرف الراجحي,26.601743,37.923114,16.8,2
-63,Maraya,bank,Al Rajhi Bank,27.6304166666667,38.5491666666667,119.6,3
-63,Maraya,cafe,ستاربكس,26.66390077667957,37.904318746536234,9.7,1
-63,Maraya,cafe,Key Café,26.688859,37.980707,13.0,2
-63,Maraya,cafe,Jolt,26.690083,37.981888,13.0,3
-63,Maraya,fuel,الدريس,26.6158,37.92,15.2,1
-63,Maraya,fuel,الدريس,26.8782,37.9026,15.4,2
-63,Maraya,fuel,الدريس,26.6089,37.926,16.1,3
-63,Maraya,pharmacy,صيدلية بلسم العلا,26.60493183,37.9253492,16.5,1
-63,Maraya,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.577534,37.942795,20.0,2
-63,Maraya,pharmacy,ER Pharmacy,26.554984,37.949995,22.6,3
-63,Maraya,restaurant,Saffron,26.755356,37.862894,1.3,1
-63,Maraya,restaurant,Sass Cafe,26.826622,37.852562,9.3,2
-63,Maraya,restaurant,Burger King,26.66438576,37.90444182,9.6,3
-64,Ithra (King Abdulaziz Center for World Culture),bank,بنك الرياض,26.344516,50.138103,2.0,1
-64,Ithra (King Abdulaziz Center for World Culture),bank,صراف بنك الجزيره,26.344912,50.137851,2.0,2
-64,Ithra (King Abdulaziz Center for World Culture),bank,SABB Bank ATM | بنك ساب,26.34515631600085,50.13770064313432,2.0,3
-64,Ithra (King Abdulaziz Center for World Culture),cafe,ORIGO,26.335279,50.119989,0.1,1
-64,Ithra (King Abdulaziz Center for World Culture),cafe,Starbucks,26.334401,50.1225988,0.2,2
-64,Ithra (King Abdulaziz Center for World Culture),cafe,Starbucks,26.335343,50.131038,1.0,3
-64,Ithra (King Abdulaziz Center for World Culture),fuel,Orange Fuel Station,26.335196,50.131558,1.1,1
-64,Ithra (King Abdulaziz Center for World Culture),fuel,الدريس,26.3468,50.1355,1.9,2
-64,Ithra (King Abdulaziz Center for World Culture),fuel,الدريس,26.3451,50.1382,2.0,3
-64,Ithra (King Abdulaziz Center for World Culture),pharmacy,صيدليه النهدي,26.344289,50.138337,2.0,1
-64,Ithra (King Abdulaziz Center for World Culture),pharmacy,JHAH Core Area Pharmacy,26.312077,50.131332,2.8,2
-64,Ithra (King Abdulaziz Center for World Culture),pharmacy,صيدلية الدواء | Al-Dawaa Pharmacy,26.363234370709403,50.09618106149849,3.9,3
-64,Ithra (King Abdulaziz Center for World Culture),restaurant,إيوان,26.335077060072003,50.12042959995144,0.1,1
-64,Ithra (King Abdulaziz Center for World Culture),restaurant,North Audley Cantine (NAC),26.336214,50.12187,0.1,2
-64,Ithra (King Abdulaziz Center for World Culture),restaurant,Section-B,26.338793,50.11999,0.4,3
-65,City Walk,bank,Alrajhi Bank,26.30721644,50.17975358,0.4,1
-65,City Walk,bank,صراف بنك الجزيره,26.312062,50.185568,0.7,2
-65,City Walk,bank,بنك الجزيرة,26.308311,50.176861,0.7,3
-65,City Walk,cafe,ستاربوكس,26.306161,50.183436,0.0,1
-65,City Walk,cafe,Starbucks,26.30633075,50.18347103,0.0,2
-65,City Walk,cafe,Sword,26.306253,50.183136,0.0,3
-65,City Walk,fuel,Orange Gas Station Mashriqeen | محطة وقود أورانج المشرقين,26.3130389,50.177359,1.0,1
-65,City Walk,fuel,Fuel Way,26.303682,50.173695,1.0,2
-65,City Walk,fuel,الدريس,26.2986,50.1775,1.0,3
-65,City Walk,pharmacy,صيدلية برايت,26.30803041,50.17704281,0.7,1
-65,City Walk,pharmacy,United Pharmacy - صيدلية المتحدة,26.303853,50.174261,1.0,2
-65,City Walk,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.29839,50.178502,1.0,3
-65,City Walk,restaurant,BLANCA,26.306064,50.18377,0.0,1
-65,City Walk,restaurant,Il Figo,26.30625388,50.18368944,0.0,2
-65,City Walk,restaurant,Flaky,26.30595,50.183422,0.0,3
-66,Khobar Water Tower,bank,SNB Bank - HQ البنك الاهلي السعودي,26.306307,50.223734,0.8,1
-66,Khobar Water Tower,bank,SAMBA Main Regional Branch,26.30583756,50.22356532,0.8,2
-66,Khobar Water Tower,bank,مصرف الإنماء,26.30970443,50.2234958,0.9,3
-66,Khobar Water Tower,cafe,Container Cafe,26.313197,50.22854,0.7,1
-66,Khobar Water Tower,cafe,هارت اوف خبر كافيه,26.307048,50.2245228,0.7,2
-66,Khobar Water Tower,cafe,Monroe,26.306534308194987,50.22453546524048,0.7,3
-66,Khobar Water Tower,fuel,Tasihelat Fuel station,26.307784726388,50.224068150938,0.8,1
-66,Khobar Water Tower,fuel,محطة البراك,26.312758760042,50.217234074631,1.6,2
-66,Khobar Water Tower,fuel,Al-Miadin petrol station,26.298087,50.21474,2.0,3
-66,Khobar Water Tower,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.309533,50.222943,0.9,1
-66,Khobar Water Tower,pharmacy,al-dawaa pharmacy,26.31499808,50.21706029,1.7,2
-66,Khobar Water Tower,pharmacy,صيدلية العافية الرابعة,26.31037,50.213976,1.8,3
-66,Khobar Water Tower,restaurant,UZBK,26.30884,50.22867,0.3,1
-66,Khobar Water Tower,restaurant,Pickup,26.31199,50.2275,0.6,2
-66,Khobar Water Tower,restaurant,Fatto,26.30727128,50.2251981,0.6,3
-67,Khobar Corniche,bank,SAMBA Main Regional Branch,26.30583756,50.22356532,0.6,1
-67,Khobar Corniche,bank,SNB Bank - HQ البنك الاهلي السعودي,26.306307,50.223734,0.6,2
-67,Khobar Corniche,bank,SABB Bank ATM | بنك ساب,26.297051,50.221875,0.8,3
-67,Khobar Corniche,cafe,Motive Cafe,26.30360119,50.22353181,0.4,1
-67,Khobar Corniche,cafe,Equalcoffeehub,26.303302711324,50.223248004913,0.5,2
-67,Khobar Corniche,cafe,تولوم,26.303709,50.22342,0.5,3
-67,Khobar Corniche,fuel,Tasihelat Fuel station,26.307784726388,50.224068150938,0.8,1
-67,Khobar Corniche,fuel,Al-Miadin petrol station,26.298087,50.21474,1.3,2
-67,Khobar Corniche,fuel,محطة البراك,26.312758760042,50.217234074631,1.6,3
-67,Khobar Corniche,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.309533,50.222943,1.0,1
-67,Khobar Corniche,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.291039,50.219949,1.4,2
-67,Khobar Corniche,pharmacy,صيدلية العافية الرابعة,26.31037,50.213976,1.7,3
-67,Khobar Corniche,restaurant,Leonardo Restaurant,26.30159189,50.22420806,0.3,1
-67,Khobar Corniche,restaurant,بلومار,26.299334743319,50.224996586106,0.4,2
-67,Khobar Corniche,restaurant,مطعم الأطلال,26.304545,50.22551,0.4,3
-68,Ajdan Walk,bank,Emirates NBD ATM,26.283547,50.219719,0.0,1
-68,Ajdan Walk,bank,العربي,26.283206,50.218222,0.1,2
-68,Ajdan Walk,bank,Alawwal Bank,26.282808,50.214226,0.5,3
-68,Ajdan Walk,cafe,ستاربوكس,26.283472,50.219667,0.0,1
-68,Ajdan Walk,cafe,"Spaces -  Al Khobar, Ajdan Walk",26.283987451405,50.219961582462,0.1,2
-68,Ajdan Walk,cafe,Koffiqa,26.283784259742,50.220183849269,0.1,3
-68,Ajdan Walk,fuel,الدريس,26.2846,50.2185,0.2,1
-68,Ajdan Walk,fuel,الدريس,26.2807,50.2113,0.9,2
-68,Ajdan Walk,fuel,Shell,26.273818,50.216379,1.1,3
-68,Ajdan Walk,pharmacy,صيدليات الهلال,26.28897,50.21478,0.8,1
-68,Ajdan Walk,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.291039,50.219949,0.8,2
-68,Ajdan Walk,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.277606,50.209543,1.2,3
-68,Ajdan Walk,restaurant,Babel,26.28342743,50.21923118,0.0,1
-68,Ajdan Walk,restaurant,P.F. Chang's,26.2838348,50.21969781,0.0,2
-68,Ajdan Walk,restaurant,Nando's Ajdan Walk,26.283209,50.219895,0.1,3
-69,Jabal Al-Qarah,bank,صراف بنك الجزيره,25.4171,49.683305,0.9,1
-69,Jabal Al-Qarah,bank,صراف بنك الجزيره,25.3993201904905,49.683217713658806,1.3,2
-69,Jabal Al-Qarah,bank,صراف بنك الجزيره,25.420456,49.714268,2.8,3
-69,Jabal Al-Qarah,cafe,90Sec Coffee,25.420042,49.68042,1.4,1
-69,Jabal Al-Qarah,cafe,Shozbi Coffee | شوزبي كوفي,25.407653,49.702278,1.4,2
-69,Jabal Al-Qarah,cafe,معزوفة القهوة,25.423658,49.714471,3.0,3
-69,Jabal Al-Qarah,fuel,الدريس,25.4208,49.7037,1.9,1
-69,Jabal Al-Qarah,fuel,نفط,25.420896199010897,49.72165341104506,3.5,2
-69,Jabal Al-Qarah,fuel,نفط,25.440817788860173,49.64317658895494,5.7,3
-69,Jabal Al-Qarah,pharmacy,Nahdi pharmacy | صيدليه النهدى,25.417899,49.727466,4.0,1
-69,Jabal Al-Qarah,pharmacy,Hussein Al-Ali Pharmacy,25.39361984,49.60453386,8.6,2
-69,Jabal Al-Qarah,pharmacy,صيدلية رحيق السلامة,25.39157095,49.59951907,9.2,3
-69,Jabal Al-Qarah,restaurant,شورمتنا,25.420921,49.686822,1.2,1
-69,Jabal Al-Qarah,restaurant,مطعم سنابل,25.419832229614,49.679428100586,1.4,2
-69,Jabal Al-Qarah,restaurant,مطعم ماريز 5,25.427994,49.668444,2.8,3
-70,Al-Habala Village,bank,صراف الراجحي,18.09539545,42.80796698,9.3,1
-70,Al-Habala Village,bank,Al Rajhi Bank,18.0985,42.81065,9.4,2
-70,Al-Habala Village,bank,anb ATM,18.2036167,42.8163333,19.3,3
-70,Al-Habala Village,cafe,Casca - كاسكا,18.02427,42.76184,11.8,1
-70,Al-Habala Village,cafe,Barn's | بارنز,18.1616977,42.8418511,14.1,2
-70,Al-Habala Village,cafe,ستاربكس,18.175204,42.82388,16.1,3
-70,Al-Habala Village,fuel,الدريس,18.1206,42.854,9.4,1
-70,Al-Habala Village,fuel,نفط,18.05087584357265,42.73801591667175,14.3,2
-70,Al-Habala Village,fuel,الدريس,18.1651,42.8106,15.6,3
-70,Al-Habala Village,pharmacy,Nahdi pharmacy | صيدليه النهدى,18.096731,42.808644,9.4,1
-70,Al-Habala Village,pharmacy,Nahdi pharmacy | صيدليه النهدى,18.07911,42.776382,11.2,2
-70,Al-Habala Village,pharmacy,Nahdi pharmacy | صيدليه النهدى,18.156951,42.844531,13.5,3
-70,Al-Habala Village,restaurant,دانكن دونتس,18.14469026,42.84746342,12.1,1
-70,Al-Habala Village,restaurant,شركة مطاعم سماء ديرتي,18.17938710397,42.825870884345,16.5,2
-70,Al-Habala Village,restaurant,Pizza Hut,18.182451,42.826497,16.8,3
-71,Jabal al-Lawz,bank,Al Rajhi Bank,29.2824166666667,34.94525,78.1,1
-71,Jabal al-Lawz,bank,بنك الرياض,29.2972,34.9472,79.5,2
-71,Jabal al-Lawz,bank,Al Rajhi Bank,29.1633333333333,36.0746666666667,94.0,3
-71,Jabal al-Lawz,cafe,كوش Kush,28.41685,35.00624,39.3,1
-71,Jabal al-Lawz,cafe,Dunkin' - دانكن,28.113387,35.108168,63.1,2
-71,Jabal al-Lawz,cafe,Starbucks,28.112505,35.109385,63.1,3
-71,Jabal al-Lawz,fuel,الدريس,28.7385,35.4658,18.4,1
-71,Jabal al-Lawz,fuel,الدريس,28.8668,35.6605,42.0,2
-71,Jabal al-Lawz,fuel,الدريس,28.0654,35.1773,66.6,3
-71,Jabal al-Lawz,pharmacy,Nahdi pharmacy | صيدليه النهدى,29.283986,34.949699,78.1,1
-71,Jabal al-Lawz,pharmacy,Nahdi pharmacy | صيدليه النهدى,28.401139,36.530718,123.1,2
-71,Jabal al-Lawz,pharmacy,Nahdi pharmacy | صيدليه النهدى,28.45549,36.552606,123.9,3
-71,Jabal al-Lawz,restaurant,مطعم الشهري للمأكولات البحرية,28.504836042373,35.007149393236,33.4,1
-71,Jabal al-Lawz,restaurant,Revo - ريڤو,28.41685,35.00624,39.3,2
-71,Jabal al-Lawz,restaurant,دانكن دونتس,28.115729807717603,35.321175460244696,59.9,3
-72,Aja Mountains,bank,صراف بنك الجزيره,27.473676,41.615098,3.3,1
-72,Aja Mountains,bank,مصرف الراجحي Al Rajhi Bank,27.44957,41.623922,6.1,2
-72,Aja Mountains,bank,صراف بنك الجزيره,27.517682543795452,41.662812996917744,6.5,3
-72,Aja Mountains,cafe,Dunkin' - دانكن,27.496304,41.646629,4.6,1
-72,Aja Mountains,cafe,Dunkin' - دانكن,27.4919272,41.6492038,4.9,2
-72,Aja Mountains,cafe,Starbucks,27.4794606,41.6496667,5.4,3
-72,Aja Mountains,fuel,الدريس,27.4782,41.6489,5.4,1
-72,Aja Mountains,fuel,محطة الإزدهار,27.473746,41.65384,6.1,2
-72,Aja Mountains,fuel,الدريس,27.4476,41.6199,6.1,3
-72,Aja Mountains,pharmacy,Nahdi pharmacy | صيدليه النهدى,27.521626,41.657451,6.2,1
-72,Aja Mountains,pharmacy,صيدلية أهل الدواء الطبية فرع ١,27.4503247,41.6514328,7.5,2
-72,Aja Mountains,pharmacy,Nahdi pharmacy | صيدليه النهدى,27.488803,41.677973,7.8,3
-72,Aja Mountains,restaurant,القصرين لاونج,27.463882,41.637894,5.5,1
-72,Aja Mountains,restaurant,Panello,27.46688838,41.64180057,5.5,2
-72,Aja Mountains,restaurant,Padella Restaurant & Café,27.461898033348,41.640916600887,5.9,3
-73,Fayfa Mountains,bank,Al Rajhi Bank,17.03928373138039,43.08550067952309,23.5,1
-73,Fayfa Mountains,bank,Al Rajhi Bank,17.1136666666667,42.7698333333333,38.2,2
-73,Fayfa Mountains,bank,صراف بنك الجزيره,17.108557,42.762569,39.1,3
-73,Fayfa Mountains,cafe,Barn's | بارنز,17.2322286,42.9355949,17.6,1
-73,Fayfa Mountains,cafe,VIRLA,17.11306421,42.75958126,39.2,2
-73,Fayfa Mountains,cafe,Ivar Cafe,16.98107406,42.82717983,41.7,3
-73,Fayfa Mountains,fuel,محطة السلام,17.02998218,43.04280399,25.2,1
-73,Fayfa Mountains,fuel,الدريس,17.0492,42.7798,40.7,2
-73,Fayfa Mountains,fuel,الدريس,16.9791,42.8097,43.1,3
-73,Fayfa Mountains,pharmacy,Nahdi pharmacy | صيدليه النهدى,17.335948,43.133697,10.2,1
-73,Fayfa Mountains,pharmacy,صيدلية الشهد,17.23326263,42.94075526,17.0,2
-73,Fayfa Mountains,pharmacy,Nahdi pharmacy | صيدليه النهدى,17.232106,42.935801,17.6,3
-73,Fayfa Mountains,restaurant,حاشي باشا| فرع الداير بني مالك,17.337427,43.134083,10.4,1
-73,Fayfa Mountains,restaurant,حاشي باشا | فرع العارضة,17.033176,43.056022,24.6,2
-73,Fayfa Mountains,restaurant,مطاعم ومحانذ السادلية,16.973603,42.85428,40.3,3
-74,Rajajil Columns,bank,صراف بنك الجزيره,29.878056,40.104368,13.3,1
-74,Rajajil Columns,bank,مصرف الإنماء,29.93222,40.18592,13.7,2
-74,Rajajil Columns,bank,Bank Albilad | بنك البلاد,29.96043772,40.20393393,16.5,3
-74,Rajajil Columns,cafe,Coffee Address | عنوان القهوة,29.85144,40.221085,4.3,1
-74,Rajajil Columns,cafe,Coffee Town,29.86274947,40.20242791,5.8,2
-74,Rajajil Columns,cafe,Aromatic Specialty Coffee,29.92820463,40.19334726,13.1,3
-74,Rajajil Columns,fuel,الدريس,29.8568,40.2156,4.9,1
-74,Rajajil Columns,fuel,الدريس,29.9158,40.2051,11.6,2
-74,Rajajil Columns,fuel,الدريس,29.9297,40.2036,13.1,3
-74,Rajajil Columns,pharmacy,Nahdi pharmacy | صيدليه النهدى,29.889936,40.216157,8.6,1
-74,Rajajil Columns,pharmacy,صيدلية الدواء,29.95703784,40.20576354,16.1,2
-74,Rajajil Columns,pharmacy,Nahdi pharmacy | صيدليه النهدى,29.964245,40.212883,16.9,3
-74,Rajajil Columns,restaurant,دانكن دونتس,29.83785992,40.18091218,4.7,1
-74,Rajajil Columns,restaurant,Kudu,29.867801,40.218864,6.2,2
-74,Rajajil Columns,restaurant,مطعم حصاد الصيد,29.87707117,40.21986684,7.2,3
+19,Half Moon Bay,bank,صراف بنك الجزيره,26.23615,50.039397,13.1,1
+19,Half Moon Bay,bank,SABB Bank ATM | بنك ساب,26.244568,49.980766,13.3,2
+19,Half Moon Bay,bank,صراف بنك الجزيره,26.186631,50.159708,18.0,3
+19,Half Moon Bay,cafe,Starbucks,26.083762,50.010638,5.0,1
+19,Half Moon Bay,cafe,Starbucks,26.079703,50.010568,5.4,2
+19,Half Moon Bay,cafe,ديربي,26.17219106,49.92960013,8.1,3
+19,Half Moon Bay,fuel,Fuel Way Gas Station,26.16853148,49.92467324,8.2,1
+19,Half Moon Bay,fuel,Al-Khaldi Gas Station,26.16870769,49.92473811,8.3,2
+19,Half Moon Bay,fuel,الدريس,26.2412,49.9977,12.8,3
+19,Half Moon Bay,pharmacy,Al-Dawaa Pharmacy,26.187316,50.187035,20.6,1
+19,Half Moon Bay,pharmacy,صيدلية النهدي,26.208916,50.191079,21.9,2
+19,Half Moon Bay,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.203691,50.197595,22.3,3
+19,Half Moon Bay,restaurant,مطعم الدلفين,26.079741,50.011625,5.5,1
+19,Half Moon Bay,restaurant,Burger King,26.190006,50.01064,7.4,2
+19,Half Moon Bay,restaurant,دانكن دونتس,26.168500752334786,49.924498738628245,8.3,3
+20,"Qatif Old Town",bank,"بنك الرياض",26.5167797,49.9994616,1,1
+20,"Qatif Old Town",bank,"Al Rajhi Bank",26.527493789214123,50.02263291981999,1.6,2
+20,"Qatif Old Town",bank,"SABB Bank ATM | بنك ساب",26.518729216849003,50.02793608937225,1.9,3
+20,"Qatif Old Town",cafe,"Oh la la",26.52039131,49.99933578,0.9,1
+20,"Qatif Old Town",cafe,ستاربكس,26.533395,50.027426,2.4,2
+20,"Qatif Old Town",cafe,ستاربوكس,26.533395,50.027426,2.4,3
+20,"Qatif Old Town",fuel,"محطة الساحل الشرقي",26.51899657935,50.006012377674,0.3,1
+20,"Qatif Old Town",fuel,الدريس,26.5083,50.0292,2.5,2
+20,"Qatif Old Town",fuel,SASCO,26.50307842,50.039026,3.6,3
+20,"Qatif Old Town",pharmacy,"Farah Khalid's Pharmacy",26.52,50.0247,1.6,1
+20,"Qatif Old Town",pharmacy,"United Pharmacy - صيدلية المتحدة",26.53840116,50.02515554,2.6,2
+20,"Qatif Old Town",pharmacy,"صيدليه الدواء",26.539362903044,50.024335421649,2.6,3
+20,"Qatif Old Town",restaurant,"مطعم الساباط",26.51950118,50.00082836,0.8,1
+20,"Qatif Old Town",restaurant,"مطعم استاذ الشاورما",26.521467,49.99877,1,2
+20,"Qatif Old Town",restaurant,ksa.restaurant,26.521042,49.998524,1,3
+21,"Tarout Castle",bank,"صراف بنك الجزيره",26.564291,50.049617,1,1
+21,"Tarout Castle",bank,"Riyad Bank",26.56946999570304,50.071539193829466,2,2
+21,"Tarout Castle",bank,"بنك الرياض",26.569453,50.071551,2,3
+21,"Tarout Castle",cafe,ChocoValley,26.57865,50.05209,0.6,1
+21,"Tarout Castle",cafe,"Dark Café",26.566996,50.048255,0.8,2
+21,"Tarout Castle",cafe,"Brugge Originalite",26.567611,50.044298,1,3
+21,"Tarout Castle",fuel,"Al Abduljabbar Gas Station",26.57411035,50.05339993,0.2,1
+21,"Tarout Castle",fuel,نفط,26.55716530127503,50.07219466501236,2.7,2
+21,"Tarout Castle",fuel,"محطة طيبة للمحروقات",26.57387315,50.08064247,2.9,3
+21,"Tarout Castle",pharmacy,"Farah Khaled Pharmacy",26.58139534,50.03990195,1.5,1
+21,"Tarout Castle",pharmacy,"Nahdi pharmacy | صيدليه النهدى",26.558707,50.053387,1.6,2
+21,"Tarout Castle",pharmacy,"صيدلية النهدي - الشاطيء",26.55884520209,50.036967432161,2.2,3
+21,"Tarout Castle",restaurant,كشكش,26.574374,50.050031,0.2,1
+21,"Tarout Castle",restaurant,"مشويات المعلم الشامي",26.5694995,50.053503,0.4,2
+21,"Tarout Castle",restaurant,"مطعم القلعة",26.57376672,50.04622606,0.6,3
+22,"Dammam Corniche",bank,"Al Rajhi Bank",26.432649309403637,50.104674890993955,0.2,1
+22,"Dammam Corniche",bank,"Western Union",26.43908106,50.10485113,0.5,2
+22,"Dammam Corniche",bank,SABB,26.439506,50.104355,0.6,3
+22,"Dammam Corniche",cafe,"Dunkin' - دانكن",26.43441963,50.10326004,0,1
+22,"Dammam Corniche",cafe,ATYPICAL,26.438028621863836,50.10453956527289,0.4,2
+22,"Dammam Corniche",cafe,"karak Cup",26.436514,50.10737,0.5,3
+22,"Dammam Corniche",fuel,الدريس,26.4339,50.1049,0.2,1
+22,"Dammam Corniche",fuel,الدريس,26.4257,50.0991,1.1,2
+22,"Dammam Corniche",fuel,"محطة الدريس",26.441623,50.111466,1.1,3
+22,"Dammam Corniche",pharmacy,"Nahdi pharmacy | صيدليه النهدى",26.436528,50.096989,0.7,1
+22,"Dammam Corniche",pharmacy,"Nahdi pharmacy | صيدليه النهدى",26.437988,50.092371,1.2,2
+22,"Dammam Corniche",pharmacy,"Abeer Pharmacy",26.44398426,50.09417736,1.4,3
+22,"Dammam Corniche",restaurant,"مطبخ ومطعم واحة شبام",26.43272,50.10333328,0.2,1
+22,"Dammam Corniche",restaurant,"Egyptian Falafel Corner",26.433051645606,50.101030456331,0.3,2
+22,"Dammam Corniche",restaurant,Redtable.sa,26.43324,50.1007,0.3,3
+23,Al-Ahsa Oasis,bank,صراف بنك الجزيره,25.44081355775884,49.64293995261765,2.5,1
+23,Al-Ahsa Oasis,bank,صراف بنك الجزيره,25.426225,49.596517,2.6,2
+23,Al-Ahsa Oasis,bank,صراف بنك الجزيره,25.45031581466946,49.64025271169091,3.0,3
+23,Al-Ahsa Oasis,cafe,Coffeelogy,25.42834113,49.6463326,2.5,1
+23,Al-Ahsa Oasis,cafe,Cinnabon,25.42873108,49.59701771,2.5,2
+23,Al-Ahsa Oasis,cafe,Cope,25.445649,49.593831,3.3,3
+23,Al-Ahsa Oasis,fuel,الدريس,25.4304,49.5974,2.5,1
+23,Al-Ahsa Oasis,fuel,نفط,25.440817788860173,49.64317658895494,2.5,2
+23,Al-Ahsa Oasis,fuel,الدريس,25.4342,49.5914,3.1,3
+23,Al-Ahsa Oasis,pharmacy,Al-Dawaa Pharmacy,25.44034729,49.58204318,4.2,1
+23,Al-Ahsa Oasis,pharmacy,al-dawaa pharmacy,25.39786781,49.59775915,4.3,2
+23,Al-Ahsa Oasis,pharmacy,Hussein Al-Ali Pharmacy,25.39361984,49.60453386,4.3,3
+23,Al-Ahsa Oasis,restaurant,مطعم مذاق عراقي,25.435194334348,49.622304439545,0.6,1
+23,Al-Ahsa Oasis,restaurant,لولو سويت ,25.42889,49.60551,1.6,2
+23,Al-Ahsa Oasis,restaurant,أنا جوعان,25.446531,49.636734,2.4,3
+24,"Abha Lake Park",bank,"صراف بنك الجزيره",18.246502,42.51173,0,1
+24,"Abha Lake Park",bank,"Al Rajhi Bank",18.2384166666667,42.5000833333333,1.5,2
+24,"Abha Lake Park",bank,"بنك الأهلي",18.232034,42.508209,1.7,3
+24,"Abha Lake Park",cafe,"الإستكانة التركية",18.23957239,42.50192416,1.3,1
+24,"Abha Lake Park",cafe,"مقهى جلسة السمو",18.241819,42.499076,1.4,2
+24,"Abha Lake Park",cafe,"مقهى الباخرة الحديث",18.23530889,42.50076952,1.7,3
+24,"Abha Lake Park",fuel,الدريس,18.2329,42.5063,1.6,1
+24,"Abha Lake Park",fuel,الدريس,18.226,42.5002,2.6,2
+24,"Abha Lake Park",fuel,الدريس,18.2312,42.492,2.7,3
+24,"Abha Lake Park",pharmacy,"Nahdi pharmacy | صيدليه النهدى",18.246475,42.511783,0,1
+24,"Abha Lake Park",pharmacy,"Nahdi pharmacy | صيدليه النهدى‎",18.233149,42.504462,1.7,2
+24,"Abha Lake Park",pharmacy,"صيدلية النميص فرع السامر",18.23111607,42.50828355,1.7,3
+24,"Abha Lake Park",restaurant,"مطعم كبسة البيت ٢",18.24023634,42.49987364,1.4,1
+24,"Abha Lake Park",restaurant,البيك,18.254255,42.500435,1.5,2
+24,"Abha Lake Park",restaurant,"Al Baik",18.254450221734363,42.500337423326734,1.5,3
+25,Rijal Almaa Heritage Village,bank,Al Rajhi Bank,18.207329168022405,42.489949510076535,22.9,1
+25,Rijal Almaa Heritage Village,bank,بنك الإنماء,18.215079454244,42.492729610919,23.2,2
+25,Rijal Almaa Heritage Village,bank,SABB Bank ATM | بنك ساب,18.213594,42.498339,23.8,3
+25,Rijal Almaa Heritage Village,cafe,Barncafe - بارنيز كافيه,18.230553,42.467634,20.6,1
+25,Rijal Almaa Heritage Village,cafe,Barn's | بارنز,18.23059246,42.4676407,20.6,2
+25,Rijal Almaa Heritage Village,cafe,شّـري | SHARI,18.232606,42.479389,21.9,3
+25,Rijal Almaa Heritage Village,fuel,الدريس,18.2338,42.4098,14.6,1
+25,Rijal Almaa Heritage Village,fuel,الدريس,18.2312,42.492,23.2,2
+25,Rijal Almaa Heritage Village,fuel,الدريس,18.226,42.5002,24.0,3
+25,Rijal Almaa Heritage Village,pharmacy,Nahdi pharmacy | صيدليه النهدى,18.24436,42.271536,3.5,1
+25,Rijal Almaa Heritage Village,pharmacy,Nahdi pharmacy | صيدليه النهدى,18.278795,42.241276,8.1,2
+25,Rijal Almaa Heritage Village,pharmacy,Nahdi pharmacy | صيدليه النهدى,18.08754,42.225653,14.8,3
+25,Rijal Almaa Heritage Village,restaurant,دانكن دونتس,18.2750798,42.24430173,7.6,1
+25,Rijal Almaa Heritage Village,restaurant,مطعم الشجره محايل عسير,18.251517633345028,42.475456866657396,21.8,2
+25,Rijal Almaa Heritage Village,restaurant,الشوكة التركية,18.230858,42.480719,22.0,3
+26,Al-Soudah,bank,"Al Rajhi Bank",18.2384166666667,42.5000833333333,14.7,1
+26,Al-Soudah,bank,"بنك الإنماء",18.215079454244,42.492729610919,14.8,2
+26,Al-Soudah,bank,"Al Rajhi Bank",18.207329168022405,42.489949510076535,14.9,3
+26,Al-Soudah,cafe,"Barn's | بارنز",18.23059246,42.4676407,11.6,1
+26,Al-Soudah,cafe,"Barncafe - بارنيز كافيه",18.230553,42.467634,11.7,2
+26,Al-Soudah,cafe,"Box Coffee",18.241634,42.480502,12.6,3
+26,Al-Soudah,fuel,الدريس,18.2338,42.4098,6.2,1
+26,Al-Soudah,fuel,الدريس,18.2312,42.492,14,2
+26,Al-Soudah,fuel,الدريس,18.226,42.5002,15.1,3
+26,Al-Soudah,pharmacy,"Nahdi pharmacy | صيدليه النهدى",18.24436,42.271536,10.3,1
+26,Al-Soudah,pharmacy,"Nahdi pharmacy | صيدليه النهدى",18.230094,42.482287,13.1,2
+26,Al-Soudah,pharmacy,"Nahdi pharmacy | صيدليه النهدى",18.278795,42.241276,13.1,3
+26,Al-Soudah,restaurant,"مطعم الشجره محايل عسير",18.251517633345028,42.47545686665739,11.8,1
+26,Al-Soudah,restaurant,"دانكن دونتس",18.2750798,42.24430173,12.8,2
+26,Al-Soudah,restaurant,"الشوكة التركية",18.230858,42.480719,12.9,3
+27,"Abha Cable Car",bank,"Al Rajhi Bank",18.2384166666667,42.5000833333333,1.1,1
+27,"Abha Cable Car",bank,"بنك الأهلي",18.232034,42.508209,2,2
+27,"Abha Cable Car",bank,"بنك الإنماء",18.215079454244,42.492729610919,2.2,3
+27,"Abha Cable Car",cafe,ستاربوكس,18.231266,42.492366,0.5,1
+27,"Abha Cable Car",cafe,Starbucks,18.23116825,42.4923809,0.5,2
+27,"Abha Cable Car",cafe,"Tooz Cafe",18.2319824,42.4948071,0.6,3
+27,"Abha Cable Car",fuel,الدريس,18.2312,42.492,0.5,1
+27,"Abha Cable Car",fuel,الدريس,18.226,42.5002,1.5,2
+27,"Abha Cable Car",fuel,الدريس,18.2329,42.5063,1.7,3
+27,"Abha Cable Car",pharmacy,"Universe Pharmacy",18.23082459,42.49325019,0.6,1
+27,"Abha Cable Car",pharmacy,"صيدلية الوردتين",18.22901323,42.49555263,0.9,2
+27,"Abha Cable Car",pharmacy,"Nahdi pharmacy | صيدليه النهدى",18.230094,42.482287,1,3
+27,"Abha Cable Car",restaurant,"دانكن دونتس",18.23150186,42.4923069,0.5,1
+27,"Abha Cable Car",restaurant,ماكدونالدز,18.23058543701914,42.48967835809756,0.5,2
+27,"Abha Cable Car",restaurant,McDonald's,18.23046576,42.48976543,0.5,3
+28,Tabuk Castle,bank,Al Rajhi Bank,28.3831666666667,36.55875,0.2,1
+28,Tabuk Castle,bank,بنك الرياض,28.38481,36.5624,0.6,2
+28,Tabuk Castle,bank,Al Rajhi Bank,28.38509627538865,36.56301242004624,0.7,3
+28,Tabuk Castle,cafe,Arab Cafe,28.38338616,36.5620209,0.5,1
+28,Tabuk Castle,cafe,Fantasy Coffee,28.38340435,36.563886476667,0.7,2
+28,Tabuk Castle,cafe,مقهى الطائر الرمادي,28.389304227563,36.557753052939,0.7,3
+28,Tabuk Castle,fuel,الدريس,28.3939,36.5466,1.6,1
+28,Tabuk Castle,fuel,نفط,28.37383,36.54161,1.8,2
+28,Tabuk Castle,fuel,نفط,28.36779,36.56362,1.8,3
+28,Tabuk Castle,pharmacy,Nahdi pharmacy | صيدليه النهدى,28.375722,36.542813,1.6,1
+28,Tabuk Castle,pharmacy,صيدلية تبوك 2,28.39035386,36.57188823,1.7,2
+28,Tabuk Castle,pharmacy,Tabuk Al Amal Pharmacy,28.39993231991,36.567477965329,2.2,3
+28,Tabuk Castle,restaurant,Manila Restaurants,28.38296882,36.56117564,0.4,1
+28,Tabuk Castle,restaurant,Speedy Meals Restaurant and Catering,28.38217143,36.56137062,0.5,2
+28,Tabuk Castle,restaurant,Seç Turkish Restaurant,28.38776685,36.55914349,0.6,3
+29,Gulf of Aqaba Beaches,bank,Al Rajhi Bank,29.2824166666667,34.94525,0.5,1
+29,Gulf of Aqaba Beaches,bank,بنك الرياض,29.2972,34.9472,1.2,2
+29,Gulf of Aqaba Beaches,bank,Al Rajhi Bank,29.1633333333333,36.0746666666667,110.3,3
+29,Gulf of Aqaba Beaches,cafe,Sun sand coffee,29.283769489458642,34.95054692028589,0.5,1
+29,Gulf of Aqaba Beaches,cafe,Tramonto,29.291693,34.942438,0.7,2
+29,Gulf of Aqaba Beaches,cafe,كوش Kush,28.41685,35.00624,96.9,3
+29,Gulf of Aqaba Beaches,fuel,الدريس,29.2322,34.9427,6.0,1
+29,Gulf of Aqaba Beaches,fuel,الدريس,28.7385,35.4658,79.1,2
+29,Gulf of Aqaba Beaches,fuel,الدريس,28.8668,35.6605,83.6,3
+29,Gulf of Aqaba Beaches,pharmacy,Nahdi pharmacy | صيدليه النهدى,29.283986,34.949699,0.4,1
+29,Gulf of Aqaba Beaches,pharmacy,Nahdi pharmacy | صيدليه النهدى,28.45549,36.552606,181.6,2
+29,Gulf of Aqaba Beaches,pharmacy,Nahdi pharmacy | صيدليه النهدى,28.401139,36.530718,183.0,3
+29,Gulf of Aqaba Beaches,restaurant,دانكن دونتس,29.2925704,34.93988726,1.0,1
+29,Gulf of Aqaba Beaches,restaurant,مطعم الشهري للمأكولات البحرية,28.504836042373,35.007149393236,87.1,2
+29,Gulf of Aqaba Beaches,restaurant,Revo - ريڤو,28.41685,35.00624,96.9,3
+30,Disi Desert,bank,صراف بنك الجزيره,28.356278,36.567723,80.2,1
+30,Disi Desert,bank,بنك الرياض,28.360369,36.5714,80.7,2
+30,Disi Desert,bank,Alrajhi Bank,28.369664,36.56354,81.7,3
+30,Disi Desert,cafe,Dunkin' - دانكن,28.3478532,36.5955046,79.3,1
+30,Disi Desert,cafe,ستاربوكس,28.3626697,36.5674873,80.9,2
+30,Disi Desert,cafe,The Coffee Address | عنوان القهوة,28.368969,36.578385,81.6,3
+30,Disi Desert,fuel,الدريس,28.3517,36.5305,79.8,1
+30,Disi Desert,fuel,Shell,28.365701,36.565155,81.3,2
+30,Disi Desert,fuel,الدريس,28.365,36.5145,81.3,3
+30,Disi Desert,pharmacy,Nahdi pharmacy | صيدليه النهدى,28.365951,36.576459,81.3,1
+30,Disi Desert,pharmacy,Nahdi pharmacy | صيدليه النهدى,28.375722,36.542813,82.4,2
+30,Disi Desert,pharmacy,Al Dawaa Pharmacy,28.376089,36.583133,82.4,3
+30,Disi Desert,restaurant,Al Masudi Restaurant,27.80941412,36.03625997,55.4,1
+30,Disi Desert,restaurant,KFC,28.318090438842773,36.65195083618164,76.5,2
+30,Disi Desert,restaurant,Other Taste,28.344193990001692,36.58213160001521,78.9,3
+31,"Qishlah Palace",bank,"SABB Bank بنك ساب",27.512164532472287,41.69286244902746,0.3,1
+31,"Qishlah Palace",bank,"Al Rajhi Bank بنك الراجحي",27.51751848770071,41.693952299733056,0.6,2
+31,"Qishlah Palace",bank,"بنك الرياض",27.51367,41.69617,0.6,3
+31,"Qishlah Palace",cafe,"مقهى الهرم الرابع لتقديم المشروبات",27.51606353,41.68199485,0.8,1
+31,"Qishlah Palace",cafe,"Mur Cafe",27.50991,41.682424,0.9,2
+31,"Qishlah Palace",cafe,"Turkish coffee shop hail saudi arabia",27.523805821423,41.692177238678,1.2,3
+31,"Qishlah Palace",fuel,الدريس,27.509,41.6821,0.9,1
+31,"Qishlah Palace",fuel,الدريس,27.5143,41.7015,1.1,2
+31,"Qishlah Palace",fuel,الدريس,27.5192,41.6723,1.9,3
+31,"Qishlah Palace",pharmacy,"Nahdi pharmacy | صيدليه النهدى",27.499791,41.697728,1.7,1
+31,"Qishlah Palace",pharmacy,"Nahdi pharmacy | صيدليه النهدى",27.488803,41.677973,3,2
+31,"Qishlah Palace",pharmacy,"Nahdi pharmacy | صيدليه النهدى",27.521626,41.657451,3.3,3
+31,"Qishlah Palace",restaurant,"مطعم دفرنت",27.510474,41.695006,0.6,1
+31,"Qishlah Palace",restaurant,"مطعم النخيل",27.519064,41.693837,0.7,2
+31,"Qishlah Palace",restaurant,KFC,27.514780082258,41.69732093811,0.7,3
+32,A'arif Fort,bank,Al Rajhi Bank بنك الراجحي,27.512075603341454,41.69812095266561,0.8,1
+32,A'arif Fort,bank,Al Rajhi Bank لنك الراجحي,27.524,41.7053333333333,0.8,2
+32,A'arif Fort,bank,بنك الرياض,27.51367,41.69617,0.8,3
+32,A'arif Fort,cafe,Z Cafe,27.52389356,41.70175337,0.8,1
+32,A'arif Fort,cafe,Mamma Roti Cafe,27.506796965638,41.700057980698,1.2,2
+32,A'arif Fort,cafe,Turkish coffee shop hail saudi arabia,27.523805821423,41.692177238678,1.3,3
+32,A'arif Fort,fuel,الدريس,27.5143,41.7015,0.4,1
+32,A'arif Fort,fuel,الدريس,27.509,41.6821,2.3,2
+32,A'arif Fort,fuel,الدريس,27.5192,41.6723,3.1,3
+32,A'arif Fort,pharmacy,Nahdi pharmacy | صيدليه النهدى,27.499791,41.697728,2.0,1
+32,A'arif Fort,pharmacy,Nahdi pharmacy | صيدليه النهدى,27.488803,41.677973,4.0,2
+32,A'arif Fort,pharmacy,Nahdi pharmacy | صيدليه النهدى,27.521626,41.657451,4.6,3
+32,A'arif Fort,restaurant,مطعم ركن السيرية,27.51536652,41.70099435,0.3,1
+32,A'arif Fort,restaurant,حدائق الفرات للمشويات العراقية,27.513842079814,41.702882163265,0.4,2
+32,A'arif Fort,restaurant,هرفي,27.51558788346066,41.69713415013072,0.6,3
+33,"Jubbah Rock Art",bank,"Al Rajhi Bank",28.0301666666667,40.94,4.1,1
+33,"Jubbah Rock Art",bank,"صراف بنك الجزيره",27.825154,41.566552,69.1,2
+33,"Jubbah Rock Art",bank,"Al Rajhi Bank",27.38688380504719,41.1767900216517,75.8,3
+33,"Jubbah Rock Art",cafe,"Hail Train Rail",27.684758,41.755049,92.1,1
+33,"Jubbah Rock Art",cafe,"SWORDS CAFÉ",27.546111,41.666745,92.3,2
+33,"Jubbah Rock Art",cafe,"النورس كافيه",27.547914,41.668349,92.3,3
+33,"Jubbah Rock Art",fuel,الدريس,27.8466,41.7288,83.8,1
+33,"Jubbah Rock Art",fuel,"محطة الدائري الغربي",27.52668,41.65959,93,2
+33,"Jubbah Rock Art",fuel,نفط,27.52416,41.65995,93.1,3
+33,"Jubbah Rock Art",pharmacy,"Lemon Pharmacy 258 - salamat hospital",27.55340887,41.67902304,92.8,1
+33,"Jubbah Rock Art",pharmacy,"Nahdi pharmacy | صيدليه النهدى",27.521626,41.657451,93.1,2
+33,"Jubbah Rock Art",pharmacy,"al-dawaa pharmacy",27.56821928,41.73008977,96.1,3
+33,"Jubbah Rock Art",restaurant,"مطعم ومطبخ دكة مذاق الشمال",27.58676122,41.67184859,90.1,1
+33,"Jubbah Rock Art",restaurant,"دانكن دونتس",27.57474331,41.6717457,90.9,2
+33,"Jubbah Rock Art",restaurant,"Grain Silos And Flour Mill",27.646921,41.726771,91.5,3
+34,Al-Ukhdood Archaeological Site,bank,صراف بنك الجزيره,17.494662,44.189465,2.0,1
+34,Al-Ukhdood Archaeological Site,bank,صراف بنك الجزيره,17.496511,44.218483,4.7,2
+34,Al-Ukhdood Archaeological Site,bank,بنك الرياض,17.489317,44.133369,4.8,3
+34,Al-Ukhdood Archaeological Site,cafe,مقهى مراكش,17.497126800007347,44.189240029995545,2.2,1
+34,Al-Ukhdood Archaeological Site,cafe,Barn's | بارنز,17.5012675,44.1879794,2.5,2
+34,Al-Ukhdood Archaeological Site,cafe,Dunkin' - دانكن,17.504211,44.187933,2.8,3
+34,Al-Ukhdood Archaeological Site,fuel,الدريس,17.514,44.1747,3.7,1
+34,Al-Ukhdood Archaeological Site,fuel,الدريس,17.5294,44.231,7.8,2
+34,Al-Ukhdood Archaeological Site,fuel,الدريس,17.542,44.2212,8.2,3
+34,Al-Ukhdood Archaeological Site,pharmacy,Nahdi pharmacy | صيدليه النهدى,17.488573,44.188234,1.4,1
+34,Al-Ukhdood Archaeological Site,pharmacy,Nahdi pharmacy | صيدليه النهدى,17.496843,44.188628,2.1,2
+34,Al-Ukhdood Archaeological Site,pharmacy,Nahdi pharmacy | صيدليه النهدى,17.491999,44.137933,4.4,3
+34,Al-Ukhdood Archaeological Site,restaurant,مطعم اسلام اباد,17.48936867,44.18978205,1.6,1
+34,Al-Ukhdood Archaeological Site,restaurant,شورو برجر,17.494822,44.189238,2.0,2
+34,Al-Ukhdood Archaeological Site,restaurant,Maestro Pizza,17.49546478,44.18907386,2.0,3
+35,Najran Dam,bank,بنك الرياض,17.489317,44.133369,15.6,1
+35,Najran Dam,bank,صراف بنك الجزيره,17.494662,44.189465,21.0,2
+35,Najran Dam,bank,بنك الرياض,17.524746,44.200474,23.7,3
+35,Najran Dam,cafe,مقهى الإستكانة فرع/البلد,17.48959555,44.13104861,15.4,1
+35,Najran Dam,cafe,مقهى مراكش,17.497126800007347,44.189240029995545,21.1,2
+35,Najran Dam,cafe,Barn's | بارنز,17.5012675,44.1879794,21.2,3
+35,Najran Dam,fuel,الدريس,17.514,44.1747,20.7,1
+35,Najran Dam,fuel,الدريس,17.542,44.2212,26.5,2
+35,Najran Dam,fuel,الدريس,17.5294,44.231,26.7,3
+35,Najran Dam,pharmacy,Nahdi pharmacy | صيدليه النهدى,17.491999,44.137933,16.1,1
+35,Najran Dam,pharmacy,Nahdi pharmacy | صيدليه النهدى,17.517349,44.156125,19.4,2
+35,Najran Dam,pharmacy,Nahdi pharmacy | صيدليه النهدى,17.488573,44.188234,20.5,3
+35,Najran Dam,restaurant,نجران,17.48840322,44.13212171,15.4,1
+35,Najran Dam,restaurant,مطعم اسلام اباد,17.48936867,44.18978205,20.7,2
+35,Najran Dam,restaurant,شورو برجر,17.494822,44.189238,20.9,3
+36,Old Najran Mudbrick Houses,bank,بنك الرياض,17.489317,44.133369,0.2,1
+36,Old Najran Mudbrick Houses,bank,صراف بنك الجزيره,17.494662,44.189465,6.1,2
+36,Old Najran Mudbrick Houses,bank,بنك الرياض,17.524746,44.200474,8.2,3
+36,Old Najran Mudbrick Houses,cafe,مقهى الإستكانة فرع/البلد,17.48959555,44.13104861,0.1,1
+36,Old Najran Mudbrick Houses,cafe,Barn's | بارنز,17.5012675,44.1879794,6.1,2
+36,Old Najran Mudbrick Houses,cafe,مقهى مراكش,17.497126800007347,44.189240029995545,6.1,3
+36,Old Najran Mudbrick Houses,fuel,الدريس,17.514,44.1747,5.3,1
+36,Old Najran Mudbrick Houses,fuel,الدريس,17.542,44.2212,11.1,2
+36,Old Najran Mudbrick Houses,fuel,الدريس,17.5294,44.231,11.4,3
+36,Old Najran Mudbrick Houses,pharmacy,Nahdi pharmacy | صيدليه النهدى,17.491999,44.137933,0.7,1
+36,Old Najran Mudbrick Houses,pharmacy,Nahdi pharmacy | صيدليه النهدى,17.517349,44.156125,4.0,2
+36,Old Najran Mudbrick Houses,pharmacy,Nahdi pharmacy | صيدليه النهدى,17.488573,44.188234,6.0,3
+36,Old Najran Mudbrick Houses,restaurant,نجران,17.48840322,44.13212171,0.2,1
+36,Old Najran Mudbrick Houses,restaurant,N8 Burger,17.50160034,44.18754419,6.0,2
+36,Old Najran Mudbrick Houses,restaurant,Maestro Pizza,17.49546478,44.18907386,6.1,3
+37,"Farasan Islands",bank,"Samba Bank",16.903,42.54869,72.4,1
+37,"Farasan Islands",bank,"بنك الرياض",16.902511,42.550462,72.5,2
+37,"Farasan Islands",bank,"ENJAZ Money Transfer",16.90434869,42.55024256,72.6,3
+37,"Farasan Islands",cafe,"ديوانية دلة الخيالة",16.88994,42.541015,71.2,1
+37,"Farasan Islands",cafe,"PORTO CAFÉ",16.901761090000004,42.53813117,71.3,2
+37,"Farasan Islands",cafe,"The Coffee Address | عنوان القهوة",16.904966,42.544016,72,3
+37,"Farasan Islands",fuel,الدريس,16.6998,42.1072,22.1,1
+37,"Farasan Islands",fuel,الدريس,16.9064,42.5537,73,2
+37,"Farasan Islands",fuel,الدريس,16.9224,42.5551,73.7,3
+37,"Farasan Islands",pharmacy,"Nahdi pharmacy | صيدليه النهدى",16.907348,42.544959,72.1,1
+37,"Farasan Islands",pharmacy,"Nahdi pharmacy | صيدليه النهدى",16.89568,42.552858,72.6,2
+37,"Farasan Islands",pharmacy,Boots,16.902442,42.553028,72.8,3
+37,"Farasan Islands",restaurant,"فرن تميس و بوفية صباح الخير",16.701929855982446,42.11714109140939,23.1,1
+37,"Farasan Islands",restaurant,"مطعم الوفاء",16.70210571,42.11778272,23.2,2
+37,"Farasan Islands",restaurant,Saaltndpepper.sa,16.8876,42.53994,71,3
+38,Jazan Corniche,bank,مصرف الانماء,16.919162,42.551442,0.5,1
+38,Jazan Corniche,bank,Saudi Awwal Bank,16.90800802,42.55398755,1.1,2
+38,Jazan Corniche,bank,بنك الرياض,16.926493,42.549869,1.2,3
+38,Jazan Corniche,cafe,Dunkin - دانكن,16.919611,42.549982,0.5,1
+38,Jazan Corniche,cafe,Diamond Dose,16.91150013,42.54725501,0.5,2
+38,Jazan Corniche,cafe,OTCHo Coffee,16.91135431,42.54754328,0.5,3
+38,Jazan Corniche,fuel,نفط,16.91937,42.55638,1.0,1
+38,Jazan Corniche,fuel,الدريس,16.9224,42.5551,1.1,2
+38,Jazan Corniche,fuel,الدريس,16.9064,42.5537,1.3,3
+38,Jazan Corniche,pharmacy,Nahdi pharmacy | صيدليه النهدى,16.907348,42.544959,1.0,1
+38,Jazan Corniche,pharmacy,Nahdi pharmacy | صيدليه النهدى,16.916643,42.56234,1.6,2
+38,Jazan Corniche,pharmacy,Nahdi pharmacy | صيدليه النهدى,16.928866,42.553827,1.6,3
+38,Jazan Corniche,restaurant,Ocean Basket,16.9155512,42.5508495,0.3,1
+38,Jazan Corniche,restaurant,المعالي,16.912413102423,42.54828620418,0.4,2
+38,Jazan Corniche,restaurant,Jazan,16.919752,42.549634,0.5,3
+39,"Al Idabi Waterfall",bank,"Al Rajhi Bank",17.03928373138039,43.08550067952309,21.6,1
+39,"Al Idabi Waterfall",bank,"Al Rajhi Bank",17.1136666666667,42.7698333333333,37.5,2
+39,"Al Idabi Waterfall",bank,"صراف بنك الجزيره",17.108557,42.762569,38.4,3
+39,"Al Idabi Waterfall",cafe,"Barn's | بارنز",17.2322286,42.9355949,17.5,1
+39,"Al Idabi Waterfall",cafe,VIRLA,17.11306421,42.75958126,38.6,2
+39,"Al Idabi Waterfall",cafe,"Jazan Avenue Cafe",16.969167420014074,42.84026069503291,40.3,3
+39,"Al Idabi Waterfall",fuel,"محطة السلام",17.02998218,43.04280399,23.4,1
+39,"Al Idabi Waterfall",fuel,الدريس,17.0492,42.7798,39.7,2
+39,"Al Idabi Waterfall",fuel,الدريس,16.9791,42.8097,41.8,3
+39,"Al Idabi Waterfall",pharmacy,"Nahdi pharmacy | صيدليه النهدى",17.335948,43.133697,12,1
+39,"Al Idabi Waterfall",pharmacy,"صيدلية الشهد",17.23326263,42.94075526,16.9,2
+39,"Al Idabi Waterfall",pharmacy,"Nahdi pharmacy | صيدليه النهدى",17.232106,42.935801,17.4,3
+39,"Al Idabi Waterfall",restaurant,"حاشي باشا| فرع الداير بني مالك",17.337427,43.134083,12.1,1
+39,"Al Idabi Waterfall",restaurant,"حاشي باشا | فرع العارضة",17.033176,43.056022,22.7,2
+39,"Al Idabi Waterfall",restaurant,"مطاعم ومحانذ السادلية",16.973603,42.85428,38.9,3
+40,Raghadan Forest Park,bank,Al Rajhi Bank,20.01025,41.4649666666667,3.4,1
+40,Raghadan Forest Park,bank,بنك الرياض,20.013301,41.467349,3.5,2
+40,Raghadan Forest Park,bank,مصرف الراجحي | alrajhi bank,20.01476995,41.46966723,3.7,3
+40,Raghadan Forest Park,cafe,Barn's | بارنز,20.0305766,41.4489287,1.6,1
+40,Raghadan Forest Park,cafe,Sweet & Haven,20.008038,41.452826,2.4,2
+40,Raghadan Forest Park,cafe,Extra Sugar,20.00916588,41.45738437,2.7,3
+40,Raghadan Forest Park,fuel,الدريس,20.0306,41.4488,1.6,1
+40,Raghadan Forest Park,fuel,الدريس,20.0286,41.4124,2.5,2
+40,Raghadan Forest Park,fuel,الدريس,20.0023,41.4619,3.6,3
+40,Raghadan Forest Park,pharmacy,Nahdi pharmacy | صيدليه النهدى,20.034735,41.449836,2.0,1
+40,Raghadan Forest Park,pharmacy,Nahdi pharmacy | صيدليه النهدى,20.012127,41.463682,3.2,2
+40,Raghadan Forest Park,pharmacy,Nahdi pharmacy | صيدليه النهدى,20.002965,41.458489,3.3,3
+40,Raghadan Forest Park,restaurant,شاورما كنج على الحطب | Shawarma King On Al-Hatteb,20.020275,41.454136,1.9,1
+40,Raghadan Forest Park,restaurant,مطعم الليتشي,20.00751666,41.45038193,2.3,2
+40,Raghadan Forest Park,restaurant,Bahah,20.00826,41.45143,2.3,3
+41,Dhee Ain Village (Marble Village),bank,Al Rajhi Bank,20.01025,41.4649666666667,9.2,1
+41,Dhee Ain Village (Marble Village),bank,بنك الرياض,20.013301,41.467349,9.5,2
+41,Dhee Ain Village (Marble Village),bank,مصرف الراجحي | alrajhi bank,20.01476995,41.46966723,9.8,3
+41,Dhee Ain Village (Marble Village),cafe,أطياف الشاهي,20.002043,41.462986,8.2,1
+41,Dhee Ain Village (Marble Village),cafe,Sweet & Haven,20.008038,41.452826,8.7,2
+41,Dhee Ain Village (Marble Village),cafe,Extra Sugar,20.00916588,41.45738437,8.9,3
+41,Dhee Ain Village (Marble Village),fuel,الدريس,19.889,41.445,4.6,1
+41,Dhee Ain Village (Marble Village),fuel,الدريس,20.0023,41.4619,8.2,2
+41,Dhee Ain Village (Marble Village),fuel,الدريس,20.019,41.4699,10.2,3
+41,Dhee Ain Village (Marble Village),pharmacy,Nahdi pharmacy | صيدليه النهدى,20.002965,41.458489,8.2,1
+41,Dhee Ain Village (Marble Village),pharmacy,Nahdi pharmacy | صيدليه النهدى,20.012127,41.463682,9.3,2
+41,Dhee Ain Village (Marble Village),pharmacy,Nahdi pharmacy | صيدليه النهدى,20.014351,41.469072,9.7,3
+41,Dhee Ain Village (Marble Village),restaurant,مطعم الليتشي,20.00751666,41.45038193,8.6,1
+41,Dhee Ain Village (Marble Village),restaurant,Sixty Burger,20.00798895,41.45272486,8.7,2
+41,Dhee Ain Village (Marble Village),restaurant,Bahah,20.00826,41.45143,8.7,3
+42,Zaabal Castle,bank,بنك الراجحي,29.974911400115385,40.2162586998629,2.5,1
+42,Zaabal Castle,bank,البنك الاهلي,29.974202,40.215342,2.5,2
+42,Zaabal Castle,bank,بنك الرياض,29.9691,40.20272,2.7,3
+42,Zaabal Castle,cafe,مجلس تعاليل,29.992208162072,40.202350849951,0.1,1
+42,Zaabal Castle,cafe,Dunkin' - دانكن,29.97709755,40.20190645,1.8,2
+42,Zaabal Castle,cafe,Starbucks,29.98611989,40.2216802,2.1,3
+42,Zaabal Castle,fuel,محطة وقود,29.97168827,40.19873332,2.4,1
+42,Zaabal Castle,fuel,الدريس,29.9807,40.2233,2.5,2
+42,Zaabal Castle,fuel,الدريس,29.9719,40.1896,2.6,3
+42,Zaabal Castle,pharmacy,صيدلية طب الدوائية,29.98035471,40.21284792,1.8,1
+42,Zaabal Castle,pharmacy,Nahdi pharmacy | صيدليه النهدى,29.964245,40.212883,3.4,2
+42,Zaabal Castle,pharmacy,صيدلية الدواء,29.95703784,40.20576354,4.0,3
+42,Zaabal Castle,restaurant,فلافل المدينة,29.9924476,40.20921,0.7,1
+42,Zaabal Castle,restaurant,مطعم ليالى الشام,29.97764459,40.20342178,1.7,2
+42,Zaabal Castle,restaurant,Planet city,29.9808299,40.21499435,1.9,3
+43,"Marid Castle",bank,"بنك الرياض",29.79921,39.86045,1.6,1
+43,"Marid Castle",bank,"Al Rajhi Bank بنك الراجحي",29.79866281673699,39.87084750525173,1.6,2
+43,"Marid Castle",bank,"صراف بنك الجزيره",29.878056,40.104368,24.1,3
+43,"Marid Castle",cafe,نُزُل,29.802595,39.869747,1.2,1
+43,"Marid Castle",cafe,"Dunkin - دانكن",29.798585,39.859574,1.7,2
+43,"Marid Castle",cafe,"RIحana cafe",29.796162,39.87029,1.9,3
+43,"Marid Castle",fuel,الدريس,29.7985,39.8677,1.6,1
+43,"Marid Castle",fuel,الدريس,29.7953,39.8716,2,2
+43,"Marid Castle",fuel,الدريس,29.8139,39.639,21.9,3
+43,"Marid Castle",pharmacy,"Nahdi pharmacy | صيدليه النهدى",29.808841,39.859957,0.8,1
+43,"Marid Castle",pharmacy,"Nahdi pharmacy | صيدليه النهدى",29.889936,40.216157,34.8,2
+43,"Marid Castle",pharmacy,"صيدلية الدواء",29.95703784,40.20576354,36.4,3
+43,"Marid Castle",restaurant,"Al-Cafe Time",29.806494,39.860525,0.9,1
+43,"Marid Castle",restaurant,kudu,29.79919772,39.86847978,1.5,2
+43,"Marid Castle",restaurant,"دانكن دونتس",29.79859379,39.85954807,1.7,3
+44,"Dumat Al-Jandal Lake",bank,"Al Rajhi Bank بنك الراجحي",29.79866281673699,39.87084750525173,1.3,1
+44,"Dumat Al-Jandal Lake",bank,"بنك الرياض",29.79921,39.86045,1.5,2
+44,"Dumat Al-Jandal Lake",bank,"صراف بنك الجزيره",29.878056,40.104368,23.8,3
+44,"Dumat Al-Jandal Lake",cafe,نُزُل,29.802595,39.869747,0.8,1
+44,"Dumat Al-Jandal Lake",cafe,"RIحana cafe",29.796162,39.87029,1.5,2
+44,"Dumat Al-Jandal Lake",cafe,"Dunkin - دانكن",29.798585,39.859574,1.6,3
+44,"Dumat Al-Jandal Lake",fuel,الدريس,29.7985,39.8677,1.3,1
+44,"Dumat Al-Jandal Lake",fuel,الدريس,29.7953,39.8716,1.6,2
+44,"Dumat Al-Jandal Lake",fuel,الدريس,29.8139,39.639,22.3,3
+44,"Dumat Al-Jandal Lake",pharmacy,"Nahdi pharmacy | صيدليه النهدى",29.808841,39.859957,1,1
+44,"Dumat Al-Jandal Lake",pharmacy,"Nahdi pharmacy | صيدليه النهدى",29.889936,40.216157,34.5,2
+44,"Dumat Al-Jandal Lake",pharmacy,"صيدلية الدواء",29.95703784,40.20576354,36.3,3
+44,"Dumat Al-Jandal Lake",restaurant,"Al-Cafe Time",29.806494,39.860525,1,1
+44,"Dumat Al-Jandal Lake",restaurant,kudu,29.79919772,39.86847978,1.2,2
+44,"Dumat Al-Jandal Lake",restaurant,"دانكن دونتس",29.79859379,39.85954807,1.6,3
+45,"North Borders Museum",bank,"مصرف الإنماء",30.9809472,41.0272222,1.3,1
+45,"North Borders Museum",bank,"Al Rajhi Bank | بنك الراجحي",30.979558,41.026138,1.3,2
+45,"North Borders Museum",bank,"مصرف الراجحي",30.98447522,41.0210631,2,3
+45,"North Borders Museum",cafe,"Creppy Cafe",30.98353383,41.02471499,1.6,1
+45,"North Borders Museum",cafe,"Dunkin' - دانكن",30.990379,41.049506,1.9,2
+45,"North Borders Museum",cafe,"Brownbird Cafe",30.956146,41.041652,2.2,3
+45,"North Borders Museum",fuel,نفط,30.97773,41.02747,1.1,1
+45,"North Borders Museum",fuel,الدريس,30.9821,41.0596,2.1,2
+45,"North Borders Museum",fuel,الدريس,30.9924,41.0262,2.2,3
+45,"North Borders Museum",pharmacy,"Salamaty pharmacy",30.98676455,41.01989798,2.2,1
+45,"North Borders Museum",pharmacy,"صيدلية اليحيى",30.977261,41.010336,2.7,2
+45,"North Borders Museum",pharmacy,"Nahdi pharmacy | صيدليه النهدى",30.954412,41.011665,3.5,3
+45,"North Borders Museum",restaurant,"Herfy | هرفي",30.97120943759904,41.03296801564478,0.7,1
+45,"North Borders Museum",restaurant,ماكدونالدز,30.982853,41.030713,1.1,2
+45,"North Borders Museum",restaurant,"مطاعم الرومانسية",30.982564709924148,41.02489944907379,1.5,3
+46,Al-Gharaba Nature Reserve,bank,البنك الأهلي,30.968044,41.006843,45.6,1
+46,Al-Gharaba Nature Reserve,bank,بنك الرياض,30.967667,41.014969,46.4,2
+46,Al-Gharaba Nature Reserve,bank,البنك الأهلي,30.983426379032,41.019020637742,46.7,3
+46,Al-Gharaba Nature Reserve,cafe,تابلاين كافيه,30.95652867940655,41.000945350781706,45.1,1
+46,Al-Gharaba Nature Reserve,cafe,Fifty Street Coffee,30.955933020746,41.002146077501,45.2,2
+46,Al-Gharaba Nature Reserve,cafe,باتشينو كافيه,30.980943,41.005321,45.4,3
+46,Al-Gharaba Nature Reserve,fuel,محطة الزمام,30.66138847,40.55983639,36.9,1
+46,Al-Gharaba Nature Reserve,fuel,الدريس,30.9828,40.9583,40.9,2
+46,Al-Gharaba Nature Reserve,fuel,الدريس,30.9773,40.9734,42.3,3
+46,Al-Gharaba Nature Reserve,pharmacy,صيدلية اليحيى,30.977261,41.010336,45.9,1
+46,Al-Gharaba Nature Reserve,pharmacy,Nahdi pharmacy | صيدليه النهدى,30.954412,41.011665,46.2,2
+46,Al-Gharaba Nature Reserve,pharmacy,Salamaty pharmacy,30.98676455,41.01989798,46.7,3
+46,Al-Gharaba Nature Reserve,restaurant,Mazaya,30.95613626,40.99899078,44.9,1
+46,Al-Gharaba Nature Reserve,restaurant,مطعم المكان,30.97368061,41.00084392,45.0,2
+46,Al-Gharaba Nature Reserve,restaurant,دانكن دونتس,30.95656221,41.00413796,45.4,3
+47,Linah Heritage Village,bank,Al Rajhi Bank,28.2606666666667,42.919,97.5,1
+47,Linah Heritage Village,bank,بنك الراجحي,29.63870949567553,43.50675054143253,100.2,2
+47,Linah Heritage Village,bank,Al Rajhi Bank,27.46872162670602,42.99436902006381,161.2,3
+47,Linah Heritage Village,cafe,Corner,29.62737307,43.54271194,98.2,1
+47,Linah Heritage Village,cafe,Stage Chocolate,29.631144,43.545384,98.6,2
+47,Linah Heritage Village,cafe,Ibra Café إبرا كافيه,29.631066,43.544813,98.6,3
+47,Linah Heritage Village,fuel,الدريس,28.7857,43.7236,3.1,1
+47,Linah Heritage Village,fuel,محطة الشرق الاوسط,28.52167440459,44.089998372281,43.4,2
+47,Linah Heritage Village,fuel,محطة الدويهم للمحروقات,29.43873345,43.8467815,76.1,3
+47,Linah Heritage Village,pharmacy,Nahdi pharmacy | صيدليه النهدى,27.908997,42.381272,163.2,1
+47,Linah Heritage Village,pharmacy,صيدلية الدواء 159,28.12054226,45.67105805,201.9,2
+47,Linah Heritage Village,restaurant,دانكن دونتس,29.60646409,43.5369403,96.0,1
+47,Linah Heritage Village,restaurant,مطعم المذاق,29.62279932,43.54053365,97.7,2
+47,Linah Heritage Village,restaurant,مطعم رغيف الصاج,29.62459,43.51784,98.4,3
+48,Shura Island,bank,بنك الرياض,25.02544,37.26577,61.6,1
+48,Shura Island,bank,البنك الأهلي | NCB,26.230885,36.459169,94.9,2
+48,Shura Island,bank,البنك العربي ANB,26.247246499690817,36.45530669792072,96.7,3
+48,Shura Island,cafe,Zone Cup,25.034055,37.255885,60.3,1
+48,Shura Island,cafe,Sea Seal,25.02260087,37.267161,61.9,2
+48,Shura Island,cafe,Awtar Elsadaa,26.23542873,36.45918799,95.4,3
+48,Shura Island,fuel,الدريس,25.5175,37.0335,7.8,1
+48,Shura Island,fuel,الدريس,25.129,37.2687,52.1,2
+48,Shura Island,fuel,الدريس,25.0981,37.2678,54.9,3
+48,Shura Island,pharmacy,Nahdi pharmacy | صيدليه النهدى,25.038011,37.261317,60.2,1
+48,Shura Island,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.247122,36.455095,96.7,2
+48,Shura Island,pharmacy,ER Pharmacy,26.554984,37.949995,153.2,3
+48,Shura Island,restaurant,دانكن دونتس,25.50915487,37.04360379,8.7,1
+48,Shura Island,restaurant,ماكدونالدز,25.091939,37.265829,55.3,2
+48,Shura Island,restaurant,Domino's,25.09177484571376,37.26613658327135,55.4,3
+49,Shebara Island,bank,بنك الرياض,25.02544,37.26577,53.1,1
+49,Shebara Island,bank,البنك الأهلي | NCB,26.230885,36.459169,105.6,2
+49,Shebara Island,bank,البنك العربي ANB,26.247246499690817,36.45530669792072,107.5,3
+49,Shebara Island,cafe,Zone Cup,25.034055,37.255885,51.7,1
+49,Shebara Island,cafe,Sea Seal,25.02260087,37.267161,53.4,2
+49,Shebara Island,cafe,Awtar Elsadaa,26.23542873,36.45918799,106.1,3
+49,Shebara Island,fuel,الدريس,25.5175,37.0335,21.9,1
+49,Shebara Island,fuel,الدريس,25.129,37.2687,45.9,2
+49,Shebara Island,fuel,الدريس,25.0981,37.2678,47.9,3
+49,Shebara Island,pharmacy,Nahdi pharmacy | صيدليه النهدى,25.038011,37.261317,51.8,1
+49,Shebara Island,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.247122,36.455095,107.5,2
+49,Shebara Island,pharmacy,ER Pharmacy,26.554984,37.949995,169.2,3
+49,Shebara Island,restaurant,دانكن دونتس,25.50915487,37.04360379,21.9,1
+49,Shebara Island,restaurant,ماكدونالدز,25.091939,37.265829,48.1,2
+49,Shebara Island,restaurant,دانكن دونتس,25.091348901922157,37.26566431655295,48.2,3
+50,Abu Ali Island,bank,Al Rajhi Bank,27.156898,49.541395,17.9,1
+50,Abu Ali Island,bank,مصرف الراجحي,27.156108,49.541709,17.9,2
+50,Abu Ali Island,bank,بنك الرياض,27.146821,49.567073,18.4,3
+50,Abu Ali Island,cafe,Derby Coffee,27.167456779139,49.57092128211,16.1,1
+50,Abu Ali Island,cafe,CELESTE CORNER,27.176405,49.529335,16.2,2
+50,Abu Ali Island,cafe,ستاربوكس,27.176248,49.529341,16.2,3
+50,Abu Ali Island,fuel,الدريس,27.1106,49.5537,22.6,1
+50,Abu Ali Island,fuel,الدريس,27.0191,49.6727,33.4,2
+50,Abu Ali Island,fuel,khonaini petroleum services office (KPS01),27.013505,49.641487,33.5,3
+50,Abu Ali Island,pharmacy,Luluat Al Ferdos Pharmacy,27.159616795402,49.560398858024,17.1,1
+50,Abu Ali Island,pharmacy,Boots,27.15807399,49.56626553,17.2,2
+50,Abu Ali Island,pharmacy,Al Nahdi Pharmacy,27.147180557251,49.565967559814,18.4,3
+50,Abu Ali Island,restaurant,SalaDo,27.17611,49.529225,16.2,1
+50,Abu Ali Island,restaurant,كوست تو كوست|Coast To Coast Burger,27.163697,49.577019,16.5,2
+50,Abu Ali Island,restaurant,Kudu,27.16987016,49.54164525,16.5,3
+51,Karan Island,bank,Al Rajhi Bank,27.156898,49.541395,68.5,1
+51,Karan Island,bank,بنك الرياض,27.146821,49.567073,68.5,2
+51,Karan Island,bank,مصرف الراجحي,27.156108,49.541709,68.6,3
+51,Karan Island,cafe,Derby Coffee,27.167456779139,49.57092128211,66.3,1
+51,Karan Island,cafe,EQUAL,27.163517,49.578393,66.4,2
+51,Karan Island,cafe,Yogorino_jubail,27.163589,49.578064,66.4,3
+51,Karan Island,fuel,الدريس,27.5091,49.2551,60.9,1
+51,Karan Island,fuel,Konaini Station,27.47640283887435,49.18635176164013,68.5,2
+51,Karan Island,fuel,الدريس,27.1106,49.5537,72.8,3
+51,Karan Island,pharmacy,Boots,27.15807399,49.56626553,67.4,1
+51,Karan Island,pharmacy,Luluat Al Ferdos Pharmacy,27.159616795402,49.560398858024,67.5,2
+51,Karan Island,pharmacy,Al Nahdi Pharmacy,27.147180557251,49.565967559814,68.5,3
+51,Karan Island,restaurant,كوست تو كوست|Coast To Coast Burger,27.163697,49.577019,66.4,1
+51,Karan Island,restaurant,مشويات الرمانه,27.163359,49.567348,66.8,2
+51,Karan Island,restaurant,SalaDo,27.17611,49.529225,67.1,3
+52,Farasan Al-Kabir Island,bank,Samba Bank,16.903,42.54869,64.1,1
+52,Farasan Al-Kabir Island,bank,بنك الرياض,16.902511,42.550462,64.2,2
+52,Farasan Al-Kabir Island,bank,ENJAZ Money Transfer,16.90434869,42.55024256,64.3,3
+52,Farasan Al-Kabir Island,cafe,ديوانية دلة الخيالة,16.88994,42.541015,62.8,1
+52,Farasan Al-Kabir Island,cafe,PORTO CAFÉ,16.901761090000004,42.53813117,63.0,2
+52,Farasan Al-Kabir Island,cafe,The Coffee Address | عنوان القهوة,16.904966,42.544016,63.7,3
+52,Farasan Al-Kabir Island,fuel,الدريس,16.6998,42.1072,13.2,1
+52,Farasan Al-Kabir Island,fuel,الدريس,16.9064,42.5537,64.7,2
+52,Farasan Al-Kabir Island,fuel,الدريس,16.9224,42.5551,65.5,3
+52,Farasan Al-Kabir Island,pharmacy,Nahdi pharmacy | صيدليه النهدى,16.907348,42.544959,63.8,1
+52,Farasan Al-Kabir Island,pharmacy,Nahdi pharmacy | صيدليه النهدى,16.89568,42.552858,64.2,2
+52,Farasan Al-Kabir Island,pharmacy,Boots,16.902442,42.553028,64.5,3
+52,Farasan Al-Kabir Island,restaurant,فرن تميس و بوفية صباح الخير,16.701929855982446,42.11714109140939,14.3,1
+52,Farasan Al-Kabir Island,restaurant,مطعم الوفاء,16.70210571,42.11778272,14.3,2
+52,Farasan Al-Kabir Island,restaurant,Saaltndpepper.sa,16.8876,42.53994,62.6,3
+53,"Qiddiya City",bank,"Al Rajhi Bank",24.4733,46.28225,14,1
+53,"Qiddiya City",bank,"بنك الرياض",24.47243,46.27973,14.2,2
+53,"Qiddiya City",bank,"مصرف الراجحي Al Rajhi Bank",24.459396718646975,46.27432823181152,15.7,3
+53,"Qiddiya City",cafe,"Tim Hortons | تيم هورتنز",24.476336701071094,46.28656780960707,13.5,1
+53,"Qiddiya City",cafe,McCafe,24.475991,46.286196,13.5,2
+53,"Qiddiya City",cafe,"مقهى القهوة العربية",24.474258,46.2848,13.8,3
+53,"Qiddiya City",fuel,الدريس,24.5193,46.3693,8.3,1
+53,"Qiddiya City",fuel,"محطة أجزالا",24.490727996121365,46.32549061055222,10.9,2
+53,"Qiddiya City",fuel,"Petromin Fuel Station",24.54436671,46.4672556,13.9,3
+53,"Qiddiya City",pharmacy,"Nahdi pharmacy | صيدليه النهدى",24.472531057700227,46.28782354232789,13.8,1
+53,"Qiddiya City",pharmacy,"Nahdi pharmacy | صيدليه النهدى",24.460797,46.298556,14.7,2
+53,"Qiddiya City",pharmacy,"Nahdi pharmacy | صيدليه النهدى",24.562998,46.517917,18.3,3
+53,"Qiddiya City",restaurant,McDonald's,24.492692,46.362456,10.9,1
+53,"Qiddiya City",restaurant,"دوّار السّعاده",24.490335,46.324978,11,2
+53,"Qiddiya City",restaurant,"بوفيه الدمام",24.48085331,46.29258029,12.8,3
+54,"Clock Tower Museum",bank,"Al Rajhi Bank",21.420199578103116,39.82415453533683,0.2,1
+54,"Clock Tower Museum",bank,"NCB Bank",21.429989052674,39.829441573965,1.3,2
+54,"Clock Tower Museum",bank,"Alamoudi Exchange Co",21.432468486092,39.829079738058,1.6,3
+54,"Clock Tower Museum",cafe,"Zamzam Resto Cafe & Mall",21.419105711744443,39.82552695950094,0,1
+54,"Clock Tower Museum",cafe,مذاق,21.419137460918,39.825498744777,0,2
+54,"Clock Tower Museum",cafe,"Tim Hortons",21.418126962554087,39.825918920018665,0.1,3
+54,"Clock Tower Museum",fuel,"محطات سمارك للمحروقات",21.385111372608,39.833314418793,3.8,1
+54,"Clock Tower Museum",fuel,"محطة درب",21.402928975499577,39.792404515552505,3.9,2
+54,"Clock Tower Museum",fuel,نفط,21.38339492711412,39.82834478157997,3.9,3
+54,"Clock Tower Museum",pharmacy,"Nahdi pharmacy | صيدليه النهدى",21.419407,39.825635,0.1,1
+54,"Clock Tower Museum",pharmacy,"United Pharmacy - صيدلية المتحدة",21.419367482141,39.8242599146361,0.2,2
+54,"Clock Tower Museum",pharmacy,"Al-Nahdi Pharmacy | صيدلية النهدي",21.42008538049929,39.82482297908741,0.2,3
+54,"Clock Tower Museum",restaurant,Smashburger,21.41867646,39.82557668,0,1
+54,"Clock Tower Museum",restaurant,"Zad Restaurant",21.41879498,39.82564946,0,2
+54,"Clock Tower Museum",restaurant,Hardee's,21.41883778,39.82556363,0,3
+55,Masmak Fortress,bank,Al Rajhi Bank,24.62855,46.71335,0.3,1
+55,Masmak Fortress,bank,Al Rajhi Bank,24.629383844159616,46.71007097107549,0.4,2
+55,Masmak Fortress,bank,Al Rajhi Bank,24.6335,46.7161666666667,0.4,3
+55,Masmak Fortress,cafe,Elixir Bunn Coffee Roasters,24.63093610701081,46.712279319763184,0.1,1
+55,Masmak Fortress,cafe,هيلة,24.630008,46.712559,0.1,2
+55,Masmak Fortress,cafe,رغيف وكيف,24.63031222,46.71198922,0.2,3
+55,Masmak Fortress,fuel,الدريس,24.6202,46.7176,1.3,1
+55,Masmak Fortress,fuel,الدريس,24.6371,46.6985,1.6,2
+55,Masmak Fortress,fuel,الدريس,24.6164,46.7099,1.7,3
+55,Masmak Fortress,pharmacy,United Pharmacy - صيدلية المتحدة,24.63786419,46.70895932,0.9,1
+55,Masmak Fortress,pharmacy,Exir Pharmacy,24.64065904,46.71750641,1.1,2
+55,Masmak Fortress,pharmacy,SAFARI Pharmacy,24.64316311,46.71763366,1.4,3
+55,Masmak Fortress,restaurant,دانكن دونتس,24.63148215,46.71203674,0.1,1
+55,Masmak Fortress,restaurant,Chop Chop Square,24.63090202,46.71171557,0.2,2
+55,Masmak Fortress,restaurant,Al Baik Chicken,24.63320541381836,46.71592712402344,0.4,3
+56,Boulevard City,bank,Bank Al Jazira | بنك الجزيرة,24.753289743506738,46.61059825522173,0.4,1
+56,Boulevard City,bank,SABB Bank بنك ساب,24.749844130892782,46.62250554232787,0.9,2
+56,Boulevard City,bank,AlRajhi Bank ATM,24.73924275,46.60852746,1.3,3
+56,Boulevard City,cafe,Starbucks,24.75035824,46.61357296,0.0,1
+56,Boulevard City,cafe,ستاربوكس,24.7503846,46.6136045,0.0,2
+56,Boulevard City,cafe,Minyums,24.750177394451004,46.61378023524262,0.1,3
+56,Boulevard City,fuel,محطة حطين بطريق الأبراج الجديد,24.767053731342,46.612723660735,1.9,1
+56,Boulevard City,fuel,الدريس,24.7487,46.6354,2.2,2
+56,Boulevard City,fuel,الدريس,24.7711,46.6228,2.5,3
+56,Boulevard City,pharmacy,Whites Pharmacy | صيدلية وايتس,24.746739203069367,46.61883706121339,0.7,1
+56,Boulevard City,pharmacy,Nahdi pharmacy | صيدليه النهدى,24.738169,46.607143,1.5,2
+56,Boulevard City,pharmacy,صيدليات المتحدة,24.7368,46.60978,1.5,3
+56,Boulevard City,restaurant,Morini Riyadh,24.750584609216613,46.613384842237586,0.0,1
+56,Boulevard City,restaurant,Lokma | لقمة,24.7506620435416,46.61321578504534,0.0,2
+56,Boulevard City,restaurant,Five Guys,24.75010191,46.61366953,0.0,3
+57,Al-Shafa,bank,صراف بنك الجزيره,21.224255,40.374432,18.4,1
+57,Al-Shafa,bank,صراف بنك الجزيره,21.23562,40.362201,19.2,2
+57,Al-Shafa,bank,anb Bank,21.24248949,40.41874471,22.2,3
+57,Al-Shafa,cafe,ركن الشاذلية للقهوة,21.0714156,40.30936367,0.3,1
+57,Al-Shafa,cafe,كافية ولاونج,21.072250366211,40.310050964355,0.4,2
+57,Al-Shafa,cafe,Breezes Cafe,21.06735026,40.3090818,0.4,3
+57,Al-Shafa,fuel,محطة درب,21.217019,40.375197,17.7,1
+57,Al-Shafa,fuel,الدريس,21.2224,40.3634,17.8,2
+57,Al-Shafa,fuel,الدريس,21.2462,40.3708,20.6,3
+57,Al-Shafa,pharmacy,Nahdi pharmacy | صيدليه النهدى,21.228235,40.377842,18.9,1
+57,Al-Shafa,pharmacy,United Pharmacy - صيدلية المتحدة,21.228800852701195,40.386066429161076,19.3,2
+57,Al-Shafa,pharmacy,Nahdi pharmacy | صيدليه النهدى,21.227503,40.414447,20.5,3
+57,Al-Shafa,restaurant,MEGYAL Restaurant,21.067498,40.308857,0.4,1
+57,Al-Shafa,restaurant,Domino's,21.07227850767923,40.30968914097519,0.4,2
+57,Al-Shafa,restaurant,مزرعة ومطل مطعم السيف,21.11773725,40.3595949,7.3,3
+58,Al-Hada,bank,البنك الاهلي,21.35706,40.28475,1.3,1
+58,Al-Hada,bank,صراف البنك الاهلي التجاري,21.35181278,40.27812577,2.0,2
+58,Al-Hada,bank,Alinma Bank,21.29150975,40.40376261,15.0,3
+58,Al-Hada,cafe,barn’s|بارنز,21.369589,40.270634,1.5,1
+58,Al-Hada,cafe,Location Cafe,21.36340026,40.27031721,1.6,2
+58,Al-Hada,cafe,المعشوقة السمراء,21.35586774,40.27453435,1.8,3
+58,Al-Hada,fuel,الدريس,21.3619,40.2853,0.7,1
+58,Al-Hada,fuel,الدريس,21.3609,40.2964,1.5,2
+58,Al-Hada,fuel,الدريس,21.3548,40.2117,7.7,3
+58,Al-Hada,pharmacy,صيدلية جنة الشفاء,21.35465444,40.27517319,1.8,1
+58,Al-Hada,pharmacy,United Pharmacy - صيدلية المتحدة,21.35917286210252,40.42295680643139,14.4,2
+58,Al-Hada,pharmacy,Nahdi pharmacy | صيدليه النهدى,21.35717584150344,40.42535108465575,14.6,3
+58,Al-Hada,restaurant,بن سليم للفول,21.360315444822,40.275921887923,1.3,1
+58,Al-Hada,restaurant,Burgerizzr | برغرايززر,21.36967651537367,40.270607341104515,1.5,2
+58,Al-Hada,restaurant,مطعم وكافيه تراسينا,21.358123,40.272939,1.7,3
+59,Shubra Palace,bank,Al Rajhi Bank,21.288700134718205,40.41860279482039,0.5,1
+59,Shubra Palace,bank,مصرف الراجحي,21.28888891652468,40.41859284242997,0.5,2
+59,Shubra Palace,bank,SABB,21.282297,40.41368,0.5,3
+59,Shubra Palace,cafe,مقهى الليالي السبع,21.285438,40.416866,0.2,1
+59,Shubra Palace,cafe,Selected Coffee,21.28844772,40.41598192,0.2,2
+59,Shubra Palace,cafe,Di Roasta Cafe,21.28757995,40.41831279,0.4,3
+59,Shubra Palace,fuel,الدريس,21.284,40.4149,0.3,1
+59,Shubra Palace,fuel,الدريس,21.289,40.4163,0.3,2
+59,Shubra Palace,fuel,محطة درب,21.284092,40.424886,1.1,3
+59,Shubra Palace,pharmacy,Nahdi pharmacy | صيدليه النهدى,21.290251,40.416704,0.5,1
+59,Shubra Palace,pharmacy,صيدلية تداوي زهرة سينا tadawi zahrat sina pharmacy,21.27768091,40.41376573,1.0,2
+59,Shubra Palace,pharmacy,Nahdi pharmacy | صيدليه النهدى,21.291424,40.40339,1.3,3
+59,Shubra Palace,restaurant,بيتزا إن,21.28821772,40.41587486,0.2,1
+59,Shubra Palace,restaurant,Liwan Al Arab - ليوان العرب,21.28437,40.41465,0.2,2
+59,Shubra Palace,restaurant,Dar Taj Indian Restaurant,21.28660253,40.41792659,0.3,3
+60,AlUla Old Town,bank,بنك الرياض,26.605509,37.925577,2.5,1
+60,AlUla Old Town,bank,مصرف الراجحي,26.601743,37.923114,2.8,2
+60,AlUla Old Town,bank,Al Rajhi Bank,27.6304166666667,38.5491666666667,128.1,3
+60,AlUla Old Town,cafe,مركاز,26.627238,37.913102,0.3,1
+60,AlUla Old Town,cafe,Dunkin' - دانكن,26.627522047405577,37.912946119049074,0.3,2
+60,AlUla Old Town,cafe,ستاربكس,26.6293312,37.9133353,0.4,3
+60,AlUla Old Town,fuel,الدريس,26.6158,37.92,1.2,1
+60,AlUla Old Town,fuel,الدريس,26.6089,37.926,2.2,2
+60,AlUla Old Town,fuel,الدريس,26.5786,37.9425,5.9,3
+60,AlUla Old Town,pharmacy,صيدلية بلسم العلا,26.60493183,37.9253492,2.5,1
+60,AlUla Old Town,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.577534,37.942795,6.0,2
+60,AlUla Old Town,pharmacy,ER Pharmacy,26.554984,37.949995,8.6,3
+60,AlUla Old Town,restaurant,شعبيات,26.625282,37.915869,0.1,1
+60,AlUla Old Town,restaurant,Acme,26.62517566,37.91424653,0.1,2
+60,AlUla Old Town,restaurant,Entrecôte Café de Paris,26.62538450943086,37.913821041584015,0.1,3
+61,Maraya,bank,بنك الرياض,26.605509,37.925577,16.5,1
+61,Maraya,bank,مصرف الراجحي,26.601743,37.923114,16.8,2
+61,Maraya,bank,Al Rajhi Bank,27.6304166666667,38.5491666666667,119.6,3
+61,Maraya,cafe,ستاربكس,26.66390077667957,37.904318746536234,9.7,1
+61,Maraya,cafe,Key Café,26.688859,37.980707,13.0,2
+61,Maraya,cafe,Jolt,26.690083,37.981888,13.0,3
+61,Maraya,fuel,الدريس,26.6158,37.92,15.2,1
+61,Maraya,fuel,الدريس,26.8782,37.9026,15.4,2
+61,Maraya,fuel,الدريس,26.6089,37.926,16.1,3
+61,Maraya,pharmacy,صيدلية بلسم العلا,26.60493183,37.9253492,16.5,1
+61,Maraya,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.577534,37.942795,20.0,2
+61,Maraya,pharmacy,ER Pharmacy,26.554984,37.949995,22.6,3
+61,Maraya,restaurant,Saffron,26.755356,37.862894,1.3,1
+61,Maraya,restaurant,Sass Cafe,26.826622,37.852562,9.3,2
+61,Maraya,restaurant,Burger King,26.66438576,37.90444182,9.6,3
+62,Ithra (King Abdulaziz Center for World Culture),bank,بنك الرياض,26.344516,50.138103,2.0,1
+62,Ithra (King Abdulaziz Center for World Culture),bank,صراف بنك الجزيره,26.344912,50.137851,2.0,2
+62,Ithra (King Abdulaziz Center for World Culture),bank,SABB Bank ATM | بنك ساب,26.34515631600085,50.13770064313432,2.0,3
+62,Ithra (King Abdulaziz Center for World Culture),cafe,ORIGO,26.335279,50.119989,0.1,1
+62,Ithra (King Abdulaziz Center for World Culture),cafe,Starbucks,26.334401,50.1225988,0.2,2
+62,Ithra (King Abdulaziz Center for World Culture),cafe,Starbucks,26.335343,50.131038,1.0,3
+62,Ithra (King Abdulaziz Center for World Culture),fuel,Orange Fuel Station,26.335196,50.131558,1.1,1
+62,Ithra (King Abdulaziz Center for World Culture),fuel,الدريس,26.3468,50.1355,1.9,2
+62,Ithra (King Abdulaziz Center for World Culture),fuel,الدريس,26.3451,50.1382,2.0,3
+62,Ithra (King Abdulaziz Center for World Culture),pharmacy,صيدليه النهدي,26.344289,50.138337,2.0,1
+62,Ithra (King Abdulaziz Center for World Culture),pharmacy,JHAH Core Area Pharmacy,26.312077,50.131332,2.8,2
+62,Ithra (King Abdulaziz Center for World Culture),pharmacy,صيدلية الدواء | Al-Dawaa Pharmacy,26.363234370709403,50.09618106149849,3.9,3
+62,Ithra (King Abdulaziz Center for World Culture),restaurant,إيوان,26.335077060072003,50.12042959995144,0.1,1
+62,Ithra (King Abdulaziz Center for World Culture),restaurant,North Audley Cantine (NAC),26.336214,50.12187,0.1,2
+62,Ithra (King Abdulaziz Center for World Culture),restaurant,Section-B,26.338793,50.11999,0.4,3
+63,City Walk,bank,Alrajhi Bank,26.30721644,50.17975358,0.4,1
+63,City Walk,bank,صراف بنك الجزيره,26.312062,50.185568,0.7,2
+63,City Walk,bank,بنك الجزيرة,26.308311,50.176861,0.7,3
+63,City Walk,cafe,ستاربوكس,26.306161,50.183436,0.0,1
+63,City Walk,cafe,Starbucks,26.30633075,50.18347103,0.0,2
+63,City Walk,cafe,Sword,26.306253,50.183136,0.0,3
+63,City Walk,fuel,Orange Gas Station Mashriqeen | محطة وقود أورانج المشرقين,26.3130389,50.177359,1.0,1
+63,City Walk,fuel,Fuel Way,26.303682,50.173695,1.0,2
+63,City Walk,fuel,الدريس,26.2986,50.1775,1.0,3
+63,City Walk,pharmacy,صيدلية برايت,26.30803041,50.17704281,0.7,1
+63,City Walk,pharmacy,United Pharmacy - صيدلية المتحدة,26.303853,50.174261,1.0,2
+63,City Walk,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.29839,50.178502,1.0,3
+63,City Walk,restaurant,BLANCA,26.306064,50.18377,0.0,1
+63,City Walk,restaurant,Il Figo,26.30625388,50.18368944,0.0,2
+63,City Walk,restaurant,Flaky,26.30595,50.183422,0.0,3
+64,Khobar Water Tower,bank,SNB Bank - HQ البنك الاهلي السعودي,26.306307,50.223734,0.8,1
+64,Khobar Water Tower,bank,SAMBA Main Regional Branch,26.30583756,50.22356532,0.8,2
+64,Khobar Water Tower,bank,مصرف الإنماء,26.30970443,50.2234958,0.9,3
+64,Khobar Water Tower,cafe,Container Cafe,26.313197,50.22854,0.7,1
+64,Khobar Water Tower,cafe,هارت اوف خبر كافيه,26.307048,50.2245228,0.7,2
+64,Khobar Water Tower,cafe,Monroe,26.306534308194987,50.22453546524048,0.7,3
+64,Khobar Water Tower,fuel,Tasihelat Fuel station,26.307784726388,50.224068150938,0.8,1
+64,Khobar Water Tower,fuel,محطة البراك,26.312758760042,50.217234074631,1.6,2
+64,Khobar Water Tower,fuel,Al-Miadin petrol station,26.298087,50.21474,2.0,3
+64,Khobar Water Tower,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.309533,50.222943,0.9,1
+64,Khobar Water Tower,pharmacy,al-dawaa pharmacy,26.31499808,50.21706029,1.7,2
+64,Khobar Water Tower,pharmacy,صيدلية العافية الرابعة,26.31037,50.213976,1.8,3
+64,Khobar Water Tower,restaurant,UZBK,26.30884,50.22867,0.3,1
+64,Khobar Water Tower,restaurant,Pickup,26.31199,50.2275,0.6,2
+64,Khobar Water Tower,restaurant,Fatto,26.30727128,50.2251981,0.6,3
+65,Khobar Corniche,bank,SAMBA Main Regional Branch,26.30583756,50.22356532,0.6,1
+65,Khobar Corniche,bank,SNB Bank - HQ البنك الاهلي السعودي,26.306307,50.223734,0.6,2
+65,Khobar Corniche,bank,SABB Bank ATM | بنك ساب,26.297051,50.221875,0.8,3
+65,Khobar Corniche,cafe,Motive Cafe,26.30360119,50.22353181,0.4,1
+65,Khobar Corniche,cafe,Equalcoffeehub,26.303302711324,50.223248004913,0.5,2
+65,Khobar Corniche,cafe,تولوم,26.303709,50.22342,0.5,3
+65,Khobar Corniche,fuel,Tasihelat Fuel station,26.307784726388,50.224068150938,0.8,1
+65,Khobar Corniche,fuel,Al-Miadin petrol station,26.298087,50.21474,1.3,2
+65,Khobar Corniche,fuel,محطة البراك,26.312758760042,50.217234074631,1.6,3
+65,Khobar Corniche,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.309533,50.222943,1.0,1
+65,Khobar Corniche,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.291039,50.219949,1.4,2
+65,Khobar Corniche,pharmacy,صيدلية العافية الرابعة,26.31037,50.213976,1.7,3
+65,Khobar Corniche,restaurant,Leonardo Restaurant,26.30159189,50.22420806,0.3,1
+65,Khobar Corniche,restaurant,بلومار,26.299334743319,50.224996586106,0.4,2
+65,Khobar Corniche,restaurant,مطعم الأطلال,26.304545,50.22551,0.4,3
+66,Ajdan Walk,bank,Emirates NBD ATM,26.283547,50.219719,0.0,1
+66,Ajdan Walk,bank,العربي,26.283206,50.218222,0.1,2
+66,Ajdan Walk,bank,Alawwal Bank,26.282808,50.214226,0.5,3
+66,Ajdan Walk,cafe,ستاربوكس,26.283472,50.219667,0.0,1
+66,Ajdan Walk,cafe,"Spaces -  Al Khobar, Ajdan Walk",26.283987451405,50.219961582462,0.1,2
+66,Ajdan Walk,cafe,Koffiqa,26.283784259742,50.220183849269,0.1,3
+66,Ajdan Walk,fuel,الدريس,26.2846,50.2185,0.2,1
+66,Ajdan Walk,fuel,الدريس,26.2807,50.2113,0.9,2
+66,Ajdan Walk,fuel,Shell,26.273818,50.216379,1.1,3
+66,Ajdan Walk,pharmacy,صيدليات الهلال,26.28897,50.21478,0.8,1
+66,Ajdan Walk,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.291039,50.219949,0.8,2
+66,Ajdan Walk,pharmacy,Nahdi pharmacy | صيدليه النهدى,26.277606,50.209543,1.2,3
+66,Ajdan Walk,restaurant,Babel,26.28342743,50.21923118,0.0,1
+66,Ajdan Walk,restaurant,P.F. Chang's,26.2838348,50.21969781,0.0,2
+66,Ajdan Walk,restaurant,Nando's Ajdan Walk,26.283209,50.219895,0.1,3
+67,Jabal Al-Qarah,bank,صراف بنك الجزيره,25.4171,49.683305,0.9,1
+67,Jabal Al-Qarah,bank,صراف بنك الجزيره,25.3993201904905,49.683217713658806,1.3,2
+67,Jabal Al-Qarah,bank,صراف بنك الجزيره,25.420456,49.714268,2.8,3
+67,Jabal Al-Qarah,cafe,90Sec Coffee,25.420042,49.68042,1.4,1
+67,Jabal Al-Qarah,cafe,Shozbi Coffee | شوزبي كوفي,25.407653,49.702278,1.4,2
+67,Jabal Al-Qarah,cafe,معزوفة القهوة,25.423658,49.714471,3.0,3
+67,Jabal Al-Qarah,fuel,الدريس,25.4208,49.7037,1.9,1
+67,Jabal Al-Qarah,fuel,نفط,25.420896199010897,49.72165341104506,3.5,2
+67,Jabal Al-Qarah,fuel,نفط,25.440817788860173,49.64317658895494,5.7,3
+67,Jabal Al-Qarah,pharmacy,Nahdi pharmacy | صيدليه النهدى,25.417899,49.727466,4.0,1
+67,Jabal Al-Qarah,pharmacy,Hussein Al-Ali Pharmacy,25.39361984,49.60453386,8.6,2
+67,Jabal Al-Qarah,pharmacy,صيدلية رحيق السلامة,25.39157095,49.59951907,9.2,3
+67,Jabal Al-Qarah,restaurant,شورمتنا,25.420921,49.686822,1.2,1
+67,Jabal Al-Qarah,restaurant,مطعم سنابل,25.419832229614,49.679428100586,1.4,2
+67,Jabal Al-Qarah,restaurant,مطعم ماريز 5,25.427994,49.668444,2.8,3
+68,Al-Habala Village,bank,صراف الراجحي,18.09539545,42.80796698,9.3,1
+68,Al-Habala Village,bank,Al Rajhi Bank,18.0985,42.81065,9.4,2
+68,Al-Habala Village,bank,anb ATM,18.2036167,42.8163333,19.3,3
+68,Al-Habala Village,cafe,Casca - كاسكا,18.02427,42.76184,11.8,1
+68,Al-Habala Village,cafe,Barn's | بارنز,18.1616977,42.8418511,14.1,2
+68,Al-Habala Village,cafe,ستاربكس,18.175204,42.82388,16.1,3
+68,Al-Habala Village,fuel,الدريس,18.1206,42.854,9.4,1
+68,Al-Habala Village,fuel,نفط,18.05087584357265,42.73801591667175,14.3,2
+68,Al-Habala Village,fuel,الدريس,18.1651,42.8106,15.6,3
+68,Al-Habala Village,pharmacy,Nahdi pharmacy | صيدليه النهدى,18.096731,42.808644,9.4,1
+68,Al-Habala Village,pharmacy,Nahdi pharmacy | صيدليه النهدى,18.07911,42.776382,11.2,2
+68,Al-Habala Village,pharmacy,Nahdi pharmacy | صيدليه النهدى,18.156951,42.844531,13.5,3
+68,Al-Habala Village,restaurant,دانكن دونتس,18.14469026,42.84746342,12.1,1
+68,Al-Habala Village,restaurant,شركة مطاعم سماء ديرتي,18.17938710397,42.825870884345,16.5,2
+68,Al-Habala Village,restaurant,Pizza Hut,18.182451,42.826497,16.8,3
+69,Jabal al-Lawz,bank,Al Rajhi Bank,29.2824166666667,34.94525,78.1,1
+69,Jabal al-Lawz,bank,بنك الرياض,29.2972,34.9472,79.5,2
+69,Jabal al-Lawz,bank,Al Rajhi Bank,29.1633333333333,36.0746666666667,94.0,3
+69,Jabal al-Lawz,cafe,كوش Kush,28.41685,35.00624,39.3,1
+69,Jabal al-Lawz,cafe,Dunkin' - دانكن,28.113387,35.108168,63.1,2
+69,Jabal al-Lawz,cafe,Starbucks,28.112505,35.109385,63.1,3
+69,Jabal al-Lawz,fuel,الدريس,28.7385,35.4658,18.4,1
+69,Jabal al-Lawz,fuel,الدريس,28.8668,35.6605,42.0,2
+69,Jabal al-Lawz,fuel,الدريس,28.0654,35.1773,66.6,3
+69,Jabal al-Lawz,pharmacy,Nahdi pharmacy | صيدليه النهدى,29.283986,34.949699,78.1,1
+69,Jabal al-Lawz,pharmacy,Nahdi pharmacy | صيدليه النهدى,28.401139,36.530718,123.1,2
+69,Jabal al-Lawz,pharmacy,Nahdi pharmacy | صيدليه النهدى,28.45549,36.552606,123.9,3
+69,Jabal al-Lawz,restaurant,مطعم الشهري للمأكولات البحرية,28.504836042373,35.007149393236,33.4,1
+69,Jabal al-Lawz,restaurant,Revo - ريڤو,28.41685,35.00624,39.3,2
+69,Jabal al-Lawz,restaurant,دانكن دونتس,28.115729807717603,35.321175460244696,59.9,3
+70,Aja Mountains,bank,صراف بنك الجزيره,27.473676,41.615098,3.3,1
+70,Aja Mountains,bank,مصرف الراجحي Al Rajhi Bank,27.44957,41.623922,6.1,2
+70,Aja Mountains,bank,صراف بنك الجزيره,27.517682543795452,41.662812996917744,6.5,3
+70,Aja Mountains,cafe,Dunkin' - دانكن,27.496304,41.646629,4.6,1
+70,Aja Mountains,cafe,Dunkin' - دانكن,27.4919272,41.6492038,4.9,2
+70,Aja Mountains,cafe,Starbucks,27.4794606,41.6496667,5.4,3
+70,Aja Mountains,fuel,الدريس,27.4782,41.6489,5.4,1
+70,Aja Mountains,fuel,محطة الإزدهار,27.473746,41.65384,6.1,2
+70,Aja Mountains,fuel,الدريس,27.4476,41.6199,6.1,3
+70,Aja Mountains,pharmacy,Nahdi pharmacy | صيدليه النهدى,27.521626,41.657451,6.2,1
+70,Aja Mountains,pharmacy,صيدلية أهل الدواء الطبية فرع ١,27.4503247,41.6514328,7.5,2
+70,Aja Mountains,pharmacy,Nahdi pharmacy | صيدليه النهدى,27.488803,41.677973,7.8,3
+70,Aja Mountains,restaurant,القصرين لاونج,27.463882,41.637894,5.5,1
+70,Aja Mountains,restaurant,Panello,27.46688838,41.64180057,5.5,2
+70,Aja Mountains,restaurant,Padella Restaurant & Café,27.461898033348,41.640916600887,5.9,3
+71,Fayfa Mountains,bank,Al Rajhi Bank,17.03928373138039,43.08550067952309,23.5,1
+71,Fayfa Mountains,bank,Al Rajhi Bank,17.1136666666667,42.7698333333333,38.2,2
+71,Fayfa Mountains,bank,صراف بنك الجزيره,17.108557,42.762569,39.1,3
+71,Fayfa Mountains,cafe,Barn's | بارنز,17.2322286,42.9355949,17.6,1
+71,Fayfa Mountains,cafe,VIRLA,17.11306421,42.75958126,39.2,2
+71,Fayfa Mountains,cafe,Ivar Cafe,16.98107406,42.82717983,41.7,3
+71,Fayfa Mountains,fuel,محطة السلام,17.02998218,43.04280399,25.2,1
+71,Fayfa Mountains,fuel,الدريس,17.0492,42.7798,40.7,2
+71,Fayfa Mountains,fuel,الدريس,16.9791,42.8097,43.1,3
+71,Fayfa Mountains,pharmacy,Nahdi pharmacy | صيدليه النهدى,17.335948,43.133697,10.2,1
+71,Fayfa Mountains,pharmacy,صيدلية الشهد,17.23326263,42.94075526,17.0,2
+71,Fayfa Mountains,pharmacy,Nahdi pharmacy | صيدليه النهدى,17.232106,42.935801,17.6,3
+71,Fayfa Mountains,restaurant,حاشي باشا| فرع الداير بني مالك,17.337427,43.134083,10.4,1
+71,Fayfa Mountains,restaurant,حاشي باشا | فرع العارضة,17.033176,43.056022,24.6,2
+71,Fayfa Mountains,restaurant,مطاعم ومحانذ السادلية,16.973603,42.85428,40.3,3
+72,Rajajil Columns,bank,صراف بنك الجزيره,29.878056,40.104368,13.3,1
+72,Rajajil Columns,bank,مصرف الإنماء,29.93222,40.18592,13.7,2
+72,Rajajil Columns,bank,Bank Albilad | بنك البلاد,29.96043772,40.20393393,16.5,3
+72,Rajajil Columns,cafe,Coffee Address | عنوان القهوة,29.85144,40.221085,4.3,1
+72,Rajajil Columns,cafe,Coffee Town,29.86274947,40.20242791,5.8,2
+72,Rajajil Columns,cafe,Aromatic Specialty Coffee,29.92820463,40.19334726,13.1,3
+72,Rajajil Columns,fuel,الدريس,29.8568,40.2156,4.9,1
+72,Rajajil Columns,fuel,الدريس,29.9158,40.2051,11.6,2
+72,Rajajil Columns,fuel,الدريس,29.9297,40.2036,13.1,3
+72,Rajajil Columns,pharmacy,Nahdi pharmacy | صيدليه النهدى,29.889936,40.216157,8.6,1
+72,Rajajil Columns,pharmacy,صيدلية الدواء,29.95703784,40.20576354,16.1,2
+72,Rajajil Columns,pharmacy,Nahdi pharmacy | صيدليه النهدى,29.964245,40.212883,16.9,3
+72,Rajajil Columns,restaurant,دانكن دونتس,29.83785992,40.18091218,4.7,1
+72,Rajajil Columns,restaurant,Kudu,29.867801,40.218864,6.2,2
+72,Rajajil Columns,restaurant,مطعم حصاد الصيد,29.87707117,40.21986684,7.2,3
