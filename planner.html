@@ -309,7 +309,7 @@ Object.assign(translations.en, {
   "plan.how.flight": "Flights: an estimated round-trip ticket per traveler, based on the distance between the airports. Type the real price in the ticket box for an exact total.",
   "plan.how.flight.own": "Flights: your ticket price × the number of travelers.",
   "plan.how.taxi": "Taxis: the official Transport General Authority fare ({s} SAR to start + {k} SAR per km): the airport and back, {n} rides of about {km} km a day, and a trip to the place and back if it's outside the city.",
-  "plan.how.season": "Season: room prices in {r} in {m} are about {x}% of the year average (GASTAT monthly prices by region, Jul 2025 to Jun 2026).",
+  "plan.how.season": "Season: room prices in {r} in {m} are about {x}% of the year average (GASTAT monthly prices: the city's own for January to June 2026, the region's for July to December 2025).",
   "plan.month": "Travel month", "plan.month.any": "Not sure (year average)",
   "plan.months": "January,February,March,April,May,June,July,August,September,October,November,December",
   "plan.flight.price": "Round-trip ticket per adult (SAR)",
@@ -384,7 +384,7 @@ Object.assign(translations.ar, {
   "plan.how.flight": "الطيران: تذكرة ذهاب وعودة تقديرية لكل مسافر حسب المسافة بين المطارين. اكتب السعر الحقيقي في خانة التذكرة عشان يطلع الحساب بالضبط.",
   "plan.how.flight.own": "الطيران: سعر تذكرتك × عدد المسافرين.",
   "plan.how.taxi": "التاكسي: تعرفة هيئة النقل الرسمية ({s} ريال فتح العداد + {k} ريال للكيلو): المطار رايح وراجع، و{n} مشاوير باليوم كل مشوار حوالي {km} كم، ومشوار للمكان ورجعة إذا كان برا المدينة.",
-  "plan.how.season": "الموسم: أسعار الغرف في {r} في شهر {m} حوالي {x}٪ من متوسط السنة (أسعار الهيئة العامة للإحصاء الشهرية لكل منطقة، من يوليو ٢٠٢٥ لين يونيو ٢٠٢٦).",
+  "plan.how.season": "الموسم: أسعار الغرف في {r} في شهر {m} حوالي {x}٪ من متوسط السنة (أسعار الهيئة العامة للإحصاء الشهرية: أسعار المدينة نفسها من يناير لين يونيو ٢٠٢٦، وأسعار المنطقة من يوليو لين ديسمبر ٢٠٢٥).",
   "plan.month": "شهر السفر", "plan.month.any": "مو متأكد (متوسط السنة)",
   "plan.months": "يناير,فبراير,مارس,أبريل,مايو,يونيو,يوليو,أغسطس,سبتمبر,أكتوبر,نوفمبر,ديسمبر",
   "plan.flight.price": "سعر تذكرة الذهاب والعودة للبالغ (ريال)",
@@ -507,7 +507,7 @@ function estimate(placeIdx = currentPlaceIndex(), useTyped = true) {
   // Hotel price: what the user typed, or the real GASTAT average near this place (+ VAT),
   // changed for the travel month with the region's real monthly prices (no month = year average)
   const roomType = style === 'budget' ? 'apartment' : 'hotel';
-  const season = month === '' ? 1 : HOTEL_SEASONS[place.region][roomType][month];
+  const season = month === '' ? 1 : HOTEL_SEASONS[pc.season][roomType][month];
   const baseNight = style === 'budget' ? pc.apartment_night
                   : pc.hotel_night * (style === 'luxury' ? C.luxuryHotelFactor : 1);
   const estNight = baseNight * season * (1 + C.vat);
@@ -668,7 +668,7 @@ function render() {
   how.push(tf('plan.how.hotel', { r: fmt(roundTo(r.night, 10)), n: rooms, x: nights }));
   if (!r.typed) how.push(tf('plan.how.hotelsrc', { c: currentLang === 'ar' ? r.pc.hotel_city_ar : r.pc.hotel_city }));
   if (!r.typed && state.month !== '') how.push(tf('plan.how.season', {
-    r: tRegion(r.place.region), m: t('plan.months').split(',')[state.month], x: Math.round(r.season * 100) }));
+    r: currentLang === 'ar' ? r.pc.hotel_city_ar : r.pc.hotel_city, m: t('plan.months').split(',')[state.month], x: Math.round(r.season * 100) }));
   how.push(tf('plan.how.food', { f: fmt(r.foodDay), d: r.days }));
   how.push(tf('plan.how.foodsrc', { c: currentLang === 'ar' ? r.pc.food_city_ar : r.pc.food_city,
     a: fmt(r.pc.meal_cheap), b: fmt(r.pc.meal_mid_for_two) }));

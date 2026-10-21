@@ -1,73 +1,73 @@
-place_name,region,hotel_city,hotel_city_ar,place_km,apartment_night,hotel_night,food_city,food_city_ar,meal_cheap,meal_mid_for_two,cappuccino,water
-Edge of the World (Jabal Fihrayn),Riyadh,Riyadh,الرياض,64,248,707,Riyadh,الرياض,30.0,245.0,16.07,2.08
-At-Turaif District (Diriyah),Riyadh,Riyadh,الرياض,0,248,707,Riyadh,الرياض,30.0,245.0,16.07,2.08
-National Museum,Riyadh,Riyadh,الرياض,9,248,707,Riyadh,الرياض,30.0,245.0,16.07,2.08
-Kingdom Centre Tower,Riyadh,Riyadh,الرياض,0,248,707,Riyadh,الرياض,30.0,245.0,16.07,2.08
-Wadi Hanifah,Riyadh,Riyadh,الرياض,15,248,707,Riyadh,الرياض,30.0,245.0,16.07,2.08
-Masjid al-Haram,Makkah,Makkah,مكة المكرمة,5,269,390,Makkah,مكة المكرمة,17.0,100.0,9.74,1.95
-Jabal al-Nour (Cave of Hira),Makkah,Makkah,مكة المكرمة,8,269,390,Makkah,مكة المكرمة,17.0,100.0,9.74,1.95
-Al-Balad (Historic Jeddah),Makkah,Jeddah,جدة,7,206,397,Jeddah,جدة,23.0,300.0,14.23,1.95
-Jeddah Corniche,Makkah,Jeddah,جدة,9,206,397,Jeddah,جدة,23.0,300.0,14.23,1.95
-King Fahd's Fountain,Makkah,Jeddah,جدة,4,206,397,Jeddah,جدة,23.0,300.0,14.23,1.95
-Al-Masjid an-Nabawi,Madinah,Madinah,المدينة المنورة,1,234,441,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Quba Mosque,Madinah,Madinah,المدينة المنورة,3,234,441,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Hegra (Mada'in Salih),Madinah,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,165,480,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Elephant Rock,Madinah,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,165,480,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Mount Uhud,Madinah,Madinah,المدينة المنورة,4,234,441,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Buraydah Date City,Al-Qassim,Buraydah & Unaizah,بريدة وعنيزة,2,152,413,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Unaizah Old Town,Al-Qassim,Buraydah & Unaizah,بريدة وعنيزة,1,152,413,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Al-Bassam Historic House,Al-Qassim,Buraydah & Unaizah,بريدة وعنيزة,2,152,413,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Half Moon Bay,Eastern Province,Dammam & Khobar,الدمام والخبر,13,216,442,Al Khobar,الخبر,25.0,225.0,16.5,2.09
-Qatif Old Town,Eastern Province,Dammam & Khobar,الدمام والخبر,14,216,442,Dammam,الدمام,27.0,130.0,11.45,2.24
-Tarout Castle,Eastern Province,Dammam & Khobar,الدمام والخبر,17,216,442,Dammam,الدمام,27.0,130.0,11.45,2.24
-Dammam Corniche,Eastern Province,Dammam & Khobar,الدمام والخبر,2,216,442,Dammam,الدمام,27.0,130.0,11.45,2.24
-Al-Ahsa Oasis,Eastern Province,Al-Ahsa,الأحساء,6,178,545,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Abha Lake Park,Aseer,Abha & Khamis Mushait,أبها وخميس مشيط,3,142,331,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Rijal Almaa Heritage Village,Aseer,Abha & Khamis Mushait,أبها وخميس مشيط,25,142,331,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Al-Soudah,Aseer,Abha & Khamis Mushait,أبها وخميس مشيط,16,142,331,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Abha Cable Car,Aseer,Abha & Khamis Mushait,أبها وخميس مشيط,3,142,331,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Tabuk Castle,Tabuk,Tabuk,تبوك,1,137,230,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Gulf of Aqaba Beaches,Tabuk,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,174,493,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Disi Desert,Tabuk,Tabuk,تبوك,83,137,230,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Qishlah Palace,Hail,Hail,حائل,3,186,390,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-A'arif Fort,Hail,Hail,حائل,2,186,390,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Jubbah Rock Art,Hail,Hail,حائل,99,186,390,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Al-Ukhdood Archaeological Site,Najran,Najran,نجران,5,93,296,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Najran Dam,Najran,Najran,نجران,16,93,296,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Old Najran Mudbrick Houses,Najran,Najran,نجران,0,93,296,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Farasan Islands,Jazan,Jazan,جازان,72,155,334,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Jazan Corniche,Jazan,Jazan,جازان,3,155,334,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Al Idabi Waterfall,Jazan,Jazan,جازان,70,155,334,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Raghadan Forest Park,Al-Baha,Al-Baha,الباحة,4,156,378,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Dhee Ain Village (Marble Village),Al-Baha,Al-Baha,الباحة,10,156,378,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Zaabal Castle,Al-Jouf,Sakaka,سكاكا,3,133,277,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Marid Castle,Al-Jouf,Sakaka,سكاكا,37,133,277,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Dumat Al-Jandal Lake,Al-Jouf,Sakaka,سكاكا,37,133,277,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-North Borders Museum,Northern Borders,Arar,عرعر,0,190,244,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Al-Gharaba Nature Reserve,Northern Borders,Arar,عرعر,49,190,244,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Linah Heritage Village,Northern Borders,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,193,580,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Shura Island,Tabuk,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,174,493,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Shebara Island,Tabuk,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,174,493,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Abu Ali Island,Eastern Province,Dammam & Khobar,الدمام والخبر,111,216,442,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Karan Island,Eastern Province,Dammam & Khobar,الدمام والخبر,147,216,442,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Farasan Al-Kabir Island,Jazan,Jazan,جازان,64,155,334,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Qiddiya City,Riyadh,Riyadh,الرياض,29,248,707,Riyadh,الرياض,30.0,245.0,16.07,2.08
-Clock Tower Museum,Makkah,Makkah,مكة المكرمة,5,269,390,Makkah,مكة المكرمة,17.0,100.0,9.74,1.95
-Masmak Fortress,Riyadh,Riyadh,الرياض,10,248,707,Riyadh,الرياض,30.0,245.0,16.07,2.08
-Boulevard City,Riyadh,Riyadh,الرياض,4,248,707,Riyadh,الرياض,30.0,245.0,16.07,2.08
-Al-Shafa,Makkah,Taif,الطائف,25,166,327,Makkah,مكة المكرمة,17.0,100.0,9.74,1.95
-Al-Hada,Makkah,Taif,الطائف,17,166,327,Makkah,مكة المكرمة,17.0,100.0,9.74,1.95
-Shubra Palace,Makkah,Taif,الطائف,2,166,327,Makkah,مكة المكرمة,17.0,100.0,9.74,1.95
-AlUla Old Town,Madinah,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,165,480,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Maraya,Madinah,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,165,480,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Ithra (King Abdulaziz Center for World Culture),Eastern Province,Dammam & Khobar,الدمام والخبر,10,216,442,Dammam,الدمام,27.0,130.0,11.45,2.24
-City Walk,Eastern Province,Dammam & Khobar,الدمام والخبر,10,216,442,Al Khobar,الخبر,25.0,225.0,16.5,2.09
-Khobar Water Tower,Eastern Province,Dammam & Khobar,الدمام والخبر,11,216,442,Al Khobar,الخبر,25.0,225.0,16.5,2.09
-Khobar Corniche,Eastern Province,Dammam & Khobar,الدمام والخبر,10,216,442,Al Khobar,الخبر,25.0,225.0,16.5,2.09
-Ajdan Walk,Eastern Province,Dammam & Khobar,الدمام والخبر,8,216,442,Al Khobar,الخبر,25.0,225.0,16.5,2.09
-Jabal Al-Qarah,Eastern Province,Al-Ahsa,الأحساء,11,178,545,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Al-Habala Village,Aseer,Abha & Khamis Mushait,أبها وخميس مشيط,33,142,331,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Jabal al-Lawz,Tabuk,Tabuk,تبوك,127,137,230,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Aja Mountains,Hail,Hail,حائل,12,186,390,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Fayfa Mountains,Jazan,Jazan,جازان,71,155,334,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
-Rajajil Columns,Al-Jouf,Sakaka,سكاكا,18,133,277,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+place_name,region,hotel_city,hotel_city_ar,place_km,season,apartment_night,hotel_night,food_city,food_city_ar,meal_cheap,meal_mid_for_two,cappuccino,water
+Edge of the World (Jabal Fihrayn),Riyadh,Riyadh,الرياض,64,Riyadh city (1),247,678,Riyadh,الرياض,30.0,245.0,16.07,2.08
+At-Turaif District (Diriyah),Riyadh,Riyadh,الرياض,0,Riyadh city (1),247,678,Riyadh,الرياض,30.0,245.0,16.07,2.08
+National Museum,Riyadh,Riyadh,الرياض,9,Riyadh city (1),247,678,Riyadh,الرياض,30.0,245.0,16.07,2.08
+Kingdom Centre Tower,Riyadh,Riyadh,الرياض,0,Riyadh city (1),247,678,Riyadh,الرياض,30.0,245.0,16.07,2.08
+Wadi Hanifah,Riyadh,Riyadh,الرياض,15,Riyadh city (1),247,678,Riyadh,الرياض,30.0,245.0,16.07,2.08
+Masjid al-Haram,Makkah,Makkah,مكة المكرمة,5,Makkah Al-Mukarramah city,185,371,Makkah,مكة المكرمة,17.0,100.0,9.74,1.95
+Jabal al-Nour (Cave of Hira),Makkah,Makkah,مكة المكرمة,8,Makkah Al-Mukarramah city,185,371,Makkah,مكة المكرمة,17.0,100.0,9.74,1.95
+Al-Balad (Historic Jeddah),Makkah,Jeddah,جدة,7,Jiddah governorate,198,445,Jeddah,جدة,23.0,300.0,14.23,1.95
+Jeddah Corniche,Makkah,Jeddah,جدة,9,Jiddah governorate,198,445,Jeddah,جدة,23.0,300.0,14.23,1.95
+King Fahd's Fountain,Makkah,Jeddah,جدة,4,Jiddah governorate,198,445,Jeddah,جدة,23.0,300.0,14.23,1.95
+Al-Masjid an-Nabawi,Madinah,Madinah,المدينة المنورة,1,Al-Madinah Al-Munawwarah city,235,439,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Quba Mosque,Madinah,Madinah,المدينة المنورة,3,Al-Madinah Al-Munawwarah city,235,439,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Hegra (Mada'in Salih),Madinah,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,Other (3) | Madinah,164,474,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Elephant Rock,Madinah,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,Other (3) | Madinah,164,474,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Mount Uhud,Madinah,Madinah,المدينة المنورة,4,Al-Madinah Al-Munawwarah city,235,439,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Buraydah Date City,Al-Qassim,Buraydah & Unaizah,بريدة وعنيزة,2,Bariduh city and  Unayzah governorate,152,408,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Unaizah Old Town,Al-Qassim,Buraydah & Unaizah,بريدة وعنيزة,1,Bariduh city and  Unayzah governorate,152,408,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Al-Bassam Historic House,Al-Qassim,Buraydah & Unaizah,بريدة وعنيزة,2,Bariduh city and  Unayzah governorate,152,408,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Half Moon Bay,Eastern Province,Dammam & Khobar,الدمام والخبر,13,Dammam metropolitan area (2),215,442,Al Khobar,الخبر,25.0,225.0,16.5,2.09
+Qatif Old Town,Eastern Province,Dammam & Khobar,الدمام والخبر,14,Dammam metropolitan area (2),215,442,Dammam,الدمام,27.0,130.0,11.45,2.24
+Tarout Castle,Eastern Province,Dammam & Khobar,الدمام والخبر,17,Dammam metropolitan area (2),215,442,Dammam,الدمام,27.0,130.0,11.45,2.24
+Dammam Corniche,Eastern Province,Dammam & Khobar,الدمام والخبر,2,Dammam metropolitan area (2),215,442,Dammam,الدمام,27.0,130.0,11.45,2.24
+Al-Ahsa Oasis,Eastern Province,Al-Ahsa,الأحساء,6,Al-Ahsa governorate,179,540,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Abha Lake Park,Aseer,Abha & Khamis Mushait,أبها وخميس مشيط,3,Abha city and Khamis Mushayt governorate,140,329,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Rijal Almaa Heritage Village,Aseer,Abha & Khamis Mushait,أبها وخميس مشيط,25,Abha city and Khamis Mushayt governorate,140,329,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Al-Soudah,Aseer,Abha & Khamis Mushait,أبها وخميس مشيط,16,Abha city and Khamis Mushayt governorate,140,329,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Abha Cable Car,Aseer,Abha & Khamis Mushait,أبها وخميس مشيط,3,Abha city and Khamis Mushayt governorate,140,329,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Tabuk Castle,Tabuk,Tabuk,تبوك,1,Tabuk city,136,254,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Gulf of Aqaba Beaches,Tabuk,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,Other (3) | Tabuk,173,511,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Disi Desert,Tabuk,Tabuk,تبوك,83,Tabuk city,136,254,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Qishlah Palace,Hail,Hail,حائل,3,Hail city,185,385,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+A'arif Fort,Hail,Hail,حائل,2,Hail city,185,385,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Jubbah Rock Art,Hail,Hail,حائل,99,Hail city,185,385,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Al-Ukhdood Archaeological Site,Najran,Najran,نجران,5,Najran city,93,261,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Najran Dam,Najran,Najran,نجران,16,Najran city,93,261,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Old Najran Mudbrick Houses,Najran,Najran,نجران,0,Najran city,93,261,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Farasan Islands,Jazan,Jazan,جازان,72,Jazan city,151,330,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Jazan Corniche,Jazan,Jazan,جازان,3,Jazan city,151,330,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Al Idabi Waterfall,Jazan,Jazan,جازان,70,Jazan city,151,330,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Raghadan Forest Park,Al-Baha,Al-Baha,الباحة,4,Al Bahah city,153,369,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Dhee Ain Village (Marble Village),Al-Baha,Al-Baha,الباحة,10,Al Bahah city,153,369,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Zaabal Castle,Al-Jouf,Sakaka,سكاكا,3,Sakaka city,132,278,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Marid Castle,Al-Jouf,Sakaka,سكاكا,37,Sakaka city,132,278,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Dumat Al-Jandal Lake,Al-Jouf,Sakaka,سكاكا,37,Sakaka city,132,278,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+North Borders Museum,Northern Borders,Arar,عرعر,0,Arar city,189,245,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Al-Gharaba Nature Reserve,Northern Borders,Arar,عرعر,49,Arar city,189,245,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Linah Heritage Village,Northern Borders,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,Other (3) | Northern Borders,192,549,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Shura Island,Tabuk,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,Other (3) | Tabuk,173,511,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Shebara Island,Tabuk,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,Other (3) | Tabuk,173,511,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Abu Ali Island,Eastern Province,Dammam & Khobar,الدمام والخبر,111,Dammam metropolitan area (2),215,442,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Karan Island,Eastern Province,Dammam & Khobar,الدمام والخبر,147,Dammam metropolitan area (2),215,442,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Farasan Al-Kabir Island,Jazan,Jazan,جازان,64,Jazan city,151,330,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Qiddiya City,Riyadh,Riyadh,الرياض,29,Riyadh city (1),247,678,Riyadh,الرياض,30.0,245.0,16.07,2.08
+Clock Tower Museum,Makkah,Makkah,مكة المكرمة,5,Makkah Al-Mukarramah city,185,371,Makkah,مكة المكرمة,17.0,100.0,9.74,1.95
+Masmak Fortress,Riyadh,Riyadh,الرياض,10,Riyadh city (1),247,678,Riyadh,الرياض,30.0,245.0,16.07,2.08
+Boulevard City,Riyadh,Riyadh,الرياض,4,Riyadh city (1),247,678,Riyadh,الرياض,30.0,245.0,16.07,2.08
+Al-Shafa,Makkah,Taif,الطائف,25,Taif governorate,164,364,Makkah,مكة المكرمة,17.0,100.0,9.74,1.95
+Al-Hada,Makkah,Taif,الطائف,17,Taif governorate,164,364,Makkah,مكة المكرمة,17.0,100.0,9.74,1.95
+Shubra Palace,Makkah,Taif,الطائف,2,Taif governorate,164,364,Makkah,مكة المكرمة,17.0,100.0,9.74,1.95
+AlUla Old Town,Madinah,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,Other (3) | Madinah,164,474,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Maraya,Madinah,the area (average of smaller cities),المنطقة (متوسط المدن الأصغر),0,Other (3) | Madinah,164,474,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Ithra (King Abdulaziz Center for World Culture),Eastern Province,Dammam & Khobar,الدمام والخبر,10,Dammam metropolitan area (2),215,442,Dammam,الدمام,27.0,130.0,11.45,2.24
+City Walk,Eastern Province,Dammam & Khobar,الدمام والخبر,10,Dammam metropolitan area (2),215,442,Al Khobar,الخبر,25.0,225.0,16.5,2.09
+Khobar Water Tower,Eastern Province,Dammam & Khobar,الدمام والخبر,11,Dammam metropolitan area (2),215,442,Al Khobar,الخبر,25.0,225.0,16.5,2.09
+Khobar Corniche,Eastern Province,Dammam & Khobar,الدمام والخبر,10,Dammam metropolitan area (2),215,442,Al Khobar,الخبر,25.0,225.0,16.5,2.09
+Ajdan Walk,Eastern Province,Dammam & Khobar,الدمام والخبر,8,Dammam metropolitan area (2),215,442,Al Khobar,الخبر,25.0,225.0,16.5,2.09
+Jabal Al-Qarah,Eastern Province,Al-Ahsa,الأحساء,11,Al-Ahsa governorate,179,540,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Al-Habala Village,Aseer,Abha & Khamis Mushait,أبها وخميس مشيط,33,Abha city and Khamis Mushayt governorate,140,329,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Jabal al-Lawz,Tabuk,Tabuk,تبوك,127,Tabuk city,136,254,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Aja Mountains,Hail,Hail,حائل,12,Hail city,185,385,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Fayfa Mountains,Jazan,Jazan,جازان,71,Jazan city,151,330,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21
+Rajajil Columns,Al-Jouf,Sakaka,سكاكا,18,Sakaka city,132,278,Saudi Arabia,المملكة,25.0,150.0,13.79,2.21

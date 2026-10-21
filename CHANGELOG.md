@@ -5,6 +5,42 @@ The newest changes are at the **top**. Every new update adds a section at the st
 
 ---
 
+## October 21, 2026: Each city has its own season in the trip cost estimator 📅
+
+### Why?
+- The travel month used **the region's** monthly prices for every place in it. So Taif got the Makkah region's Hajj jump in May, and Tabuk city got the Tabuk region's March jump, which comes from the Red Sea resorts.
+- GASTAT also publishes **monthly prices for each major city** (Tables 2.13 and 2.14), for January to June 2026, and they show the real picture: in May, **Makkah city** rose to 1,028 SAR a night, while **Taif** was 370 (cheaper than in April).
+
+### What changed?
+- Each place now follows **its own city's season**:
+  - **January to June:** the city's real monthly prices.
+  - **July to December:** there's no city data yet, so it follows the region's monthly shape at the city's level (city median × region that month ÷ region median). We use the median so one odd month doesn't skew it.
+- The place's room price is the average of its 12 months.
+- Examples (comfortable hotel, a night, VAT included):
+
+| Place | Year average | March | May | August |
+|---|---|---|---|---|
+| Taif | 419 | 427 | **427** (no Hajj jump) | 410 |
+| Makkah | 427 | 653 | **1,182** (Hajj) | 350 |
+| Tabuk | 292 | 327 (was more than double) | 280 | 231 |
+| Abha | 378 | 306 | 382 | **613** (summer) |
+| AlUla | 545 | **1,052** (winter season) | 720 | 360 |
+
+- "How is this calculated?" now names the city the season comes from.
+- `data/clean/hotel_seasons.csv` now has a row for each city instead of each region.
+
+### Still to do
+- **July to December** still follow the region. For example, Taif's summer season isn't visible yet, because GASTAT hasn't published city prices for those months. When the Q3 2026 file is out, the script can use it.
+
+### Files changed
+| File | Change |
+|---|---|
+| `scripts/build_place_costs.py` | City monthly prices (Tables 2.13 / 2.14) |
+| `place_costs.js`, `data/clean/place_costs.csv`, `data/clean/hotel_seasons.csv` | City seasons |
+| `planner.html` | Uses the city's season, and the explanation text |
+
+---
+
 ## October 21, 2026: City Walk is in Al Khobar, not Dhahran
 
 ### What changed?
