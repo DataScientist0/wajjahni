@@ -31,6 +31,7 @@ const translations = {
     "mic.btn": "🎤 Speak", "mic.label": "Search by voice", "mic.listening": "Listening… say a place name",
     "mic.stop": "⏹ Stop", "mic.error": "Couldn't use the microphone. Check that it's allowed for this site.",
     "mic.nothing": "Didn't catch that. Tap 🎤 and try again.",
+    "mic.heard": "Heard “{h}”, showing the closest place: {p}",
     "listen.nearby": "Nearest {type}: {name}, {km} kilometers.",
     "svc1.fuel": "gas station", "svc1.pharmacy": "pharmacy", "svc1.restaurant": "restaurant", "svc1.cafe": "cafe", "svc1.bank": "bank or ATM",
     "empty.didyoumean": "Did you mean:", "empty.typo": "Check the spelling, or try another name.",
@@ -78,6 +79,7 @@ const translations = {
     "mic.btn": "🎤 تكلّم", "mic.label": "ابحث بصوتك", "mic.listening": "أسمعك… قل اسم المكان",
     "mic.stop": "⏹ إيقاف", "mic.error": "ما قدرنا نستخدم المايك. تأكد إنه مسموح لهالموقع.",
     "mic.nothing": "ما سمعت شي. اضغط 🎤 وجرب مرة ثانية.",
+    "mic.heard": "سمعت «{h}»، وهذا أقرب مكان له: {p}",
     "listen.nearby": "أقرب {type}: {name}، على بعد {km} كيلو.",
     "svc1.fuel": "محطة بنزين", "svc1.pharmacy": "صيدلية", "svc1.restaurant": "مطعم", "svc1.cafe": "مقهى", "svc1.bank": "بنك أو صراف",
     "empty.didyoumean": "قصدك:", "empty.typo": "تأكد من الإملاء، أو جرب اسم ثاني.",
@@ -680,6 +682,69 @@ window.addEventListener('pagehide', () => { stopAudio(); window.speechSynthesis 
 // ---- 🎤 Search by voice (SpeechRecognition) ----
 const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
 
+// Words people add around a place name ("I want to go to AlUla", "وين الحجر") that aren't part of it
+const VOICE_FILLER = new Set(normalizeSearch(
+  'ابي ابغى ابغا اريد ودي اروح نروح روح وين فين دور دورلي ابحث بحث عن على لي في الى ابيك ممكن مكان اسمه ' +
+  'i want wanna to go take me show search for find where is the please'
+).split(' '));
+
+// The names a place can be said by: the full name and each part, e.g. "حافة العالم (جبل فهرين)"
+// → "حافة العالم جبل فهرين", "حافة العالم", "جبل فهرين"
+function voiceNames(d) {
+  const names = [];
+  for (const full of [d.place_name_ar, d.place_name]) {
+    if (!full) continue;
+    names.push(full, ...full.split(/[()]/));
+  }
+  return names.map(withoutFiller).filter(n => n.length >= 3);
+}
+const withoutFiller = s => normalizeSearch(s).split(' ').filter(w => !VOICE_FILLER.has(w)).join(' ');
+
+// Letters that sound alike count as half a mistake when compared by ear: vowels, and close sounds
+const SOUND_GROUPS = ['aeiouwy', 'اوي', 'sz', 'ckq', 'صسث', 'ذزظض', 'تط', 'هح', 'قك'];
+const soundGroup = ch => SOUND_GROUPS.findIndex(g => g.includes(ch));
+const isVowel = ch => 'aeiouwyاوي'.includes(ch);
+
+// Mistakes needed to turn a into b (the whole of both), counted by how it sounds
+function editDistance(a, b) {
+  const swap = (x, y) => x === y ? 0 : (soundGroup(x) >= 0 && soundGroup(x) === soundGroup(y) ? 0.5 : 1);
+  const addOrDrop = ch => isVowel(ch) ? 0.5 : 1;
+  let prev = [0];
+  for (let j = 1; j <= b.length; j++) prev[j] = prev[j - 1] + addOrDrop(b[j - 1]);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [prev[0] + addOrDrop(a[i - 1])];
+    for (let j = 1; j <= b.length; j++) {
+      cur[j] = Math.min(prev[j] + addOrDrop(a[i - 1]), cur[j - 1] + addOrDrop(b[j - 1]),
+                        prev[j - 1] + swap(a[i - 1], b[j - 1]));
+    }
+    prev = cur;
+  }
+  return prev[b.length];
+}
+
+// The speech engine doesn't know most place names, so it often writes a word that sounds close
+// ("الحجز" for "الحجر"). We take its top guesses and find the place whose name is closest.
+// Returns { text, place } — place is a DATA index, or null when nothing is close enough.
+function voiceBestMatch(guesses) {
+  const cleaned = guesses.map(withoutFiller).filter(Boolean);
+  if (!cleaned.length) return { text: guesses[0] || '', place: null };
+
+  // 1. A guess that already finds places with the normal search (e.g. a region like "الرياض"): keep it
+  const direct = cleaned.find(g => DATA.some(d => matchesSearch(d, g)));
+  if (direct) return { text: direct, place: null };
+
+  // 2. Otherwise the place whose name is closest to any guess (a few wrong letters allowed).
+  //    Either the whole guess sounds like the whole name, or the name is said inside a longer guess.
+  let best = null;
+  DATA.forEach((d, i) => voiceNames(d).forEach(name => cleaned.forEach(g => {
+    const score = Math.min(editDistance(g, name) / Math.max(g.length, name.length),
+                           fuzzyDistance(name, g) / name.length);   // share of letters that differ
+    if (!best || score < best.score) best = { score, i };
+  })));
+  if (best && best.score <= 0.34) return { text: tName(DATA[best.i]), place: best.i };
+  return { text: cleaned[0], place: null };
+}
+
 function setupVoiceSearch() {
   const input = document.getElementById('searchInput');
   if (!SpeechRec || !input) return;          // browser can't do it (e.g. Firefox): no button
@@ -706,6 +771,13 @@ function setupVoiceSearch() {
     rec = new SpeechRec();
     rec.lang = currentLang === 'ar' ? 'ar-SA' : 'en-US';
     rec.interimResults = true;                // show words while the person is still talking
+    rec.maxAlternatives = 5;                  // the engine's top 5 guesses, not just the first
+    // Newer Chrome can be told which words to expect, so it hears our place names better
+    if (window.SpeechRecognitionPhrase && 'phrases' in rec) {
+      try {
+        rec.phrases = DATA.map(d => new SpeechRecognitionPhrase(currentLang === 'ar' ? d.place_name_ar : d.place_name, 5));
+      } catch (err) { /* not supported in this browser: listen normally */ }
+    }
     let heard = '';
 
     rec.onstart = () => {
@@ -713,8 +785,19 @@ function setupVoiceSearch() {
       status.textContent = t('mic.listening');
     };
     rec.onresult = e => {
-      heard = Array.from(e.results).map(r => r[0].transcript).join(' ');
-      input.value = heard.replace(/[.،,!?؟]+$/, '').trim();   // drop the final punctuation
+      const results = Array.from(e.results);
+      heard = results.map(r => r[0].transcript).join(' ').replace(/[.،,!?؟]+$/, '').trim();
+      let text = heard;
+      if (results.every(r => r.isFinal)) {
+        // Finished talking: try every guess the engine gave and pick the closest place
+        const guesses = Array.from(results[results.length - 1]).map(a => a.transcript);
+        if (results.length > 1) guesses.unshift(heard);
+        const match = voiceBestMatch(guesses);
+        text = match.text;
+        status.textContent = match.place !== null && normalizeSearch(heard) !== normalizeSearch(text)
+          ? t('mic.heard').replace('{h}', heard).replace('{p}', text) : '';
+      }
+      input.value = text;
       input.dispatchEvent(new Event('input', { bubbles: true })); // run the normal search
     };
     rec.onerror = e => {
@@ -722,7 +805,7 @@ function setupVoiceSearch() {
     };
     rec.onend = () => {
       if (!heard && !status.textContent.startsWith(t('mic.error'))) status.textContent = t('mic.nothing');
-      else if (heard) status.textContent = '';
+      else if (heard && status.textContent === t('mic.listening')) status.textContent = '';
       rec = null; idle();
     };
     status.textContent = '';
