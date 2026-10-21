@@ -5,6 +5,19 @@ The newest changes are at the **top**. Every new update adds a section at the st
 
 ---
 
+## October 21, 2026: Home page numbers in the title's color
+
+### What changed?
+- The statistics numbers on the home page (72, 13, 5) were navy. They're now the same color as the page title, in both light and dark mode.
+- Removed the `--navy-text` color variable, because nothing else used it.
+
+### Files changed
+| File | Change |
+|---|---|
+| `styles.css` | `.stat b` uses the normal text color; `--navy-text` removed |
+
+---
+
 ## October 21, 2026: Each city has its own season in the trip cost estimator 📅
 
 ### Why?
