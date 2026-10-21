@@ -1,979 +1,979 @@
-# سجل التغييرات · وجّهني
+# Changelog · Wajjahni
 
-هذا الملف يشرح كل تغيير في مشروع وجّهني بالتفصيل: **وش تغير، وليش، وفي أي ملف**.
-أحدث التغييرات تكون **فوق**. ومع كل تحديث جديد، ينضاف قسم جديد في أول الملف.
+This file explains every change to Wajjahni in detail: **what changed, why, and in which file**.
+The newest changes are at the **top**. Every new update adds a section at the start of the file.
 
 ---
 
-## ٢١ أكتوبر ٢٠٢٦: البحث بالصوت صار أدق 🎤
+## October 21, 2026: More accurate voice search 🎤
 
-### ليش كان يغلط؟
-- محرك التعرف على الكلام (Google في Chrome، وApple في Safari) **ما يعرف أسماء أماكننا** مثل "زعبل" و"فهرين" و"الحجر"، فيكتب أقرب كلمة يعرفها، مثل "الحجز" بدل "الحجر".
-- الموقع كان ياخذ **أول تخمين بس** ويحطه في البحث مثل ما هو، فأي حرف غلط أو كلمة زيادة (مثل "ابي اروح…") تخلي البحث ما يلقى شي.
+### Why did it get things wrong?
+- The speech recognition engine (Google in Chrome, Apple in Safari) **doesn't know our place names**, like "زعبل" (Zaabal), "فهرين" (Fihrayn), or "الحجر" (Hegra), so it writes the closest word it knows, e.g. "الحجز" instead of "الحجر".
+- The site took **only the first guess** and put it in the search box as it was, so one wrong letter or an extra word (like "ابي اروح…", "I want to go to…") meant the search found nothing.
 
-### وش تغير؟
-- نطلب من المحرك **أفضل ٥ تخمينات** بدل واحد.
-- نشيل الكلمات الزايدة مثل "ابي، اروح، وين، دور على"، و"take me to، where is".
-- إذا ما لقى البحث العادي شي، نقارن التخمينات بأسماء الأماكن الـ ٧٤ (الاسم كامل وكل جزء منه، مثل "حافة العالم" و"جبل فهرين")، ونختار **أقرب مكان**.
-- المقارنة **حسب النطق**: الحروف المتقاربة في الصوت تنحسب نص غلطة (س/ص/ث، ذ/ز/ظ/ض، ت/ط، ق/ك، والحروف الممدودة).
-- إذا صحّحنا الكلام، تطلع تحت البحث رسالة مثل: **سمعت «الحجز»، وهذا أقرب مكان له: الحِجر (مدائن صالح)**.
-- في Chrome الجديد نعطي المحرك **أسماء الأماكن قبل لا يسمع** (`SpeechRecognitionPhrase`)، فيتوقعها ويكتبها صح من البداية.
-- إذا الكلام ما يشبه أي مكان، يبقى مثل ما هو، وتطلع اقتراحات "قصدك…؟" العادية.
+### What changed?
+- We ask the engine for its **top 5 guesses** instead of one.
+- We remove extra words like "ابي، اروح، وين، دور على" and "take me to, where is".
+- If the normal search finds nothing, we compare the guesses with the 74 place names (the full name and each part of it, e.g. "حافة العالم" and "جبل فهرين") and pick the **closest place**.
+- The comparison is **by sound**: letters that sound alike count as half a mistake (س/ص/ث, ذ/ز/ظ/ض, ت/ط, ق/ك, and long vowels).
+- When we correct the words, a message appears under the search, e.g.: **Heard “الحجز”, showing the closest place: الحِجر (مدائن صالح)**.
+- In newer Chrome, we give the engine **the place names before it listens** (`SpeechRecognitionPhrase`), so it expects them and writes them correctly from the start.
+- If the words don't sound like any place, they stay as they are, and the usual "Did you mean…?" suggestions appear.
 
-### جربناه
-٢٤ مثال، بالعربي والإنجليزي، وكلها طلعت صح. أمثلة:
-- "جبل الكاره" ← جبل القارة
-- "قريه زي عين" ← قرية ذي عين
-- "jabal al lose" ← Jabal al-Lawz
-- "taroot castle" ← Tarout Castle
+### Testing
+24 examples in Arabic and English, all correct. For example:
+- "جبل الكاره" → جبل القارة (Jabal Al-Qarah)
+- "قريه زي عين" → قرية ذي عين (Dhee Ain Village)
+- "jabal al lose" → Jabal al-Lawz
+- "taroot castle" → Tarout Castle
 
-### ملاحظة
-المحرك يسمع بلغة الموقع، فإذا الموقع بالعربي قل الاسم بالعربي، وإذا بالإنجليزي قله بالإنجليزي.
+### Note
+The engine listens in the site's language: if the site is in Arabic, say the name in Arabic; if it's in English, say it in English.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `app.js` | التخمينات الخمسة، وتنظيف الكلام، والمقارنة حسب النطق، ورسالة "سمعت…" |
+| `app.js` | The five guesses, cleaning the words, comparing by sound, and the "Heard…" message |
 
 ---
 
-## ٢١ أكتوبر ٢٠٢٦: حاسبة التكاليف بأسعار حقيقية 💰 (فنادق، أكل، بنزين، تذاكر)، وصورة كورنيش جازان 📷
+## October 21, 2026: Trip cost estimator with real prices 💰 (hotels, food, fuel, tickets), and a Jazan Corniche photo 📷
 
-### وش تغير في حاسبة التكاليف؟
-جربنا الحاسبة برحلات حقيقية ولقينا أخطاء في الحساب، وصححناها:
+### What changed in the trip cost estimator?
+We tested the estimator with real trips, found calculation errors, and fixed them:
 
-**١) المجموع صار يساوي التفاصيل**
-- قبل: التفاصيل مجموعها ٣٬٧٧٠ ريال، والمجموع فوق مكتوب ٣٬٧٥٠، لأن كل رقم كان يتقرب لحاله.
-- الحين: كل جزء يتقرب لأقرب ١٠ ريال، والمجموع هو جمعها بالضبط.
+**1) The total now equals the breakdown**
+- Before: the breakdown added up to 3,770 SAR, but the total at the top said 3,750, because each number was rounded on its own.
+- Now: each part is rounded to the nearest 10 SAR, and the total is exactly their sum.
 
-**٢) ما نحسب طيران لمكان ما له طيران**
-- قبل: من الرياض للدرعية (١٠ كم) "بالطيارة" كانت تطلع حوالي ١٬٥٠٠ ريال طيران!
-- الحين: إذا المكان أقرب من ٤٠٠ كم، نحسب الرحلة بالسيارة ونوضح هذا للمستخدم.
+**2) No flights to places without flights**
+- Before: Riyadh to Diriyah (10 km) "by plane" came out at about 1,500 SAR in flights!
+- Now: if the place is closer than 400 km, the trip is calculated by car, and the page tells the user.
 
-**٣) الغرف تحسب الأطفال**
-- قبل: بالغين و٤ أطفال = غرفة وحدة، وزيادة الأطفال ما تغير الغرف المقترحة.
-- الحين: كل غرفة لشخصين بالغين، وتوسع ٤ أشخاص مع الأطفال، والاقتراح يتحدث لما يتغير عدد الأطفال.
+**3) Rooms count children**
+- Before: 2 adults and 4 children = one room, and adding children didn't change the suggested rooms.
+- Now: each room is for 2 adults and fits up to 4 people with children, and the suggestion updates when the number of children changes.
 
-**٤) أسعار كل منطقة من بيانات رسمية**
-- قبل: كل المناطق نفس السعر.
-- الحين: لكل منطقة "مستوى أسعار" محسوب من بيانات هيئة السياحة لعام ٢٠٢٤: متوسط إنفاق السائح بالليلة في المنطقة ÷ متوسط المملكة (٢١٤ ريال).
-  - مثلاً الرياض ١٢٨٪، ومكة ١١٠٪، وجازان ٧٩٪.
-  - البيانات فيها ناس ساكنين عند أهلهم (يصرفون قليل)، فأقل قيمة خليناها ٧٥٪ عشان ما تطلع أسعار رخيصة بشكل غير واقعي.
-- يطبق على الفندق والأكل والأنشطة.
+**4) Prices for each region from official data**
+- Before: every region had the same prices.
+- Now: each region has a "price level" calculated from the 2024 Tourism Authority data: the region's average tourist spending per night ÷ the national average (214 SAR).
+  - For example, Riyadh 128%, Makkah 110%, Jazan 79%.
+  - The data includes people staying with family (who spend very little), so the lowest value is set to 75% to avoid unrealistically cheap prices.
+- Applied to hotels, food, and activities.
 
-**٥) "كيف انحسبت التكلفة؟" صار يطابق الحساب**
-- قبل: يكتب سعر الأكل والأنشطة الأساسي، والحساب يستخدم سعر المنطقة.
-- الحين: يكتب السعر الفعلي للمنطقة، وفيه سطر جديد يوضح مستوى أسعار المنطقة.
+**5) "How is this calculated?" now matches the calculation**
+- Before: it showed the base food and activity prices, while the calculation used the region's prices.
+- Now: it shows the region's actual prices, with a new line explaining the region's price level.
 
-**٦) تنبيه لرحلة اليوم الطويلة**
-- إذا الليالي صفر والسواقة أكثر من ٤ ساعات (رايح)، يطلع تنبيه ينصح بإضافة ليلة.
+**6) Warning for long day trips**
+- With zero nights and more than 4 hours of driving each way, a warning suggests adding a night.
 
-**٧) أسعار دخول حقيقية لكل مكان 🎟️**
-- قبل: "الأنشطة" رقم تجريبي ثابت للشخص باليوم (مثلاً ٩٠ ريال)، نفسه لكل الأماكن.
-- الحين: ملف جديد **`prices.js`** فيه سعر تذكرة كل مكان من الـ ٧٤، والحاسبة تحسب: **سعر التذكرة × البالغين + سعر الطفل × الأطفال**، لزيارة وحدة.
-- كل سعر مكتوب معه **مصدره** و**قد إيش هو مؤكد**:
-  - **رسمي (٢):** من موقع الجهة نفسها، مثل جولة الحِجر ٩٥ ريال (Experience AlUla)، وجسر السماء ١٣٨ ريال للبالغ و٦٩ للطفل (Visit Saudi).
-  - **من أدلة السفر (٧):** مثل الدرعية ١٠٠، والقدية ٣٢٥ للبالغ و٢٧٥ للطفل، وجبل القارة ٥٨، ورجال ألمع ٢٠، وتلفريك أبها ٨٠، وتلفريك الحبلة ٧٠، وجبة ٢٥.
-  - **مجاني (٤٦):** الشواطئ والكورنيشات والجبال والمساجد والأسواق والمتحف الوطني والمصمك والأخدود وغيرها.
-  - **غير معروف (١٩):** ما لقينا سعر موثوق، مثل قلعة تبوك وقصر القشلة وقصر شبرا ومتحف برج الساعة. هذي **ما تنحسب** في المجموع، والصفحة تقول للمستخدم يتأكد قبل لا يروح.
-- تحت التفاصيل صار فيه مربع **"سعر الدخول"** يوضح السعر ومصدره (مع رابط) وأي ملاحظة، مثلاً إن العبّارة لجزر فرسان مجانية بس تحتاج تذكرة.
-- شلنا "الأنشطة" التجريبية، وانضافت "الأنشطة والجولات الثانية" لقائمة "ما يشمل".
+**7) Real entry prices for every place 🎟️**
+- Before: "activities" was a fixed sample number per person per day (e.g. 90 SAR), the same for every place.
+- Now: a new file, **`prices.js`**, has the ticket price for each of the 74 places, and the estimator calculates: **ticket price × adults + child price × children**, for one visit.
+- Every price comes with its **source** and **how sure we are about it**:
+  - **Official (2):** from the operator's own site, e.g. the Hegra tour 95 SAR (Experience AlUla), and the Sky Bridge 138 SAR for adults and 69 for children (Visit Saudi).
+  - **From travel guides (7):** e.g. Diriyah 100, Qiddiya 325 for adults and 275 for children, Jabal Al-Qarah 58, Rijal Almaa 20, Abha cable car 80, Al-Habala cable car 70, Jubbah 25.
+  - **Free (46):** beaches, corniches, mountains, mosques, markets, the National Museum, Masmak, Al-Ukhdood, and others.
+  - **Unknown (19):** no reliable price found, e.g. Tabuk Castle, Qishlah Palace, Shubra Palace, and the Clock Tower Museum. These are **not added** to the total, and the page tells the user to check before going.
+- Under the breakdown, a new **"Entry price"** box shows the price, its source (with a link), and any note, e.g. that the ferry to the Farasan Islands is free but needs a ticket.
+- We removed the sample "activities" cost, and added "Other activities and tours" to the "Not included" list.
 
-**٨) أسعار حقيقية للفنادق والأكل والبنزين 📊**
-بدل الأرقام التجريبية، الحاسبة صارت تستخدم بيانات حقيقية:
+**8) Real prices for hotels, food, and fuel 📊**
+Instead of sample numbers, the estimator now uses real data:
 
-| البند | المصدر | قبل | الحين (مثال: الرياض، مستوى مريح) |
+| Item | Source | Before | Now (example: Riyadh, comfortable level) |
 |---|---|---|---|
-| 🏨 الفندق | **الهيئة العامة للإحصاء**: إحصاءات المنشآت السياحية، الربع الأول ٢٠٢٦ (بيانات وزارة السياحة) | ٥٥٠ ريال تجريبي × مستوى المنطقة | ٧٨٣ ريال + ضريبة ١٥٪ = **٩٠٠ ريال** |
-| 🍽️ الأكل | **Numbeo** (أكتوبر ٢٠٢٦، أسعار يضيفها سكان كل مدينة) | ١٧٠ ريال تجريبي | وجبتين بسيطة (٣٠) + عشاء متوسط (١٢٢) + قهوة + موية = **٢٠١ ريال** للشخص باليوم |
-| ⛽ البنزين | **أرامكو** (أكتوبر ٢٠٢٦) | ٢٫٣٣ للكل | **٩١ = ٢٫١٨** و **٩٥ = ٢٫٣٣**، والمستخدم يختار |
+| 🏨 Hotel | **GASTAT** (General Authority for Statistics): Tourism Establishments Statistics, Q1 2026 (Ministry of Tourism data) | 550 SAR sample × region level | 783 SAR + 15% VAT = **900 SAR** |
+| 🍽️ Food | **Numbeo** (October 2026, prices added by people who live in each city) | 170 SAR sample | Two simple meals (30) + a mid-range dinner (122) + coffee + water = **201 SAR** per person per day |
+| ⛽ Fuel | **Aramco** (October 2026) | 2.33 for all | **91 = 2.18** and **95 = 2.33**, and the user chooses |
 
-**كيف ياخذ كل مكان أسعاره؟**
-- **الفندق:** أقرب مدينة في جدول الهيئة (١٦ مدينة) لين ١٥٠ كم. الأبعد من كذا (مثل العلا وجزر البحر الأحمر) ياخذ صف "مدن أخرى" من نفس الجدول.
-  - **اقتصادية** = متوسط الشقق المفروشة، **مريحة** = متوسط الفنادق، **فاخرة** = ضعف متوسط الفنادق (تقدير، لأن الهيئة ما تفصل الأسعار حسب النجوم، والصفحة توضح هذا).
-- **الأكل:** أقرب مدينة في Numbeo فيها ٢٠ مساهم أو أكثر لين ١٠٠ كم (الرياض، جدة، مكة، الدمام، الخبر)، وغيرها ياخذ متوسط المملكة (٢٨٩ مساهم).
-- سكربت جديد **`scripts/build_place_costs.py`** يقرأ الملفات الأصلية ويطلّع:
-  - `data/clean/place_costs.csv`: جدول تقدر تراجعه، فيه كل مكان وأقرب مدينة ومسافتها وأسعارها.
-  - `place_costs.js`: نفس الأرقام للموقع.
-- الملفات الأصلية في `data/raw/gastat/` و `data/raw/numbeo/`، وما تنعدل باليد.
-- شلنا "مستوى أسعار المنطقة" اللي كان محسوب من بيانات الإنفاق، لأن أسعار الفنادق الحقيقية أدق منه.
-- "كيف انحسبت التكلفة؟" صار يكتب مصدر سعر الفندق والأكل والمدينة اللي انحسب منها.
-- تنبيه "الأرقام تجريبية" انشال، والتنبيه فوق الصفحة صار يذكر المصادر.
+**How does each place get its prices?**
+- **Hotel:** the nearest city in GASTAT's table (16 cities) within 150 km. Places farther than that (e.g. AlUla and the Red Sea islands) use the "Other cities" row of the same table.
+  - **Budget** = furnished apartment average, **comfortable** = hotel average, **luxury** = twice the hotel average (an estimate, because GASTAT doesn't split prices by star rating; the page says so).
+- **Food:** the nearest Numbeo city with 20 or more contributors within 100 km (Riyadh, Jeddah, Makkah, Dammam, Al Khobar); other places use the national average (289 contributors).
+- A new script, **`scripts/build_place_costs.py`**, reads the original files and produces:
+  - `data/clean/place_costs.csv`: a table you can check, with each place, its nearest city, the distance, and the prices.
+  - `place_costs.js`: the same numbers for the website.
+- The original files are in `data/raw/gastat/` and `data/raw/numbeo/`, and are never edited by hand.
+- We removed the "region price level" calculated from spending data, because real hotel prices are more accurate.
+- "How is this calculated?" now shows the source of the hotel and food prices, and the city they come from.
+- The "sample numbers" warning was removed, and the notice at the top of the page now lists the sources.
 
-**دوّرنا وما لقينا:**
-- **أسعار وجبات المطاعم** ما تنشرها الهيئة العامة للإحصاء (جدول متوسط الأسعار فيه أكل البقالة والفنادق بس)، عشان كذا استخدمنا Numbeo.
-- **Kaggle:** فيه بيانات "Global Cost of Living" من Numbeo، بس من ٢٠٢٢، و٥ مدن سعودية بس موثوقة، فاستخدمنا Numbeo الحالي بداله.
-- **تذاكر الطيران الداخلي:** ما لقينا بيانات مفتوحة لها، فلسا تقدير.
+**What we looked for and didn't find:**
+- **Restaurant meal prices** aren't published by GASTAT (its average prices table only has grocery items and hotels), so we used Numbeo.
+- **Kaggle:** has "Global Cost of Living" data from Numbeo, but from 2022, with only 5 reliable Saudi cities, so we used current Numbeo data instead.
+- **Domestic flight tickets:** no open data found, so they're still an estimate.
 
-**٩) شهر السفر 📅 والتاكسي 🚕 وتذكرة الطيران ✈️**
+**9) Travel month 📅, taxis 🚕, and flight tickets ✈️**
 
-**شهر السفر:**
-- خانة جديدة "شهر السفر" (أو "مو متأكد" = متوسط السنة).
-- نزّلنا ٤ أرباع من الهيئة العامة للإحصاء (من الربع الثالث ٢٠٢٥ لين الربع الثاني ٢٠٢٦)، وفيها **سعر الغرفة لكل منطقة في كل شهر**، يعني ١٢ شهر متتالي لكل منطقة من الـ ١٣.
-- لكل منطقة وشهر: **سعر الشهر ÷ متوسط السنة**. أمثلة من البيانات:
-  - مكة في مايو (الحج): **٢٫٥ ضعف**
-  - عسير في أغسطس (الصيف): **١٫٦ ضعف**، وفي فبراير ٠٫٨
-  - الرياض في فبراير (موسم الرياض): **١٫٣**
-- أسعار المدن صارت **متوسط السنة كاملة** بدل الربع الأول بس.
-- جدول جديد `data/clean/hotel_seasons.csv` فيه معامل كل شهر لكل منطقة.
+**Travel month:**
+- New "Travel month" option (or "Not sure" = year average).
+- We downloaded 4 quarters from GASTAT (Q3 2025 to Q2 2026), which have **the room price for each region in every month**: 12 months in a row for each of the 13 regions.
+- For each region and month: **that month's price ÷ the year average**. Examples from the data:
+  - Makkah in May (Hajj): **2.5×**
+  - Aseer in August (summer): **1.6×**, and 0.8 in February
+  - Riyadh in February (Riyadh Season): **1.3×**
+- City prices are now **a full-year average** instead of Q1 only.
+- New table `data/clean/hotel_seasons.csv` with each region's factor for every month.
 
-**التاكسي (رحلات الطيران):**
-- بدل الرقم التجريبي (٢٢٠ ريال باليوم)، نحسب بـ **تعرفة هيئة النقل الرسمية**: ٦٫٤٠ ريال فتح العداد + ٢٫١٠ ريال للكيلو، والحد الأدنى ١٠ ريال.
-- المشاوير: المطار رايح وراجع، و٤ مشاوير باليوم (حوالي ١٠ كم)، ومشوار للمكان ورجعة إذا كان برا المدينة (مثل حافة العالم ٦٩ كم من الرياض).
-- كل تاكسي ياخذ ٤ أشخاص، فالمجموعات الكبيرة تحتاج أكثر من تاكسي.
+**Taxis (flying trips):**
+- Instead of the sample number (220 SAR a day), we use the **official Transport General Authority tariff**: 6.40 SAR to start the meter + 2.10 SAR per km, with a 10 SAR minimum.
+- Rides: the airport and back, 4 rides a day (about 10 km each), and a trip to the place and back if it's outside the city (e.g. Edge of the World, 69 km from Riyadh).
+- Each taxi takes 4 people, so bigger groups need more than one taxi.
 
-**تذكرة الطيران:**
-- الرحلة صارت من **أقرب مطار لمدينتك** إلى **أقرب مطار للمكان** (١٧ مطار داخلي، مثلاً الرياض RUH ← العلا ULH).
-- خانة جديدة يكتب فيها المستخدم **سعر التذكرة الحقيقي**، وزر **"شوف الرحلات في Google Flights"** يفتح البحث جاهز لنفس المسار والشهر.
-- إذا تركها فاضية نستخدم التقدير، والصفحة توضح إنه تقدير.
-- "الطيران والمواصلات" انقسمت لبندين: **تذاكر الطيران** و**التاكسي هناك**.
+**Flight tickets:**
+- The flight now goes from **the airport nearest your city** to **the airport nearest the place** (17 domestic airports, e.g. Riyadh RUH → AlUla ULH).
+- A new box where the user types the **real ticket price**, and a **"Check flights on Google Flights"** button that opens the search for the same route and month.
+- If it's left empty, we use the estimate, and the page says it's an estimate.
+- "Flights & local transport" was split into two items: **Flight tickets** and **Taxis there**.
 
-**باقي:**
-- **الطيران:** إذا ما كتب المستخدم السعر، يبقى تقدير.
-- **المدن داخل نفس المنطقة** تاخذ موسم المنطقة. مثلاً الطائف ياخذ موسم منطقة مكة (اللي يرتفع في الحج)، مع إن موسم الطائف الصيف.
-- **رسوم البلدية** على الغرف: ما لقينا مصدر حديث يأكد نسبتها، فما أضفناها.
-- الـ ١٩ مكان اللي سعر تذكرتها غير معروف.
+**Still to do:**
+- **Flights:** if the user doesn't type the price, it's still an estimate.
+- **Cities within the same region** use the region's season. For example, Taif uses the Makkah region's season (which rises during Hajj), even though Taif's high season is summer.
+- **Municipal fees** on rooms: we didn't find a recent source confirming the rate, so they aren't added.
+- The 19 places whose ticket price is unknown.
 
-### صورة جديدة 📷
-- **كورنيش جازان:** صورة غروب من الكورنيش الجنوبي، من Wikimedia Commons (MrJoker07، CC BY-SA 3.0).
-- صار عندنا صور لـ **٦٤ مكان**، وباقي **١٠**. دورنا لها في Wikimedia Commons وويكيبيديا وما لقينا صور حرة لها.
+### New photo 📷
+- **Jazan Corniche:** a sunset photo from the southern corniche, from Wikimedia Commons (MrJoker07, CC BY-SA 3.0).
+- We now have photos for **64 places**, with **10** left. We searched Wikimedia Commons and Wikipedia and found no free photos of them.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `planner.html` | تصحيح الحساب، والتنبيهات، والنصوص |
-| `costs.js` | مستوى أسعار المناطق، وإعدادات الغرف ورحلة اليوم |
-| `prices.js` | جديد: سعر دخول كل مكان ومصدره |
-| `place_costs.js` | جديد: أسعار الفنادق والأكل الحقيقية لكل مكان |
-| `scripts/build_place_costs.py` | جديد: يبني الأسعار من الملفات الأصلية |
-| `data/raw/gastat/`، `data/raw/numbeo/` | جديد: ملفات المصادر الأصلية |
-| `data/clean/place_costs.csv` | جديد: جدول الأسعار لكل مكان |
-| `data/clean/hotel_seasons.csv` | جديد: معامل الموسم لكل منطقة وشهر |
-| `styles.css` | شكل مربع سعر الدخول |
-| `data.js` | صورة كورنيش جازان |
-| `README.md` | عدد الصور، ووصف الحاسبة |
+| `planner.html` | Calculation fixes, warnings, and texts |
+| `costs.js` | Region price levels, room and day-trip settings |
+| `prices.js` | New: entry price for each place and its source |
+| `place_costs.js` | New: real hotel and food prices for each place |
+| `scripts/build_place_costs.py` | New: builds the prices from the original files |
+| `data/raw/gastat/`, `data/raw/numbeo/` | New: original source files |
+| `data/clean/place_costs.csv` | New: price table for each place |
+| `data/clean/hotel_seasons.csv` | New: season factor for each region and month |
+| `styles.css` | Style for the entry price box |
+| `data.js` | Jazan Corniche photo |
+| `README.md` | Photo count and estimator description |
 
 ---
 
-## ١٦ أكتوبر ٢٠٢٦: 🔊 يقرأ اسم المكان بس، وتجهيز الصوت البشري 🎙️
+## October 16, 2026: 🔊 Reads only the place name, and natural human-sounding audio 🎙️
 
-### وش تغير؟
-- زر **🔊 استمع** صار يقول **اسم المكان بس**، بدون المنطقة والوصف. إذا ثبتنا الوصف مستقبلاً نضيفه بسطر واحد في `placeSpeechText`.
-- الموقع صار **يشغّل تسجيل صوت جاهز** إذا موجود:
-  - `audio/ar/<رقم المكان>.mp3` للعربي
-  - `audio/en/<رقم المكان>.mp3` للإنجليزي
-- إذا ما فيه تسجيل للمكان، يقرأ الاسم **بصوت الجهاز** مثل قبل. فالموقع يشتغل الحين، وبيتحسن تلقائياً أول ما نضيف التسجيلات.
-- سكربت جديد **`scripts/make_audio.py`** يولّد التسجيلات بأصوات **Azure Neural**، وهي أصوات ذكاء اصطناعي طبيعية جداً:
-  - العربي: **زارية** (`ar-SA-ZariyahNeural`)، صوت سعودي
-  - الإنجليزي: **Jenny** (`en-US-JennyNeural`)
-  - ٧٤ مكان × لغتين = **١٤٨ ملف**
-- السكربت ياخذ مفتاح Azure من **الترمنال** (متغيرات بيئة)، فالمفتاح ما ينحفظ في أي ملف ولا يرتفع لـ GitHub.
+### What changed?
+- The **🔊 Listen** button now says **only the place name**, without the region and description. If we want the description back later, it's one line in `placeSpeechText`.
+- The site now **plays a ready-made recording** if there is one:
+  - `audio/ar/<place number>.mp3` for Arabic
+  - `audio/en/<place number>.mp3` for English
+- If a place has no recording, it reads the name **with the device's voice** as before. So the site works now, and gets better automatically as recordings are added.
+- A new script, **`scripts/make_audio.py`**, creates the recordings with **Azure Neural** voices, which are very natural AI voices:
+  - Arabic: **Zariyah** (`ar-SA-ZariyahNeural`), a Saudi voice
+  - English: **Jenny** (`en-US-JennyNeural`)
+  - 74 places × 2 languages = **148 files**
+- The script takes the Azure key from the **terminal** (environment variables), so the key is never saved in a file or uploaded to GitHub.
 
-### التسجيلات جاهزة ✅
-- سوينا حساب **Azure** وخدمة **Speech** بالباقة المجانية (**Free F0**)، وشغلنا السكربت.
-- طلع **١٤٨ ملف صوت** (٧٤ عربي + ٧٤ إنجليزي)، وحجمها كلها **٢٫٤ ميجا**، وكل ملف بين ٢ و٤ ثواني.
-- جربناها في الموقع: زر 🔊 يشغّل التسجيل البشري بالعربي والإنجليزي، ويرجع "🔊 استمع" لما يخلص.
-- **مجلد جديد:** `audio/ar/` و `audio/en/`.
+### Recordings ready ✅
+- We created an **Azure** account and a **Speech** service on the free tier (**Free F0**), and ran the script.
+- It produced **148 audio files** (74 Arabic + 74 English), **2.4 MB** in total, each 2 to 4 seconds long.
+- Tested on the site: the 🔊 button plays the human-sounding recording in Arabic and English, and goes back to "🔊 Listen" when it finishes.
+- **New folders:** `audio/ar/` and `audio/en/`.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `app.js` | قراءة الاسم بس، وتشغيل التسجيلات مع الرجوع لصوت الجهاز |
-| `scripts/make_audio.py` | جديد: توليد التسجيلات من Azure |
-| `README.md` | مجلد `scripts/` |
+| `app.js` | Read only the name, and play the recordings with the device voice as a fallback |
+| `scripts/make_audio.py` | New: creates the recordings with Azure |
+| `README.md` | The `scripts/` folder |
 
 ---
 
-## ١٦ أكتوبر ٢٠٢٦: سهولة الوصول، القراءة بصوت عالي والبحث بالصوت ♿🔊🎤
+## October 16, 2026: Accessibility: read aloud and voice search ♿🔊🎤
 
-### وش تغير؟
-**١) زر 🔊 استمع:** للي يصعب عليه يقرأ
-- في كل بطاقة مكان (صفحة الأماكن والخريطة) وفي نافذة المكان على الخريطة.
-- يقرأ بصوت عالي: **اسم المكان، والمنطقة، والنوع، والوصف**.
-- في نافذة **الخدمات القريبة**: يقرأ أقرب محطة بنزين وصيدلية ومطعم ومقهى وبنك، والمسافة لكل وحدة.
-- الزر يتحول لـ **"⏹ إيقاف"** وقت القراءة، والضغطة الثانية توقفها.
-- يقرأ **بالعربي أو الإنجليزي** حسب لغة الموقع، وأبطأ شوي من العادي عشان يكون واضح.
+### What changed?
+**1) 🔊 Listen button:** for people who find reading hard
+- On every place card (places page and map) and in the place window on the map.
+- Reads out loud: **the place name, region, type, and description**.
+- In the **nearby services** window: reads the nearest gas station, pharmacy, restaurant, cafe, and bank, and the distance to each.
+- The button turns into **"⏹ Stop"** while reading, and pressing it again stops.
+- Reads **in Arabic or English** depending on the site's language, a little slower than normal to be clear.
 
-**٢) زر 🎤 تكلّم:** للي يصعب عليه يكتب
-- داخل خانة البحث في صفحة الأماكن والخريطة.
-- يضغطه المستخدم ويقول اسم المكان، والكلام يتحول لنص في البحث وتطلع النتايج مباشرة.
-- وقت الاستماع يصير الزر **أحمر ونابض** ويطلع تحته **"أسمعك… قل اسم المكان"**.
-- إذا المايك مو مسموح أو ما سمع شي، تطلع رسالة توضح المشكلة.
-- يشتغل مع **"قصدك…؟"**، فلو التعرف على الصوت فيه خطأ بسيط تطلع الاقتراحات.
+**2) 🎤 Speak button:** for people who find typing hard
+- Inside the search box on the places page and the map.
+- The user presses it and says a place name; the words become text in the search and the results appear right away.
+- While listening, the button turns **red and pulses**, with **"Listening… say a place name"** under it.
+- If the microphone isn't allowed or nothing was heard, a message explains the problem.
+- Works with **"Did you mean…?"**, so if the recognition has a small mistake, suggestions appear.
 
-**٣) الأيقونات مفهومة:**
-- كل زر فيه **أيقونة + كلمة** ("🔊 استمع" و"🎤 تكلّم")، مو أيقونة لحالها.
-- لكل زر **وصف** (`aria-label`) تقرأه برامج قراءة الشاشة للمكفوفين، و**تلميح** (`title`) يطلع لما يوقف الماوس عليه.
+**3) Clear icons:**
+- Every button has **an icon + a word** ("🔊 Listen" and "🎤 Speak"), not an icon alone.
+- Every button has a **label** (`aria-label`) that screen readers read for blind users, and a **tooltip** (`title`) that appears on mouse hover.
 
-### كيف يشتغل؟
-- الاثنين يستخدمون **Web Speech API** الموجودة في المتصفح: مجانية، وبدون مفتاح API، وبدون سيرفر.
-  - القراءة: `speechSynthesis`
-  - البحث بالصوت: `SpeechRecognition`
-- **البحث بالصوت ما يشتغل في Firefox**، فالزر **ما يطلع** في المتصفحات اللي ما تدعمه، بدل ما يطلع ويخرب.
+### How does it work?
+- Both use the browser's **Web Speech API**: free, no API key, and no server.
+  - Reading: `speechSynthesis`
+  - Voice search: `SpeechRecognition`
+- **Voice search doesn't work in Firefox**, so the button **doesn't appear** in browsers that don't support it, instead of appearing and breaking.
 
-### إصلاح: القراءة كانت غير مفهومة
-- **المشكلة:** المتصفح يحمّل قائمة الأصوات بعد ما تفتح الصفحة بشوي. فأول ضغطة كانت تقرأ النص العربي **بصوت إنجليزي**، ويطلع الكلام غير مفهوم.
-- وكمان الصوت العربي في الماك (**ماجد**) مسجل بلغة `ar-001` مو `ar-SA`، فما كان يتطابق مع اللغة اللي طلبناها.
-- **الحل:**
-  - الكود صار **ينتظر الأصوات لين تتحمل**.
-  - يختار **أي صوت عربي** موجود في الجهاز، ويستخدم رمز لغته هو.
-  - إذا الجهاز **ما فيه صوت عربي أبداً**، يطلع على الزر "⚠️ جهازك ما فيه صوت عربي"، بدل ما يقرأ بصوت غلط.
+### Fix: reading was hard to understand
+- **The problem:** the browser loads its list of voices a moment after the page opens. So the first click read the Arabic text **with an English voice**, and it sounded like nonsense.
+- Also, the Arabic voice on Mac (**Majed**) is registered as `ar-001`, not `ar-SA`, so it didn't match the language we asked for.
+- **The fix:**
+  - The code now **waits for the voices to load**.
+  - It picks **any Arabic voice** on the device, and uses that voice's own language code.
+  - If the device **has no Arabic voice at all**, the button shows "⚠️ No Arabic voice on this device", instead of reading with the wrong voice.
 
-### تحسين: نطق أوضح وأقرب للطبيعي
-- الموقع صار يختار **أفضل صوت** موجود في الجهاز. الأولوية للأصوات عالية الجودة:
-  - **Premium** و **Enhanced** في أجهزة Apple
-  - **Neural** و **Natural** من مايكروسوفت
-  - **Google** في Chrome وأندرويد
-  - وبعدها اللهجة السعودية (`ar-SA`)
-- **تجهيز النص قبل القراءة** (`speechFriendly`):
-  - الأقواس والرموز (· | —) صارت وقفة قصيرة بدل ما ينقرأ الرمز
-  - "٩٠ كم" تنقرأ "٩٠ **كيلومتر**"
-  - "64.0" تنقرأ "64"
-  - تنظيف الفواصل المكررة
-  - كل لغة بفاصلتها (، للعربي و , للإنجليزي)
-- السرعة صارت أبطأ شوي (0.9) عشان يكون أوضح.
+### Improvement: clearer, more natural speech
+- The site now picks **the best voice** on the device. High-quality voices come first:
+  - **Premium** and **Enhanced** on Apple devices
+  - **Neural** and **Natural** from Microsoft
+  - **Google** in Chrome and Android
+  - Then the Saudi dialect (`ar-SA`)
+- **Preparing the text before reading** (`speechFriendly`):
+  - Brackets and symbols (· | —) become a short pause instead of being read out
+  - "90 كم" is read as "90 **kilometers**"
+  - "64.0" is read as "64"
+  - Repeated commas are cleaned up
+  - Each language uses its own comma (، for Arabic and , for English)
+- The speed is a little slower (0.9) to be clearer.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `app.js` | دوال القراءة والبحث بالصوت، وزر 🔊 في نافذة المكان والخدمات القريبة، والترجمات |
-| `places.html`، `map.html` | زر 🔊 في بطاقات الأماكن |
-| `styles.css` | شكل الأزرار، وحالة "أسمعك" النابضة |
-| `README.md` | الميزة الجديدة |
+| `app.js` | Read-aloud and voice search functions, the 🔊 button in the place and nearby services windows, and translations |
+| `places.html`, `map.html` | 🔊 button on place cards |
+| `styles.css` | Button styles, and the pulsing "listening" state |
+| `README.md` | The new feature |
 
 ---
 
-## ١٤ أكتوبر ٢٠٢٦: بحث أذكى ورسائل أوضح لما ما يلقى نتيجة 🔎
+## October 14, 2026: Smarter search and clearer messages when nothing is found 🔎
 
-### وش تغير؟
-**١) "قصدك…؟" للأخطاء الإملائية:**
-- لو المستخدم كتب اسم فيه خطأ وما طلعت نتيجة، تطلع له **أقرب ٣ أماكن** للي كتبه، وبضغطة على أي واحد يتصحح البحث. أمثلة:
-  - "hegre" ← **الحِجر (مدائن صالح)**
-  - "جبل الوز" ← **جبل اللوز**
-  - "tabok" ← **قلعة تبوك**
-- لو ما فيه شي قريب، تطلع له: "تأكد من الإملاء، أو جرب اسم ثاني".
-- يبقى معها زر "اقترح هالمكان علينا" وزر "دوّر عليه في خرائط Google" مثل قبل.
+### What changed?
+**1) "Did you mean…?" for spelling mistakes:**
+- If the user types a name with a mistake and nothing is found, the **3 closest places** to what they typed appear, and clicking one corrects the search. Examples:
+  - "hegre" → **Hegra (Mada'in Salih)**
+  - "جبل الوز" → **جبل اللوز (Jabal al-Lawz)**
+  - "tabok" → **Tabuk Castle**
+- If nothing is close, it shows: "Check the spelling, or try another name".
+- The "Suggest this place" and "Search on Google Maps" buttons are still there as before.
 
-**٢) بحث ما يتأثر بطريقة الكتابة:**
-- البحث صار **ما يفرق** بين:
+**2) Search that doesn't depend on how a word is written:**
+- The search now **treats these as the same**:
   - أ / إ / آ / ا
   - ة / ه
   - ى / ي
-  - ؤ / و، و ئ / ي
-  - **التشكيل**، والأحرف الكبيرة والصغيرة
-- مثلاً "الطايف" تلقى **الطائف**، و"العُلا" تلقى **العلا**، و"مكه" تلقى **مكة**.
+  - ؤ / و, and ئ / ي
+  - **Diacritics**, and upper and lower case
+- For example, "الطايف" finds **الطائف** (Taif), "العُلا" finds **العلا** (AlUla), and "مكه" finds **مكة** (Makkah).
 
-**٣) رسالة إذا اللي انكتب مو اسم أصلاً:**
-- إذا كتب **أرقام أو رموز بس** (مثل "123" أو "@@") أو حرف واحد، تطلع: «… ما يبدو اسم مكان. جرب تكتب اسم مكان أو مدينة، مثلاً العلا أو أبها».
+**3) A message when what was typed isn't a name at all:**
+- If the user types **only numbers or symbols** (like "123" or "@@") or a single letter, it shows: "… doesn't look like a place name. Try the name of a place or a city, e.g. AlUla or Abha."
 
-### كيف يشتغل "قصدك"؟
-- لكل مكان نحسب **كم حرف لازم يتغير** (إضافة أو حذف أو تبديل) عشان اللي كتبه المستخدم يطلع داخل اسم المكان. هذي فكرة **مسافة ليفنشتاين (Levenshtein distance)**.
-- نقبل خطأ واحد لكل ٣ أحرف تقريباً، ونعرض الأقرب أول.
-- البحث بالاسم الإنجليزي والعربي والمدينة والمنطقة.
+### How does "Did you mean" work?
+- For each place, we count **how many letters need to change** (add, remove, or replace) for what the user typed to appear inside the place name. This is the idea of **Levenshtein distance**.
+- We allow about one mistake for every 3 letters, and show the closest first.
+- It searches the English and Arabic names, the city, and the region.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `app.js` | `normalizeSearch`، و `matchesSearch`، و `fuzzyDistance`، و `suggestPlaces`، ورسائل البحث الجديدة بالعربي والإنجليزي |
-| `places.html`، `map.html` | يستخدمون دالة البحث الجديدة |
-| `styles.css` | شكل الاقتراحات |
+| `app.js` | `normalizeSearch`, `matchesSearch`, `fuzzyDistance`, `suggestPlaces`, and the new search messages in Arabic and English |
+| `places.html`, `map.html` | Use the new search function |
+| `styles.css` | Style for the suggestions |
 
 ---
 
-## ١٤ أكتوبر ٢٠٢٦: الأرقام بالعربي في الواجهة العربية 🔢
+## October 14, 2026: Arabic numerals in the Arabic interface 🔢
 
-### وش تغير؟
-- لما يكون الموقع **بالعربي**، كل الأرقام صارت **عربية** (٠١٢٣٤٥٦٧٨٩) بدل الإنجليزية: عدد الأماكن، والتقييمات، والمسافات، والأسعار، وساعات الذروة، وأرقام الحاسبة، وغيرها.
-- الفاصلة العشرية صارت **٫** (مثلاً ★ ٤٫٧)، وفاصلة الآلاف صارت **٬** (مثلاً ٤٬٢٠٠ ريال).
-- لما يرجع المستخدم **للإنجليزي**، ترجع الأرقام إنجليزية.
+### What changed?
+- When the site is **in Arabic**, all numbers are now **Arabic numerals** (٠١٢٣٤٥٦٧٨٩) instead of Western ones: the number of places, ratings, distances, prices, peak hours, estimator numbers, and more.
+- The decimal point is now **٫** (e.g. ★ ٤٫٧), and the thousands separator is **٬** (e.g. ٤٬٢٠٠ SAR).
+- When the user switches back **to English**, the numbers go back to Western numerals.
 
-### كيف؟
-- الأرقام تنكتب في أماكن كثيرة بالكود، فبدل ما نعدل كل مكان، أضفنا في `app.js` دالة **تحوّل الأرقام في نص الصفحة نفسه** حسب اللغة.
-- **MutationObserver** يراقب الصفحة، وأي نص جديد ينضاف أو يتغير (مثل نتيجة الحاسبة أو نافذة على الخريطة) يتحول تلقائياً.
-- **ما تتحول:**
-  - خانات الكتابة، عشان المستخدم يكتب الأرقام عادي
-  - رخص الصور مثل "CC BY 2.0"
-  - سطر حقوق الخريطة
+### How?
+- Numbers are written in many places in the code, so instead of changing each one, we added a function in `app.js` that **converts the numbers in the page text itself** depending on the language.
+- A **MutationObserver** watches the page, and any new or changed text (like an estimator result or a map window) is converted automatically.
+- **Not converted:**
+  - Input boxes, so users can type numbers normally
+  - Photo licenses like "CC BY 2.0"
+  - The map's attribution line
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `app.js` | تحويل الأرقام حسب اللغة |
+| `app.js` | Converting numbers depending on the language |
 
 ---
 
-## ١٤ أكتوبر ٢٠٢٦: خط عربي جديد (Amiri) 🔤
+## October 14, 2026: New Arabic font (Amiri) 🔤
 
-### وش تغير؟
-- الخط العربي كان **Tahoma**، وهو خط نظام عادي وما يتناسق مع خطوط الإنجليزي.
-- صار **Amiri**، خط **نسخ كلاسيكي** أنيق، ويتناسق مع **Fraunces** (خط العناوين الإنجليزي الحالي) لأن الاثنين فيهم طابع كلاسيكي.
-- قارنّا **١٣ خيار** قبل ما نختار (Readex Pro، و IBM Plex، و Alexandria، و Rubik، و Changa، و Aref Ruqaa، وغيرها).
-- الخطوط الإنجليزية ما تغيرت: **Fraunces** للعناوين و **Inter** للنصوص.
+### What changed?
+- The Arabic font was **Tahoma**, an ordinary system font that didn't match the English fonts.
+- It's now **Amiri**, an elegant **classic Naskh** font that matches **Fraunces** (the current English heading font), because both have a classic style.
+- We compared **13 options** before choosing (Readex Pro, IBM Plex, Alexandria, Rubik, Changa, Aref Ruqaa, and others).
+- The English fonts didn't change: **Fraunces** for headings and **Inter** for text.
 
-### كيف ركّبناه؟
-- أضفنا Amiri **بعد** الخط الإنجليزي في كل قائمة خطوط، مثلاً `'Fraunces', 'Amiri Arabic', serif`. الحروف الإنجليزية تجي من الخط الإنجليزي، والحروف العربية مو موجودة فيه فالمتصفح ياخذها من Amiri تلقائياً. كذا كل نص بخطه الصح، حتى لو فيه عربي وإنجليزي مع بعض.
-- Amiri يطلع **أصغر** من الخطوط الإنجليزية بنفس الحجم، فكبّرنا حروفه العربية **١٨٪** (`size-adjust` في `@font-face`) عشان يتساوى الحجم.
-- زدنا المسافة بين أسطر العناوين العربية، لأن حروف Amiri طويلة.
-- `unicode-range` يخلي ملف الخط يتحمل بس للحروف العربية.
+### How we set it up
+- We added Amiri **after** the English font in every font list, e.g. `'Fraunces', 'Amiri Arabic', serif`. English letters come from the English font; Arabic letters aren't in it, so the browser takes them from Amiri automatically. That way every text uses the right font, even when Arabic and English are mixed.
+- Amiri looks **smaller** than the English fonts at the same size, so we enlarged its Arabic letters by **18%** (`size-adjust` in `@font-face`) to even out the size.
+- We added more space between lines of Arabic headings, because Amiri's letters are tall.
+- `unicode-range` makes the font file load only for Arabic letters.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `styles.css` | `@font-face` لـ Amiri، وإضافته لقوائم الخطوط، والمسافات |
+| `styles.css` | `@font-face` for Amiri, adding it to the font lists, and spacing |
 
 ---
 
-## ١٤ أكتوبر ٢٠٢٦: الترجمة العربية بصيغة المذكر ✍️
+## October 14, 2026: Arabic translation in the masculine form ✍️
 
-### وش تغير؟
-- النصوص العربية كانت تخاطب المستخدم بصيغة **المؤنث** (مثل "ابحثي"، "افتحي الخريطة"، "وش بتلقين").
-- صارت كلها بصيغة **المذكر**، لأنها الصيغة المعتادة لما نخاطب شخص ما نعرفه. مثلاً:
-  - "ابحثي، فلتري، أو رتبي" ← **"ابحث، فلتر، أو رتّب"**
-  - "وش بتلقين" ← **"وش بتلقى"**
-  - "ناوية تزورين منطقة ثانية؟" ← **"ناوي تزور منطقة ثانية؟"**
-  - "تواصلي وياني" ← **"تواصل معنا"**
-- شمل التغيير: الصفحة الرئيسية، والأماكن، والخريطة، والتواصل، وحاسبة التكاليف كاملة، ووصف **قرية الحبلة** ("توصلين" ← "توصل").
+### What changed?
+- The Arabic texts addressed the user in the **feminine** form (like "ابحثي", "افتحي الخريطة", "وش بتلقين").
+- They're now all in the **masculine** form, the usual form for addressing someone we don't know. For example:
+  - "ابحثي، فلتري، أو رتبي" → **"ابحث، فلتر، أو رتّب"** (search, filter, or sort)
+  - "وش بتلقين" → **"وش بتلقى"** (what you'll find)
+  - "ناوية تزورين منطقة ثانية؟" → **"ناوي تزور منطقة ثانية؟"** (planning to visit another region?)
+  - "تواصلي وياني" → **"تواصل معنا"** (contact us)
+- The change covers: the home page, places, map, contact, the whole trip cost estimator, and the description of **Al-Habala Village** ("توصلين" → "توصل").
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `app.js` | الترجمات العربية المشتركة |
-| `planner.html` | ترجمات حاسبة التكاليف |
-| `data.js` | وصف قرية الحبلة |
+| `app.js` | Shared Arabic translations |
+| `planner.html` | Trip cost estimator translations |
+| `data.js` | Al-Habala Village description |
 
 ---
 
-## ١٤ أكتوبر ٢٠٢٦: لمسات كحلية تناسب صورة السماء 🌙
+## October 14, 2026: Navy touches to match the sky photo 🌙
 
-### وش تغير؟
-- أيقونات قسم **"وش بتلقين"** في الصفحة الرئيسية (تاريخي، طبيعي، ديني، ترفيهي) كان كل وحدة بلون مختلف فاتح.
-- صارت كلها **كحلية متدرجة** مثل لون السماء في صورة الهيدر، وفيها **نقاط صغيرة بيضاء كأنها نجوم**، مع ظل خفيف.
-- تطلع حلوة بالوضعين: **الفاتح والداكن**.
-- **وبعدها دخّلنا الكحلي في ٣ أماكن ثانية:**
-  1. **أرقام الإحصائيات** في الرئيسية (٧٤، ١٣، ٥): صارت كحلية (فاتحة شوي بالوضع الداكن عشان تبين).
-  2. **الصورة البديلة** للأماكن اللي ما لها صورة (مثل سيتي ووك): بدل المربع الملون، صارت **سماء كحلية بنجوم** والأيقونة في النص.
-  3. **أرقام الخطوات ١، ٢، ٣** في حاسبة التكاليف: صارت دوائر كحلية.
-- **القاعدة:** البرتقالي للأزرار الأساسية (مثل "تصفح الأماكن" و"الاتجاهات")، والكحلي للزينة والمعلومات. كذا الموقع بلونين متناسقين مع صورة الهيدر: **سماء كحلية وصخور برتقالية**.
-- ألوان الكحلي صارت **متغيرات CSS** (`--navy-text`، `--sky`، `--sky-large`)، عشان لو بغينا نغيرها نعدلها في مكان واحد.
+### What changed?
+- The icons in the **"What you'll find"** section on the home page (historical, natural, religious, entertainment) each had a different light color.
+- They're now all **navy gradients** like the sky in the header photo, with **small white dots like stars**, and a soft shadow.
+- They look good in both **light and dark** mode.
+- **Then we brought navy into 3 more places:**
+  1. **The statistics numbers** on the home page (74, 13, 5): now navy (a little lighter in dark mode so they show).
+  2. **The placeholder image** for places without a photo (like City Walk): instead of a colored box, it's now **a navy sky with stars** and the icon in the middle.
+  3. **The step numbers 1, 2, 3** in the trip cost estimator: now navy circles.
+- **The rule:** orange for main buttons (like "Browse places" and "Directions"), and navy for decoration and information. So the site uses two colors that match the header photo: **a navy sky and orange rocks**.
+- The navy colors are now **CSS variables** (`--navy-text`, `--sky`, `--sky-large`), so they can be changed in one place.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `index.html` | شلنا الألوان المكتوبة داخل الأيقونات |
-| `styles.css` | متغيرات الكحلي، والأيقونات، والإحصائيات، والصورة البديلة، وخطوات الحاسبة |
+| `index.html` | Removed the colors written inside the icons |
+| `styles.css` | Navy variables, icons, statistics, placeholder image, and estimator steps |
 
 ---
 
-## ١٢ أكتوبر ٢٠٢٦: صورة الصفحة الرئيسية صارت أوضح 🌌
+## October 12, 2026: Sharper home page photo 🌌
 
-### وش تغير؟
-- صورة السماء الليلية في الصفحة الرئيسية كانت **خلفية بعرض الشاشة كلها** وفوقها الكلام، فكانت تتمدد وتطلع **مشوشة**. السبب إن الملف الأصلي صغير (٢٣٧٤ × ٩٦٠) ومضغوط.
-- صارت **هيدر (شريط) فوق** بعرض الصفحة وبزوايا مدورة، والعنوان والكلام **تحتها**:
-  - تنعرض **بشكلها الكامل** بدون قص ولا تمدد، فتطلع **أوضح بواجد**.
-  - **توقيع المصور يبين** تحت الصورة.
-  - ما عادت تنقلب بالعربي (قبل كانت تنقلب، والتوقيع ينقلب معها).
-- **إصلاح:** النص فوق في القائمة ("74 places across 13 regions") كان يطلع بالإنجليزي حتى بالعربي. الحين يتترجم: **"٧٤ مكان في ١٣ منطقة"**.
+### What changed?
+- The night sky photo on the home page was a **full-screen background** with the text on top, so it was stretched and looked **blurry**. The reason is that the original file is small (2374 × 960) and compressed.
+- It's now a **banner at the top**, as wide as the page with rounded corners, with the title and text **under it**:
+  - It's shown **in full**, without cropping or stretching, so it looks **much sharper**.
+  - **The photographer's signature is visible** under the photo.
+  - It no longer flips in Arabic (before, it flipped, and the signature flipped with it).
+- **Fix:** the text at the top in the menu ("74 places across 13 regions") showed in English even in Arabic. It's now translated: **"٧٤ مكان في ١٣ منطقة"**.
 
-### ملاحظة
-- لو حصلنا **الملف الأصلي بدقة أعلى** من المصور، بتصير الصورة أوضح بعد.
+### Note
+- If we get **the original, higher-resolution file** from the photographer, the photo will be even sharper.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `index.html` | الصورة صارت `<img>` فوق العنوان، وترجمة نص القائمة |
-| `contact.html` | ترجمة نص القائمة |
-| `styles.css` | تصميم الهيدر الجديد بدل الخلفية |
-| `app.js` | ترجمة `nav.meta` |
+| `index.html` | The photo is now an `<img>` above the title, and the menu text is translated |
+| `contact.html` | Menu text translated |
+| `styles.css` | New banner design instead of the background |
+| `app.js` | Translation for `nav.meta` |
 
 ---
 
-## ١٢ أكتوبر ٢٠٢٦: اقتراح أماكن حسب الميزانية 🎯
+## October 12, 2026: Suggest places by budget 🎯
 
-### وش تغير؟
-- صار فوق الحاسبة **اختيارين**:
-  - **📍 أعرف وين بروح:** نفس الحاسبة القديمة، تحسب تكلفة رحلة وحدة بالتفصيل.
-  - **💰 عندي ميزانية:** المستخدم يكتب **ميزانيته الكاملة** لكل المسافرين، والحاسبة تعرض **كل الأماكن اللي تناسبها**.
-- في وضع الميزانية:
-  - تقدرين تفلترين حسب **المنطقة** و**نوع المكان** (تاريخي، طبيعي، ...).
-  - نفس الاختيارات تأثر على النتيجة: من وين، والأشخاص، والليالي، والغرف، والسيارة أو الطيارة، والمستوى.
-  - الأماكن مرتبة **من الأرخص للأغلى**، ولكل مكان: صورته، وتكلفته التقريبية، و**كم يبقى من الميزانية**.
-  - إذا ما فيه مكان يناسب، تطلع نصيحة (ليالي أقل، أو مستوى اقتصادي، أو منطقة أقرب) و**أقرب ٣ خيارات** مع كم تزيد عن الميزانية.
-  - لما يضغط على أي مكان، تنتقل الحاسبة لوضع **"أعرف وين بروح"** بنفس المكان، ويقدر يختار فندق ويشوف التفاصيل.
-- **كيف تشتغل؟** نفس دالة الحساب (`estimate`) تنحسب لكل الأماكن الـ٧٤، ونخلي اللي مجموعها أقل من الميزانية. في هالوضع نستخدم سعر الفندق التقديري، لأن المستخدم ما اختار فندق لسا.
+### What changed?
+- The estimator now has **two choices** at the top:
+  - **📍 I know where I'm going:** the same estimator as before, the full cost of one trip.
+  - **💰 I have a budget:** the user types their **total budget** for all travelers, and the estimator shows **every place that fits it**.
+- In budget mode:
+  - You can filter by **region** and **type of place** (historical, natural, ...).
+  - The same choices affect the result: starting city, travelers, nights, rooms, car or plane, and travel style.
+  - Places are sorted **from cheapest to most expensive**, and each one shows its photo, approximate cost, and **how much of the budget is left**.
+  - If nothing fits, it gives advice (fewer nights, budget style, or a closer region) and the **3 closest options** with how much they go over budget.
+  - Clicking a place switches the estimator to **"I know where I'm going"** with that place, so the user can pick a hotel and see the details.
+- **How it works:** the same calculation function (`estimate`) runs for all 74 places, and keeps those whose total is under the budget. In this mode we use the estimated hotel price, because the user hasn't picked a hotel yet.
 
-### ملاحظة
-- مع الأرقام التجريبية الحالية، تكلفة البنزين قليلة مقارنة بالفندق والأكل، فالفرق بين الأماكن بالسيارة صغير. لما نحط الأرقام الرسمية لكل منطقة (`regionFactor` وأسعار الفنادق) بيصير الفرق أوضح.
+### Note
+- With the current sample numbers, fuel costs little compared to hotels and food, so the difference between places by car is small. Once we add official numbers for each region (`regionFactor` and hotel prices), the difference will be clearer.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `planner.html` | وضع الميزانية، والفلاتر، وقائمة الأماكن المناسبة |
-| `styles.css` | تصميم أزرار الوضعين وقائمة الأماكن |
-| `README.md` | الميزة الجديدة |
+| `planner.html` | Budget mode, filters, and the list of places that fit |
+| `styles.css` | Design of the two mode buttons and the list of places |
+| `README.md` | The new feature |
 
 ---
 
-## ١٢ أكتوبر ٢٠٢٦: حساب كامل في حاسبة التكاليف + كل الفنادق 🏨
+## October 12, 2026: Full trip calculation in the estimator + all hotels 🏨
 
-### وش تغير؟
-**١) حساب أدق للمسافرين:**
-- بدل "عدد المسافرين"، صار فيه **بالغين** و**أطفال (أقل من ١٢ سنة)**.
-- الطفل يُحسب **بنص** سعر الأكل والأنشطة، و**٧٥٪** من تذكرة الطيارة.
-- **عدد الغرف** صار المستخدم يحدده بنفسه. الحاسبة تقترح رقم (غرفة لكل شخصين بالغين)، وإذا غيّره المستخدم تحترم اختياره.
-- **عدد السيارات** ينحسب تلقائياً: كل سيارة لـ٥ أشخاص، يعني ٨ مسافرين = سيارتين = بنزين ضعف.
+### What changed?
+**1) More accurate travelers:**
+- Instead of "number of travelers", there are now **adults** and **children (under 12)**.
+- A child counts as **half** for food and activities, and **75%** of a plane ticket.
+- The user now sets the **number of rooms** themselves. The estimator suggests a number (one room for every two adults), and if the user changes it, their choice is kept.
+- The **number of cars** is calculated automatically: one car for every 5 people, so 8 travelers = 2 cars = twice the fuel.
 
-**٢) كل الفنادق حول الوجهة:**
-- قسم جديد **"وين بتسكنين"** فيه **كل الفنادق** حول المكان اللي اخترتيه، من الأقرب للأبعد:
-  - كل الفنادق اللي على بعد ٣٠ كم
-  - وأقرب ١٠ على الأقل للأماكن البعيدة (مثل جبل اللوز)
-  - وبحد أقصى ١٠٠٠ فندق في المدن الكبيرة
-- فيه **بحث بالاسم** (مثلاً "hilton")، وزر "اعرضي فنادق أكثر".
-- لما يختار فندق يطلع زر **"شوفي السعر في خرائط Google"**. يشوف السعر الحقيقي لتاريخه ويكتبه في خانة **"سعر الغرفة بالليلة"**، والحاسبة تحسب عليه.
-- إذا ما كتب سعر، تستخدم الحاسبة **السعر التقديري** وتوضح كم هو.
+**2) All hotels around the destination:**
+- A new **"Where you'll stay"** section lists **all the hotels** around the chosen place, from nearest to farthest:
+  - All hotels within 30 km
+  - At least the nearest 10 for remote places (like Jabal al-Lawz)
+  - Up to 1,000 hotels in big cities
+- There's a **search by name** (e.g. "hilton"), and a "Show more hotels" button.
+- When a hotel is chosen, a **"Check the price on Google Maps"** button appears. The user checks the real price for their dates and types it in the **"Price per room per night"** box, and the estimator uses it.
+- If no price is typed, the estimator uses the **estimated price** and shows how much it is.
 
-**٣) ليش ما جبنا أسعار الفنادق تلقائياً؟**
-- أسعار الفنادق **تتغير كل يوم** حسب التاريخ والموسم، وما فيه مصدر مجاني يعطيها.
-- Booking و Google ما يسمحون ناخذ أسعارهم بشكل آلي.
-- البديل الرسمي: **الهيئة العامة للإحصاء** تنشر متوسط سعر الغرفة لكل منطقة كل ربع سنة. هذا اللي بنستخدمه لاحقاً للسعر التقديري.
+**3) Why didn't we get hotel prices automatically?**
+- Hotel prices **change every day** with the date and season, and no free source provides them.
+- Booking and Google don't allow their prices to be collected automatically.
+- The official alternative: **GASTAT** publishes the average room price for each region every quarter. That's what we'll use later for the estimated price.
 
-### بيانات الفنادق (Data Pipeline جديد)
-- سحبنا **٥٢٧٦ فندق ومنتجع وشقق فندقية** من Overture Maps (خلية جديدة في `services.ipynb`) ← `data/raw/hotels_overture.csv`.
-- **ثلاث ملفات SQL جديدة** (مشروحة بالتعليقات):
+### Hotel data (new data pipeline)
+- We pulled **5,276 hotels, resorts, and serviced apartments** from Overture Maps (a new cell in `services.ipynb`) → `data/raw/hotels_overture.csv`.
+- **Three new SQL files** (explained with comments):
 
-| الملف | وش يسوي |
+| File | What it does |
 |---|---|
-| `05_import_hotels.sql` | ينشئ جدول `hotels` ويعبيه |
-| `06_clean_hotels.sql` | يضيف `is_valid` ويعلّم اللي مو فنادق (٤٤٣ صف) |
-| `07_hotels_near_places.sql` | يحسب الفنادق حول كل مكان ← جدول `place_hotels` |
+| `05_import_hotels.sql` | Creates the `hotels` table and fills it |
+| `06_clean_hotels.sql` | Adds `is_valid` and marks rows that aren't hotels (443 rows) |
+| `07_hotels_near_places.sql` | Finds the hotels around each place → `place_hotels` table |
 
-- **قواعد التنظيف** في `06`:
-  1. ثقة المصدر أقل من ٠٫٤ (٢٣٥ صف)
-  2. مكاتب حجوزات وشركات مثل "حجوزات فنادق مكة" (٢٠ صف)
-  3. أسماء لشي ثاني: مطعم، أو سكن عمال (compound)، أو شارع، أو حي، أو عنوان مثل "Yanbu, Saudi Arabia" (٢١٨ صف). **إلا** إذا فيها كلمة فندق، مثل "Clarion Hotel Jeddah Airport"
-- بقى **٤٨٣٣ فندق صالح**، منها **٤٤٢٥** حول أماكننا.
-- النتيجة في `data/clean/place_hotels.csv` (١٧٨٠٩ صف) ← `hotels.js` (حوالي ٣٨٠ كيلوبايت).
-- حسبناها بـ Python بنفس منطق الـ SQL. تقدرين تشغلين `05` ← `06` ← `07` في Workbench وتتأكدين.
+- **Cleaning rules** in `06`:
+  1. Source confidence below 0.4 (235 rows)
+  2. Booking offices and companies, like "حجوزات فنادق مكة" (Makkah hotel bookings) (20 rows)
+  3. Names of something else: a restaurant, workers' housing (compound), a street, a neighborhood, or an address like "Yanbu, Saudi Arabia" (218 rows). **Unless** the name has the word hotel, like "Clarion Hotel Jeddah Airport"
+- **4,833 valid hotels** remained, **4,425** of them around our places.
+- The result is in `data/clean/place_hotels.csv` (17,809 rows) → `hotels.js` (about 380 KB).
+- We calculated it in Python with the same logic as the SQL. You can run `05` → `06` → `07` in Workbench to check.
 
-### ملاحظة
-- بعض الفنادق مكررة في بيانات Overture (مثلاً DoubleTree مرتين بإحداثيات مختلفة شوي). نقدر نشيل التكرار لاحقاً.
+### Note
+- Some hotels are duplicated in the Overture data (e.g. DoubleTree twice with slightly different coordinates). We can remove the duplicates later.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `planner.html` | بالغين وأطفال، والغرف، والسيارات، وقسم الفنادق، وخانة السعر |
-| `costs.js` | `childFactor` و `peoplePerCar` |
-| `hotels.js` | ملف جديد: الفنادق حول كل مكان |
-| `styles.css` | تصميم قائمة الفنادق |
-| `services.ipynb` | خلية لسحب الفنادق |
-| `sql/05`، `sql/06`، `sql/07` | ملفات جديدة |
-| `data/raw/hotels_overture.csv`، `data/clean/place_hotels.csv` | بيانات جديدة |
-| `README.md` | الميزة والملفات |
+| `planner.html` | Adults and children, rooms, cars, the hotels section, and the price box |
+| `costs.js` | `childFactor` and `peoplePerCar` |
+| `hotels.js` | New file: hotels around each place |
+| `styles.css` | Design of the hotel list |
+| `services.ipynb` | Cell to pull the hotels |
+| `sql/05`, `sql/06`, `sql/07` | New files |
+| `data/raw/hotels_overture.csv`, `data/clean/place_hotels.csv` | New data |
+| `README.md` | The feature and the files |
 
 ---
 
-## ١٢ أكتوبر ٢٠٢٦: صفحة حاسبة تكاليف الرحلة 💰
+## October 12, 2026: Trip cost estimator page 💰
 
-### وش تغير؟
-- **صفحة جديدة `planner.html`** ("تكلفة الرحلة" في القائمة فوق) لأي أحد يبي يعرف **تقريباً** كم بتكلفه رحلته.
-- **أول الصفحة** فيه:
-  - **تنبيه واضح** إنها **تقدير تقريبي مو سعر نهائي**، وإن الأرقام حالياً **تجريبية**
-  - **٣ خطوات** تشرح كيف تستخدمينها
-- **يختار المستخدم:**
-  - من وين بيطلع (١٧ مدينة)
-  - وين بيروح (أي مكان من الـ٧٤، مقسمة حسب المنطقة)
-  - عدد الليالي والمسافرين
-  - سيارة أو طيارة، ونوع السيارة
-  - مستوى الرحلة: اقتصادية، أو مريحة، أو فاخرة
-- **تطلع النتيجة مباشرة** مع أي تغيير:
-  - المجموع التقريبي، والمدى المتوقع (مثلاً "غالباً بين ٣٦٠٠ و ٥٣٠٠ ريال")، ونصيب كل شخص
-  - المسافة ووقت السواقة وعدد الغرف
-  - **تفاصيل التكلفة** بأشرطة: الطريق، والفندق، والأكل، والأنشطة
-  - قسم **"كيف انحسبت التكلفة؟"** يشرح كل معادلة بالأرقام
-- تنبيه لو المكان قريب والمستخدم اختار طيارة، أو لو المكان داخل مدينته.
-- قسم **وش يشمل ووش ما يشمل** (مثلاً ما يشمل التسوق وارتفاع الأسعار في المواسم).
-- كل **الأرقام في ملف واحد `costs.js`**، عشان نبدلها بسهولة بأرقام حقيقية بعدين.
-  - مثل متوسط الإنفاق بالليلة لكل منطقة من بيانات هيئة السياحة.
-  - فيه `regionFactor` لكل منطقة (حالياً كلها ١)، و`isSample: true` اللي يظهر تنبيه "الأرقام تجريبية". إذا صارت الأرقام حقيقية نخليه `false` ويختفي التنبيه.
-- الصفحة تشتغل **بالعربي والإنجليزي** و**على الجوال**.
-- انضاف رابط "تكلفة الرحلة" في القائمة بكل الصفحات.
+### What changed?
+- **New page `planner.html`** ("Trip cost" in the top menu) for anyone who wants to know **roughly** how much their trip will cost.
+- **The top of the page** has:
+  - **A clear notice** that it's **a rough estimate, not a final price**, and that the numbers are currently **sample values**
+  - **3 steps** explaining how to use it
+- **The user chooses:**
+  - Where they're starting from (17 cities)
+  - Where they're going (any of the 74 places, grouped by region)
+  - Number of nights and travelers
+  - Car or plane, and the type of car
+  - Travel style: budget, comfortable, or luxury
+- **The result appears right away** with any change:
+  - The approximate total, the expected range (e.g. "Usually between 3,600 and 5,300 SAR"), and the cost per person
+  - Distance, driving time, and number of rooms
+  - **A cost breakdown** with bars: getting there, hotel, food, and activities
+  - A **"How is this calculated?"** section that explains each formula with the numbers
+- A warning if the place is close and the user chose a plane, or if the place is in their own city.
+- A **What's included / not included** section (e.g. shopping and seasonal price rises are not included).
+- All **the numbers are in one file, `costs.js`**, so they can easily be replaced with real numbers later.
+  - Such as the average spending per night for each region from the Tourism Authority data.
+  - It has a `regionFactor` for each region (currently all 1), and `isSample: true`, which shows the "sample numbers" notice. When the numbers are real, we set it to `false` and the notice disappears.
+- The page works **in Arabic and English** and **on phones**.
+- A "Trip cost" link was added to the menu on every page.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `planner.html` | صفحة جديدة |
-| `costs.js` | ملف جديد فيه كل الأرقام المؤقتة والمدن |
-| `styles.css` | تصميم الصفحة، وتكبير قائمة الجوال لأنها صارت ٥ روابط |
-| `app.js` | ترجمة رابط القائمة |
-| `index.html`، `places.html`، `map.html`، `contact.html` | رابط الصفحة الجديدة في القائمة |
-| `README.md` | الميزة الجديدة والملفات |
+| `planner.html` | New page |
+| `costs.js` | New file with all the temporary numbers and cities |
+| `styles.css` | Page design, and a bigger phone menu because it now has 5 links |
+| `app.js` | Translation for the menu link |
+| `index.html`, `places.html`, `map.html`, `contact.html` | Link to the new page in the menu |
+| `README.md` | The new feature and the files |
 
 ---
 
-## ١٢ أكتوبر ٢٠٢٦: شرح واضح لملفات SQL 📝
+## October 12, 2026: Clear explanations for the SQL files 📝
 
-### وش تغير؟
-- كل ملفات SQL الأربعة صار فيها **تعليقات بالإنجليزي تشرح كل استعلام**:
-  - **فوق كل ملف:** وش يسوي، ومن وين البيانات، ومتى وكيف تشغلينه (Step 1 of 4 ... Step 4 of 4).
-  - **`01` و `02`:** شرح كل عمود في الجدول، وليش `utf8mb4` و `SET NAMES`، وكيف تنكتب العلامة `'` داخل النص.
-  - **`03`:** ليش نحتاج التنظيف، ووش يسوي `SQL_SAFE_UPDATES`، و `IN`، و `CASE`، و `REGEXP` مع `|`، وليش `DEFAULT 1`، وكيف `SUM(is_valid = 0)` يعد الصفوف.
-  - **`04`:** شرح الاستعلام الداخلي والخارجي، و `ST_Distance_Sphere` وترتيب `POINT(longitude, latitude)`، و `ROW_NUMBER() OVER (PARTITION BY …)`، وليش صندوق الدرجتين، وليش شرط `rank_num <= 3` لازم يكون في الاستعلام الخارجي، وليش `LIMIT 5000`.
-- **الاستعلامات نفسها ما تغيرت.** تأكدنا إن الكود بدون التعليقات نفسه بالضبط. الشي الوحيد اللي انحذف سطرين `SELECT COUNT(*)` مكررين في آخر ملف `02`.
+### What changed?
+- All four SQL files now have **English comments explaining every query**:
+  - **At the top of each file:** what it does, where the data comes from, and when and how to run it (Step 1 of 4 ... Step 4 of 4).
+  - **`01` and `02`:** explanation of each column in the table, why `utf8mb4` and `SET NAMES`, and how to write the `'` character inside text.
+  - **`03`:** why we need the cleaning, what `SQL_SAFE_UPDATES`, `IN`, `CASE`, and `REGEXP` with `|` do, why `DEFAULT 1`, and how `SUM(is_valid = 0)` counts rows.
+  - **`04`:** explanation of the inner and outer query, `ST_Distance_Sphere` and the order `POINT(longitude, latitude)`, `ROW_NUMBER() OVER (PARTITION BY …)`, why the two-degree box, why the `rank_num <= 3` condition must be in the outer query, and why `LIMIT 5000`.
+- **The queries themselves didn't change.** We checked that the code without the comments is exactly the same. The only thing removed was two duplicate `SELECT COUNT(*)` lines at the end of `02`.
 
-### ليش؟
-عشان تقدرين تذاكرين منها، وأي أحد يفتح المشروع في GitHub يفهم كل خطوة.
+### Why?
+So you can study from them, and anyone who opens the project on GitHub understands every step.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `sql/01_import_services.sql` | تعليقات |
-| `sql/02_import_places.sql` | تعليقات، وحذف سطرين مكررين |
-| `sql/03_clean_services.sql` | تعليقات |
-| `sql/04_nearest_services.sql` | تعليقات |
+| `sql/01_import_services.sql` | Comments |
+| `sql/02_import_places.sql` | Comments, and two duplicate lines removed |
+| `sql/03_clean_services.sql` | Comments |
+| `sql/04_nearest_services.sql` | Comments |
 
 ---
 
-## ١٢ أكتوبر ٢٠٢٦: الخدمات القريبة للأماكن الجديدة، وترتيب ملفات SQL 🛠️
+## October 12, 2026: Nearby services for the new places, and organized SQL files 🛠️
 
-### وش تغير؟
-- **الأماكن الـ١٨ الجديدة صار لها خدمات قريبة**، في نافذة "خدمات قريبة" وعلى الخريطة. صار عندنا **١١١٠ خدمة** (٧٤ مكان × ١٥) بدل ٨٤٠.
-- **ملفات SQL صارت تشتغل بالترتيب من الصفر:**
+### What changed?
+- **The 18 new places now have nearby services**, in the "Nearby services" window and on the map. We now have **1,110 services** (74 places × 15) instead of 840.
+- **The SQL files now run in order from scratch:**
 
-| الملف | وش يسوي |
+| File | What it does |
 |---|---|
-| `01_import_services.sql` | يستورد الخدمات (ما تغير) |
-| `02_import_places.sql` | يستورد **الأماكن الـ٧٤ كلها** (قبل كان ٥٦) |
-| `03_clean_services.sql` | **ملف جديد**: كل أوامر التنظيف اللي شغلناها في Workbench (توحيد أسماء المدن + `is_valid` للصيدليات والمحطات والبنوك) |
-| `04_nearest_services.sql` | حساب أقرب الخدمات (كان اسمه `03_nearest_services.sql`) |
+| `01_import_services.sql` | Imports the services (unchanged) |
+| `02_import_places.sql` | Imports **all 74 places** (before: 56) |
+| `03_clean_services.sql` | **New file**: all the cleaning commands we ran in Workbench (standardizing city names + `is_valid` for pharmacies, gas stations, and banks) |
+| `04_nearest_services.sql` | Calculates the nearest services (was called `03_nearest_services.sql`) |
 
-- أوامر التنظيف كانت **مو محفوظة في أي ملف**. شغلناها في Workbench بس، يعني لو أحد شغّل الملفات من البداية كان الملف `03` القديم بيطلع خطأ لأن عمود `is_valid` مو موجود. جمعناها من سجل Workbench في ملف واحد.
-- حذفنا `04_add_places.sql`، لأن الأماكن الجديدة صارت داخل `02`.
-- أضفنا `LIMIT 5000` لآخر استعلام في ملف الخدمات. بدونه Workbench يعرض **أول ١٠٠٠ صف بس**، والنتيجة الحين ١١١٠ صف، فكان التصدير بينقص.
+- The cleaning commands **weren't saved in any file**. We had only run them in Workbench, so if anyone ran the files from the start, the old `03` file would have failed because the `is_valid` column didn't exist. We collected them from the Workbench history into one file.
+- We deleted `04_add_places.sql`, because the new places are now inside `02`.
+- We added `LIMIT 5000` to the last query in the services file. Without it, Workbench shows **only the first 1,000 rows**, and the result is now 1,110 rows, so the export would have been incomplete.
 
-### كيف تأكدنا إنه صحيح؟
-- طبقنا **نفس منطق الـ SQL بالضبط** بـ Python على نفس البيانات (نفس شروط التنظيف، ونفس صندوق الدرجتين، ونفس معادلة المسافة).
-- قارنّا النتيجة بملف MySQL اللي صدّرناه قبل: **٨٣٩ من ٨٤٠ صف متطابقة**. الفرق الوحيد مقهيين على نفس المسافة بالضبط، والترتيب بينهم عشوائي.
-- صفوف الأماكن القديمة في الـ CSV **ما تغيرت** (نفس تصدير MySQL)، وانضافت صفوف الأماكن الجديدة تحتها.
+### How did we check it's correct?
+- We applied **exactly the same SQL logic** in Python to the same data (same cleaning rules, same two-degree box, same distance formula).
+- We compared the result with the MySQL file we exported before: **839 of 840 rows match**. The only difference is two cafes at exactly the same distance, whose order is random.
+- The rows for the old places in the CSV **didn't change** (same MySQL export), and the new places' rows were added below them.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `sql/02_import_places.sql` | ٧٤ مكان |
-| `sql/03_clean_services.sql` | جديد |
-| `sql/04_nearest_services.sql` | اسم جديد، و `LIMIT 5000` |
-| `sql/04_add_places.sql` | انحذف |
-| `data/clean/nearest_services.csv` | ٢٧٠ صف جديد |
-| `services.js` | الخدمات لكل الأماكن الـ٧٤ |
-| `README.md` | ترتيب ملفات SQL |
+| `sql/02_import_places.sql` | 74 places |
+| `sql/03_clean_services.sql` | New |
+| `sql/04_nearest_services.sql` | New name, and `LIMIT 5000` |
+| `sql/04_add_places.sql` | Deleted |
+| `data/clean/nearest_services.csv` | 270 new rows |
+| `services.js` | Services for all 74 places |
+| `README.md` | Order of the SQL files |
 
 ---
 
-## ١٢ أكتوبر ٢٠٢٦: ١٨ مكان جديد 📍 (صار المجموع ٧٤)
+## October 12, 2026: 18 new places 📍 (74 in total)
 
-### وش تغير؟
-- انضاف **١٨ مكان جديد**، و**١٧ منها بصور حقيقية** من Wikimedia Commons، ومع كل صورة اسم المصور ورخصتها:
+### What changed?
+- **18 new places** were added, **17 of them with real photos** from Wikimedia Commons, each with the photographer's name and license:
 
-| المنطقة | الأماكن الجديدة |
+| Region | New places |
 |---|---|
-| الرياض | قصر المصمك، بوليفارد سيتي |
-| مكة (الطائف) | الشفا، الهدا، قصر شبرا |
-| المدينة (العلا) | البلدة القديمة، مرايا |
-| الشرقية | إثراء (الظهران)، سيتي ووك (الظهران)، برج المياه، كورنيش الخبر، أجدان ووك، جبل القارة (الأحساء) |
-| عسير | قرية الحبلة |
-| تبوك | جبل اللوز |
-| حائل | جبال أجا |
-| جازان | جبال فيفاء |
-| الجوف | أعمدة الرجاجيل |
+| Riyadh | Masmak Fortress, Boulevard City |
+| Makkah (Taif) | Al-Shafa, Al-Hada, Shubra Palace |
+| Madinah (AlUla) | AlUla Old Town, Maraya |
+| Eastern Province | Ithra (Dhahran), City Walk (Dhahran), Khobar Water Tower, Khobar Corniche, Ajdan Walk, Jabal Al-Qarah (Al-Ahsa) |
+| Aseer | Al-Habala Village |
+| Tabuk | Jabal al-Lawz |
+| Hail | Aja Mountains |
+| Jazan | Fayfa Mountains |
+| Al-Jouf | Rajajil Columns |
 
-- لكل مكان: الاسم والوصف **بالعربي والإنجليزي**، والمدينة، والإحداثيات. أخذنا الإحداثيات من Wikipedia و Overture Maps.
-- **سيتي ووك** ما لقينا له صورة مرخصة، فيطلع بصورة بديلة حسب النوع.
-- **التقييمات وأوقات الذروة** للأماكن الجديدة **تجريبية** مثل الباقي.
-- عدد الأماكن تحدّث في كل الصفحات (من ٥٦ إلى ٧٤).
-- الفوتر صار يوضح إن **التقييمات وأوقات الذروة بيانات تجريبية**، بدل ما يقول إن "بيانات الأماكن توضيحية"، لأن الأماكن والصور الحين حقيقية.
-- ملف SQL جديد `sql/04_add_places.sql` يضيف الأماكن الجديدة لجدول `places` في MySQL.
+- Each place has: its name and description **in Arabic and English**, the city, and the coordinates. We took the coordinates from Wikipedia and Overture Maps.
+- **City Walk** has no licensed photo, so it shows a placeholder image based on its type.
+- **Ratings and peak hours** for the new places are **sample data** like the rest.
+- The number of places was updated on every page (from 56 to 74).
+- The footer now says that **ratings and peak hours are sample data**, instead of saying the "place data is illustrative", because the places and photos are now real.
+- A new SQL file, `sql/04_add_places.sql`, adds the new places to the `places` table in MySQL.
 
-### باقي
-- **المرفأ (الراكة)** و**قصر الإمارة بنجران**: ما لقينا إحداثياتهم الدقيقة، ننتظر روابطهم من Google Maps.
-- **الخدمات القريبة** للأماكن الجديدة: تطلع بعد ما نشغّل الـ Data Pipeline (`04` ← `03` ← تصدير CSV ← تحديث `services.js`).
+### Still to do
+- **Al-Marfa (Al-Rakah)** and **the Emirate Palace in Najran**: we didn't find their exact coordinates; waiting for their Google Maps links.
+- **Nearby services** for the new places: they'll appear after we run the data pipeline (`04` → `03` → export CSV → update `services.js`).
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `data.js` | ١٨ مكان جديد |
-| `data/clean/places.csv` | نفس الأماكن الجديدة (من رقم ٥٧ إلى ٧٤) |
-| `sql/04_add_places.sql` | ملف جديد لإضافة الأماكن في MySQL |
-| `index.html`، `places.html`، `map.html`، `contact.html` | عدد الأماكن ونص الفوتر |
-| `app.js` | ترجمة نص الفوتر |
-| `README.md` | عدد الأماكن والصور |
+| `data.js` | 18 new places |
+| `data/clean/places.csv` | The same new places (numbers 57 to 74) |
+| `sql/04_add_places.sql` | New file to add the places in MySQL |
+| `index.html`, `places.html`, `map.html`, `contact.html` | Number of places and footer text |
+| `app.js` | Footer text translation |
+| `README.md` | Number of places and photos |
 
 ---
 
-## ١٢ أكتوبر ٢٠٢٦: الخدمات القريبة على الخريطة 🗺️
+## October 12, 2026: Nearby services on the map 🗺️
 
-### وش تغير؟
-- في **صفحة الخريطة**، لما تختار مكان (من القائمة أو من الدبوس)، تطلع **الخدمات القريبة منه كأيقونات على الخريطة**:
-  ⛽ محطات بنزين · 💊 صيدليات · 🍽️ مطاعم · ☕ مقاهي · 🏦 بنوك وصرافات
-- كل أيقونة لها **لون خاص** يختلف عن ألوان الأماكن السياحية، عشان ما تختلط.
-- لما تضغط على الأيقونة يطلع: **اسم الخدمة، ونوعها، وكم كيلو تبعد**، ورابط **"الاتجاهات"** يفتح Google Maps.
-- الخريطة **تقرّب تلقائياً** بحيث يبين المكان وأقرب خدمة من كل نوع.
-- انضافت **لوحة صغيرة فوق الخريطة** فيها مربعات اختيار، تقدر **تخفي أو تظهر** أي نوع (مثلاً تبي تشوف المحطات بس).
-- لما تختار مكان ثاني، تنمسح خدمات المكان القديم وتطلع خدمات الجديد.
-- اللوحة والنوافذ تتغير مع **اللغة** (عربي/إنجليزي).
+### What changed?
+- On the **map page**, when you choose a place (from the list or its pin), **its nearby services appear as icons on the map**:
+  ⛽ Gas stations · 💊 Pharmacies · 🍽️ Restaurants · ☕ Cafes · 🏦 Banks and ATMs
+- Each icon has **its own color**, different from the tourist place colors, so they don't get mixed up.
+- Clicking an icon shows: **the service's name, its type, and how many kilometers away it is**, and a **"Directions"** link that opens Google Maps.
+- The map **zooms automatically** so the place and the nearest service of each type are visible.
+- A **small panel on the map** has checkboxes to **hide or show** any type (e.g. to see only gas stations).
+- When you choose another place, the old place's services are cleared and the new one's appear.
+- The panel and windows change with **the language** (Arabic/English).
 
-### ليش؟
-عشان الزائر يشوف **وين** الخدمات بالضبط حول المكان، مو بس قائمة أسماء ومسافات.
+### Why?
+So visitors can see **exactly where** the services are around the place, not just a list of names and distances.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `map.html` | طبقة للخدمات (`serviceLayer`)، دالة `showServicesOnMap`، ولوحة التحكم بالأنواع |
-| `styles.css` | شكل أيقونات الخدمات واللوحة |
+| `map.html` | A layer for services (`serviceLayer`), the `showServicesOnMap` function, and the panel for the types |
+| `styles.css` | Style for the service icons and the panel |
 
 ---
 
-## ١٢ أكتوبر ٢٠٢٦: تنظيف المحطات والبنوك المصنفة غلط
+## October 12, 2026: Cleaning misclassified gas stations and banks
 
-### وش تغير؟
-- بنفس طريقة الصيدليات، علمنا بالـ SQL الخدمات اللي **اسمها ما يدل على نوعها** كغير موثوقة (`is_valid = 0`):
-  - ⛽ **١٤٧ "محطة بنزين"** طلعت مثلاً مراكز صيانة سيارات، وورش، ومغاسل، ووكالات، وحتى مطعم "حاشي باشا" 😄
-  - 🏦 **٦٨ "بنك"** طلعت مثلاً محلات عود، ومحل شنط، ومحل مواد غذائية
-- أسماء **سلاسل المحطات** (Shell، وADNOC، وساسكو، والدريس…) و**البنوك** (الراجحي، والأهلي، وساب…) انضافت للقائمة عشان ما تنشال بالغلط.
-- **أعدنا تشغيل** `sql/03_nearest_services.sql` (نفس الـ Data Pipeline)، وصدرنا النتيجة من جديد.
-- **٢٨ خدمة تغيرت** في الموقع (١٥ بنك و١٣ محطة). مثلاً:
-  - أقرب "بنك" لحي الطريف كان **"Almajed For Oud"** (محل عود)، والحين صار **بنك الرياض**
-  - أقرب "محطة" للمسجد الحرام كانت **مركز وزن وترصيص**، والحين صارت **محطة نفط**
+### What changed?
+- The same way as the pharmacies, we used SQL to mark services **whose name doesn't match their type** as unreliable (`is_valid = 0`):
+  - ⛽ **147 "gas stations"** turned out to be, for example, car service centers, workshops, car washes, dealerships, and even a restaurant, "Hashi Basha" 😄
+  - 🏦 **68 "banks"** turned out to be, for example, oud shops, a bag shop, and a grocery store
+- Names of **gas station chains** (Shell, ADNOC, SASCO, Aldrees…) and **banks** (Al Rajhi, SNB, SAB…) were added to the list so they don't get removed by mistake.
+- We **re-ran** `sql/03_nearest_services.sql` (the same data pipeline), and exported the result again.
+- **28 services changed** on the site (15 banks and 13 gas stations). For example:
+  - The nearest "bank" to At-Turaif District was **"Almajed For Oud"** (an oud shop), and now it's **Riyad Bank**
+  - The nearest "gas station" to Masjid al-Haram was **a wheel balancing center**, and now it's **a fuel station**
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `data/clean/nearest_services.csv` | النتيجة الجديدة بعد التنظيف |
-| `services.js` | تحديث من الملف الجديد |
+| `data/clean/nearest_services.csv` | The new result after cleaning |
+| `services.js` | Updated from the new file |
 
 ---
 
-## ١٢ أكتوبر ٢٠٢٦: صورتين حقيقيتين إضافية
+## October 12, 2026: Two more real photos
 
-### وش تغير؟
-- صار **٤٦ مكان** فيه صورة حقيقية، والباقي **١٠**.
-- **عنيزة القديمة:** صورة سوق المسوكف الشعبي (هيئة التراث، CC BY-SA 4.0)
-- **واحة الأحساء:** صورة نخيل الأحساء (FirasHaddad75، CC BY-SA 4.0)
-- بحثت مرة ثانية بكلمات مختلفة بالعربي والإنجليزي للأماكن الـ ١٢، وما لقيت صور مرخصة ومطابقة للعشرة الباقية.
+### What changed?
+- **46 places** now have a real photo, with **10** left.
+- **Unaizah Old Town:** a photo of the traditional Al-Musawkaf market (Heritage Commission, CC BY-SA 4.0)
+- **Al-Ahsa Oasis:** a photo of Al-Ahsa's palm trees (FirasHaddad75, CC BY-SA 4.0)
+- I searched again with different words in Arabic and English for the 12 places, and found no licensed photos that match the remaining 10.
 
-### الأماكن اللي للحين بدون صورة (١٠)
-سوق بريدة المركزي، وبحيرة الأسياح، وكورنيش جازان، وشلال الإدابي، وزيبلاين الباحة، ومتحف الحدود الشمالية، ومحمية الغرابة، وقرية لينة التراثية، وجزيرة أبو علي، وجزيرة كُرَان.
+### Places still without a photo (10)
+Buraydah Central Market, Al-Asyah Lake, Jazan Corniche, Al Idabi Waterfall, Al-Baha Zipline, North Borders Museum, Al-Gharaba Nature Reserve, Linah Heritage Village, Abu Ali Island, and Karan Island.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `data.js` | `image_url` و `image_credit` للمكانين |
-| `README.md` | تحديث عدد الصور |
+| `data.js` | `image_url` and `image_credit` for the two places |
+| `README.md` | Updated photo count |
 
 ---
 
-## ١١ أكتوبر ٢٠٢٦: ميزة الخدمات القريبة 🧭
+## October 11, 2026: Nearby services feature 🧭
 
-### وش تغير؟
-- كل مكان سياحي صار له زر **🧭 خدمات قريبة** في صفحة الأماكن وصفحة الخريطة.
-- لما تضغطين عليه، تطلع نافذة فيها **أقرب ٣ من كل خدمة**: ⛽ محطات بنزين، و💊 صيدليات، و🍽️ مطاعم، و☕ مقاهي، و🏦 بنوك وصرافات.
-- جنب كل خدمة **المسافة بالكيلومتر**، وزر **📍 الاتجاهات** يفتح Google Maps.
-- بالعربي والإنجليزي، ومكتوب تحت إن البيانات من Overture Maps وممكن ما تكون كاملة.
+### What changed?
+- Every tourist place now has a **🧭 Nearby services** button on the places page and the map page.
+- Clicking it opens a window with **the 3 nearest of each service**: ⛽ gas stations, 💊 pharmacies, 🍽️ restaurants, ☕ cafes, and 🏦 banks and ATMs.
+- Next to each service is **the distance in kilometers**, and a **📍 Directions** button that opens Google Maps.
+- In Arabic and English, with a note that the data is from Overture Maps and may not be complete.
 
-### كيف انحسبت المسافات؟ (بالـ SQL في MySQL)
-1. **الدرس ٣.٥: تنظيف الصيدليات:** لقينا إن تقريباً **ثلث "الصيدليات" في Overture مصنفة غلط** (مثل كنتاكي وهارديز وصب واي!). فأضفنا عمود `is_valid`، وعلمنا **٦٩٨** منها كغير موثوقة، لأن اسمها ما فيه كلمة صيدلية ولا اسم سلسلة صيدليات معروفة.
-2. **الدرس ٤: المسافات:**
-   - `ST_Distance_Sphere` تحسب المسافة الحقيقية على الكرة الأرضية
-   - `ROW_NUMBER() OVER (PARTITION BY ...)` ترقم الخدمات من الأقرب للأبعد لكل مكان ولكل نوع
-   - استعلام خارجي يختار **أول ٣** بس
-   - أول محاولة فشلت لأن مساحة الجهاز ما كفت لحساب **١.٨ مليون مسافة**، فخففنا الاستعلام: نبحث بس داخل **مربع حول كل مكان (حول ٢٢٠ كم)** بدال كل السعودية
-3. النتيجة: جدول `nearest_services` فيه **٨٤٠ صف** (٥٦ مكان × ٥ أنواع × ٣)، وانصدر لملف CSV.
+### How were the distances calculated? (with SQL in MySQL)
+1. **Lesson 3.5: cleaning the pharmacies:** we found that about **a third of the "pharmacies" in Overture were misclassified** (like KFC, Hardee's, and Subway!). So we added an `is_valid` column, and marked **698** of them as unreliable, because their name has neither the word pharmacy nor the name of a known pharmacy chain.
+2. **Lesson 4: distances:**
+   - `ST_Distance_Sphere` calculates the real distance on the globe
+   - `ROW_NUMBER() OVER (PARTITION BY ...)` numbers the services from nearest to farthest for each place and each type
+   - An outer query picks **only the first 3**
+   - The first attempt failed because the computer didn't have enough space to calculate **1.8 million distances**, so we made the query lighter: we search only inside **a box around each place (about 220 km)** instead of all of Saudi Arabia
+3. The result: a `nearest_services` table with **840 rows** (56 places × 5 types × 3), exported to a CSV file.
 
-### مثال
-**حافة العالم:** أقرب محطة بنزين **الدريس (٢٢.٢ كم)**، وأقرب صيدلية **النهدي (٦٤ كم)**.
+### Example
+**Edge of the World:** the nearest gas station is **Aldrees (22.2 km)**, and the nearest pharmacy is **Nahdi (64 km)**.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `sql/03_nearest_services.sql` | ملف جديد: استعلام حساب أقرب الخدمات. تقدرين تعيدين تشغيله أي وقت تتغير الأماكن أو الخدمات |
-| `data/clean/nearest_services.csv` | نتيجة الاستعلام (٨٤٠ صف) |
-| `services.js` | ملف جديد: نفس النتيجة بصيغة يقراها الموقع |
-| `app.js` | دالة جديدة `openNearbyModal()` تبني النافذة، وترجمات جديدة |
-| `places.html` و `map.html` | زر "خدمات قريبة"، وتحميل `services.js` |
-| `styles.css` | تصميم النافذة وقائمة الخدمات |
-| `README.md` | الميزة الجديدة في جدول الميزات |
+| `sql/03_nearest_services.sql` | New file: the query that finds the nearest services. You can re-run it any time the places or services change |
+| `data/clean/nearest_services.csv` | The query result (840 rows) |
+| `services.js` | New file: the same result in a format the site can read |
+| `app.js` | New function `openNearbyModal()` that builds the window, and new translations |
+| `places.html` and `map.html` | The "Nearby services" button, and loading `services.js` |
+| `styles.css` | Design of the window and the list of services |
+| `README.md` | The new feature in the features table |
 
 ---
 
-## ١١ أكتوبر ٢٠٢٦: لما البحث ما يلقى شي
+## October 11, 2026: When the search finds nothing
 
-### وش تغير؟
-- إذا الزائر **كتب شي في البحث وما طلعت نتائج**، صار يطلع له:
-  - رسالة: **ما لقينا «اسم المكان» في وجّهني**
-  - زر **📩 اقترحي هالمكان علينا:** يفتح إيميل جاهز لـ wajjahni.nj@gmail.com، فيه عنوان ونص مكتوب فيهم اسم المكان اللي بحث عنه
-  - زر **🗺️ دوري عليه في خرائط Google:** يفتح Google Maps وهو باحث عن نفس الكلمة في السعودية
-- الرسالة والأزرار **بالعربي والإنجليزي**.
-- إذا ما فيه نتائج بسبب **الفلاتر بس** (بدون كتابة في البحث)، تظل الرسالة القديمة "ما فيه أماكن مطابقة لهذي الفلاتر".
-- يشتغل في صفحة **الأماكن** وصفحة **الخريطة**.
+### What changed?
+- If a visitor **types something in the search and nothing is found**, they now see:
+  - A message: **We couldn't find “place name” on Wajjahni**
+  - A **📩 Suggest this place** button: opens a ready email to wajjahni.nj@gmail.com, with a subject and text that include the name they searched for
+  - A **🗺️ Search on Google Maps** button: opens Google Maps searching for the same word in Saudi Arabia
+- The message and buttons are **in Arabic and English**.
+- If there are no results **only because of the filters** (nothing typed in the search), the old message "No places match these filters" stays.
+- Works on the **places** page and the **map** page.
 
-### ليش؟
-قبل كان يطلع "ما فيه نتائج" بس، والزائر ممكن يطلع من الموقع. الحين يقدر يقترح المكان (فنعرف وش الأماكن اللي يدور عليها الناس)، أو يلقاه في Google Maps.
+### Why?
+Before, it only said "No results", and the visitor might leave the site. Now they can suggest the place (so we learn which places people look for), or find it on Google Maps.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `app.js` | دالة جديدة `emptyStateHTML()` تبني الرسالة والزرين، و٥ ترجمات جديدة بالعربي والإنجليزي |
-| `places.html` و `map.html` | تستخدم `emptyStateHTML()` بدال الرسالة القديمة |
-| `styles.css` | تصميم عنوان الرسالة وترتيب الزرين |
+| `app.js` | New function `emptyStateHTML()` that builds the message and the two buttons, and 5 new translations in Arabic and English |
+| `places.html` and `map.html` | Use `emptyStateHTML()` instead of the old message |
+| `styles.css` | Design of the message title and the layout of the two buttons |
 
 ---
 
-## ١١ أكتوبر ٢٠٢٦: بيانات الخدمات القريبة (بداية الميزة)
+## October 11, 2026: Nearby services data (the start of the feature)
 
-### وش تغير؟
-- **سحب ٣٢,٥٦٦ خدمة** في السعودية (مطاعم، ومقاهي، وصيدليات، وبنوك وصرافات، ومحطات بنزين) من **Overture Maps** بـ DuckDB في `services.ipynb`.
-- تجهيز **قاعدة بيانات MySQL** اسمها `wajjahni` فيها جدولين:
-  - `services`: الخدمات
-  - `places`: الأماكن السياحية الـ ٥٦
-- **تنظيف أسماء المدن بالـ SQL** في عمود جديد `city_clean`: مثلاً "الرياض" كانت مكتوبة بـ ٢١ طريقة، وصارت `Riyadh`، ونفس الشي لجدة ومكة والمدينة والدمام والخبر والأحساء والطائف وأبها وتبوك وبريدة.
+### What changed?
+- **Pulled 32,566 services** in Saudi Arabia (restaurants, cafes, pharmacies, banks and ATMs, and gas stations) from **Overture Maps** with DuckDB in `services.ipynb`.
+- Set up a **MySQL database** called `wajjahni` with two tables:
+  - `services`: the services
+  - `places`: the 56 tourist places
+- **Cleaned the city names with SQL** in a new `city_clean` column: for example, "الرياض" (Riyadh) was written in 21 different ways, and became `Riyadh`, and the same for Jeddah, Makkah, Madinah, Dammam, Al Khobar, Al-Ahsa, Taif, Abha, Tabuk, and Buraydah.
 
-### ليش؟
-الهدف ميزة **"أقرب الخدمات"**: لما تفتحين أي مكان سياحي، تشوفين أقرب صيدلية ومحطة ومطعم ومقهى وصراف. والخطوة الجاية حساب المسافات بالـ SQL.
+### Why?
+The goal is a **"nearest services"** feature: when you open any tourist place, you see the nearest pharmacy, gas station, restaurant, cafe, and ATM. The next step is calculating the distances with SQL.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `services.ipynb` | ملف جديد: سحب الخدمات من Overture |
-| `data/raw/services_overture.csv` | البيانات الخام للخدمات |
-| `data/clean/places.csv` | الأماكن السياحية بإحداثياتها، للاستيراد في MySQL |
-| `sql/01_import_services.sql` و `sql/02_import_places.sql` | ملفات تسوي الجداول وتعبيها في MySQL |
+| `services.ipynb` | New file: pulls the services from Overture |
+| `data/raw/services_overture.csv` | The raw services data |
+| `data/clean/places.csv` | The tourist places with their coordinates, for importing into MySQL |
+| `sql/01_import_services.sql` and `sql/02_import_places.sql` | Files that create the tables and fill them in MySQL |
 
 ---
 
-## ١١ أكتوبر ٢٠٢٦: إيميل تواصل حقيقي
+## October 11, 2026: Real contact email
 
-### وش تغير؟
-- صفحة التواصل صارت تعرض إيميل المشروع الحقيقي **wajjahni.nj@gmail.com** بدال الإيميل الوهمي (`hello@wajjahni-example.com`).
-- لما تضغطين على الإيميل، يفتح برنامج الإيميل وهو جاهز للإرسال لهالعنوان.
+### What changed?
+- The contact page now shows the project's real email, **wajjahni.nj@gmail.com**, instead of the fake one (`hello@wajjahni-example.com`).
+- Clicking the email opens the email app, ready to send to that address.
 
-### ليش؟
-عشان أي أحد يلاحظ خطأ في معلومات مكان، أو يبي يقترح مكان جديد، يقدر يتواصل فعلاً.
+### Why?
+So anyone who notices a mistake in a place's information, or wants to suggest a new place, can actually get in touch.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `contact.html` | الإيميل الجديد في الرابط والنص |
-| `README.md` | تحديث قائمة Progress ووصف صفحة التواصل |
+| `contact.html` | The new email in the link and the text |
+| `README.md` | Updated Progress list and contact page description |
 
 ---
 
-## ٧ أكتوبر ٢٠٢٦: صورة درب التبانة في الصفحة الرئيسية
+## October 7, 2026: Milky Way photo on the home page
 
-### وش تغير؟
-- صارت خلفية أول قسم في الصفحة الرئيسية صورة **درب التبانة فوق قوس صخري** 🌌، بإذن من المصور.
-- **توقيع المصور موجود على الصورة نفسها** وما انشال، وهو حقوقه.
-- **تحسين الجودة:** الصورة كانت مأخوذة من تويتر وجودتها ضعيفة، فـ:
-  - شلت الحواف السوداء الرفيعة فوق وتحت
-  - كبرتها ١.٥ مرة (صارت ٣٥٤٧ × ١٤٠٧ بكسل)
-  - نعّمت التشويش في السماء، وقويت تفاصيل الصخر والنجوم
-  - رفعت التباين والألوان شوي
-- **تتكيف مع الشاشة:**
-  - بالإنجليزي: النص يسار، والقوس يمين
-  - بالعربي: انعكست الصورة عشان القوس يصير يسار، لأن النص صار يمين
-  - في الجوال: النص فوق، والقوس يطلع تحت
-- طبقة غامقة متدرجة ورا النص عشان يكون واضح.
+### What changed?
+- The background of the first section on the home page is now a photo of **the Milky Way over a rock arch** 🌌, with the photographer's permission.
+- **The photographer's signature is on the photo itself** and wasn't removed; it's their right.
+- **Quality improvements:** the photo was taken from Twitter and was low quality, so I:
+  - Removed the thin black edges at the top and bottom
+  - Enlarged it 1.5× (now 3547 × 1407 pixels)
+  - Smoothed the noise in the sky, and sharpened the details of the rock and stars
+  - Raised the contrast and colors a little
+- **Adapts to the screen:**
+  - In English: the text on the left, the arch on the right
+  - In Arabic: the photo is mirrored so the arch is on the left, because the text is on the right
+  - On phones: the text on top, the arch below
+- A dark gradient layer behind the text keeps it readable.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `hero.jpg` | ملف جديد: الصورة بعد التحسين |
-| `index.html` | أول قسم صار `class="hero photo-hero"` |
-| `styles.css` | تصميم جديد للقسم: الصورة والطبقة الغامقة والانعكاس بالعربي وشكل الجوال |
-| `README.md` | ملاحظة عن إذن المصور في قسم Photo credits |
+| `hero.jpg` | New file: the photo after the improvements |
+| `index.html` | The first section is now `class="hero photo-hero"` |
+| `styles.css` | New design for the section: the photo, the dark layer, mirroring in Arabic, and the phone layout |
+| `README.md` | Note about the photographer's permission in the Photo credits section |
 
 ---
 
-## ٧ أكتوبر ٢٠٢٦: صور حقيقية لـ ٨ أماكن إضافية
+## October 7, 2026: Real photos for 8 more places
 
-### وش تغير؟
-- صار **٤٤ مكان** فيه صورة حقيقية بدال ٣٦، والباقي **١٢ مكان**.
-- الأماكن الجديدة: وادي حنيفة، وبيت البسام التراثي، والقطيف القديمة (برج قلعة القطيف)، وشواطئ خليج العقبة (شاطئ حقل)، وصحراء الديسة، وقصر القشلة، ومنتزه غابة رغدان، وقرية ذي عين.
-- كل الصور من **Wikimedia Commons** ومرخصة للاستخدام المجاني، وتحت كل صورة اسم المصور ونوع الرخصة.
-- هالمرة بحثت **بالعربي والإنجليزي**، وراجعت كل صورة عشان تكون فعلاً للمكان نفسه.
+### What changed?
+- **44 places** now have a real photo instead of 36, with **12 places** left.
+- The new places: Wadi Hanifah, Al-Bassam Historic House, Qatif Old Town (Qatif Castle tower), Gulf of Aqaba Beaches (Haql beach), Disi Desert, Qishlah Palace, Raghadan Forest Park, and Dhee Ain Village.
+- All photos are from **Wikimedia Commons** and licensed for free use, with the photographer's name and license under each photo.
+- This time I searched **in Arabic and English**, and checked every photo to make sure it really shows the place itself.
 
-### الأماكن اللي للحين بدون صورة (١٢)
-سوق بريدة المركزي، وعنيزة القديمة، وبحيرة الأسياح، وواحة الأحساء، وكورنيش جازان، وشلال الإدابي، وزيبلاين الباحة، ومتحف الحدود الشمالية، ومحمية الغرابة، وقرية لينة التراثية، وجزيرة أبو علي، وجزيرة كُرَان.
-ما لقيت لها صور مرخصة ومطابقة للمكان. مثلاً صور "سوق بريدة" كانت لسوق التمور مو سوق الإبل، فما استخدمتها.
+### Places still without a photo (12)
+Buraydah Central Market, Unaizah Old Town, Al-Asyah Lake, Al-Ahsa Oasis, Jazan Corniche, Al Idabi Waterfall, Al-Baha Zipline, North Borders Museum, Al-Gharaba Nature Reserve, Linah Heritage Village, Abu Ali Island, and Karan Island.
+I didn't find licensed photos that match these places. For example, the "Buraydah market" photos were of the dates market, not the camel market, so I didn't use them.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `data.js` | `image_url` و `image_credit` للأماكن الثمانية |
-| `README.md` | تحديث عدد الصور في قائمة Progress |
+| `data.js` | `image_url` and `image_credit` for the eight places |
+| `README.md` | Updated photo count in the Progress list |
 
 ---
 
-## ٦ أكتوبر ٢٠٢٦: إصلاح الشريط العلوي في الجوالات الصغيرة
+## October 6, 2026: Fixing the top bar on small phones
 
-### وش تغير؟
-- في الجوالات الصغيرة (اللي عرض شاشتها ٤٨٠ بكسل أو أقل)، صار الشريط العلوي **ينضغط ويناسب الشاشة**:
-  - انخفى نص عدد الأماكن ("56 of 56 places") من الشريط
-  - صغرت المسافات بين الأزرار وعلى أطراف الشريط
-- جربته على عرض **٣٢٠ بكسل** (أصغر جوالات آيفون) في كل الصفحات الأربع، بالعربي والإنجليزي، وما عاد فيه شي ينقص أو يطلع برا الشاشة.
+### What changed?
+- On small phones (screens 480 pixels wide or less), the top bar now **shrinks to fit the screen**:
+  - The places count text ("56 of 56 places") is hidden from the bar
+  - The spacing between the buttons and at the edges of the bar is smaller
+- I tested it at **320 pixels** wide (the smallest iPhones) on all four pages, in Arabic and English, and nothing is cut off or goes off the screen anymore.
 
-### ليش؟
-في الجوالات الصغيرة كان زر القائمة ☰ ينقص على طرف الشاشة، والصفحة تصير أعرض من الشاشة شوي، فيطلع جزء من النص مقصوص.
+### Why?
+On small phones, the ☰ menu button was cut off at the edge of the screen, and the page was slightly wider than the screen, so part of the text was cut off.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `styles.css` | قاعدة جديدة للشاشات الصغيرة (`@media (max-width: 480px)`) تخفي `.nav-meta` وتصغر المسافات في `.nav` و `.nav-right` |
+| `styles.css` | A new rule for small screens (`@media (max-width: 480px)`) that hides `.nav-meta` and reduces the spacing in `.nav` and `.nav-right` |
 
 ---
 
-## ٦ أكتوبر ٢٠٢٦: إضافة المدينة لكل مكان، وتصحيح منطقة جزيرتين
+## October 6, 2026: Adding the city for each place, and fixing the region of two islands
 
-### وش تغير؟
-- صار كل مكان يعرض **المدينة والمنطقة** مع بعض، بدال المنطقة بس:
-  - قبل: `مكة المكرمة · طبيعي`
-  - بعد: `جدة، منطقة مكة المكرمة · طبيعي`
-  - وبالإنجليزي: `Jeddah, Makkah Region`
-- الأماكن اللي ما لها مدينة محددة (مثل حافة العالم ومحمية الغرابة وجزيرتي شورى والشيبارة) تعرض اسم المنطقة كامل، مثل `منطقة الرياض`، عشان ما ينحسب اسم المنطقة اسم مدينة.
-- **البحث** صار يدور في اسم المدينة بعد، فلو كتبتي "العلا" أو "AlUla" يطلع الحِجر وجبل الفيل.
-- **تصحيح:** جزيرة شورى وجزيرة الشيبارة كانت مسجلة في **منطقة مكة**، والصحيح إنها في **منطقة تبوك** (جزر مشروع البحر الأحمر قبالة ساحل تبوك). فصار عدد أماكن منطقة تبوك ٥، ومكة ٦.
+### What changed?
+- Every place now shows **the city and the region** together, instead of the region only:
+  - Before: `مكة المكرمة · طبيعي` (Makkah · Natural)
+  - After: `جدة، منطقة مكة المكرمة · طبيعي` (Jeddah, Makkah Region · Natural)
+  - And in English: `Jeddah, Makkah Region`
+- Places without a specific city (like Edge of the World, Al-Gharaba Nature Reserve, and Shura and Shebara islands) show the full region name, like `منطقة الرياض` (Riyadh Region), so the region name isn't mistaken for a city name.
+- **The search** now also looks in the city name, so typing "العلا" or "AlUla" finds Hegra and Elephant Rock.
+- **Fix:** Shura Island and Shebara Island were listed in **the Makkah region**, but they're actually in **the Tabuk region** (Red Sea Project islands off the Tabuk coast). So the Tabuk region now has 5 places, and Makkah 6.
 
-### ليش؟
-اسم المنطقة لحاله كان يلخبط. مثلاً كورنيش جدة كان مكتوب عنده "مكة المكرمة"، فالزائر ممكن يحسبه في مدينة مكة، مع إن جدة تتبع **منطقة** مكة إدارياً بس.
+### Why?
+The region name alone was confusing. For example, Jeddah Corniche showed "مكة المكرمة" (Makkah), so a visitor might think it's in the city of Makkah, even though Jeddah only belongs to the Makkah **region** administratively.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `data.js` | حقلين جديدين لكل مكان: `city` (المدينة بالإنجليزي) و `city_ar` (بالعربي)، وتصحيح منطقة جزيرتي شورى والشيبارة |
-| `app.js` | دالة جديدة `tLocation(d)` تكتب "المدينة، منطقة …" حسب اللغة. وصارت تُستخدم في نافذة أوقات الذروة وفي نوافذ الخريطة |
-| `places.html` و `map.html` | بطاقات الأماكن تعرض `tLocation(d)` بدال `tRegion(d.region)`، والبحث يشمل المدينة |
+| `data.js` | Two new fields for each place: `city` (the city in English) and `city_ar` (in Arabic), and the fixed region for Shura and Shebara islands |
+| `app.js` | New function `tLocation(d)` that writes "city, … Region" depending on the language. It's now used in the peak hours window and in the map windows |
+| `places.html` and `map.html` | Place cards show `tLocation(d)` instead of `tRegion(d.region)`, and the search includes the city |
 
 ---
 
-## ٦ أكتوبر ٢٠٢٦: ترجمة أسماء الأماكن والأوصاف للعربي
+## October 6, 2026: Translating place names and descriptions into Arabic
 
-### وش تغير؟
-- لما تختارين **العربية**، صارت **أسماء الأماكن** و**الأوصاف** تطلع بالعربي، مثل: حافة العالم (جبل فهرين)، وحي الطريف (الدرعية).
-- الترجمة تشمل: بطاقات الأماكن، ونوافذ الخريطة، ونافذة أوقات الذروة، ورسائل الاتجاهات.
-- زر "Open in Google Maps" صار يطلع بالعربي: "افتحي في خرائط Google".
-- **البحث يشتغل باللغتين**: لو كتبتي "جدة" يطلع البلد وكورنيش جدة.
+### What changed?
+- When you choose **Arabic**, **place names** and **descriptions** now appear in Arabic, like: حافة العالم (جبل فهرين) and حي الطريف (الدرعية).
+- The translation covers: place cards, map windows, the peak hours window, and directions messages.
+- The "Open in Google Maps" button now appears in Arabic: "افتحي في خرائط Google".
+- **The search works in both languages**: typing "جدة" (Jeddah) finds Al-Balad and Jeddah Corniche.
 
-### ليش؟
-قبل كانت الأزرار والقوائم بس تتعرب، وأسماء الأماكن وأوصافها تظل بالإنجليزي، فالموقع ما كان عربي بالكامل.
+### Why?
+Before, only the buttons and menus were in Arabic, while place names and descriptions stayed in English, so the site wasn't fully Arabic.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `data.js` | حقلين جديدين لكل مكان: `place_name_ar` و `short_description_ar` |
-| `app.js` | دالتين جديدتين: `tName(d)` و `tDesc(d)`، ترجعان النص العربي إذا اللغة عربي، وإلا الإنجليزي. وترجمة جديدة باسم `gmaps.open` |
-| `places.html` و `map.html` | استبدال `d.place_name` بـ `tName(d)`، و `d.short_description` بـ `tDesc(d)`، والبحث صار يدور في الاسم العربي بعد |
-| `README.md` | تحديث قائمة Progress |
+| `data.js` | Two new fields for each place: `place_name_ar` and `short_description_ar` |
+| `app.js` | Two new functions: `tName(d)` and `tDesc(d)`, which return the Arabic text if the language is Arabic, otherwise the English. And a new translation called `gmaps.open` |
+| `places.html` and `map.html` | Replaced `d.place_name` with `tName(d)`, and `d.short_description` with `tDesc(d)`, and the search now also looks in the Arabic name |
+| `README.md` | Updated Progress list |
 
 ---
 
-## ٦ أكتوبر ٢٠٢٦: تحليل بيانات السياحة
+## October 6, 2026: Tourism data analysis
 
-### وش تغير؟
-- notebook جديد اسمه `analysis.ipynb`، فيه تحليل لبيانات السياحة الرسمية (٢٠١٥–٢٠٢٤): تطور السياحة عبر السنين، والداخلي مقابل الوافد، وأكثر المناطق زيارة وإنفاقاً، ومدة الإقامة، وأسرع المناطق نمواً.
-- اكتشاف صف فيه **أصفار وهمية** (الباحة، ٢٠١٧، وافد) وتحويله لقيم ناقصة (NaN).
+### What changed?
+- A new notebook, `analysis.ipynb`, analyzing the official tourism data (2015–2024): how tourism changed over the years, domestic vs. inbound, the most visited and highest-spending regions, length of stay, and the fastest-growing regions.
+- Found a row with **fake zeros** (Al-Baha, 2017, inbound) and turned it into missing values (NaN).
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `analysis.ipynb` | ملف جديد |
+| `analysis.ipynb` | New file |
 
 ---
 
-## ٣ أكتوبر ٢٠٢٦: تنظيف بيانات السياحة الرسمية
+## October 3, 2026: Cleaning the official tourism data
 
-### وش تغير؟
-- إضافة بيانات السياحة الرسمية من هيئة السياحة: ٢٦ ملف (١٣ منطقة × داخلي ووافد) في `data/raw/tourism`.
-- notebook جديد اسمه `data-cleaning.ipynb` ينظف البيانات:
-  - تحويل الأرقام المكتوبة كنص (`"1,041"`) لأرقام
-  - أسماء أعمدة قصيرة وواضحة، والوحدة فيها
-  - توحيد أسماء المناطق مع الموقع
-  - فصل مجموع المنطقة عن المدن
-  - حذف صف منسوخ بالغلط في ملف نجران الوافد ٢٠٢٤
-- الناتج: `data/clean/tourism_by_region.csv` و `data/clean/tourism_by_destination.csv`
+### What changed?
+- Added the official tourism data from the Tourism Authority: 26 files (13 regions × domestic and inbound) in `data/raw/tourism`.
+- A new notebook, `data-cleaning.ipynb`, cleans the data:
+  - Converting numbers written as text (`"1,041"`) into numbers
+  - Short, clear column names, with the unit in them
+  - Matching region names with the site
+  - Separating region totals from cities
+  - Removing a row copied by mistake into the Najran inbound 2024 file
+- Output: `data/clean/tourism_by_region.csv` and `data/clean/tourism_by_destination.csv`
 
-### ليش ما استخدمنا الملف المجمع من Kaggle؟
-لأن فيه مشاكل: عمود المدينة محذوف، و٢٨ صف مكرر، و٢٠ صف كله أصفار.
+### Why didn't we use the merged file from Kaggle?
+Because it has problems: the city column was dropped, plus 28 duplicate rows and 20 rows of all zeros.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `data/raw/` | البيانات الأصلية، ولا تنعدل باليد أبداً |
-| `data/clean/` | البيانات النظيفة |
-| `data-cleaning.ipynb` | ملف جديد |
-| `README.md` | قسم جديد عن البيانات والتنظيف |
+| `data/raw/` | The original data, never edited by hand |
+| `data/clean/` | The clean data |
+| `data-cleaning.ipynb` | New file |
+| `README.md` | New section about the data and cleaning |
 
 ---
 
-## ٢ أكتوبر ٢٠٢٦: تغيير أسماء منطقتين
+## October 2, 2026: Renaming two regions
 
-### وش تغير؟
-- `Asir` صارت `Aseer`، و `Qassim` صارت `Al-Qassim`، عشان تطابق الكتابة الرسمية وبيانات هيئة السياحة.
+### What changed?
+- `Asir` became `Aseer`, and `Qassim` became `Al-Qassim`, to match the official spelling and the Tourism Authority data.
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `data.js` | اسم المنطقة للأماكن الثمانية في عسير والقصيم |
-| `app.js` | الترجمة العربية للمنطقتين |
+| `data.js` | Region name for the eight places in Aseer and Al-Qassim |
+| `app.js` | Arabic translation for the two regions |
 
 ---
 
-## ٢ أكتوبر ٢٠٢٦: صور حقيقية للأماكن
+## October 2, 2026: Real photos of the places
 
-### وش تغير؟
-- **٣٦ مكان** صار له صورة حقيقية من Wikimedia Commons، بدال الصور العشوائية.
-- تحت كل صورة **اسم المصور ونوع الرخصة**، مع رابط للصفحة الأصلية.
-- الأماكن اللي ما لها صورة مناسبة (٢٠ مكان) تعرض شكل ملون حسب نوع المكان، مع أيقونة وجملة "الصورة قريباً".
+### What changed?
+- **36 places** now have a real photo from Wikimedia Commons, instead of random photos.
+- Under each photo are **the photographer's name and the license**, with a link to the original page.
+- Places without a suitable photo (20 places) show a colored shape based on the type of place, with an icon and the text "Photo coming soon".
 
-### ليش؟
-الصور القديمة كانت عشوائية ومالها علاقة بالأماكن (مثلاً صورة حافة العالم كانت كلب 🐶).
+### Why?
+The old photos were random and had nothing to do with the places (for example, the Edge of the World photo was a dog 🐶).
 
-### الملفات اللي تغيرت
-| الملف | التغيير |
+### Files changed
+| File | Change |
 |---|---|
-| `data.js` | روابط الصور الجديدة، وحقل `image_credit` (المصور والرخصة والمصدر) |
-| `app.js` | دالتين: `placeImage()` للصورة أو الشكل البديل، و `photoCredit()` لاسم المصور |
-| `places.html` و `map.html` | استخدام الدوال الجديدة |
-| `styles.css` | تصميم الشكل البديل وسطر اسم المصور |
-| `README.md` | قسم Photo credits |
+| `data.js` | New photo links, and an `image_credit` field (photographer, license, and source) |
+| `app.js` | Two functions: `placeImage()` for the photo or placeholder shape, and `photoCredit()` for the photographer's name |
+| `places.html` and `map.html` | Use the new functions |
+| `styles.css` | Design of the placeholder shape and the photographer line |
+| `README.md` | Photo credits section |
 
 ---
 
-## ٢ أكتوبر ٢٠٢٦: حقوق النشر
+## October 2, 2026: Copyright
 
-### وش تغير؟
-- إضافة **© 2026 Najla. All rights reserved.** أسفل كل الصفحات وفي الـ README، وبالعربي: **© 2026 نجلاء. جميع الحقوق محفوظة.**
-- المشروع **بدون رخصة مفتوحة**، فهو محمي: الناس يقدرون يشوفونه، بس ما يحق لهم ينسخونه بدون إذن.
+### What changed?
+- Added **© 2026 Najla. All rights reserved.** at the bottom of every page and in the README, and in Arabic: **© 2026 نجلاء. جميع الحقوق محفوظة.**
+- The project has **no open license**, so it's protected: people can view it, but they aren't allowed to copy it without permission.
 
-### الملفات اللي تغيرت
-`README.md` و `index.html` و `places.html` و `map.html` و `contact.html` و `app.js`
-
----
-
-## ٢ أكتوبر ٢٠٢٦: أول نسخة من وجّهني
-
-### وش فيها؟
-- ٤ صفحات: الرئيسية، والأماكن، والخريطة، والتواصل
-- ٥٦ مكان سياحي في ١٣ منطقة
-- بحث وفلترة حسب المنطقة والنوع
-- خريطة تفاعلية (Leaflet)
-- ترتيب الأماكن حسب المسافة منج
-- الاتجاهات
-- رسم أوقات الذروة
-- العربي والإنجليزي
-- الوضع الفاتح والغامق
-- يشتغل على الجوال
+### Files changed
+`README.md`, `index.html`, `places.html`, `map.html`, `contact.html`, and `app.js`
 
 ---
 
-## كيف يتحدث هذا الملف؟
-مع كل تغيير جديد ينضاف قسم في **أول** الملف، فيه:
-١. **التاريخ والعنوان**
-٢. **وش تغير؟**
-٣. **ليش؟**
-٤. **الملفات اللي تغيرت**
+## October 2, 2026: First version of Wajjahni
+
+### What's in it?
+- 4 pages: home, places, map, and contact
+- 56 tourist places across 13 regions
+- Search and filters by region and type
+- Interactive map (Leaflet)
+- Sorting places by distance from you
+- Directions
+- Peak hours chart
+- Arabic and English
+- Light and dark mode
+- Works on phones
+
+---
+
+## How is this file updated?
+Every new change adds a section at the **start** of the file, with:
+1. **The date and title**
+2. **What changed?**
+3. **Why?**
+4. **Files changed**

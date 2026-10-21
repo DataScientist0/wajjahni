@@ -132,7 +132,7 @@ wajjahni/
 ├── data/
 │   ├── raw/        # Original tourism files, never edited by hand
 │   └── clean/      # Clean tables made by the notebook
-├── CHANGELOG.md    # Detailed log of every change (in Arabic)
+├── CHANGELOG.md    # Detailed log of every change
 └── README.md
 ```
 
