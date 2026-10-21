@@ -101,7 +101,7 @@ INSERT INTO places (place_id, place_name, place_name_ar, city, region, type, lat
 (60, 'AlUla Old Town', 'البلدة القديمة بالعلا', 'AlUla', 'Madinah', 'Historical', 26.6257, 37.9151),
 (61, 'Maraya', 'مرايا', 'AlUla', 'Madinah', 'Entertainment', 26.7435, 37.8654),
 (62, 'Ithra (King Abdulaziz Center for World Culture)', 'إثراء (مركز الملك عبدالعزيز الثقافي العالمي)', 'Dhahran', 'Eastern Province', 'Cultural', 26.3355, 50.1209),
-(63, 'City Walk', 'سيتي ووك', 'Dhahran', 'Eastern Province', 'Entertainment', 26.3061, 50.1836),
+(63, 'City Walk', 'سيتي ووك', 'Al Khobar', 'Eastern Province', 'Entertainment', 26.3061, 50.1836),
 (64, 'Khobar Water Tower', 'برج المياه بالخبر', 'Al Khobar', 'Eastern Province', 'Entertainment', 26.3076, 50.2317),
 (65, 'Khobar Corniche', 'كورنيش الخبر', 'Al Khobar', 'Eastern Province', 'Natural', 26.3017, 50.2275),
 (66, 'Ajdan Walk', 'أجدان ووك', 'Al Khobar', 'Eastern Province', 'Entertainment', 26.2835, 50.2194),

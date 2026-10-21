@@ -5,6 +5,19 @@ The newest changes are at the **top**. Every new update adds a section at the st
 
 ---
 
+## October 21, 2026: City Walk is in Al Khobar, not Dhahran
+
+### What changed?
+- City Walk's city changed from **Dhahran** to **Al Khobar**, so the site now shows "Al Khobar, Eastern Province".
+- Its location is confirmed: the place is **Khobar City Walk** (الخبر سيتي ووك), on Prince Faisal bin Fahd Road in Olaya, Al Khobar, next to the Mall of Dhahran. The coordinates already on the site were correct (within about 200 m of the listing).
+
+### Files changed
+| File | Change |
+|---|---|
+| `data.js`, `data/clean/places.csv`, `sql/02_import_places.sql` | City: Al Khobar |
+
+---
+
 ## October 21, 2026: Buraydah Date City replaces Buraydah Central Market, and two places removed (72 places now)
 
 ### What changed?
